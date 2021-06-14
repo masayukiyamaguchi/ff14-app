@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Metamorphous&display=swap');
+@font-face {
+	font-family: 'MyFont';
+	src: url(/font/Eofont-R.otf);
+}
+
+@media screen and (min-width: 480px) { /*ウィンドウ幅が480px以上の場合に適用*/
+
+.header_div{
+    background-size:  cover;  
+    background-image:url("/img/header_bg.png");
+}
+
+.main_div{
+    margin-top: 20px;
+    height: 750px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.left_menu{
+    float: left;
+    width: 30%;    /* floatに、width 指定は必須です。*/
+}
+
+.contents{
+    float: left;
+    width: 40%;
+ }
+
+.rigth_menu{
+    float: left;
+} 
+
+.footer{
+    margin-top: 20px;
+}
+
+.title_div{
+    text-align: center;
+}
+
+.title_span{
+    font-size: 80px;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.generate_button_div{
+    margin-left: 150px;
+    margin-top: 20px;
+}
+
+.generate_button{
+    font-size: 18px;
+    display: inline-block;
+    background: #ffffff;
+    color: #cc99ff;
+    width: 80px;
+    height: 80px;
+    border: double 4px #cc99ff;
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+.generate_button:hover{
+    background: #cc99ff;
+    color: #ffffff;
+    border: double 4px #ffffff;
+    border-radius: 50%;
+}
+
+.ccard_div{
+    position: relative;
+}
+
+.ccard_preview{
+    width: 100%;    
+}
+
+.white_cambas{
+    position: absolute;
+    left:0px;
+    top:0px;
+    filter: opacity(40%);
+    width: 50%;
+}
+
+/* 画像の加工 */
+.char_name{
+    position: absolute;
+    left:20px;
+    top:5px;
+    font-size: 23px;
+    font-weight: bold;
+    font-family: MyFont;
+}
+
+.create_text_div{
+    clear: left;
+}
+
+
+
+
+
+
+
+}
+/* PCのCSSおわり */
+
+
+
+
+@media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
+
+
+}
