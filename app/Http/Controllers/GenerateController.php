@@ -27,7 +27,7 @@ class GenerateController extends Controller
         // ロドストIDが不正だった場合
         if($seach_datas=="error"){
             return view("index",["error"=>"Lodestone IDが不正です"]);
-        }        
+        }
 
          // キャラ名
         $char_name = $seach_datas->Character->Name;
@@ -49,6 +49,13 @@ class GenerateController extends Controller
 
         // フリーカンパニー
         $char_freecompany = $seach_datas->Character->FreeCompanyName;
+
+        // アチーブメント
+        $char_achievements = $seach_datas->Achievements->List;
+        $char_achievement = $seachdata->searchachievement($char_achievements,$char_gender);        
+
+        // ジョブ
+        $job_levels = $seachdata->searchjoblevel($loadstone_id);        
 
 
         // 画像
@@ -80,13 +87,30 @@ class GenerateController extends Controller
             return view("index",["error"=>"アップロード失敗:".$file_error]);
         }
 
+        // // fflogsデータ
+        // $fflogs_datas = $seachdata->fflogsdata();
 
-        // 画像のクリエイトテスト
+        // // 画像のクリエイトテスト
+        // $url = "img/test.png";
+        // $img = \Image::make($url);
+        // $ins_img = \Image::make("img/jobicon/01/paladin.png"); 
+        // $position = 'top-left';
+        // $x = 0;
+        // $y = 0;
+        // $img->insert($ins_img, $position, $x, $y);
 
-        $url = "img/test.png";
-        $img = \Image::make($url);
-
-        // $img->flip();
+        // // 文字入れ
+        // $y_chousei = 20;
+        // $x = 0;
+        // $y = 0 + $y_chousei;
+        // $img->text('Lennath Valkyrie', $x, $y, function($font){
+        //     $font->file('font\Eofont-R.otf'); // フォントファイル
+        //     $font->size(100);        // 文字サイズ
+        //     $font->color('#ffffff');   // 文字の色
+        //     $font->align('left'); // 横の揃え方（left, center, right）
+        //     $font->valign('top');   // 縦の揃え方（top, middle, bottom）
+        //     $font->angle(0);       // 回転（フォントが指定されていないと無視されます。）
+        // });
 
         // $save_path = "img/test2.png";
         // $img->save($save_path,100);
@@ -101,7 +125,10 @@ class GenerateController extends Controller
                 "char_tribe"=>$char_tribe,
                 "char_gender"=>$char_gender,
                 "char_freecompany"=>$char_freecompany,
+                "char_achievements"=>$char_achievement,
+                "job_levels" => $job_levels,
                 "save_dir"=>$save_dir,
+
             ]);
 
     }

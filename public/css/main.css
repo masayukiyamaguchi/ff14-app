@@ -1,10 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Metamorphous&display=swap');
-@font-face {
-	font-family: 'MyFont';
-	src: url(/font/Eofont-R.otf);
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Bungee+Inline&family=Elsie+Swash+Caps:wght@400;900&family=IM+Fell+English:ital@0;1&family=Kalam:wght@300;400;700&family=Leckerli+One&family=Metamorphous&family=Noto+Sans+JP:wght@100;300;400;500&family=Nunito:wght@200;300;400;600;700&family=Righteous&family=Rock+Salt&family=Sacramento&family=Sorts+Mill+Goudy&display=swap');
 @media screen and (min-width: 480px) { /*ウィンドウ幅が480px以上の場合に適用*/
 
 .header_div{
@@ -21,12 +16,12 @@
 
 .left_menu{
     float: left;
-    width: 30%;    /* floatに、width 指定は必須です。*/
+    width: 380px;    /* floatに、width 指定は必須です。*/
 }
 
 .contents{
     float: left;
-    width: 40%;
+    width: 970px;
  }
 
 .rigth_menu{
@@ -77,31 +72,710 @@
 }
 
 .ccard_preview{
-    width: 100%;    
+    width: 960px;    
+}
+
+.canvas{
+    position: relative;
 }
 
 .white_cambas{
     position: absolute;
     left:0px;
     top:0px;
-    filter: opacity(40%);
-    width: 50%;
+    width: 480px;
+    height: 540px;
+    background: rgba(255, 255, 255, 0.5);
+
 }
 
 /* 画像の加工 */
+/* キャラ名 */
 .char_name{
     position: absolute;
-    left:20px;
-    top:5px;
-    font-size: 23px;
+    left:10px;
+    top:10px;
+    color: #000000;
+    font-size: 35px;
     font-weight: bold;
-    font-family: MyFont;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* メインジョブ */
+.char_main_job_span{
+    position: absolute;
+    left:0px;
+    top:0px;
+    width: 300px;
+}
+
+.char_main_job{
+    position: absolute;
+    left:10px;
+    top:70px;
+    color: #000000;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.char_main_job_icon{
+    position: absolute;
+    left:10px;
+    top:80px;
+}
+
+.char_main_name{
+    position: absolute;
+    left:60px;
+    top:90px;
+    font-size: 20px;
+    color: #000000;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* サーバー */
+.char_server_span{
+    position: absolute;
+    left:0px;
+    top:0px;
+    width: 300px;
+}
+
+.char_server{
+    position: absolute;
+    left: 220px;
+    top:70px;
+    color: #000000;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.char_server_name{
+    position: absolute;
+    left:220px;
+    top:90px;
+    font-size: 20px;
+    color: #000000;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* 種族 */
+.char_race_span{
+    position: absolute;
+    left:0px;
+    top:0px;
+    width: 300px;
+}
+
+.char_race{
+    position: absolute;
+    left:10px;
+    top:150px;
+    color: #000000;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.char_race_name{
+    position: absolute;
+    left:10px;
+    top:160px;
+    font-size: 20px;
+    color: #000000;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.char_gender{
+    color: rgb(255, 56, 56);
+}
+
+.char_tribe_name{
+    position: absolute;
+    left: 15px;
+    top:188px;
+    font-size: 10px;
+    color: #000000;
+    font-weight: bold;
+}
+
+
+/* フリーカンパニー */
+.char_freecompany_span{
+    position: absolute;
+    left:0px;
+    top:0px;
+    width: 600px;
+    color: #5da0ff;
+}
+
+.char_freecompany{
+    position: absolute;
+    left: 220px;
+    top:150px;
+    color: #000000;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.char_freecompany_name{
+    position: absolute;
+    left:220px;
+    top:160px;
+    font-size: 20px;
+    color: #000000;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+
+/* 好きなこと */
+.char_favorite_span{
+    position: absolute;
+    left:0px;
+    top:0px;
+    width: 300px;
+}
+
+.char_favorite{
+    position: absolute;
+    left:10px;
+    top:230px;
+    color: #000000;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.char_favorite_name{
+    width: 480px;
+    position: absolute;
+    left:10px;
+    top:240px;
+    color: #000000;
+    font-size: 20px;
+    font-family: 'Noto Sans JP', sans-serif;
+    
+}
+
+.char_favorite_name span{
+    display: inline-block;
+}
+
+.char_favorite_div img{
+    width: 17px;
+}
+
+/* ジョブアイコン */
+.char_job_icon_span{
+    position: absolute;
+    left:0px;
+    top:0px;
+    width: 300px;
+}
+
+[class^="job_icon_img"]{
+    width: 30px;
+}
+
+.job_icon_img_paladin{
+    position: absolute;
+    left:10px;
+    top:350px;
+}
+
+.job_level_paladin{
+    position: absolute;
+    left:15px;
+    top:375px;
+    color: #ee852e ;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.job_icon_img_warrior{
+    position: absolute;
+    left:45px;
+    top:350px;
+}
+
+.job_level_warrior{
+    position: absolute;
+    left:50px;
+    top:375px;
+    color: #ee852e ;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.job_icon_img_darkknight{
+    position: absolute;
+    left:80px;
+    top:350px;
+}
+
+.job_level_darkknight{
+    position: absolute;
+    left:85px;
+    top:375px;
+    color: #ee852e ;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.job_icon_img_gunbreaker{
+    position: absolute;
+    left:115px;
+    top:350px;
+}
+
+.job_level_gunbreaker{
+    position: absolute;
+    left:120px;
+    top:375px;
+    color: #ee852e ;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.job_icon_img_whitemage{
+    position: absolute;
+    left:160px;
+    top:350px;
+}
+
+.job_level_whitemage{
+    position: absolute;
+    left:165px;
+    top:375px;
+    color: #ee852e ;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.job_icon_img_scholar{
+    position: absolute;
+    left:195px;
+    top:350px;
+}
+
+.job_level_scholar{
+    position: absolute;
+    left:200px;
+    top:375px;
+    color: #ee852e ;
+    font-family: 'Noto Sans JP', sans-serif;    
+}
+
+.job_icon_img_astrologian{
+    position: absolute;
+    left:230px;
+    top:350px;
+}
+
+.job_level_astrologian{
+    position: absolute;
+    left:235px;
+    top:375px;
+    color: #ee852e ;
+    font-family: 'Noto Sans JP', sans-serif;    
+}
+
+
+.job_icon_img_monk{
+    position: absolute;
+    left:10px;
+    top:400px;
+}
+
+.job_level_monk{
+    position: absolute;
+    left:15px;
+    top:425px;
+    color: #ee852e ;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.job_icon_img_dragoon{
+    position: absolute;
+    left:45px;
+    top:400px;
+}
+
+.job_level_dragoon{
+    position: absolute;
+    left:50px;
+    top:425px;
+    color: #ee852e ;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.job_icon_img_ninja{
+    position: absolute;
+    left:80px;
+    top:400px;
+}
+
+.job_level_ninja{
+    position: absolute;
+    left:85px;
+    top:425px;
+    color: #ee852e ;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.job_icon_img_samurai{
+    position: absolute;
+    left:115px;
+    top:400px;
+}
+
+.job_level_samurai{
+    position: absolute;
+    left:120px;
+    top:425px;
+    color: #ee852e ;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.job_icon_img_bard{
+    position: absolute;
+    left:160px;
+    top:400px;
+}
+
+.job_level_bard{
+    position: absolute;
+    left:165px;
+    top:425px;
+    color: #ee852e ;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.job_icon_img_machinist{
+    position: absolute;
+    left:195px;
+    top:400px;
+}
+
+.job_level_machinist{
+    position: absolute;
+    left:200px;
+    top:425px;
+    color: #ee852e ;
+    font-family: 'Noto Sans JP', sans-serif;    
+}
+
+.job_icon_img_dancer{
+    position: absolute;
+    left:230px;
+    top:400px;
+}
+
+.job_level_dancer{
+    position: absolute;
+    left:235px;
+    top:425px;
+    color: #ee852e ;
+    font-family: 'Noto Sans JP', sans-serif;    
+}
+
+.job_icon_img_blackmage{
+    position: absolute;
+    left:275px;
+    top:400px;
+}
+
+.job_level_blackmage{
+    position: absolute;
+    left:280px;
+    top:425px;
+    color: #ee852e ;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.job_icon_img_summoner{
+    position: absolute;
+    left:310px;
+    top:400px;
+}
+
+.job_level_summoner{
+    position: absolute;
+    left:315px;
+    top:425px;
+    color: #ee852e ;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.job_icon_img_redmage{
+    position: absolute;
+    left:345px;
+    top:400px;
+}
+
+.job_level_redmage{
+    position: absolute;
+    left:350px;
+    top:425px;
+    color: #ee852e ;
+    font-family: 'Noto Sans JP', sans-serif;    
+}
+
+.job_icon_img_bluemage{
+    position: absolute;
+    left:380px;
+    top:400px;
+}
+
+.job_level_bluemage{
+    position: absolute;
+    left:385px;
+    top:425px;
+    color: #ee852e ;
+    font-family: 'Noto Sans JP', sans-serif;    
+}
+
+/* ギャザクラ */
+.job_icon_img_carpenter{
+    position: absolute;
+    left:10px;
+    top:450px;
+}
+
+.job_level_carpenter{
+    position: absolute;
+    left:15px;
+    top:475px;
+    color: #ee852e ;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.job_icon_img_blacksmith{
+    position: absolute;
+    left:45px;
+    top:450px;
+}
+
+.job_level_blacksmith{
+    position: absolute;
+    left:50px;
+    top:475px;
+    color: #ee852e ;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.job_icon_img_armorer{
+    position: absolute;
+    left:80px;
+    top:450px;
+}
+
+.job_level_armorer{
+    position: absolute;
+    left:85px;
+    top:475px;
+    color: #ee852e ;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.job_icon_img_goldsmith{
+    position: absolute;
+    left:115px;
+    top:450px;
+}
+
+.job_level_goldsmith{
+    position: absolute;
+    left:120px;
+    top:475px;
+    color: #ee852e ;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.job_icon_img_leatherworker{
+    position: absolute;
+    left:150px;
+    top:450px;
+}
+
+.job_level_leatherworker{
+    position: absolute;
+    left:155px;
+    top:475px;
+    color: #ee852e ;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.job_icon_img_weaver{
+    position: absolute;
+    left:185px;
+    top:450px;
+}
+
+.job_level_weaver{
+    position: absolute;
+    left:190px;
+    top:475px;
+    color: #ee852e ;
+    font-family: 'Noto Sans JP', sans-serif;    
+}
+
+.job_icon_img_alchemist{
+    position: absolute;
+    left:220px;
+    top:450px;
+}
+
+.job_level_alchemist{
+    position: absolute;
+    left:225px;
+    top:475px;
+    color: #ee852e ;
+    font-family: 'Noto Sans JP', sans-serif;    
+}
+
+.job_icon_img_culinarian{
+    position: absolute;
+    left:255px;
+    top:450px;
+}
+
+.job_level_culinarian{
+    position: absolute;
+    left:260px;
+    top:475px;
+    color: #ee852e ;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.job_icon_img_miner{
+    position: absolute;
+    left:300px;
+    top:450px;
+}
+
+.job_level_miner{
+    position: absolute;
+    left:305px;
+    top:475px;
+    color: #ee852e ;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.job_icon_img_botanist{
+    position: absolute;
+    left:335px;
+    top:450px;
+}
+
+.job_level_botanist{
+    position: absolute;
+    left:340px;
+    top:475px;
+    color: #ee852e ;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+
+.job_icon_img_fisher{
+    position: absolute;
+    left:370px;
+    top:450px;
+}
+
+.job_level_fisher{
+    position: absolute;
+    left:375px;
+    top:475px;
+    color: #ee852e ;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.job_level{
+    padding-right: 5px;
 }
 
 .create_text_div{
     clear: left;
 }
 
+
+
+/* アチーブメント */
+
+
+
+.achievements_div .achievements_span{
+    position: absolute;
+    left: 955px;
+}
+.achievements_div .achievements_span:nth-child(1){top:10px;}
+.achievements_div .achievements_span:nth-child(2){top:25px;}
+.achievements_div .achievements_span:nth-child(3){top:60px;}
+.achievements_div .achievements_span:nth-child(4){top:95px;}
+.achievements_div .achievements_span:nth-child(5){top:130px;}
+.achievements_div .achievements_span:nth-child(6){top:165px;}
+.achievements_div .achievements_span:nth-child(7){top:200px;}
+.achievements_div .achievements_span:nth-child(8){top:235px;}
+.achievements_div .achievements_span:nth-child(9){top:270px;}
+.achievements_div .achievements_span:nth-child(10){top:305px;}
+.achievements_div .achievements_span:nth-child(11){top:340px;}
+.achievements_div .achievements_span:nth-child(12){top:375px;}
+.achievements_div .achievements_span:nth-child(13){top:410px;}
+.achievements_div .achievements_span:nth-child(14){top:445px;}
+.achievements_div .achievements_span:nth-child(15){top:480px;}
+.achievements_div .achievements_span:nth-child(16){top:515px;}
+
+.achievements_span{
+    transform: translateX(-100%);
+    text-align: right;
+    font-weight: bold;
+    white-space: nowrap;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: chocolate;
+}
+
+.achievements_title{
+    position: absolute;
+    left: 955px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.achievements_span img{
+    width: 25px;
+    padding-left: 3px;
+}
+
+
+/* ライトメニュー */
+.char_name_font_span span{
+    font-weight: bold;
+}
+.char_info_font_span span{
+    font-weight: bold;
+}
+
+.Alice{font-family: 'Alice', serif;}
+.Bungee{font-family: 'Bungee Inline', cursive;}
+.Elsie{font-family: 'Elsie Swash Caps', cursive;}
+.IMFell{font-family: 'IM Fell English', serif;}
+.Kalam{font-family: 'Kalam', cursive;}
+.Leckerli{font-family: 'Leckerli One', cursive;}
+.Metamorphous{font-family: 'Metamorphous', cursive;}
+.Metamorphous{font-family: 'Noto Sans JP', sans-serif;}
+.Nunito{font-family: 'Nunito', sans-serif;}
+.Righteous{font-family: 'Righteous', cursive;}
+.Rock{font-family: 'Rock Salt', cursive;}
+.Sacramento{font-family: 'Sacramento', cursive;}
+.Sorts{font-family: 'Sorts Mill Goudy', serif;}
+
+.char_name_font_span p{
+    line-height:0
+}
+.char_info_font_span p{
+    line-height:0
+}
+
+#wkSlider2{
+    width: 220px;
+}
+#transparent_value2{
+    width: 220px;
+}
 
 
 
