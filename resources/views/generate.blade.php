@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/tab.css">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/sunny/jquery-ui.css">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
     <script src="/js/main.js"></script>
@@ -84,21 +85,21 @@
         <div class="char_favorite_div">
             <span class="char_favorite char_info">お気に入りコンテンツ</span>
             <span class="char_favorite_name">
-                <span class="char_info"><img src="img\faveriteicon\sample01.png" alt="">レベリング・</span>
-                <span class="char_info"><img src="img\faveriteicon\sample01.png" alt="">クラフター・</span>
-                <span class="char_info"><img src="img\faveriteicon\sample01.png" alt="">ギャザラー・</span>
-                <span class="char_info"><img src="img\faveriteicon\sample01.png" alt="">SS・</span>
-                <span class="char_info"><img src="img\faveriteicon\sample01.png" alt="">ミラプリ・</span>
-                <span class="char_info"><img src="img\faveriteicon\sample01.png" alt="">チャット・</span>
-                <span class="char_info"><img src="img\faveriteicon\sample01.png" alt="">ハウジング・</span>
-                <span class="char_info"><img src="img\faveriteicon\sample01.png" alt="">ゴールドソーサー・</span>
-                <span class="char_info"><img src="img\faveriteicon\sample01.png" alt="">麻雀・</span>
-                <span class="char_info"><img src="img\faveriteicon\sample01.png" alt="">演奏・</span>
-                <span class="char_info"><img src="img\faveriteicon\sample01.png" alt="">地図・</span>
-                <span class="char_info"><img src="img\faveriteicon\sample01.png" alt="">討伐・討滅戦・</span>
-                <span class="char_info"><img src="img\faveriteicon\sample01.png" alt="">零式・</span>
-                <span class="char_info"><img src="img\faveriteicon\sample01.png" alt="">絶・</span>
-                <span class="char_info"><img src="img\faveriteicon\sample01.png" alt="">PvP・</span>
+                <span class="char_info"><img src="img\faveriteicon\faverite001.png" alt="">レベリング・</span>
+                <span class="char_info"><img src="img\faveriteicon\faverite002.png" alt="">クラフター・</span>
+                <span class="char_info"><img src="img\faveriteicon\faverite003.png" alt="">ギャザラー・</span>
+                <span class="char_info"><img src="img\faveriteicon\faverite004.png" alt="">グルポ・</span>
+                <span class="char_info"><img src="img\faveriteicon\faverite005.png" alt="">ミラプリ・</span>
+                <span class="char_info"><img src="img\faveriteicon\faverite006.png" alt="">おしゃべり・</span>
+                <span class="char_info"><img src="img\faveriteicon\faverite007.png" alt="">ハウジング・</span>
+                <span class="char_info"><img src="img\faveriteicon\faverite008.png" alt="">ゴールドソーサー・</span>
+                <span class="char_info"><img src="img\faveriteicon\faverite009.png" alt="">演奏・</span>
+                <span class="char_info"><img src="img\faveriteicon\faverite010.png" alt="">トレハン・</span>
+                <span class="char_info"><img src="img\faveriteicon\faverite011.png" alt="">討伐/討滅戦・</span>
+                <span class="char_info"><img src="img\faveriteicon\faverite012.png" alt="">零式・</span>
+                <span class="char_info"><img src="img\faveriteicon\faverite013.png" alt="">絶・</span>
+                <span class="char_info"><img src="img\faveriteicon\faverite014.png" alt="">PvP・</span>
+                <span class="char_info"><img src="img\faveriteicon\faverite015.png" alt="">メインストーリー・</span>
             </span>
         </div>
         </div>

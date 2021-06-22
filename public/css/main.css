@@ -260,7 +260,7 @@
 }
 
 .char_favorite_div img{
-    width: 17px;
+    width: 20px;
 }
 
 /* ジョブアイコン */
@@ -275,31 +275,31 @@
     width: 30px;
 }
 
-.job_icon_img_paladin{
+.job_icon_img_paladin,.job_icon_img_gladiator{
     position: absolute;
     left:10px;
     top:350px;
 }
 
-.job_level_paladin{
+.job_level_paladin,.job_level_gladiator{
     position: absolute;
     left:15px;
     top:375px;
-    color: #ee852e ;
+    color: #000000 ;
     font-family: 'Noto Sans JP', sans-serif;
 }
 
-.job_icon_img_warrior{
+.job_icon_img_warrior,.job_icon_img_marauder{
     position: absolute;
     left:45px;
     top:350px;
 }
 
-.job_level_warrior{
+.job_level_warrior,.job_level_marauder{
     position: absolute;
     left:50px;
     top:375px;
-    color: #ee852e ;
+    color: #000000 ;
     font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -313,7 +313,7 @@
     position: absolute;
     left:85px;
     top:375px;
-    color: #ee852e ;
+    color: #000000 ;
     font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -327,21 +327,21 @@
     position: absolute;
     left:120px;
     top:375px;
-    color: #ee852e ;
+    color: #000000 ;
     font-family: 'Noto Sans JP', sans-serif;
 }
 
-.job_icon_img_whitemage{
+.job_icon_img_whitemage,.job_icon_img_conjurer{
     position: absolute;
     left:160px;
     top:350px;
 }
 
-.job_level_whitemage{
+.job_level_whitemage,.job_level_conjurer{
     position: absolute;
     left:165px;
     top:375px;
-    color: #ee852e ;
+    color: #000000 ;
     font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -355,7 +355,7 @@
     position: absolute;
     left:200px;
     top:375px;
-    color: #ee852e ;
+    color: #000000 ;
     font-family: 'Noto Sans JP', sans-serif;    
 }
 
@@ -369,50 +369,50 @@
     position: absolute;
     left:235px;
     top:375px;
-    color: #ee852e ;
+    color: #000000 ;
     font-family: 'Noto Sans JP', sans-serif;    
 }
 
 
-.job_icon_img_monk{
+.job_icon_img_monk,.job_icon_img_pugilist{
     position: absolute;
     left:10px;
     top:400px;
 }
 
-.job_level_monk{
+.job_level_monk,.job_level_pugilist{
     position: absolute;
     left:15px;
     top:425px;
-    color: #ee852e ;
+    color: #000000 ;
     font-family: 'Noto Sans JP', sans-serif;
 }
 
-.job_icon_img_dragoon{
+.job_icon_img_dragoon,.job_icon_img_lancer{
     position: absolute;
     left:45px;
     top:400px;
 }
 
-.job_level_dragoon{
+.job_level_dragoon,.job_level_lancer{
     position: absolute;
     left:50px;
     top:425px;
-    color: #ee852e ;
+    color: #000000 ;
     font-family: 'Noto Sans JP', sans-serif;
 }
 
-.job_icon_img_ninja{
+.job_icon_img_ninja,.job_icon_img_rogue{
     position: absolute;
     left:80px;
     top:400px;
 }
 
-.job_level_ninja{
+.job_level_ninja,.job_level_rogue{
     position: absolute;
     left:85px;
     top:425px;
-    color: #ee852e ;
+    color: #000000 ;
     font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -426,21 +426,21 @@
     position: absolute;
     left:120px;
     top:425px;
-    color: #ee852e ;
+    color: #000000 ;
     font-family: 'Noto Sans JP', sans-serif;
 }
 
-.job_icon_img_bard{
+.job_icon_img_bard,.job_icon_img_archer{
     position: absolute;
     left:160px;
     top:400px;
 }
 
-.job_level_bard{
+.job_level_bard,.job_level_archer{
     position: absolute;
     left:165px;
     top:425px;
-    color: #ee852e ;
+    color: #000000 ;
     font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -454,7 +454,7 @@
     position: absolute;
     left:200px;
     top:425px;
-    color: #ee852e ;
+    color: #000000 ;
     font-family: 'Noto Sans JP', sans-serif;    
 }
 
@@ -468,35 +468,35 @@
     position: absolute;
     left:235px;
     top:425px;
-    color: #ee852e ;
+    color: #000000 ;
     font-family: 'Noto Sans JP', sans-serif;    
 }
 
-.job_icon_img_blackmage{
+.job_icon_img_blackmage,.job_icon_img_thaumaturge{
     position: absolute;
     left:275px;
     top:400px;
 }
 
-.job_level_blackmage{
+.job_level_blackmage,.job_level_thaumaturge{
     position: absolute;
     left:280px;
     top:425px;
-    color: #ee852e ;
+    color: #000000 ;
     font-family: 'Noto Sans JP', sans-serif;
 }
 
-.job_icon_img_summoner{
+.job_icon_img_summoner,.job_icon_img_arcanist{
     position: absolute;
     left:310px;
     top:400px;
 }
 
-.job_level_summoner{
+.job_level_summoner,.job_level_arcanist{
     position: absolute;
     left:315px;
     top:425px;
-    color: #ee852e ;
+    color: #000000 ;
     font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -510,7 +510,7 @@
     position: absolute;
     left:350px;
     top:425px;
-    color: #ee852e ;
+    color: #000000 ;
     font-family: 'Noto Sans JP', sans-serif;    
 }
 
@@ -524,7 +524,7 @@
     position: absolute;
     left:385px;
     top:425px;
-    color: #ee852e ;
+    color: #000000 ;
     font-family: 'Noto Sans JP', sans-serif;    
 }
 
@@ -539,7 +539,7 @@
     position: absolute;
     left:15px;
     top:475px;
-    color: #ee852e ;
+    color: #000000 ;
     font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -553,7 +553,7 @@
     position: absolute;
     left:50px;
     top:475px;
-    color: #ee852e ;
+    color: #000000 ;
     font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -567,7 +567,7 @@
     position: absolute;
     left:85px;
     top:475px;
-    color: #ee852e ;
+    color: #000000 ;
     font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -581,7 +581,7 @@
     position: absolute;
     left:120px;
     top:475px;
-    color: #ee852e ;
+    color: #000000 ;
     font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -595,7 +595,7 @@
     position: absolute;
     left:155px;
     top:475px;
-    color: #ee852e ;
+    color: #000000 ;
     font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -609,7 +609,7 @@
     position: absolute;
     left:190px;
     top:475px;
-    color: #ee852e ;
+    color: #000000 ;
     font-family: 'Noto Sans JP', sans-serif;    
 }
 
@@ -623,7 +623,7 @@
     position: absolute;
     left:225px;
     top:475px;
-    color: #ee852e ;
+    color: #000000 ;
     font-family: 'Noto Sans JP', sans-serif;    
 }
 
@@ -637,7 +637,7 @@
     position: absolute;
     left:260px;
     top:475px;
-    color: #ee852e ;
+    color: #000000 ;
     font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -651,7 +651,7 @@
     position: absolute;
     left:305px;
     top:475px;
-    color: #ee852e ;
+    color: #000000 ;
     font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -665,7 +665,7 @@
     position: absolute;
     left:340px;
     top:475px;
-    color: #ee852e ;
+    color: #000000 ;
     font-family: 'Noto Sans JP', sans-serif;
 }
 
@@ -680,7 +680,7 @@
     position: absolute;
     left:375px;
     top:475px;
-    color: #ee852e ;
+    color: #000000 ;
     font-family: 'Noto Sans JP', sans-serif;
 }
 
