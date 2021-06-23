@@ -21,7 +21,8 @@
 	clear: both;
 }
 .new-widget ul{
-	display: none;
+	/* display: none; */
+	/* なにか不具合あればココ復活 */
 }
 
 .tab-wrapper{

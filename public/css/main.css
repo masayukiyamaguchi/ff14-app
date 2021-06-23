@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alice&family=Bungee+Inline&family=Elsie+Swash+Caps:wght@400;900&family=IM+Fell+English:ital@0;1&family=Kalam:wght@300;400;700&family=Leckerli+One&family=Metamorphous&family=Noto+Sans+JP:wght@100;300;400;500&family=Nunito:wght@200;300;400;600;700&family=Righteous&family=Rock+Salt&family=Sacramento&family=Sorts+Mill+Goudy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Hachi+Maru+Pop&family=Kosugi+Maru&family=Noto+Sans+JP:wght@100;300;400&family=Noto+Serif+JP:wght@200;300;400&family=Potta+One&family=Reggae+One&family=RocknRoll+One&family=Sawarabi+Mincho&family=Stick&family=Yusei+Magic&display=swap');
 @media screen and (min-width: 480px) { /*ウィンドウ幅が480px以上の場合に適用*/
 
 .header_div{
@@ -152,8 +153,8 @@
 
 .char_server_name{
     position: absolute;
-    left:220px;
-    top:90px;
+    left:230px;
+    top:80px;
     font-size: 20px;
     color: #000000;
     font-family: 'Noto Sans JP', sans-serif;
@@ -178,7 +179,7 @@
 
 .char_race_name{
     position: absolute;
-    left:10px;
+    left:20px;
     top:160px;
     font-size: 20px;
     color: #000000;
@@ -191,7 +192,7 @@
 
 .char_tribe_name{
     position: absolute;
-    left: 15px;
+    left: 25px;
     top:188px;
     font-size: 10px;
     color: #000000;
@@ -219,7 +220,7 @@
 
 .char_freecompany_name{
     position: absolute;
-    left:220px;
+    left:230px;
     top:160px;
     font-size: 20px;
     color: #000000;
@@ -749,6 +750,7 @@
     font-weight: bold;
 }
 
+/* キャラ名 */
 .Alice{font-family: 'Alice', serif;}
 .Bungee{font-family: 'Bungee Inline', cursive;}
 .Elsie{font-family: 'Elsie Swash Caps', cursive;}
@@ -763,11 +765,28 @@
 .Sacramento{font-family: 'Sacramento', cursive;}
 .Sorts{font-family: 'Sorts Mill Goudy', serif;}
 
+/* 詳細 */
+.Noto{font-family: 'Noto Sans JP', sans-serif;}
+.Sawarabi{font-family: 'Sawarabi Mincho', sans-serif;}
+.Kosugi{font-family: 'Kosugi Maru', sans-serif;}
+.Potta{font-family: 'Potta One', cursive;}
+.Hachi{font-family: 'Hachi Maru Pop', cursive;}
+.Yusei{font-family: 'Yusei Magic', sans-serif;}
+.RocknRol{font-family: 'RocknRoll One', sans-serif;}
+.Reggae{font-family: 'Reggae One', cursive;}
+.Stick{font-family: 'Stick', sans-serif;}
+.Dot{font-family: 'DotGothic16', sans-serif;}
+
+
 .char_name_font_span p{
     line-height:0
 }
 .char_info_font_span p{
     line-height:0
+}
+
+.char_info{
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 #wkSlider2{
@@ -777,7 +796,27 @@
     width: 220px;
 }
 
+/* メインジョブ */
+.main_job_select_div ul li{
+    list-style: none;
 
+}
+
+.main_job_select_ul{
+    padding-left: 0;
+    display: table;
+
+}
+
+.select_main_job{
+    width: 200px;
+    border: 1px solid;
+    border-color: black;
+}
+
+.select_main_job_plus{
+    margin-left: 90px;
+}
 
 
 

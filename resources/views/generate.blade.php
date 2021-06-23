@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
-    <script src="/js/main.js"></script>
     <script src="/js/tab.js"></script>
+    <script src="/js/main.js"></script>
     <script src="/js/imageview.js"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/material-design-inspired-color-picker@1.7.2/dist/md-color-picker.min.js"></script> 
@@ -68,7 +68,7 @@
 
         <!-- 種族 -->
         <div class="char_race_span dragg">
-            <span class="char_race char_info">種族</span>
+            <span class="char_race char_info">種族/性別</span>
             <span class="char_race_name char_info">{{$char_race}}<span class="char_gender">{{$char_gender}}</span></span>
             <span class="char_tribe_name char_info">({{$char_tribe}})</span>
         </div>
@@ -208,29 +208,70 @@
   <div id='キャラ情報' class="tab-content">
 
   <!-- メインジョブ -->
-  
+    <p>メインジョブ</p>
+    <div class="main_job_select_div">
+        <ul class="main_job_select_ul">   
+    		<li><div class="select_main_job">ナイト<span class="select_main_job_plus">+</span></div>
+    			<ul class="main_job_select_ul">
+    				<li>Photoshop</li>
+    				<li>HTML</li>
+    				<li>CSS</li>
+    				<li>Maquetacion</li>
+    			</ul>
+    		</li>		
+    	</ul>
+    </div>
+
+    <!-- <select  class="main_job_select" name="main_job_select">
+        <option class="main_job_select" value="ナイト">ナイト</option>
+        <option class="main_job_select" value="戦士">戦士</option>
+        <option class="main_job_select" value="ガンブレイカー">ガンブレイカー</option>
+        <option class="main_job_select" value="モンク">モンク</option>
+        <option class="main_job_select" value="竜騎士">竜騎士</option>
+        <option class="main_job_select" value="忍者">忍者</option>
+        <option class="main_job_select" value="白魔道士">白魔道士</option>
+        <option class="main_job_select" value="学者">学者</option>
+        <option class="main_job_select" value="占星術士">占星術士</option>
+        <option class="main_job_select" value="吟遊詩人">吟遊詩人</option>
+        <option class="main_job_select" value="機工士">機工士</option>
+        <option class="main_job_select" value="踊り子">踊り子</option>
+        <option class="main_job_select" value="黒魔道士">黒魔道士</option>
+        <option class="main_job_select" value="召喚士">召喚士</option>
+        <option class="main_job_select" value="赤魔道士">赤魔道士</option>
+        <option class="main_job_select" value="青魔道士">青魔道士</option>
+        <option class="main_job_select" value="木工師">木工師</option>
+        <option class="main_job_select" value="鍛冶師">鍛冶師</option>
+        <option class="main_job_select" value="甲冑師">甲冑師</option>
+        <option class="main_job_select" value="彫金師">彫金師</option>
+        <option class="main_job_select" value="革細工師">革細工師</option>
+        <option class="main_job_select" value="裁縫師">裁縫師</option>
+        <option class="main_job_select" value="錬金術師">錬金術師</option>
+        <option class="main_job_select" value="調理師">調理師</option>
+        <option class="main_job_select" value="採掘師">採掘師</option>
+        <option class="main_job_select" value="園芸師">園芸師</option>
+        <option class="main_job_select" value="釣師">釣師</option>
+    </select> -->
+ 
 
   <!-- 文字情報 -->
   <p>フォント</p>
     <span class="char_info_font_span">
         <p class="char_info_font_p">
-            <input type="radio" name="char_info_radio" value="Alice"><span class="Alice">Alice</span>
-            <input type="radio" name="char_info_radio" value="Bungee"><span class="Bungee">Bungee</span>
-            <input type="radio" name="char_info_radio" value="Elsie"><span class="Elsie">Elsie</span>
-            <input type="radio" name="char_info_radio" value="IMFell"><span class="IMFell">IMFell</span>
-            <input type="radio" name="char_info_radio" value="Kalam"><span class="Kalam">Kalam</span>
-        </p>
-        <p class="char_name_font_p">
-            <input type="radio" name="char_info_radio" value="Leckerli"><span class="Leckerli">Leckerli</span>
-            <input type="radio" name="char_info_radio" value="Metamorphous"><span class="Metamorphous">Metamo</span>
             <input type="radio" name="char_info_radio" value="Noto"><span class="Noto">Noto</span>
-            <input type="radio" name="char_info_radio" value="Nunito"><span class="Nunito">Nunito</span>
-            <input type="radio" name="char_info_radio" value="Righteous"><span class="Righteous">Right</span>
+            <input type="radio" name="char_info_radio" value="Sawarabi"><span class="Sawarabi">Sawarabi</span>
+            <input type="radio" name="char_info_radio" value="Kosugi"><span class="Kosugi">Kosugi</span>
+            <input type="radio" name="char_info_radio" value="Potta"><span class="Potta">Potta</span>
+            <input type="radio" name="char_info_radio" value="Hachi"><span class="Hachi">Hachi</span>
         </p>
         <p class="char_name_font_p">
-            <input type="radio" name="char_info_radio" value="Rock"><span class="Rock">Rock</span>
-            <input type="radio" name="char_info_radio" value="Sacramento"><span class="Sacramento">Sacrame</span>
-            <input type="radio" name="char_info_radio" value="Sorts"><span class="Sorts">Sorts</span>
+            <input type="radio" name="char_info_radio" value="Yusei"><span class="Yusei">Yusei</span>
+            <input type="radio" name="char_info_radio" value="RocknRol"><span class="RocknRol">RocknRol</span>
+            <input type="radio" name="char_info_radio" value="Reggae"><span class="Reggae">Reggae</span>
+            <input type="radio" name="char_info_radio" value="Stick"><span class="Stick">Stick</span>
+            <input type="radio" name="char_info_radio" value="Dot"><span class="Dot">Dot</span>
+        </p>
+        <p>
+            <button class="char_info_font_toname">キャラ名にも反映</button>
         </p>
     </span>
     
@@ -281,7 +322,6 @@
 
 <!-- フッター -->
 <div class="footer">
-
 
 
 
