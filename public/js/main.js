@@ -204,6 +204,79 @@ $(function() {
 
 
 //キャラ情
+// メインジョブ
+$('.select_job_tank').hover(
+  function() {
+    $(this).addClass("job_color_tank");
+    $(this).addClass("figure");
+  },
+  function() {
+    $(this).removeClass("job_color_tank");
+    $(this).removeClass("figure");
+  }
+);
+$('.select_job_healer').hover(
+  function() {
+    $(this).addClass("job_color_healer");
+    $(this).addClass("figure");
+  },
+  function() {
+    $(this).removeClass("job_color_healer");
+    $(this).removeClass("figure");
+  }
+);
+$('.select_job_dps').hover(
+  function() {
+    $(this).addClass("job_color_dps");
+    $(this).addClass("figure");
+  },
+  function() {
+    $(this).removeClass("job_color_dps");
+    $(this).removeClass("figure");
+  }
+);
+$('.select_job_crafter').hover(
+  function() {
+    $(this).addClass("job_color_crafter");
+    $(this).addClass("figure");
+  },
+  function() {
+    $(this).removeClass("job_color_crafter");
+    $(this).removeClass("figure");
+  }
+);
+$('.select_job_gatherer').hover(
+  function() {
+    $(this).addClass("job_color_gatherer");
+    $(this).addClass("figure");
+  },
+  function() {
+    $(this).removeClass("job_color_gatherer");
+    $(this).removeClass("figure");
+  }
+);
+
+
+// プルダウンジョブを選んだ際に起こるアクション
+$('li[class^="select_job_"]').click(function(){
+  var name = $(this).text();
+  $(".select_main_job_name").text(name);
+});
+
+// プルダウンの表示と非表示
+$(document).click(function(event) {
+  if($(event.target).closest('.select_main_job').length) {
+    $(".main_job_select_font").removeClass("display_none");
+  }else{
+    $(".main_job_select_font").addClass("display_none");   
+  }
+});
+
+
+
+
+
+
 // フォント
 $("[name=char_info_radio]").click(function(){
   if($('input[name=char_info_radio]:eq(0)').prop('checked')){

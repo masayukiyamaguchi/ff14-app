@@ -809,15 +809,127 @@
 }
 
 .select_main_job{
+    position: relative;
     width: 200px;
     border: 1px solid;
     border-color: black;
+    vertical-align: middle;
+}
+
+.select_main_job_name{
+    position:absolute;
+    top: 3px;
+    vertical-align: middle;
 }
 
 .select_main_job_plus{
-    margin-left: 90px;
+    position:absolute;
+    top: 3px;
+    left:180px;
+    vertical-align: middle;
+    background-color: rgb(165, 165, 165);
 }
 
+.main_job_select_ul img{
+    padding: 2px 2px;
+    width: 30px;
+    vertical-align: middle;
+
+}
+
+.main_job_select_ul{
+    width: 350px;
+
+}
+
+.display_none{
+    display: none;
+}
+
+.main_job_select_font{
+    font-size: 15px;
+}
+
+.main_job_select_ul li{
+    width: 150px;
+    float: left;
+    width: calc(50% - 10px);
+}
+
+.main_job_select_ul li{
+    position: relative;
+    padding-left: 5px;
+    vertical-align: middle;
+}
+
+.main_job_select_ul img{
+    width: 30px;
+}
+
+.select_main_job_name_li{
+    position:absolute;
+    top: 3px;
+}
+
+.job_color_tank{
+    background-color: rgb(87, 87, 255);
+    color: white;
+    transition: all 300ms 0s ease;
+}
+.job_color_healer{
+    background-color: rgb(63, 182, 89);
+    color: white;
+}
+.job_color_dps{
+    background-color: rgb(255, 87, 95);
+    color: white;
+}
+.job_color_crafter{
+    background-color: rgb(255, 182, 87);
+    color: white;
+}
+.job_color_gatherer{
+    background-color: rgb(61, 167, 158);
+    color: white;
+}
+
+.figure::before {
+  position: absolute;
+  top: 0;
+  left: -75%;
+  z-index: 2;
+  display: block;
+  content: '';
+  width: 50%;
+  height: 100%;
+  background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+  -webkit-transform: skewX(-25deg);
+  transform: skewX(-25deg);
+}
+.figure:hover::before {
+  -webkit-animation: shine .75s;
+  animation: shine .75s;
+}
+@-webkit-keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+/* キラリと光るココまで */
+
+
+
+.main_job_select_font{
+    border: 1px solid;
+    border-color: black;
+    margin: 2px 2px;
+};
 
 
 

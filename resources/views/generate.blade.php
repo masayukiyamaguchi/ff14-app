@@ -211,13 +211,57 @@
     <p>メインジョブ</p>
     <div class="main_job_select_div">
         <ul class="main_job_select_ul">   
-    		<li><div class="select_main_job">ナイト<span class="select_main_job_plus">+</span></div>
-    			<ul class="main_job_select_ul">
-    				<li>Photoshop</li>
-    				<li>HTML</li>
-    				<li>CSS</li>
-    				<li>Maquetacion</li>
+    		<li>
+                <div class="select_main_job">
+                    <img class="select_main_job_img" src="img/jobicon/02/paladin.png" alt="">
+                    <plus class="select_main_job_name">ナイト</plus>
+                    <plus class="select_main_job_plus">+</plus></div>
+
+    			<ul class="main_job_select_ul main_job_select_font display_none">
+                    <li>-TANK-</li>
+                    <li><img class="select_main_job_img" src="img/jobicon/02/1dot.png" alt=""><plus class="select_main_job_name_li"></plus></li>
+    				<li class="select_job_tank"><img class="select_main_job_img" src="img/jobicon/02/paladin.png" alt=""><plus class="select_main_job_name_li">ナイト</plus></li>
+    				<li class="select_job_tank"><img class="select_main_job_img" src="img/jobicon/02/warrior.png" alt=""><plus class="select_main_job_name_li">戦士</plus></li>
+                    <li class="select_job_tank"><img class="select_main_job_img" src="img/jobicon/02/darkknight.png" alt=""><plus class="select_main_job_name_li">暗黒騎士</plus></li>
+                    <li class="select_job_tank"><img class="select_main_job_img" src="img/jobicon/02/gunbreaker.png" alt=""><plus class="select_main_job_name_li">ガンブレイカー</plus></li>
+                    <li>-HEALER-</li>
+                    <li><img class="select_main_job_img" src="img/jobicon/02/1dot.png" alt=""><plus class="select_main_job_name_li"></plus></li>                    
+                    <li class="select_job_healer"><img class="select_main_job_img" src="img/jobicon/02/whitemage.png" alt=""><plus class="select_main_job_name_li">白魔道士</plus></li>
+                    <li class="select_job_healer"><img class="select_main_job_img" src="img/jobicon/02/scholar.png" alt=""><plus class="select_main_job_name_li">学者</plus></li>
+                    <li class="select_job_healer"><img class="select_main_job_img" src="img/jobicon/02/astrologian.png" alt=""><plus class="select_main_job_name_li">占星術士</plus></li>
+                    <li><img class="select_main_job_img" src="img/jobicon/02/1dot.png" alt=""><plus class="select_main_job_name_li"></plus></li>
+                    <li>-DPS-</li>
+                    <li><img class="select_main_job_img" src="img/jobicon/02/1dot.png" alt=""><plus class="select_main_job_name_li"></plus></li>
+                    <li class="select_job_dps"><img class="select_main_job_img" src="img/jobicon/02/monk.png" alt=""><plus class="select_main_job_name_li">モンク</plus></li>
+                    <li class="select_job_dps"><img class="select_main_job_img" src="img/jobicon/02/dragoon.png" alt=""><plus class="select_main_job_name_li">竜騎士</plus></li>
+                    <li class="select_job_dps"><img class="select_main_job_img" src="img/jobicon/02/ninja.png" alt=""><plus class="select_main_job_name_li">忍者</plus></li>
+                    <li class="select_job_dps"><img class="select_main_job_img" src="img/jobicon/02/samurai.png" alt=""><plus class="select_main_job_name_li">侍</plus></li>
+                    <li class="select_job_dps"><img class="select_main_job_img" src="img/jobicon/02/bard.png" alt=""><plus class="select_main_job_name_li">吟遊詩人</plus></li>
+                    <li class="select_job_dps"><img class="select_main_job_img" src="img/jobicon/02/machinist.png" alt=""><plus class="select_main_job_name_li">機工士</plus></li>
+                    <li class="select_job_dps"><img class="select_main_job_img" src="img/jobicon/02/dancer.png" alt=""><plus class="select_main_job_name_li">踊り子</plus></li>
+                    <li class="select_job_dps"><img class="select_main_job_img" src="img/jobicon/02/1dot.png" alt=""><plus class="select_main_job_name_li"></plus></li>
+                    <li class="select_job_dps"><img class="select_main_job_img" src="img/jobicon/02/blackmage.png" alt=""><plus class="select_main_job_name_li">黒魔道士</plus></li>
+                    <li class="select_job_dps"><img class="select_main_job_img" src="img/jobicon/02/summoner.png" alt=""><plus class="select_main_job_name_li">召喚士</plus></li>
+                    <li class="select_job_dps"><img class="select_main_job_img" src="img/jobicon/02/redmage.png" alt=""><plus class="select_main_job_name_li">赤魔道士</plus></li>
+                    <li class="select_job_dps"><img class="select_main_job_img" src="img/jobicon/02/bluemage.png" alt=""><plus class="select_main_job_name_li">青魔道士</plus></li>
+                    <li>-CRAFTER-</li>
+                    <li><img class="select_main_job_img" src="img/jobicon/02/1dot.png" alt=""><plus class="select_main_job_name_li"></plus></li>
+                    <li class="select_job_crafter"><img class="select_main_job_img" src="img/jobicon/02/carpenter.png" alt=""><plus class="select_main_job_name_li">木工師</plus></li>
+                    <li class="select_job_crafter"><img class="select_main_job_img" src="img/jobicon/02/blacksmith.png" alt=""><plus class="select_main_job_name_li">鍛冶師</plus></li>
+                    <li class="select_job_crafter"><img class="select_main_job_img" src="img/jobicon/02/armorer.png" alt=""><plus class="select_main_job_name_li">甲冑師</plus></li>
+                    <li class="select_job_crafter"><img class="select_main_job_img" src="img/jobicon/02/goldsmith.png" alt=""><plus class="select_main_job_name_li">彫金師</plus></li>
+    				<li class="select_job_crafter"><img class="select_main_job_img" src="img/jobicon/02/leatherworker.png" alt=""><plus class="select_main_job_name_li">革細工師</plus></li>
+    				<li class="select_job_crafter"><img class="select_main_job_img" src="img/jobicon/02/weaver.png" alt=""><plus class="select_main_job_name_li">裁縫師</plus></li>
+    				<li class="select_job_crafter"><img class="select_main_job_img" src="img/jobicon/02/alchemist.png" alt=""><plus class="select_main_job_name_li">錬金術師</plus></li>
+    				<li class="select_job_crafter"><img class="select_main_job_img" src="img/jobicon/02/culinarian.png" alt=""><plus class="select_main_job_name_li">調理師</plus></li>
+                    <li>-GATHERER-</li>
+                    <li><img class="select_main_job_img" src="img/jobicon/02/1dot.png" alt=""><plus class="select_main_job_name_li"></plus></li>
+    				<li class="select_job_gatherer"><img class="select_main_job_img" src="img/jobicon/02/miner.png" alt=""><plus class="select_main_job_name_li">採掘師</plus></li>
+                    <li class="select_job_gatherer"><img class="select_main_job_img" src="img/jobicon/02/botanist.png" alt=""><plus class="select_main_job_name_li">園芸師</plus></li>
+                    <li class="select_job_gatherer"><img class="select_main_job_img" src="img/jobicon/02/fisher.png" alt=""><plus class="select_main_job_name_li">釣師</plus></li>
+
     			</ul>
+
     		</li>		
     	</ul>
     </div>
