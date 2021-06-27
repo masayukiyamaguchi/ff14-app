@@ -3,6 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Hachi+Maru+Pop&family=Kosugi+Maru&family=Noto+Sans+JP:wght@100;300;400&family=Noto+Serif+JP:wght@200;300;400&family=Potta+One&family=Reggae+One&family=RocknRoll+One&family=Sawarabi+Mincho&family=Stick&family=Yusei+Magic&display=swap');
 @media screen and (min-width: 480px) { /*ウィンドウ幅が480px以上の場合に適用*/
 
+
+
 .header_div{
     background-size:  cover;  
     background-image:url("/img/header_bg.png");
@@ -10,7 +12,7 @@
 
 .main_div{
     margin-top: 20px;
-    height: 750px;
+    height: 1000px;
     width: 100%;
     overflow: hidden;
 }
@@ -82,8 +84,9 @@
 
 .white_cambas{
     position: absolute;
-    left:0px;
-    top:0px;
+    /* top: 0px; */
+    left: 0px;
+    top:-547px;
     width: 480px;
     height: 540px;
     background: rgba(255, 255, 255, 0.5);
@@ -122,7 +125,11 @@
 .char_main_job_icon{
     position: absolute;
     left:10px;
-    top:80px;
+    top:85px;
+}
+
+.char_main_job_icon img{
+    width: 45px;
 }
 
 .char_main_name{
@@ -249,7 +256,7 @@
     width: 480px;
     position: absolute;
     left:10px;
-    top:240px;
+    top:245px;
     color: #000000;
     font-size: 20px;
     font-family: 'Noto Sans JP', sans-serif;
@@ -263,6 +270,32 @@
 .char_favorite_div img{
     width: 20px;
 }
+
+/* コピーライト */
+.copyright_span_white{
+    display: none;
+    font-size: 5px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    left:1px;
+    top:525px;
+}
+.copyright_span_black{
+    display: none;
+    font-size: 5px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    left:1px;
+    top:525px;
+}
+
+/* コンテンツ右メニュー */
+.favorite_contents_span img{
+    width: 20px;
+}
+
 
 /* ジョブアイコン */
 .char_job_icon_span{
@@ -556,6 +589,7 @@
     top:475px;
     color: #000000 ;
     font-family: 'Noto Sans JP', sans-serif;
+
 }
 
 .job_icon_img_armorer{
@@ -694,11 +728,15 @@
 }
 
 
+/* ジョブアイコン右メニュー */
+.job_icon_list_p img{
+    width: 30px;
+}
+
+
+
 
 /* アチーブメント */
-
-
-
 .achievements_div .achievements_span{
     position: absolute;
     left: 955px;
@@ -743,6 +781,19 @@
 
 
 /* ライトメニュー */
+/* 基本 */
+#transparent_value2_white{
+    width: 250px;
+}
+
+.slyder_attention{
+    font-size: 10px;
+    color: red;
+}
+
+
+
+
 .char_name_font_span span{
     font-weight: bold;
 }
@@ -923,13 +974,17 @@
 }
 /* キラリと光るココまで */
 
-
-
 .main_job_select_font{
     border: 1px solid;
     border-color: black;
     margin: 2px 2px;
 };
+
+
+
+
+
+
 
 
 

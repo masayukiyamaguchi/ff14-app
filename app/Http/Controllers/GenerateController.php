@@ -31,6 +31,9 @@ class GenerateController extends Controller
 
          // キャラ名
         $char_name = $seach_datas->Character->Name;
+        $char_name_array = explode(" ",$char_name);
+        $char_first_name = $char_name_array[0];
+        $char_last_name = $char_name_array[1];
 
         // サーバー
         $char_server = $seach_datas->Character->Server;
@@ -115,10 +118,11 @@ class GenerateController extends Controller
         // $save_path = "img/test2.png";
         // $img->save($save_path,100);
 
-
         return view("generate",
             [
                 "char_name"=>$char_name,
+                "char_first_name"=>$char_first_name,
+                "char_last_name"=>$char_last_name,
                 "char_server"=>$char_server,
                 "char_world"=>$char_world,
                 "char_race"=>$char_race,
