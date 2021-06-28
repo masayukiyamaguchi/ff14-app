@@ -57,7 +57,6 @@ $(function() {
   $('input[name=data_display]:eq(3)').prop('checked', true);  
   $('input[name=data_display]:eq(4)').prop('checked', true);  
   $('input[name=data_display]:eq(5)').prop('checked', true);  
-  $('input[name=data_display]:eq(6)').prop('checked', true);  
 
 
 
@@ -113,11 +112,13 @@ $(function() {
   // 表示
   $("[name=data_display]").click(function(){
     var e = $(this).prop("checked");
-    var v = $(this).val();
+    var v = $(this).attr("data");
     if(e){
-      $('.'+v).css("display","block");      
+      $('.'+v).removeClass("display_none");
+      $('.'+v+"_h").removeClass("display_none");     
     }else{
-      $('.'+v).css("display","none");
+      $('.'+v).addClass("display_none");
+      $('.'+v+"_h").addClass("display_none");
     }
   });
   
@@ -420,7 +421,7 @@ $(document).click(function(event) {
 $("[name=char_info_radio]").click(function(){
   if($('input[name=char_info_radio]:eq(0)').prop('checked')){
      $('input[name=char_info_radio]:eq(0)').prop('checked', true);
-     $(".char_info").css("font-family","'Noto Sans JP', sans-serif");
+     $(".char_info").css("font-family","'Noto Sans JP', sans-serif")
   }else if($('input[name=char_info_radio]:eq(1)').prop('checked')){
     $('input[name=char_info_radio]:eq(1)').prop('checked', true);
     $(".char_info").css("font-family","'Sawarabi Mincho', sans-serif");
@@ -432,7 +433,7 @@ $("[name=char_info_radio]").click(function(){
     $(".char_info").css("font-family","'Potta One', cursive");
   }else if($('input[name=char_info_radio]:eq(4)').prop('checked')){
     $('input[name=char_info_radio]:eq(4)').prop('checked', true);
-    $(".char_info").css("font-family","'Hachi Maru Pop', cursive");
+    $(".char_info").css("font-family","'Hachi Maru Pop', cursive").css("font-weight","bold");
   }else if($('input[name=char_info_radio]:eq(5)').prop('checked')){
     $('input[name=char_info_radio]:eq(5)').prop('checked', true);
     $(".char_info").css("font-family","'Yusei Magic', sans-serif");
@@ -461,6 +462,11 @@ $("[name=char_info_radio]").click(function(){
   }
   
 });
+
+// 太字にする
+// $(".char_info").css("font-weight","bold");
+
+
 
 // キャラ名にも情報のフォントを適応
 $(".char_info_font_toname").click(function(){
@@ -719,20 +725,54 @@ $(".resize").resizable({
 $(".white_cambas").resizable( "disable" );
 
 
-// 枠線(次回ここから。)
-$("[name=data_display]").hover(
+// 枠線
+// 汎用
+$("[class=mhover_bg]").hover(
   function(){
-    console.log("on");
+    var v = $(this).attr("data");
+    var str = v.split(" ");
+    str.forEach(v => {
+      $("."+v).addClass("mouse_hover_bg");
+      $("."+v+"_h").addClass("mouse_hover_bg");
+    });
   },
   function(){
-    console.log("leave");
-  }
+    var v = $(this).attr("data");
+    var str = v.split(" ");
+    str.forEach(v => {
+      $("."+v).removeClass("mouse_hover_bg");
+      $("."+v+"_h").removeClass("mouse_hover_bg");
+    });
+  },
 );
 
+// テキストだけ
+$("[class=mhover_bg_text]").hover(
+  function(){
+    var v = $(this).attr("data");
+    var str = v.split(" ");
+    str.forEach(v => {
+      $("."+v).addClass("mouse_hover_bg");
+    });
+  },
+  function(){
+    var v = $(this).attr("data");
+    var str = v.split(" ");
+    str.forEach(v => {
+      $("."+v).removeClass("mouse_hover_bg");
+    });
+  },
+);
 
-
-
-
+// memo
+// char_name_bg
+// main_job_bg
+// server_bg
+// race_bg
+// freecompany_bg
+// favorite_bg
+// job_bg
+// mhover_bg
 
 
 

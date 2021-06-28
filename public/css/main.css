@@ -265,6 +265,7 @@
 
 .char_favorite_name span{
     display: inline-block;
+
 }
 
 .char_favorite_div img{
@@ -273,7 +274,6 @@
 
 /* コピーライト */
 .copyright_span_white{
-    display: none;
     font-size: 5px;
     font-weight: bold;
     color: rgb(255, 255, 255);
@@ -282,7 +282,6 @@
     top:525px;
 }
 .copyright_span_black{
-    display: none;
     font-size: 5px;
     font-weight: bold;
     color: rgb(0, 0, 0);
@@ -736,6 +735,7 @@
 
 
 
+
 /* アチーブメント */
 .achievements_div .achievements_span{
     position: absolute;
@@ -782,6 +782,8 @@
 
 /* ライトメニュー */
 /* 基本 */
+
+/* 枠線をつける */
 #transparent_value2_white{
     width: 250px;
 }
@@ -791,8 +793,17 @@
     color: red;
 }
 
+.mouse_hover_bg{
+    background-color: rgb(255, 124, 124 , 0.5);
+}
 
 
+/* メインジョブプルダウン */
+.main_job_select_font{
+    border: 1px solid;
+    border-color: black;
+    margin: 2px 2px;
+};
 
 .char_name_font_span span{
     font-weight: bold;
@@ -973,12 +984,6 @@
   }
 }
 /* キラリと光るココまで */
-
-.main_job_select_font{
-    border: 1px solid;
-    border-color: black;
-    margin: 2px 2px;
-};
 
 
 

@@ -3,7 +3,7 @@ $(document).ready(function(){
 	$(".widget").hide();
 	$(".widget:first").before(newWidget);
 	$(".widget > div").each(function(){
-		$(".tab-wrapper").append("<li class='tab'>"+this.id+"</li>");
+		$(".tab-wrapper").append("<li class='tab mhover_bg' data='char_name_bg'>"+this.id+"</li>");
 		$(this).appendTo(".new-widget");
 	});
 	$(".tab").click(function(){
