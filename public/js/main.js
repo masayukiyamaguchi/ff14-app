@@ -1,4 +1,11 @@
 $(function() {
+
+  // // ストレージの内容を反映  
+  // var char_name_x = localStorage.getItem('char_name_x');
+  // var char_name_y = localStorage.getItem('char_name_y');
+  // $(".char_name").css("left",char_name_x+"px");
+  // $(".char_name").css("top",char_name_y+"px");  
+
   // 種族の色判別、変更
   var gender = $(".char_gender").text();
   if(gender == "♂"){
@@ -57,9 +64,6 @@ $(function() {
   $('input[name=data_display]:eq(3)').prop('checked', true);  
   $('input[name=data_display]:eq(4)').prop('checked', true);  
   $('input[name=data_display]:eq(5)').prop('checked', true);  
-
-
-
 
   // コンテンツチェックを入れておく
   $('input[class=favorite_contents]:eq(0)').prop('checked', true);
@@ -148,7 +152,6 @@ $(function() {
     slide: function( event, ui ) {
       $("#transparent_value_white").html(ui.value);
       var num = $(this).slider( "value" );
-      console.log(num);
       // 調整
       if(num <= 1 ){
         $(".white_cambas").css("display","none");
@@ -708,7 +711,11 @@ $('#job_icon_list_color_const').on('change', function(e){
 
 // ドラッグ要素付与
 $(".dragg").draggable({
-
+    stop: function(e, ui) {
+      var key = $(this).attr('class').split(" ")[0];
+      localStorage.setItem(key+"_x", ui.position.left);
+      localStorage.setItem(key+"_y", ui.position.top);
+    }
 });
 
 // 初期値設定
@@ -763,6 +770,10 @@ $("[class=mhover_bg_text]").hover(
     });
   },
 );
+
+
+
+
 
 // memo
 // char_name_bg
