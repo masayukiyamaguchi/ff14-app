@@ -47,18 +47,20 @@
 
     <div class="ccard_div">
     <div id=camvas>
-        <span id="js-getVariable" data-name={{$save_dir}}></span>
+        <span class="main_image" id="js-getVariable" data-name={{$save_dir}}></span>
         <canvas id="myCanvas" width="960" height="540"></canvas>
         <!-- <img class="ccard_preview" src="{{$save_dir}}" alt=""> -->
-        <div class="white_cambas back_img_bg position dragg resize"></div>
+        <div class="white_cambas back_img_bg position_bg dragg resize"></div>
+        <!-- <div class="white_cambas back_img_bg position_bg dragg resize display_none"></div> -->
+
         <!-- <img class="white_cambas" src="/img/white_cambas.png" alt=""> -->
 
 
         <!-- キャラ名 -->
         <div class="char_name_div">
-            <span class="char_name dragg position first_last_name char_name_bg">{{$char_name}}</span>
-            <span class="char_name dragg position first_name display_none char_name_bg">{{$char_first_name}}</span>
-            <span class="char_name dragg position last_name display_none char_name_bg">{{$char_last_name}}</span>
+            <span class="char_name dragg position first_last_name char_name_bg fontfix">{{$char_name}}</span>
+            <span class="char_name dragg position first_name display_none char_name_bg fontfix">{{$char_first_name}}</span>
+            <span class="char_name dragg position last_name display_none char_name_bg fontfix">{{$char_last_name}}</span>
         </div>
         <!-- メインジョブ -->
         <div class="char_main_job_span dragg position">
@@ -98,6 +100,16 @@
             </span>
         </div>
         </div>
+
+        <!-- コメント -->
+        <div class="char_comment_span dragg position">       
+        <div class="char_comment_div">
+            <span class="char_comment char_info comment_bg_h">コメント</span>
+            <span class="char_comment_name comment_bg char_info">
+                <span class="char_comment_text">まったり楽しんでます(*´∀｀)<br>よろしくおねがいします！<br></span>
+            </span>
+        </div>
+        </div>
         
        
         <!-- ジョブアイコン -->
@@ -108,14 +120,23 @@
             @endforeach
 
             @foreach($job_levels as $job_level)
-                <span class="job_level_{{$job_level['icn']}} job_bg">{{$job_level['level']}}</span>            
+                <span class="job_level_{{$job_level['icn']}} job_bg fontfix">{{$job_level['level']}}</span>            
             @endforeach
+        </div>
+        </div>
+
+        <!-- フレーム -->
+        <div class="char_flame">  
+        <div class="char_flame_div">
+            <img src="/img/flame/flame005.png" alt="">
         </div>
         </div>
 
         <!-- コピーライト -->
         <span class="copyright_span_white display_none  copy_white_bg dragg position">(C) SQUARE ENIX CO., LTD. All Rights Reserved.</span>        
         <span class="copyright_span_black display_none  copy_black_bg dragg position">(C) SQUARE ENIX CO., LTD. All Rights Reserved.</span>        
+
+
 
         
         <!-- アチーブメント -->
@@ -160,19 +181,19 @@
     <input class="mhover_bg" type="checkbox" name="data_display" data="race_bg"><span class="mhover_bg" name="data_display" data="race_bg">種族</span>
     <input class="mhover_bg" type="checkbox" name="data_display" data="freecompany_bg"><span class="mhover_bg" name="data_display" data="freecompany_bg">FC</span><br>
     <input class="mhover_bg" type="checkbox" name="data_display" data="favorite_bg"><span class="mhover_bg" name="data_display" data="favorite_bg">コンテンツ</span>
+    <input class="mhover_bg" type="checkbox" name="data_display" data="comment_bg"><span class="mhover_bg" name="data_display" data="comment_bg">コメント</span>
     <input class="mhover_bg" type="checkbox" name="data_display" data="job_bg"><span class="mhover_bg" name="data_display" data="job_bg">ジョブレベル</span><br>
     <input class="mhover_bg" type="checkbox" name="data_display" data="copy_white_bg"><span class="mhover_bg" name="data_display" data="copy_white_bg">コピーライト(白)</span>
     <input class="mhover_bg" type="checkbox" name="data_display" data="copy_black_bg"><span class="mhover_bg" name="data_display" data="copy_black_bg">コピーライト(黒)</span>
 
 
     <!-- 色変更 -->
-    <p class="mhover_bg" data="back_img_bg">背景色:
-        <span id="colorPicker_color_white"></span>
-        <input type="checkbox" name="white_cambas">サイズを変更する
-        <span class="slyder_attention">※右下のつまみで調整できます</span>
-    </p>
+    <p class="mhover_bg" data="back_img_bg">背景色</p>
+        <!-- <span id="colorPicker_color_white"></span> -->
+    <input type="checkbox" name="white_cambas">サイズを変更する
+    <span class="slyder_attention">※右下のつまみで調整できます</span>    
     <span class="char_name_fontsize_span_white">
-    <md-color-picker id="colorPicker_white" color-margin="4" colors-per-row="8" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
+    <md-color-picker id="colorPicker_white" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
     </span>
 
     <!-- 透明度変更 -->
@@ -225,9 +246,9 @@
 
 
     <!-- 色変更 -->
-    <p class="mhover_bg" data="char_name_bg">色:<span id="colorPicker_color"></span></p>
+    <p class="mhover_bg" data="char_name_bg">色</p>
     <span class="char_name_fontsize_span">
-    <md-color-picker id="colorPicker" color-margin="4" colors-per-row="8" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
+    <md-color-picker id="colorPicker" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
     </span>
 
 
@@ -342,7 +363,10 @@
  
 
   <!-- 文字情報 -->
-  <p class="mhover_bg" data="main_job_bg server_bg race_bg freecompany_bg favorite_bg">フォント</p>
+  <p class="mhover_bg" data="main_job_bg server_bg race_bg freecompany_bg favorite_bg comment_bg">フォント
+      <input type="checkbox" name="font_bold_check">太字にする
+　</p>
+  
     <span class="char_info_font_span">
         <p class="char_info_font_p">
             <input type="radio" name="char_info_radio" value="Noto"><span class="Noto">Noto</span>
@@ -364,15 +388,15 @@
     </span>
     
   <p class="mhover_bg" data="main_job_bg_h server_bg_h race_bg_h freecompany_bg_h">見出し</p>
-  <p>色:<span id="char_info_h_span"></span></p>
+  <!-- <p>色:<span id="char_info_h_span"></span></p> -->
 　<span class="char_info_h_span">
-　  <md-color-picker id="char_info_h" color-margin="4" colors-per-row="8" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
+　  <md-color-picker id="char_info_h" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
 　</span>
 
 　<p class="mhover_bg_text" data="main_job_bg server_bg race_bg freecompany_bg">テキスト</p>
-  <p>色:<span id="char_text_h_span"></span></p>
+  <p>色</p>
 　<span class="char_text_h_span">
-　  <md-color-picker id="char_text_h" color-margin="4" colors-per-row="8" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
+　  <md-color-picker id="char_text_h" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
 　</span>
 
 
@@ -382,7 +406,7 @@
 
 
 
-
+<!-- コンテンツ -->
 <div class='widget'>
   <div id='コンテンツ' class="tab-content">
 
@@ -398,30 +422,54 @@
         <input class="favorite_contents" type="checkbox" name="007" value="ハウジング・"><img class="favorite_contents_img" src="img\faveriteicon\faverite007.png" alt="">ハウジング
         <input class="favorite_contents" type="checkbox" name="008" value="ゴールドソーサー・"><img class="favorite_contents_img" src="img\faveriteicon\faverite008.png" alt="">ゴールドソーサー
         <input class="favorite_contents" type="checkbox" name="009" value="演奏・"><img class="favorite_contents_img" src="img\faveriteicon\faverite009.png" alt="">演奏<br>
-        <input class="favorite_contents" type="checkbox" name="010" value="レハン・"><img class="favorite_contents_img" src="img\faveriteicon\faverite010.png" alt="">トレハン
+        <input class="favorite_contents" type="checkbox" name="010" value="トレハン・"><img class="favorite_contents_img" src="img\faveriteicon\faverite010.png" alt="">トレハン
         <input class="favorite_contents" type="checkbox" name="011" value="討伐/討滅戦・"><img class="favorite_contents_img" src="img\faveriteicon\faverite011.png" alt="">討伐/討滅戦
         <input class="favorite_contents" type="checkbox" name="012" value="零式・"><img class="favorite_contents_img" src="img\faveriteicon\faverite012.png" alt="">零式
         <input class="favorite_contents" type="checkbox" name="013" value="絶・"><img class="favorite_contents_img" src="img\faveriteicon\faverite013.png" alt="">絶
         <input class="favorite_contents" type="checkbox" name="014" value="PvP・"><img class="favorite_contents_img" src="img\faveriteicon\faverite014.png" alt="">PvP
-    </span>
+    </span>    
 
   <p class="mhover_bg" data="favorite_bg_h">見出し</p>
-  <p>色:<span id="char_favorite_h_span"></span></p>
 　<span class="char_favorite_h_span">
-　  <md-color-picker id="char_favorite_h" color-margin="4" colors-per-row="8" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
+　  <md-color-picker id="char_favorite_h" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
 　</span>
 
 　<p class="mhover_bg_text" data="favorite_bg">テキスト</p>
-  <p>色:<span id="char_favorite_text_h_span"></span></p>
 　<span class="char_favorite_text_h_span">
-　  <md-color-picker id="char_favorite_text_h" color-margin="4" colors-per-row="8" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
+　  <md-color-picker id="char_favorite_text_h" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
 　</span>
 
   </div>
 </div>
 
 
+<!-- コメント -->
+<div class='widget'>
+<div id='コメント' class="tab-content">
+    
+    <p class="mhover_bg" data="comment_bg">コメント</p>
+    <span class="comment_contents_span">
+        <textarea name="char_comment" id="char_comment" cols="40" rows="3">
+まったり楽しんでます(*´∀｀)
+よろしくおねがします！</textarea>
+    </span>
 
+    <p class="mhover_bg" data="comment_bg_h">見出し</p>
+    <span class="char_comment_h_span">
+        <md-color-picker id="char_comment_h" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
+    </span>
+
+    <p class="mhover_bg_text" data="comment_bg">テキスト</p>
+    <span class="char_comment_text_h_span">
+        <md-color-picker id="char_comment_text_h" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
+    </span>
+    
+</div>
+</div>
+
+
+
+<!-- ジョブ -->
 <div class='widget'>
   <div id='ジョブ' class="tab-content">
   <p class="mhover_bg" data="job_bg_h">ジョブアイコン</p>
@@ -480,13 +528,13 @@
   <p class="mhover_bg_text" data="job_bg">通常の色</p>
   <p>色:<span id="job_icon_list_color_span"></span></p>
 　<span class="job_icon_list_color">
-　  <md-color-picker id="job_icon_list_color" color-margin="4" colors-per-row="8" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
+　  <md-color-picker id="job_icon_list_color" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
 　</span>
 
 　<p class="mhover_bg_text" data="job_bg">カンストジョブの色</p>
   <p>色:<span id="job_icon_list_color_const_span"></span></p>
 　<span class="job_icon_list_color_const">
-　  <md-color-picker id="job_icon_list_color_const" color-margin="4" colors-per-row="8" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
+　  <md-color-picker id="job_icon_list_color_const" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
 　</span>
  
 

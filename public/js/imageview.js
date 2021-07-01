@@ -50,7 +50,7 @@ $(function() {
             
         });
         const name = $('#js-getVariable').data();
-        image.src = name["name"];        
+        image.src = name["name"];
     }
     
     function canvasZoom(e) {

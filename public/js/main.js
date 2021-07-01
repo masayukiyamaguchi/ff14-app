@@ -63,7 +63,8 @@ $(function() {
   $('input[name=data_display]:eq(2)').prop('checked', true);  
   $('input[name=data_display]:eq(3)').prop('checked', true);  
   $('input[name=data_display]:eq(4)').prop('checked', true);  
-  $('input[name=data_display]:eq(5)').prop('checked', true);  
+  $('input[name=data_display]:eq(5)').prop('checked', true);
+  $('input[name=data_display]:eq(6)').prop('checked', true);    
 
   // コンテンツチェックを入れておく
   $('input[class=favorite_contents]:eq(0)').prop('checked', true);
@@ -72,8 +73,7 @@ $(function() {
 
 
 
-
-
+  // 初期画面
   $(".img_button").change(function(e){
       //ファイルオブジェクトを取得する
       var file = e.target.files[0];
@@ -89,27 +89,52 @@ $(function() {
       reader.readAsDataURL(file);     
   });
 
+  // 画像保存
   $("#camvas_button").click(function(){
+    font_fix();
     html2canvas(document.querySelector("#camvas"), {
+    // 画像調整
     width: 960,
     height: 540
-    }).then(canvas => {
+    }).then(canvas => {      
       canvas.toBlob(blob => {
         $("#download").attr("download", `${document.title}.png`).attr("href", window.URL.createObjectURL(blob));
         $('a#download')[0].click();
     })
     })
 
+    font_retun();
+
   });
+
+  // 画像調整
+  function font_fix(){
+    slide_char_name = font2slide(parseInt($(".fontfix").css("font-size")));
+    $(".fontfix").css("top","-="+slide_char_name+"px");
+  }
+
+  function font_retun(){
+    $(".fontfix").css("top","+="+slide_char_name+"px");
+  }
+
+  function font2slide(i){
+    return Math.round(i*0.1739);
+  }
+
+
+
+
 
   // 基本
   $("[name=position_radio]").click(function(){
     if($('input[name=position_radio]:eq(0)').prop('checked')){
       $('input[name=position_radio]:eq(0)').prop('checked', true);
-      $(".position").css("left","-=480px");
+      $(".position").css("left","-=460px");
+      $(".position_bg").css("left","-=480px");
     }else if($('input[name=position_radio]:eq(1)').prop('checked')){
       $('input[name=position_radio]:eq(1)').prop('checked', true);
-      $(".position").css("left","+=480px");
+      $(".position").css("left","+=460px");
+      $(".position_bg").css("left","+=480px");
     }
   });
 
@@ -392,14 +417,13 @@ $('.select_job_gatherer').hover(
   }
 );
 
-
 // プルダウンジョブを選んだ際に起こるアクション
 $('li[class^="select_job_"]').click(function(){
   var job_name = $(this).text();
   var name = $(this).attr("name");
   $(".select_main_job_name").text(job_name);
   $(".char_main_name").text(job_name);
-  $(".select_main_job_img_change").attr("src",'img/jobicon/02/'+name+'.png');
+  $(".select_main_job_img_change").attr("src",'img/jobicon/01/'+name+'.png');
   $(".char_main_job_icon_img").attr("src",'img/jobicon/mainjob/'+name+'.png');
   
 });
@@ -436,7 +460,7 @@ $("[name=char_info_radio]").click(function(){
     $(".char_info").css("font-family","'Potta One', cursive");
   }else if($('input[name=char_info_radio]:eq(4)').prop('checked')){
     $('input[name=char_info_radio]:eq(4)').prop('checked', true);
-    $(".char_info").css("font-family","'Hachi Maru Pop', cursive").css("font-weight","bold");
+    $(".char_info").css("font-family","'Hachi Maru Pop', cursive")
   }else if($('input[name=char_info_radio]:eq(5)').prop('checked')){
     $('input[name=char_info_radio]:eq(5)').prop('checked', true);
     $(".char_info").css("font-family","'Yusei Magic', sans-serif");
@@ -467,8 +491,14 @@ $("[name=char_info_radio]").click(function(){
 });
 
 // 太字にする
-// $(".char_info").css("font-weight","bold");
-
+$("[name=font_bold_check]").click(function(){
+  var e = $(this).prop("checked");
+  if(e){
+    $(".char_info").css("font-weight","bold");
+  }else{
+    $(".char_info").css("font-weight","");
+  }
+});
 
 
 // キャラ名にも情報のフォントを適応
@@ -539,6 +569,38 @@ $("[class=favorite_contents]").change(function(){
   }
 
 });
+
+
+
+// 見出し色　コメント
+// 見出し色
+$('#char_comment_h').on('change', function(e){
+  // 選択した色の情報を取得
+  var color = e.detail[0];
+  $(this).val(color);
+  $(".char_comment").css("color",color);
+  $("#char_comment_h_span").html(color);
+});
+// テキスト色
+$('#char_comment_text_h').on('change', function(e){
+  // 選択した色の情報を取得
+  var color = e.detail[0];
+  $(this).val(color);
+  $(".char_comment_name").css("color",color);
+  $("#char_comment_text_h_span").html(color);
+});
+
+// テキストエリア
+$("#char_comment").change(function(){
+  var view_comment = "";
+  var text = $(this).val();
+  var split=text.split(/\r\n|\r|\n/);
+  split.forEach(function(data){
+  view_comment += data+"<br>"
+  });
+  $(".char_comment_text").html(view_comment);
+});
+
 
 
 // ジョブアイコン
@@ -770,7 +832,6 @@ $("[class=mhover_bg_text]").hover(
     });
   },
 );
-
 
 
 
