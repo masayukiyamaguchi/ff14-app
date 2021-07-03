@@ -58,9 +58,9 @@
 
         <!-- キャラ名 -->
         <div class="char_name_div">
-            <span class="char_name dragg position first_last_name char_name_bg fontfix">{{$char_name}}</span>
-            <span class="char_name dragg position first_name display_none char_name_bg fontfix">{{$char_first_name}}</span>
-            <span class="char_name dragg position last_name display_none char_name_bg fontfix">{{$char_last_name}}</span>
+            <span class="first_last_name char_name dragg position first_last_name char_name_bg fontfix">{{$char_name}}</span>
+            <span class="first_name char_name dragg position display_none char_name_bg fontfix">{{$char_first_name}}</span>
+            <span class="last_name char_name dragg position display_none char_name_bg fontfix">{{$char_last_name}}</span>
         </div>
         <!-- メインジョブ -->
         <div class="char_main_job_span dragg position">
@@ -169,11 +169,13 @@
 <!-- 保存ボタン -->
 <button id="camvas_button">保存</button>
 <a id="download" href="">ダウンロード</a>
+<button id="default_setting">元に戻す</button>
 
   <!-- 位置 -->
-    <p class="test">データ位置</p>
-    <input type="radio" name="position_radio" value="left">左寄せ
-    <input type="radio" name="position_radio" value="rigth">右寄せ
+  
+    <p class="test">データ位置<span class="slyder_attention">(レイアウトが崩れた場合は「元に戻す」で初期化してください)</span></p>
+    <input type="radio" class="position_radio_left" name="position_radio" value="left">左寄せ
+    <input type="radio" class="position_radio_right" name="position_radio" value="rigth">右寄せ
 
     <p>データ表示</p>
     <input class="mhover_bg" type="checkbox" name="data_display" data="main_job_bg"><span class="mhover_bg" name="data_display" data="main_job_bg">メインジョブ</span>
@@ -536,13 +538,42 @@
 　<span class="job_icon_list_color_const">
 　  <md-color-picker id="job_icon_list_color_const" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
 　</span>
- 
-
-
-
 
 
   </div>
+</div>
+
+
+
+
+<!-- 保存 -->
+<div class='widget'>
+    <div id='保存' class="tab-content">
+        <p>
+          <span class="save_layout_span">レイアウト1</span>
+          <button name="layout01" class="save_layout">保存</button>
+          <button name="layout01" class="reflect_layout">反映</button>
+          <span class="save_layout_span_comment01"></span>
+        </p>
+        <p>
+          <span class="save_layout_span">レイアウト2</span>
+          <button name="layout02" class="save_layout">保存</button>
+          <button name="layout02" class="reflect_layout">反映</button>
+          <span class="save_layout_span_comment02"></span>
+        </p>
+        <p>
+          <span class="save_layout_span">レイアウト3</span>
+          <button name="layout03" class="save_layout">保存</button>
+          <button name="layout03" class="reflect_layout">反映</button>
+          <span class="save_layout_span_comment03"></span>
+        </p>
+        <p>
+          <span class="save_layout_span">レイアウト4</span>
+          <button name="layout04" class="save_layout">保存</button>
+          <button name="layout04" class="reflect_layout">反映</button>
+          <span class="save_layout_span_comment04"></span>
+        </p>
+    </div>
 </div>
 
 

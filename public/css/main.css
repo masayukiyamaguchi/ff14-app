@@ -29,6 +29,8 @@
 
 .rigth_menu{
     float: left;
+    position: relative;
+    z-index: 10px;
 } 
 
 .footer{
@@ -87,7 +89,7 @@
     /* top: 0px; */
     left: 0px;
     top:-547px;
-    width: 480px;
+    width: 481px;
     height: 540px;
     background: rgba(255, 255, 255, 0.5);
 
@@ -333,8 +335,8 @@
     font-weight: bold;
     color: rgb(255, 255, 255);
     position: absolute;
-    left:1px;
-    top:525px;
+    left:3px;
+    top:527px;
     z-index: 5;
 }
 .copyright_span_black{
@@ -342,8 +344,8 @@
     font-weight: bold;
     color: rgb(0, 0, 0);
     position: absolute;
-    left:1px;
-    top:525px;
+    left:3px;
+    top:527px;
     z-index: 5;
 }
 
@@ -1114,12 +1116,15 @@
 }
 /* キラリと光るココまで */
 
-
-
 .output{
     width: 50%;
 }
 
+
+/* 保存 */
+[class^=save_layout_span_comment]{
+    color: red;
+}
 
 
 

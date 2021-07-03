@@ -1,10 +1,100 @@
 $(function() {
 
-  // // ストレージの内容を反映  
-  // var char_name_x = localStorage.getItem('char_name_x');
-  // var char_name_y = localStorage.getItem('char_name_y');
-  // $(".char_name").css("left",char_name_x+"px");
-  // $(".char_name").css("top",char_name_y+"px");  
+// 初期値
+var default_setting = {
+  "char_comment_span_x": "28",
+  "char_comment_span_y": "50",
+  "char_favorite_span_x": "26",
+  "char_favorite_span_y": "-28",
+  "char_freecompany_span_x": "-12",
+  "char_freecompany_span_y": "-12",
+  "char_job_icon_span_x": "28",
+  "char_job_icon_span_y": "16",
+  "char_main_job_span_x": "28",
+  "char_main_job_span_y": "1",
+  "char_message_x": "495",
+  "char_message_y": "171",
+  "first_last_name_x": "36",
+  "first_last_name_y": "18",
+  "first_name_x": "36",
+  "first_name_y": "18",
+  "last_name_x": "182",
+  "last_name_y": "18",
+  "char_race_span_x": "26",
+  "char_race_span_y": "-11",
+  "char_server_span_x": "-14",
+  "char_server_span_y": "0",
+  "copyright_span_black_x": "3",
+  "copyright_span_black_y": "527",
+  "copyright_span_white_x": "3",
+  "copyright_span_white_y": "527",
+  "white_cambas_x": "-1",
+  "white_cambas_y": "-547",
+}
+
+  // ストレージの内容を読み込み
+  object = loadStorage();
+  function loadStorage(){
+    var object = {};
+    for(var i = 0 ; i < localStorage.length ; i++) {
+      var key = localStorage.key(i);
+      if(key.startsWith("layout")){
+
+      }else{
+        object[key] = localStorage.getItem(key);
+      }
+    }
+    return object;
+  }
+
+  // 初期値設定
+  // デフォルトの設定を画面とストレージに設定
+  stolageHuck(default_setting);
+  // ストレージの内容を反映
+  stolageHuck(object);
+
+  // データの内容に反映
+  function setStolage(object){
+    Object.keys(object).forEach(function(key) {
+      var last = key.slice(-1);
+      switch(last){
+        case "x":
+          classkey = key.slice(0,-2);
+          $("."+classkey).css("left",object[key]+"px");
+          break;
+
+        case "y":
+          classkey = key.slice(0,-2);
+          $("."+classkey).css("top",object[key]+"px");
+          break;
+
+        default :
+          break;
+      }
+
+    });
+  }
+
+  // データの内容にストレージを上書き
+  function saveStolage(object){
+    Object.keys(object).forEach(function(key) {
+      localStorage.setItem(key,object[key]);
+    });
+  }
+
+  //データを受け取り、表示とストレージの上書きを行う
+  function stolageHuck(object){
+    setStolage(object);
+    saveStolage(object);
+  }
+
+  // もとに戻す
+  $("#default_setting").click(function(){
+    stolageHuck(default_setting);
+    $('input[name=position_radio]:eq(0)').prop('checked', true); 
+    $("input[name=position_radio]").prop('disabled', false); 
+  });
+
 
   // 種族の色判別、変更
   var gender = $(".char_gender").text();
@@ -64,7 +154,7 @@ $(function() {
   $('input[name=data_display]:eq(3)').prop('checked', true);  
   $('input[name=data_display]:eq(4)').prop('checked', true);  
   $('input[name=data_display]:eq(5)').prop('checked', true);
-  $('input[name=data_display]:eq(6)').prop('checked', true);    
+  $('input[name=data_display]:eq(6)').prop('checked', true);   
 
   // コンテンツチェックを入れておく
   $('input[class=favorite_contents]:eq(0)').prop('checked', true);
@@ -126,17 +216,65 @@ $(function() {
 
 
   // 基本
+  // データ位置
   $("[name=position_radio]").click(function(){
     if($('input[name=position_radio]:eq(0)').prop('checked')){
       $('input[name=position_radio]:eq(0)').prop('checked', true);
       $(".position").css("left","-=460px");
       $(".position_bg").css("left","-=480px");
+      var object = positionStorageLeft();
+      saveStolage(object);
+      $(".position_radio_left").prop('disabled', true);
+      $(".position_radio_right").prop('disabled', false);
+      var key = $(this).attr('name').split(" ")[0];
+      localStorage.setItem(key+"_r", 0);
+
     }else if($('input[name=position_radio]:eq(1)').prop('checked')){
       $('input[name=position_radio]:eq(1)').prop('checked', true);
       $(".position").css("left","+=460px");
       $(".position_bg").css("left","+=480px");
+      var object = positionStorageRight();
+      saveStolage(object);
+      $(".position_radio_left").prop('disabled', false);
+      $(".position_radio_right").prop('disabled', true);
+      var key = $(this).attr('name').split(" ")[0];
+      localStorage.setItem(key+"_r", 1);
     }
   });
+
+  // ストレージの内容を書き換え
+  function positionStorageRight(){
+    var object = {};
+    for(var i = 0 ; i < localStorage.length ; i++) {
+      var key = localStorage.key(i);
+      var last = key.slice(-1);
+      if(last == "y"){
+      }else if(key.startsWith("layout")){
+      }else if(key.startsWith("white_cambas")){
+        object[key] = Number(localStorage.getItem(key))+480;
+      }else{
+        object[key] = Number(localStorage.getItem(key))+460;
+        console.log(localStorage.getItem(key));
+      }
+    }
+    return object;
+  }
+
+  function positionStorageLeft(){
+    var object = {};
+    for(var i = 0 ; i < localStorage.length ; i++) {
+      var key = localStorage.key(i);
+      var last = key.slice(-1);
+      if(last == "y"){
+      }else if(key.startsWith("layout")){
+      }else if(key.startsWith("white_cambas")){
+        object[key] =Number( localStorage.getItem(key))-480;
+      }else{
+        object[key] =Number( localStorage.getItem(key))-460;
+      }
+    }
+    return object;
+  }
 
   // 表示
   $("[name=data_display]").click(function(){
@@ -144,15 +282,17 @@ $(function() {
     var v = $(this).attr("data");
     if(e){
       $('.'+v).removeClass("display_none");
-      $('.'+v+"_h").removeClass("display_none");     
+      $('.'+v+"_h").removeClass("display_none");
+      localStorage.setItem(v+"_c", 1);
     }else{
       $('.'+v).addClass("display_none");
       $('.'+v+"_h").addClass("display_none");
+      localStorage.setItem(v+"_c", 0); 
     }
   });
   
 
-  // white基本
+  // 背景色基本
    // 色
    $('#colorPicker_white').on('change', function(e){
     // 選択した色の情報を取得
@@ -164,6 +304,10 @@ $(function() {
     num = $("#transparent_value_white").text();
     $(".white_cambas").css("background","rgba("+color_rgb[0]+","+color_rgb[1]+","+color_rgb[2]+","+num*0.01+")");      
     $("#colorPicker_color_white").html(color);
+    // ストレージ保存
+    var key = "white_cambas"
+    var v = $(".white_cambas").css("background-color");
+    localStorage.setItem(key+"_b", v);
   });
 
   // 透明度
@@ -192,6 +336,12 @@ $(function() {
       // rgbの1つ1つの色を解析し、透明度をプラスして表示
       rgb = rgb2hex(name_color);
       $(".white_cambas").css("background","rgba("+rgb[1]+","+rgb[2]+","+rgb[3]+","+num*0.01+")");
+    
+      // ストレージ保存
+      var key = "white_cambas"
+      var v = $(".white_cambas").css("background-color");
+      localStorage.setItem(key+"_b", v);
+    
     },
     create: function( event, ui ) {
       $("#transparent_value_white").html($(this).slider( "value" ));
@@ -208,9 +358,11 @@ $(function() {
     if(e){
       $(".white_cambas").draggable( "enable" );
       $(".white_cambas").resizable( "enable" );
+      $(".white_cambas").css( "z-index","5" );
     }else{
       $(".white_cambas").draggable( "disable" );
       $(".white_cambas").resizable( "disable" );
+      $(".white_cambas").css( "z-index","" );
     }
   });
 
@@ -222,10 +374,13 @@ $(function() {
     if($('input[name=char_name_radio]:eq(0)').prop('checked')){
        $('input[name=char_name_radio]:eq(0)').prop('checked', true);
        $(".char_name").css("font-family","'Alice', serif");
+      //  ストレージ保存
+      localStorage.setItem("char_name"+"_r",0);
 
     }else if($('input[name=char_name_radio]:eq(1)').prop('checked')){
       $('input[name=char_name_radio]:eq(1)').prop('checked', true);
       $(".char_name").css("font-family","'Bungee Inline', cursive");
+
 
     }else if($('input[name=char_name_radio]:eq(2)').prop('checked')){
       $('input[name=char_name_radio]:eq(2)').prop('checked', true);
@@ -272,6 +427,10 @@ $(function() {
       $(".char_name").css("font-family","'Sorts Mill Goudy', serif");
 
     }
+
+    // ストレージ保存
+    var v = $(".char_name").css("font-family");
+    localStorage.setItem("char_name"+"_r",v);
     
   });
 
@@ -291,8 +450,11 @@ $(function() {
       $("#wkValue").html($(this).slider( "value" ));
     },
     change: function( event, ui ) {
-      $("#wkValue").html(ui.value);
-    }
+      $("#wkValue").html(ui.value);            
+      // ストレージ保存
+      var v = $(".char_name").css("font-size");
+      localStorage.setItem("char_name"+"_s",v);
+    } 
   });
 
   // 色
@@ -306,6 +468,11 @@ $(function() {
     num = $("#transparent_value").text();
     $(".char_name").css("color","rgba("+color_rgb[0]+","+color_rgb[1]+","+color_rgb[2]+","+num*0.01+")");      
     $("#colorPicker_color").html(color);
+
+    // ストレージ保存
+    var key = "char_name";
+    var v = $(".char_name").css("color");
+    localStorage.setItem(key+"_b", v);
   });
 
   // 透明度
@@ -330,6 +497,10 @@ $(function() {
     },
     change: function( event, ui ) {
       $("#transparent_value").html(ui.value);
+      // ストレージ保存
+      var key = "char_name";
+      var v = $(".char_name").css("color");
+      localStorage.setItem(key+"_b", v);
     }
 
   });
@@ -341,10 +512,16 @@ $(function() {
       $(".first_last_name").addClass("display_none");
       $(".first_name").removeClass("display_none");
       $(".last_name").removeClass("display_none");
+      // ストレージ保存
+      var key = "char_name";
+      localStorage.setItem(key+"_c", 1);
     }else{
       $(".first_last_name").removeClass("display_none");
       $(".first_name").addClass("display_none");
       $(".last_name").addClass("display_none");
+      // ストレージ保存
+      var key = "char_name";
+      localStorage.setItem(key+"_c", 0);
     }
   });
 
@@ -425,8 +602,13 @@ $('li[class^="select_job_"]').click(function(){
   $(".char_main_name").text(job_name);
   $(".select_main_job_img_change").attr("src",'img/jobicon/01/'+name+'.png');
   $(".char_main_job_icon_img").attr("src",'img/jobicon/mainjob/'+name+'.png');
-  
+
+  // ストレージの保存
+  localStorage.setItem("select_main_job"+"_p", name); 
+
 });
+
+
 
 // プルダウンの表示と非表示
 $(document).click(function(event) {
@@ -440,52 +622,62 @@ $(document).click(function(event) {
 });
 
 
-
-
-
-
 // フォント
 $("[name=char_info_radio]").click(function(){
   if($('input[name=char_info_radio]:eq(0)').prop('checked')){
      $('input[name=char_info_radio]:eq(0)').prop('checked', true);
-     $(".char_info").css("font-family","'Noto Sans JP', sans-serif")
+     $(".char_info").css("font-family","'Noto Sans JP', sans-serif");
+    //  ストレージ保存
+     localStorage.setItem("char_info"+"_r", 0);
   }else if($('input[name=char_info_radio]:eq(1)').prop('checked')){
     $('input[name=char_info_radio]:eq(1)').prop('checked', true);
     $(".char_info").css("font-family","'Sawarabi Mincho', sans-serif");
+    localStorage.setItem("char_info"+"_r", 1);
   }else if($('input[name=char_info_radio]:eq(2)').prop('checked')){
     $('input[name=char_info_radio]:eq(2)').prop('checked', true);
     $(".char_info").css("font-family","'Kosugi Maru', sans-serif");
+    localStorage.setItem("char_info"+"_r", 2);
   }else if($('input[name=char_info_radio]:eq(3)').prop('checked')){
     $('input[name=char_info_radio]:eq(3)').prop('checked', true);
     $(".char_info").css("font-family","'Potta One', cursive");
+    localStorage.setItem("char_info"+"_r", 3);
   }else if($('input[name=char_info_radio]:eq(4)').prop('checked')){
     $('input[name=char_info_radio]:eq(4)').prop('checked', true);
     $(".char_info").css("font-family","'Hachi Maru Pop', cursive")
+    localStorage.setItem("char_info"+"_r", 4);
   }else if($('input[name=char_info_radio]:eq(5)').prop('checked')){
     $('input[name=char_info_radio]:eq(5)').prop('checked', true);
     $(".char_info").css("font-family","'Yusei Magic', sans-serif");
+    localStorage.setItem("char_info"+"_r", 5);
   }else if($('input[name=char_info_radio]:eq(6)').prop('checked')){
     $('input[name=char_info_radio]:eq(6)').prop('checked', true);
     $(".char_info").css("font-family","'RocknRoll One', sans-serif");
+    localStorage.setItem("char_info"+"_r", 6);
   }else if($('input[name=char_info_radio]:eq(7)').prop('checked')){
     $('input[name=char_info_radio]:eq(7)').prop('checked', true);
     $(".char_info").css("font-family","'Reggae One', cursive");
+    localStorage.setItem("char_info"+"_r", 7);
   }else if($('input[name=char_info_radio]:eq(8)').prop('checked')){
     $('input[name=char_info_radio]:eq(8)').prop('checked', true);
     $(".char_info").css("font-family","'Stick', sans-serif");
+    localStorage.setItem("char_info"+"_r", 8);
   }else if($('input[name=char_info_radio]:eq(9)').prop('checked')){
     $('input[name=char_info_radio]:eq(9)').prop('checked', true);
     $(".char_info").css("font-family","'DotGothic16', sans-serif");
+    localStorage.setItem("char_info"+"_r", 9);
     // 本来これ以下はない
   }else if($('input[name=char_info_radio]:eq(10)').prop('checked')){
     $('input[name=char_info_radio]:eq(10)').prop('checked', true);
     $(".char_info").css("font-family","'Rock Salt', cursive");
+    localStorage.setItem("char_info"+"_r", 10);
   }else if($('input[name=char_info_radio]:eq(11)').prop('checked')){
     $('input[name=char_info_radio]:eq(11)').prop('checked', true);
     $(".char_info").css("font-family","'Sacramento', cursive");
+    localStorage.setItem("char_info"+"_r", 11);
   }else if($('input[name=char_info_radio]:eq(12)').prop('checked')){
     $('input[name=char_info_radio]:eq(12)').prop('checked', true);
     $(".char_info").css("font-family","'Sorts Mill Goudy', serif");
+    localStorage.setItem("char_info"+"_r", 12);
   }
   
 });
@@ -495,8 +687,13 @@ $("[name=font_bold_check]").click(function(){
   var e = $(this).prop("checked");
   if(e){
     $(".char_info").css("font-weight","bold");
+    // ストレージ保存
+    localStorage.setItem("char_info"+"_c", 1);
+
   }else{
     $(".char_info").css("font-weight","");
+    localStorage.setItem("char_info"+"_c", 0);
+
   }
 });
 
@@ -505,8 +702,12 @@ $("[name=font_bold_check]").click(function(){
 $(".char_info_font_toname").click(function(){
   var font = $(".char_info").css("font-family");
   $(".char_name").css("font-family",font);
-});
+  
+  // ストレージ保存  
+  var v = $(".char_name").css("font-family");  
+  localStorage.setItem("char_name"+"_r",v);
 
+});
 
 // 見出し色 キャラ情報
 $('#char_info_h').on('change', function(e){
@@ -518,7 +719,14 @@ $('#char_info_h').on('change', function(e){
   $(".char_race").css("color",color);
   $(".char_freecompany").css("color",color);     
   $("#char_info_h_span").html(color);
+
+  // ストレージ保存
+  var key = "char_info_h";
+  var v = $(".char_info").css("color");
+  localStorage.setItem(key+"_b", v);
+
 });
+
 // テキスト色
 $('#char_text_h').on('change', function(e){
   // 選択した色の情報を取得
@@ -530,27 +738,15 @@ $('#char_text_h').on('change', function(e){
   $(".char_tribe_name").css("color",color);
   $(".char_freecompany_name").css("color",color);       
   $("#char_text_h_span").html(color);
+
+  // ストレージ保存
+  var key = "char_info";
+  var v = $(".char_main_name").css("color");
+  localStorage.setItem(key+"_b", v);
+
 });
 
-
-// 見出し色　コンテンツ
-// 見出し色
-$('#char_favorite_h').on('change', function(e){
-  // 選択した色の情報を取得
-  var color = e.detail[0];
-  $(this).val(color);
-  $(".char_favorite").css("color",color);
-  $("#char_favorite_h_span").html(color);
-});
-// テキスト色
-$('#char_favorite_text_h').on('change', function(e){
-  // 選択した色の情報を取得
-  var color = e.detail[0];
-  $(this).val(color);
-  $(".char_favorite_name").css("color",color);
-  $("#char_favorite_text_h_span").html(color);
-});
-
+// コンテンツ
 // コンテンツ選択
 $("[class=favorite_contents]").change(function(){
   // チェックオンオフ取得
@@ -559,16 +755,56 @@ $("[class=favorite_contents]").change(function(){
     var name = $(this).attr("name");
     var text = $(this).val();
     var img = $(this).next().attr('src');
+    var key = name;
   if(favorite_check){
     var favorite_html = '<span name="text'+name+'" class="char_info"><img src="'+img+'" alt="">'+text+'</span>'
     // 要素追加
     $(".char_favorite_name").append(favorite_html);
+    // ストレージ保存
+    localStorage.setItem("text"+key+"_c", 1);
   }else{
     // 要素削除
     $('[name=text'+name+']').remove();
+    localStorage.setItem("text"+key+"_c", 0);
   }
 
+  
+  
+
 });
+
+// 見出し色
+$('#char_favorite_h').on('change', function(e){
+  // 選択した色の情報を取得
+  var color = e.detail[0];
+  $(this).val(color);
+  $(".char_favorite").css("color",color);
+  $("#char_favorite_h_span").html(color);
+
+  // ストレージ保存
+  var key = "char_favorite_name_h";
+  var v = $(".char_favorite").css("color");
+  localStorage.setItem(key+"_b", v);
+
+});
+
+// テキスト色
+$('#char_favorite_text_h').on('change', function(e){
+  // 選択した色の情報を取得
+  var color = e.detail[0];
+  $(this).val(color);
+  $(".char_favorite_name").css("color",color);
+  $("#char_favorite_text_h_span").html(color);
+
+    // ストレージ保存
+    var key = "char_favorite_name";
+    var v = $(".char_favorite_name").css("color");
+    localStorage.setItem(key+"_b", v);
+
+});
+
+
+
 
 
 
@@ -774,9 +1010,13 @@ $('#job_icon_list_color_const').on('change', function(e){
 // ドラッグ要素付与
 $(".dragg").draggable({
     stop: function(e, ui) {
+      // ドラッグしたらストレージに位置を保存
       var key = $(this).attr('class').split(" ")[0];
       localStorage.setItem(key+"_x", ui.position.left);
       localStorage.setItem(key+"_y", ui.position.top);
+      // // 寄せを使えなくする
+      // $("input[name=position_radio]").prop('disabled', true);
+
     }
 });
 
@@ -789,6 +1029,11 @@ $(".resize").resizable({
   minWidth:10,
   maxWidth:960,
   maxHeight:560,
+  stop: function(e, ui) {
+    var key = $(this).attr('class').split(" ")[0];
+    localStorage.setItem(key+"_w", ui.size.width);
+    localStorage.setItem(key+"_h", ui.size.height);
+  }
 
 });
 $(".white_cambas").resizable( "disable" );
@@ -833,18 +1078,42 @@ $("[class=mhover_bg_text]").hover(
   },
 );
 
+// 現在のレイアウトをストレージへ保存
+$(".save_layout").click(function(){
+  if(!confirm('現在のレイアウトを保存します。\n上書きされますがよろしいですか？')){
+    /* キャンセルの時の処理 */
+    return false;
+  }else{
+    /*　OKの時の処理 */
+    var layout = $(this).attr("name");
+    object = JSON.stringify(loadStorage());
+    localStorage.removeItem(layout);
+    localStorage.setItem(layout,object);
+    $(this).next().next().text("保存しました");
+  }
+});
+
+// 保存してあるレイアウトを反映
+$(".reflect_layout").click(function(){
+  if(!confirm('レイアウトを反映させます。\n編集中の内容は失われますがよろしいですか？')){
+    /* キャンセルの時の処理 */
+    return false;
+  }else{
+    /*　OKの時の処理 */
+    var layout = $(this).attr("name");
+    object = JSON.parse(localStorage.getItem(layout));
+    stolageHuck(object)
+    console.log(object["char_name_x"]);
+    $(this).next().text("反映しました");
+  }
+
+});
+
+// 各種トリガー実行
+// $('li[class^=select_job_][name="warrior"]').trigger('click');
 
 
 
-// memo
-// char_name_bg
-// main_job_bg
-// server_bg
-// race_bg
-// freecompany_bg
-// favorite_bg
-// job_bg
-// mhover_bg
 
 
 
