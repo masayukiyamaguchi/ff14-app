@@ -528,13 +528,13 @@
 
 
   <p class="mhover_bg_text" data="job_bg">通常の色</p>
-  <p>色:<span id="job_icon_list_color_span"></span></p>
+  <p>色</p>
 　<span class="job_icon_list_color">
 　  <md-color-picker id="job_icon_list_color" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
 　</span>
 
 　<p class="mhover_bg_text" data="job_bg">カンストジョブの色</p>
-  <p>色:<span id="job_icon_list_color_const_span"></span></p>
+  <p>色</p>
 　<span class="job_icon_list_color_const">
 　  <md-color-picker id="job_icon_list_color_const" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
 　</span>
