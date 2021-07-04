@@ -81,6 +81,8 @@ var default_setting = {
   'char_info_c':'0',
   'white_cambas_w':'481',
   'white_cambas_h':'540',
+  'char_flame_div_c':'0',
+  'char_flame_div_d':'4',
 }
 
   // ストレージの内容を読み込み
@@ -146,6 +148,8 @@ stolageHuck(storage_object);
             $('input[name=job_icon_list]:eq('+object[key]+')').prop('checked', true);
           }else if(classkey == "char_name"){
             $('input[name=char_name_radio]:eq('+object[key]+')').prop('checked', true);
+          }else if(classkey == "char_flame_div"){
+            $('input[name=flame_radio]:eq('+object[key]+')').prop('checked', true);
           }
           break;
 
@@ -179,6 +183,17 @@ stolageHuck(storage_object);
               $("[data="+classkey+"]").prop('checked',true); 
             }else{
               $("[data="+classkey+"]").prop('checked',false);
+            }
+          // フレーム
+          }else if(classkey == "char_flame_div"){
+            var v = Number( localStorage.getItem(key));
+            if(v){
+              $(".char_flame_div").children("img").addClass("display_none");
+              $('[name=flame_onoff]').prop('checked',true);
+            }else{
+              $(".char_flame_div").children("img").removeClass("display_none");
+              $('[name=flame_onoff]').prop('checked',false); 
+
             }
           }
           break;
@@ -589,6 +604,72 @@ stolageHuck(storage_object);
     }
   });
 
+
+  // フレーム
+  // フレームを消す
+  $("[name=flame_onoff]").click(function(){
+    var e = $(this).prop("checked");
+    if(e){
+      $(".char_flame_div").children("img").addClass("display_none");
+      // ストレージ保存
+      var key = "char_flame_div"
+      var v = 1;
+      localStorage.setItem(key+"_c", v);
+    }else{
+      $(".char_flame_div").children("img").removeClass("display_none");
+      // ストレージ保存
+      var key = "char_flame_div"
+      var v = 0;
+      localStorage.setItem(key+"_c", v);
+
+    }
+  });
+
+  // フレーム選択
+  $("[name=flame_radio]").click(function(){
+    if($('input[name=flame_radio]:eq(0)').prop('checked')){
+       $('input[name=flame_radio]:eq(0)').prop('checked', true);
+       $(".char_flame_div").children("img").attr("src","/img/flame/flame00"+1+".png");
+        // ストレージ保存
+      localStorage.setItem("char_flame_div"+"_d",0);
+
+    }else if($('input[name=flame_radio]:eq(1)').prop('checked')){
+      $('input[name=flame_radio]:eq(1)').prop('checked', true);
+      $(".char_flame_div").children("img").attr("src","/img/flame/flame00"+2+".png");
+      localStorage.setItem("char_flame_div"+"_d",1);
+
+    }else if($('input[name=flame_radio]:eq(2)').prop('checked')){
+      $('input[name=flame_radio]:eq(2)').prop('checked', true);
+      $(".char_flame_div").children("img").attr("src","/img/flame/flame00"+3+".png");
+      localStorage.setItem("char_flame_div"+"_d",2);
+
+    }else if($('input[name=flame_radio]:eq(3)').prop('checked')){
+      $('input[name=flame_radio]:eq(3)').prop('checked', true);
+      $(".char_flame_div").children("img").attr("src","/img/flame/flame00"+4+".png");
+      localStorage.setItem("char_flame_div"+"_d",3);
+
+    }else if($('input[name=flame_radio]:eq(4)').prop('checked')){
+      $('input[name=flame_radio]:eq(4)').prop('checked', true);
+      $(".char_flame_div").children("img").attr("src","/img/flame/flame00"+5+".png");
+      localStorage.setItem("char_flame_div"+"_d",4);
+
+    }else if($('input[name=flame_radio]:eq(5)').prop('checked')){
+      $('input[name=flame_radio]:eq(5)').prop('checked', true);
+      $(".char_flame_div").children("img").attr("src","/img/flame/flame00"+6+".png");
+      localStorage.setItem("char_flame_div"+"_d",5);
+
+    }else if($('input[name=flame_radio]:eq(6)').prop('checked')){
+      $('input[name=flame_radio]:eq(6)').prop('checked', true);
+      $(".char_flame_div").children("img").attr("src","/img/flame/flame00"+7+".png");
+      localStorage.setItem("char_flame_div"+"_d",6);
+
+    }else if($('input[name=flame_radio]:eq(7)').prop('checked')){
+      $('input[name=flame_radio]:eq(7)').prop('checked', true);
+      $(".char_flame_div").children("img").attr("src","/img/flame/flame00"+8+".png");
+      localStorage.setItem("char_flame_div"+"_d",7);
+
+    }         
+  });
 
 
   // キャラ名
@@ -1427,6 +1508,10 @@ $(".reflect_layout").click(function(){
 
 });
 
+// トリガー実行
+triggers();
+function triggers(){
+
 // 各種トリガー実行
 // $('li[class^=select_job_][name="warrior"]').trigger('click');
 
@@ -1466,11 +1551,6 @@ for(var i=1 ; i<=15 ;i++ ){
   }
 }
 
-
-
-// トリガー実行
-triggers();
-function triggers(){
   // データ表示
 // データの配列
 var targets = ["main_job_bg","server_bg","race_bg","freecompany_bg","favorite_bg","comment_bg","job_bg","copy_white_bg","copy_black_bg",];
@@ -1584,10 +1664,14 @@ if(button_line_minus>0){
   localStorage.setItem("button_line_minus_n",button_line_minus);
 }
 
+// 情報フォント
+var v = localStorage.getItem("char_flame_div_d");  
+$('[name=flame_radio]:eq('+v+')').trigger('click');
+
 
 
 }
-
+// トリガーここまで
 
 
 

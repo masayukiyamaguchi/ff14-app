@@ -102,7 +102,7 @@
         </div>
 
         <!-- コメント -->
-        <div class="char_comment_span dragg position">       
+        <div class="char_comment_span dragg position"> 
         <div class="char_comment_div">
             <span class="char_comment char_info comment_bg_h">コメント</span>
             <span class="char_comment_name comment_bg char_info">
@@ -203,7 +203,27 @@
     <span class="char_name_transparent_value_span_white">
         <div id="transparent_value2_white"></div>
     </span>
-    <span class="slyder_attention">※ゆっくり動かしてね！</span>
+    <p class="slyder_attention">※ゆっくり動かしてね！</p>
+
+
+
+    <span class="mhover_bg" data="flame_bg">フレーム</span>
+    <!-- フレームを消す -->
+    <input type="checkbox" name="flame_onoff">フレームを消す
+    <span class="flame_span">
+        <p class="flame_p">
+            <input type="radio" name="flame_radio" value="001"><img class="flame_s" src="/img/flame/flame_s/flame001.png" alt="">
+            <input type="radio" name="flame_radio" value="002"><img class="flame_s" src="/img/flame/flame_s/flame002.png" alt="">
+            <input type="radio" name="flame_radio" value="003"><img class="flame_s" src="/img/flame/flame_s/flame003.png" alt="">
+            <input type="radio" name="flame_radio" value="004"><img class="flame_s" src="/img/flame/flame_s/flame004.png" alt="">
+        </p>
+        <p class="flame_p">
+            <input type="radio" name="flame_radio" value="005"><img class="flame_s" src="/img/flame/flame_s/flame004.png" alt="">
+            <input type="radio" name="flame_radio" value="006"><img class="flame_s" src="/img/flame/flame_s/flame005.png" alt="">
+            <input type="radio" name="flame_radio" value="007"><img class="flame_s" src="/img/flame/flame_s/flame006.png" alt="">
+            <input type="radio" name="flame_radio" value="008"><img class="flame_s" src="/img/flame/flame_s/flame007.png" alt="">
+        </p>
+    </span>
 
 
 

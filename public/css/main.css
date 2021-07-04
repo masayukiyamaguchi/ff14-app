@@ -301,6 +301,7 @@
     top:49px;
     z-index: 5;
     width: 300px;
+    white-space: nowrap;
 }
 
 .char_comment{
