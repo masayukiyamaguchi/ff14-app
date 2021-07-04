@@ -41,10 +41,12 @@ var default_setting = {
   'copy_black_bg_c':'0',
   'white_cambas_b':'rgba(255, 255, 255, 0.59)',
   'char_name_f':'"Noto Sans JP", sans-serif',
+  'job_icon_list_font_name_f':'"Noto Sans JP", sans-serif',
+  'char_name_d':'7',
   'char_name_s':'35.7px',
-  'char_name_b':'rgba(0, 0, 0, 0.99)',
+  'char_name_b':'rgba(0, 0, 0)',
   'char_name_c':'0',
-  'select_main_job_p':'paladin',
+  'select_main_job_p':'paladin ナイト img/jobicon/01/paladin.png',
   'char_info_d':'0',
   'char_info_b':'rgb(0, 0, 0)',
   'char_main_name_b':'rgb(0, 0, 0)',
@@ -73,10 +75,12 @@ var default_setting = {
   'button_left_n':'0',
   'button_minus_n':'0',
   'button_line_minus_n':'0',
-  'job_icon_list_color_const_b':'#ff5722',
-  'job_icon_list_color_b':'#000000',
+  'job_icon_list_color_const_e':'#ff5722',
+  'job_icon_list_color_e':'#000000',
   'position_radio_r':'0',
   'char_info_c':'0',
+  'white_cambas_w':'481',
+  'white_cambas_h':'540',
 }
 
   // ストレージの内容を読み込み
@@ -107,16 +111,18 @@ stolageHuck(storage_object);
     Object.keys(object).forEach(function(key) {
       var last = key.slice(-1);
       switch(last){
-        case "x":
+        // X座標
+        case "x":          
           classkey = key.slice(0,-2);
           $("."+classkey).css("left",object[key]+"px");
           break;
-
+        // Y座標
         case "y":
           classkey = key.slice(0,-2);
           $("."+classkey).css("top",object[key]+"px");
           break;
         
+        // 寄せ
         case "r":
           classkey = key.slice(0,-2);
           var v = object[key];
@@ -131,15 +137,19 @@ stolageHuck(storage_object);
           }
           break;
 
+        // ジョブアイコン
         case "d":
           classkey = key.slice(0,-2);
           if(classkey == "char_info"){
             $('input[name=char_info_radio]:eq('+object[key]+')').prop('checked', true);
           }else if(classkey == "job_icon_img"){
             $('input[name=job_icon_list]:eq('+object[key]+')').prop('checked', true);
+          }else if(classkey == "char_name"){
+            $('input[name=char_name_radio]:eq('+object[key]+')').prop('checked', true);
           }
           break;
 
+        // サイズ変更
         case "c":
           classkey = key.slice(0,-2);
           if(classkey == "char_name"){
@@ -147,13 +157,13 @@ stolageHuck(storage_object);
             if(v){
               $('input[name=name_split]:eq(0)').prop('checked',true); 
             }
-          
+          // 太字
           }else if(classkey == "char_info"){
             var v = Number( localStorage.getItem(key));
             if(v){
               $('input[name=font_bold_check]:eq(0)').prop('checked',true); 
             }
-
+          // コンテンツ
           }else if(classkey.startsWith("text")){
             var v = Number( localStorage.getItem(key));
             var num = classkey.slice(-3);
@@ -162,7 +172,7 @@ stolageHuck(storage_object);
             }else{
               $('input[class=favorite_contents][name='+num+']').prop('checked',false); 
             }
-
+          // データ表示
           }else if(classkey.match(/bg/)){
             var v = Number( localStorage.getItem(key));
             if(v){
@@ -171,10 +181,111 @@ stolageHuck(storage_object);
               $("[data="+classkey+"]").prop('checked',false);
             }
           }
-
-          
           break;
 
+        // ホワイトキャンパス
+        case "h":
+          classkey = key.slice(0,-2);
+          var v =localStorage.getItem(key);
+          $("."+classkey).css("height",v);
+          break;
+
+        case "w":
+          classkey = key.slice(0,-2);
+          var v =localStorage.getItem(key);
+          $("."+classkey).css("width",v);
+          break;
+
+        // 色
+        case "b":
+          classkey = key.slice(0,-2);
+          // ホワイトキャンバス
+          if(classkey == "white_cambas"){
+            var v =localStorage.getItem(key);
+            $("."+classkey).css("background",v);   
+            //　ライトメニューカラー選択         
+            var v_split = rgbaSplit(v);
+            var v_hex = RGB2Color(v_split[0],v_split[1],v_split[2]);
+            $('#colorPicker_white').val(v_hex);
+          
+          // キャラ名
+          }else  if(classkey == "char_name"){
+            var v =localStorage.getItem(key);
+            $("."+classkey).css("color",v);   
+
+          // 情報
+          }else if(classkey == "char_info"){
+            var v =localStorage.getItem(key);
+            $(".char_main_job").css("color",v);
+            $(".char_server").css("color",v);
+            $(".char_race").css("color",v);
+            $(".char_freecompany").css("color",v);            
+          // 情報テキスト
+          }else if(classkey == "char_main_name"){
+            var v =localStorage.getItem(key);
+            $(".char_main_name").css("color",v);
+            $(".char_server_name").css("color",v);
+            $(".char_race_name").css("color",v);
+            $(".char_tribe_name").css("color",v);
+            $(".char_freecompany_name").css("color",v);
+          // コンテンツ
+          }else if(classkey.startsWith("char_favorite")){
+            var v =localStorage.getItem(key);
+            $("."+classkey).css("color",v);
+          // コメント
+          }else if(classkey.startsWith("char_comment")){
+            var v =localStorage.getItem(key);
+            $("."+classkey).css("color",v);
+          }
+          break;
+
+        case "f":
+          // ジョブレベルフォント
+          classkey = key.slice(0,-2);
+          if(classkey == "job_icon_list_font_name"){
+            var v =localStorage.getItem(key);
+            $("[class^=job_level]").css("font-family",v);
+          }else{
+             // キャラ名フォント
+            var v =localStorage.getItem(key);
+            $("."+classkey).css("font-family",v);
+          }
+          break;
+        
+        case "s":
+          // キャラ名フォントサイズ
+          classkey = key.slice(0,-2);
+          var v =localStorage.getItem(key);
+          $("."+classkey).css("font-size",v);
+          break;
+
+        case "p":
+          // ジョブ選択
+          var data = localStorage.getItem(key).split(" ");
+          $(".select_main_job_name").text(data[1]);
+          $(".select_main_job_img_change").attr("src",data[2]);         
+          break;
+        
+        case "t":
+          // コメント
+          classkey = key.slice(0,-2);
+          var v =localStorage.getItem(key);
+          var v_split = v.split("<br>");
+          var v_split_n="";
+          for(var i=0;i<v_split.length;i++){
+            v_split_n += v_split[i]+"\n";
+          }
+          $("#char_comment").text(v_split_n);
+          $("."+classkey).html(v);
+          break;
+
+        case "e":
+          // ジョブレベル色
+          var nomal =localStorage.getItem("job_icon_list_color_e");
+          var cunst =localStorage.getItem("job_icon_list_color_const_e");
+          $('#job_icon_list_color').val(nomal);
+          $('#job_icon_list_color_const').val(cunst);
+          break;
 
         default :
           break;
@@ -198,12 +309,15 @@ stolageHuck(storage_object);
 
   // もとに戻す
   $("#default_setting").click(function(){
-    stolageHuck(default_setting);
-    // 左にマーク
-    $('input[name=position_radio]:eq(0)').prop('checked', true); 
-    // フリック不可付与
-    $(".position_radio_left").prop('disabled', true); 
-    $(".position_radio_right").prop('disabled', false);
+    localStorage.clear();
+    location.reload();
+    // stolageHuck(default_setting);
+    // triggers();
+    // // 左にマーク
+    // $('input[name=position_radio]:eq(0)').prop('checked', true); 
+    // // フリック不可付与
+    // $(".position_radio_left").prop('disabled', true); 
+    // $(".position_radio_right").prop('disabled', false);    
   });
 
 
@@ -213,14 +327,8 @@ stolageHuck(storage_object);
     $(".char_gender").css("color","rgb(56, 109, 255)");
   }
 
-  // カンストジョブのレベル色
-  // ジョブレベルの色
-  $('#job_icon_list_color').val("#000000");
-  $('#job_icon_list_color_const').val("#ff5722");
-
-  cunst= $('#job_icon_list_color_const').val();
-  nomal = $('#job_icon_list_color').val();
-
+  var nomal =localStorage.getItem("job_icon_list_color_e");
+  var cunst =localStorage.getItem("job_icon_list_color_const_e");
   job_color_change(nomal,cunst);
   function job_color_change(nomal,counst){
     if($('.job_level_gladiator').text()=='0'){$('.job_level_gladiator').text('－').css('color',nomal);}else if(Number($('.job_level_gladiator').text())<=9 && Number($('.job_level_gladiator').text())>0){$('.job_level_gladiator').css('left','+=5').css('color',nomal);}else if($('.job_level_paladin').text()=='80'){$('.job_level_paladin').css('color',counst);}else{$('.job_level_paladin,.job_level_gladiator').css('color',nomal);}
@@ -489,63 +597,74 @@ stolageHuck(storage_object);
     if($('input[name=char_name_radio]:eq(0)').prop('checked')){
        $('input[name=char_name_radio]:eq(0)').prop('checked', true);
        $(".char_name").css("font-family","'Alice', serif");
-      //  ストレージ保存
-      localStorage.setItem("char_name"+"_r",0);
+        // ストレージ保存
+       localStorage.setItem("char_name"+"_d",0);
 
     }else if($('input[name=char_name_radio]:eq(1)').prop('checked')){
       $('input[name=char_name_radio]:eq(1)').prop('checked', true);
       $(".char_name").css("font-family","'Bungee Inline', cursive");
-
+      localStorage.setItem("char_name"+"_d",1);
 
     }else if($('input[name=char_name_radio]:eq(2)').prop('checked')){
       $('input[name=char_name_radio]:eq(2)').prop('checked', true);
       $(".char_name").css("font-family","'Elsie Swash Caps', cursive");
+      localStorage.setItem("char_name"+"_d",2);
 
     }else if($('input[name=char_name_radio]:eq(3)').prop('checked')){
       $('input[name=char_name_radio]:eq(3)').prop('checked', true);
       $(".char_name").css("font-family","'IM Fell English', serif");
+      localStorage.setItem("char_name"+"_d",3);
 
     }else if($('input[name=char_name_radio]:eq(4)').prop('checked')){
       $('input[name=char_name_radio]:eq(4)').prop('checked', true);
       $(".char_name").css("font-family","'Kalam', cursive");
+      localStorage.setItem("char_name"+"_d",4);
 
     }else if($('input[name=char_name_radio]:eq(5)').prop('checked')){
       $('input[name=char_name_radio]:eq(5)').prop('checked', true);
       $(".char_name").css("font-family","'Leckerli One', cursive");
+      localStorage.setItem("char_name"+"_d",5);
 
     }else if($('input[name=char_name_radio]:eq(6)').prop('checked')){
       $('input[name=char_name_radio]:eq(6)').prop('checked', true);
       $(".char_name").css("font-family","'Metamorphous', cursive");
+      localStorage.setItem("char_name"+"_d",6);
 
     }else if($('input[name=char_name_radio]:eq(7)').prop('checked')){
       $('input[name=char_name_radio]:eq(7)').prop('checked', true);
       $(".char_name").css("font-family","'Noto Sans JP', sans-serif");
+      localStorage.setItem("char_name"+"_d",7);
 
     }else if($('input[name=char_name_radio]:eq(8)').prop('checked')){
       $('input[name=char_name_radio]:eq(8)').prop('checked', true);
       $(".char_name").css("font-family","'Nunito', sans-serif");
+      localStorage.setItem("char_name"+"_d",8);
 
     }else if($('input[name=char_name_radio]:eq(9)').prop('checked')){
       $('input[name=char_name_radio]:eq(9)').prop('checked', true);
       $(".char_name").css("font-family","'Righteous', cursive");
+      localStorage.setItem("char_name"+"_d",9);
 
     }else if($('input[name=char_name_radio]:eq(10)').prop('checked')){
       $('input[name=char_name_radio]:eq(10)').prop('checked', true);
       $(".char_name").css("font-family","'Rock Salt', cursive");
+      localStorage.setItem("char_name"+"_d",10);
 
     }else if($('input[name=char_name_radio]:eq(11)').prop('checked')){
       $('input[name=char_name_radio]:eq(11)').prop('checked', true);
       $(".char_name").css("font-family","'Sacramento', cursive");
+      localStorage.setItem("char_name"+"_d",11);
 
     }else if($('input[name=char_name_radio]:eq(12)').prop('checked')){
       $('input[name=char_name_radio]:eq(12)').prop('checked', true);
       $(".char_name").css("font-family","'Sorts Mill Goudy', serif");
+      localStorage.setItem("char_name"+"_d",12);
 
     }
 
     // ストレージ保存
     var v = $(".char_name").css("font-family");
-    localStorage.setItem("char_name"+"_r",v);
+    localStorage.setItem("char_name"+"_f",v);
     
   });
 
@@ -655,6 +774,24 @@ stolageHuck(storage_object);
     return rgb;
    }
 
+  // rgba split
+  function rgbaSplit(rgba){
+    var num = rgba.split("(")[1].split(")")[0];
+    num = num.split(",");
+    return num;
+  }
+
+  // RGB2Color
+  function RGB2Color(r,g,b)
+  {
+  return '#' + byte2Hex(r) + byte2Hex(g) + byte2Hex(b);
+  }
+  
+  function byte2Hex (n)
+  {
+  var nybHexString = "0123456789ABCDEF";
+  return String(nybHexString.substr((n >> 4) & 0x0F,1)) + nybHexString.substr(n & 0x0F,1);
+  }
 
 //キャラ情
 // メインジョブ
@@ -717,9 +854,11 @@ $('li[class^="select_job_"]').click(function(){
   $(".char_main_name").text(job_name);
   $(".select_main_job_img_change").attr("src",'img/jobicon/01/'+name+'.png');
   $(".char_main_job_icon_img").attr("src",'img/jobicon/mainjob/'+name+'.png');
+  
+  var url = $(".select_main_job_img_change").attr("src");
 
   // ストレージの保存
-  localStorage.setItem("select_main_job"+"_p", name); 
+  localStorage.setItem("select_main_job"+"_p", name+" "+job_name+" "+url); 
 
 });
 
@@ -820,7 +959,7 @@ $(".char_info_font_toname").click(function(){
   
   // ストレージ保存  
   var v = $(".char_name").css("font-family");  
-  localStorage.setItem("char_name"+"_r",v);
+  localStorage.setItem("char_name"+"_f",v);
 
 });
 
@@ -1052,17 +1191,20 @@ $(".button_rigth").click(function(){
 });
 // 大きさ
 $(".button_minus").click(function(){
-  $("[class^=job_level_]").css("font-size","-=1px");
-  var key = $(this).attr('class').split(" ")[0];
-  var v =Number(localStorage.getItem(key+"_n")) - 1;
-  localStorage.setItem(key+"_n", v);
+  if(localStorage.getItem("button_minus_n")>-6){
+    $("[class^=job_level_]").css("font-size","-=1px");
+    var key = $(this).attr('class').split(" ")[0];
+    var v =Number(localStorage.getItem(key+"_n")) - 1;
+    localStorage.setItem(key+"_n", v);
+  }
 });
 $(".button_puls").click(function(){
   $("[class^=job_level_]").css("font-size","+=1px");
   var key = "button_minus";
   var v =Number(localStorage.getItem(key+"_n")) + 1;
-  localStorage.setItem(key+"_n", v);
+  localStorage.setItem(key+"_n", v); 
 });
+
 // 行間
 $(".button_line_minus").click(function(){
   $("[class^=job_icon_img_]:eq(0)").css("top","+=1px");  
@@ -1164,8 +1306,8 @@ $('#job_icon_list_color').on('change', function(e){
   job_color_change(nomal,cunst);
   // ストレージ保存
   var key = "job_icon_list_color";
-  localStorage.setItem(key+"_const_b", cunst);
-  localStorage.setItem(key+"_b", nomal);  
+  localStorage.setItem(key+"_const_e", cunst);
+  localStorage.setItem(key+"_e", nomal);  
 });
 
 $('#job_icon_list_color_const').on('change', function(e){
@@ -1177,8 +1319,8 @@ $('#job_icon_list_color_const').on('change', function(e){
   nomal = $('#job_icon_list_color').val();
   job_color_change(nomal,cunst);
   var key = "job_icon_list_color";
-  localStorage.setItem(key+"_const_b", cunst);
-  localStorage.setItem(key+"_b", nomal);  
+  localStorage.setItem(key+"_const_e", cunst);
+  localStorage.setItem(key+"_e", nomal);  
 });
 
 
@@ -1278,8 +1420,8 @@ $(".reflect_layout").click(function(){
     /*　OKの時の処理 */
     var layout = $(this).attr("name");
     object = JSON.parse(localStorage.getItem(layout));
-    stolageHuck(object)
-    console.log(object["char_name_x"]);
+    stolageHuck(object);
+    triggers();
     $(this).next().text("反映しました");
   }
 
@@ -1324,7 +1466,12 @@ for(var i=1 ; i<=15 ;i++ ){
   }
 }
 
-// データ表示
+
+
+// トリガー実行
+triggers();
+function triggers(){
+  // データ表示
 // データの配列
 var targets = ["main_job_bg","server_bg","race_bg","freecompany_bg","favorite_bg","comment_bg","job_bg","copy_white_bg","copy_black_bg",];
 
@@ -1340,7 +1487,106 @@ targets.forEach(function(target){
   }
 });
 
+// メインジョブ選択
+var data = localStorage.getItem("select_main_job_p").split(" ");
+$('li[class^=select_job_][name='+data[0]+']').trigger('click');
 
+// ジョブレベル色変更
+var nomal =localStorage.getItem("job_icon_list_color_e");
+var cunst =localStorage.getItem("job_icon_list_color_const_e");
+job_color_change(nomal,cunst);
+
+// 背景透明度バー
+var v =localStorage.getItem("white_cambas_b");
+var v_split = rgbaSplit(v);
+var v_parse = v_split[3]*100+"%";
+if(v_parse == "NaN%"){
+  v_parse = "100%";
+}
+$("#transparent_value2_white").children('span').css("left",v_parse);
+$("#transparent_value_white").text(Math.floor(v_parse.slice(0,-1)));
+
+// キャラ名大きさバー
+var v =localStorage.getItem("char_name_s");
+v = v.slice(0,-2);
+v_parse = Math.round(v/140*100)+"%";
+$("#wkSlider2").children('span').css("left",v_parse);
+$("#wkValue").text(Math.floor(v_parse.slice(0,-1))*2);
+
+// キャラ名透明度バー
+var v =localStorage.getItem("char_name_b");
+var v_split = rgbaSplit(v);
+var v_parse = v_split[3]*100+"%";
+if(v_parse == "NaN%"){
+  v_parse = "100%";
+}
+$("#transparent_value2").children('span').css("left",v_parse);
+$("#transparent_value").text(Math.floor(v_parse.slice(0,-1)));
+
+// 微調整
+var button_up =localStorage.getItem("button_up_n");
+var button_left =localStorage.getItem("button_left_n");
+var button_minus =localStorage.getItem("button_minus_n");
+var button_line_minus =localStorage.getItem("button_line_minus_n");
+
+// 位置
+if(button_up>0){
+  for(var i=0;i<button_up;i++){
+    $(".button_up").trigger('click');
+  }
+  localStorage.setItem("button_up_n",button_up);
+}else{
+  button_down =  button_up*(-1);
+  for(var i=0;i<button_down;i++){
+    $(".button_down").trigger('click');
+  }
+  localStorage.setItem("button_up_n",button_up);
+}
+// 位置
+if(button_left>0){
+  for(var i=0;i<button_left;i++){
+    $(".button_left").trigger('click');
+  }
+  localStorage.setItem("button_left_n",button_left);
+}else{
+  button_rigth =  button_left*(-1);
+  for(var i=0;i<button_rigth;i++){
+    $(".button_rigth").trigger('click');
+  }
+  localStorage.setItem("button_left_n",button_left);
+}
+
+// 大きさ
+if(button_minus>0){
+  for(var i=0;i<button_minus;i++){
+    $(".button_puls").trigger('click');
+  }
+  localStorage.setItem("button_minus_n",button_minus);
+}else{
+  localStorage.setItem("button_minus_n",0);
+  button_puls =  button_minus*(-1);
+  for(var i=0;i<button_puls;i++){
+    $(".button_minus").trigger('click');
+  }
+}
+
+// 行間
+if(button_line_minus>0){
+  for(var i=0;i<button_line_minus;i++){
+    $(".button_line_puls").trigger('click');
+  }
+  localStorage.setItem("button_line_minus_n",button_line_minus);
+}else{
+  button_line_puls =  button_line_minus*(-1);
+  for(var i=0;i<button_line_puls;i++){
+    $(".button_line_minus").trigger('click');
+  }
+  localStorage.setItem("button_line_minus_n",button_line_minus);
+}
+
+
+
+}
 
 
 
