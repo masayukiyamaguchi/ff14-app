@@ -1,3 +1,9 @@
+// ロード画面
+window.onload = function() {
+  const spinner = document.getElementById('load');
+  spinner.classList.add('loaded');
+}
+
 $(function() {
 
 // 初期値
@@ -324,7 +330,98 @@ stolageHuck(storage_object);
 
   // もとに戻す
   $("#default_setting").click(function(){
-    localStorage.clear();
+
+    if(!confirm('レイアウトを初期化します。\n編集中の内容は失われますがよろしいですか？')){
+      /* キャンセルの時の処理 */
+      return false;
+    }else{
+    /*　OKの時の処理 */
+    $("#load").removeClass("loaded");
+
+    // 保存したものも削除されるため1つ1つ削除する
+    // localStorage.clear();
+    localStorage.removeItem('copyright_span_white_x');
+    localStorage.removeItem('char_main_job_span_x');
+    localStorage.removeItem('freecompany_bg_c');
+    localStorage.removeItem('main_job_bg_c');
+    localStorage.removeItem('char_main_job_span_y');
+    localStorage.removeItem('job_bg_c');
+    localStorage.removeItem('text004_c');
+    localStorage.removeItem('char_favorite_b');
+    localStorage.removeItem('select_main_job_p');
+    localStorage.removeItem('favorite_bg_c');
+    localStorage.removeItem('server_bg_c');
+    localStorage.removeItem('char_name_s');
+    localStorage.removeItem('text006_c');
+    localStorage.removeItem('first_name_x');
+    localStorage.removeItem('char_comment_b');
+    localStorage.removeItem('text005_c');
+    localStorage.removeItem('char_comment_span_x');
+    localStorage.removeItem('char_freecompany_span_y');
+    localStorage.removeItem('text007_c');
+    localStorage.removeItem('button_line_minus_n');
+    localStorage.removeItem('text010_c');
+    localStorage.removeItem('text011_c');
+    localStorage.removeItem('char_name_b');
+    localStorage.removeItem('first_last_name_x');
+    localStorage.removeItem('copyright_span_white_y');
+    localStorage.removeItem('copyright_span_black_y');
+    localStorage.removeItem('race_bg_c');
+    localStorage.removeItem('button_left_n');
+    localStorage.removeItem('char_comment_name_b');
+    localStorage.removeItem('char_comment_span_y');
+    localStorage.removeItem('char_message_x');
+    localStorage.removeItem('text003_c');
+    localStorage.removeItem('text014_c');
+    localStorage.removeItem('first_last_name_y');
+    localStorage.removeItem('char_favorite_span_x');
+    localStorage.removeItem('char_race_span_x');
+    localStorage.removeItem('text001_c');
+    localStorage.removeItem('job_icon_list_color_const_e');
+    localStorage.removeItem('job_icon_list_font_name_f');
+    localStorage.removeItem('white_cambas_x');
+    localStorage.removeItem('comment_bg_c');
+    localStorage.removeItem('white_cambas_b');
+    localStorage.removeItem('job_icon_img_d');
+    localStorage.removeItem('char_job_icon_span_y');
+    localStorage.removeItem('char_freecompany_span_x');
+    localStorage.removeItem('text002_c');
+    localStorage.removeItem('char_server_span_x');
+    localStorage.removeItem('char_flame_div_d');
+    localStorage.removeItem('first_name_y');
+    localStorage.removeItem('char_name_f');
+    localStorage.removeItem('char_main_name_b');
+    localStorage.removeItem('char_info_c');
+    localStorage.removeItem('char_job_icon_span_x');
+    localStorage.removeItem('text015_c');
+    localStorage.removeItem('copy_black_bg_c');
+    localStorage.removeItem('char_name_d');
+    localStorage.removeItem('copyright_span_black_x');
+    localStorage.removeItem('position_radio_r');
+    localStorage.removeItem('char_name_c');
+    localStorage.removeItem('text009_c');
+    localStorage.removeItem('text008_c');
+    localStorage.removeItem('char_message_y');
+    localStorage.removeItem('copy_white_bg_c');
+    localStorage.removeItem('text013_c');
+    localStorage.removeItem('last_name_x');
+    localStorage.removeItem('char_favorite_name_b');
+    localStorage.removeItem('char_race_span_y');
+    localStorage.removeItem('last_name_y');
+    localStorage.removeItem('text012_c');
+    localStorage.removeItem('white_cambas_h');
+    localStorage.removeItem('char_info_b');
+    localStorage.removeItem('button_up_n');
+    localStorage.removeItem('button_minus_n');
+    localStorage.removeItem('white_cambas_y');
+    localStorage.removeItem('job_icon_list_color_e');
+    localStorage.removeItem('char_comment_text_t');
+    localStorage.removeItem('white_cambas_w');
+    localStorage.removeItem('char_flame_div_c');
+    localStorage.removeItem('char_info_d');
+    localStorage.removeItem('char_favorite_span_y');
+    localStorage.removeItem('char_server_span_y');
+
     location.reload();
     // stolageHuck(default_setting);
     // triggers();
@@ -333,6 +430,8 @@ stolageHuck(storage_object);
     // // フリック不可付与
     // $(".position_radio_left").prop('disabled', true); 
     // $(".position_radio_right").prop('disabled', false);    
+  }
+
   });
 
 
@@ -415,7 +514,9 @@ stolageHuck(storage_object);
 
   // 画像保存
   $("#camvas_button").click(function(){
-    font_fix();
+    var name_num = font_fix("fontfix_name");
+    var info_num = font_fix("fontfix_info");
+    var level_num = font_fix("fontfix_level");
     html2canvas(document.querySelector("#camvas"), {
     // 画像調整
     width: 960,
@@ -427,26 +528,103 @@ stolageHuck(storage_object);
     })
     })
 
-    font_retun();
+    font_retun("fontfix_name",name_num);
+    font_retun("fontfix_info",info_num);
+    font_retun("fontfix_level",level_num);
 
   });
 
-  // 画像調整
-  function font_fix(){
-    slide_char_name = font2slide(parseInt($(".fontfix").css("font-size")));
-    $(".fontfix").css("top","-="+slide_char_name+"px");
+
+  // 保存前の文字位置調整
+  function font_fix(fontfix){
+    slide_point = font2slide(parseInt($("."+fontfix).css("font-size")),$("."+fontfix).css("font-family"));
+    
+    // 調整値を入れてみたがだめだったｗ
+    if(fontfix == "fontfix_name"){
+    }else{
+      slide_point += 2;
+    }
+    
+    $("."+fontfix).css("top","-="+slide_point+"px");
+    return slide_point;
   }
 
-  function font_retun(){
-    $(".fontfix").css("top","+="+slide_char_name+"px");
+  function font_retun(fontfix,slide_point){
+    $("."+fontfix).css("top","+="+slide_point+"px");
   }
 
-  function font2slide(i){
-    return Math.round(i*0.1739);
+  function font2slide(i,f){
+    console.log(i);
+    console.log(f);
+    switch(f){
+      case 'Alice, serif':
+        return Math.round(i*0.035893754);
+
+      case '"Bungee Inline", cursive':
+        return Math.round(i*0.782483848);
+
+      case '"Elsie Swash Caps", cursive':
+        return Math.round(i*0.043072505);      
+
+      case '"IM Fell English", serif':
+        return Math.round(i*0.078966260);
+
+      case 'Kalam, cursive':
+        return Math.round(i*0.208183776);
+
+      case '"Leckerli One", cursive':
+        return Math.round(i*0.093323762);
+
+      case 'Metamorphous, cursive':
+        return Math.round(i*0.064608758);      
+
+      case '"Noto Sans JP", sans-serif':
+        return Math.round(i*0.165111271);
+
+      case 'Nunito, sans-serif':
+        return Math.round(i*0.100502513);
+
+      case 'Righteous, cursive':
+        return Math.round(i*0.064608758);
+
+      case '"Rock Salt", cursive':
+        return Math.round(i*0.545585068);
+
+      case 'Sacramento, cursive':
+        return Math.round(i*0.172290022);      
+
+      case '"Sorts Mill Goudy", serif':
+        return Math.round(i*0.150753769);
+
+      case '"Sawarabi Mincho", sans-serif':
+        return Math.round(i*0.165111271);
+
+      case '"Kosugi Maru", sans-serif':
+        return Math.round(i*0.000000000);
+
+      case '"Potta One", cursive':
+        return Math.round(i*0.172290022);
+
+      case '"Hachi Maru Pop", cursive':
+        return Math.round(i*0.165111271);
+
+      case '"Yusei Magic", sans-serif':
+        return Math.round(i*0.172290022);
+
+      case '"RocknRoll One", sans-serif':
+        return Math.round(i*0.172290022);
+
+      case '"Reggae One", cursive':
+        return Math.round(i*0.165111271);
+
+      case 'Stick, sans-serif':
+        return Math.round(i*0.172290022);
+
+      case 'DotGothic16, sans-serif':
+        return Math.round(i*0.172290022);
+      
+    }
   }
-
-
-
 
 
   // 基本
@@ -484,11 +662,10 @@ stolageHuck(storage_object);
       var last = key.slice(-1);
       if(last == "y"){
       }else if(key.startsWith("layout")){
-      }else if(key.startsWith("white_cambas")){
+      }else if(key.startsWith("white_cambas_x")){
         object[key] = Number(localStorage.getItem(key))+480;
       }else if(last == "x"){
         object[key] = Number(localStorage.getItem(key))+460;
-        console.log(localStorage.getItem(key));
       }else{
 
       }
@@ -503,7 +680,7 @@ stolageHuck(storage_object);
       var last = key.slice(-1);
       if(last == "y"){
       }else if(key.startsWith("layout")){
-      }else if(key.startsWith("white_cambas")){
+      }else if(key.startsWith("white_cambas_x")){
         object[key] =Number( localStorage.getItem(key))-480;
       }else if(last == "x"){
         object[key] =Number( localStorage.getItem(key))-460;
@@ -1092,7 +1269,7 @@ $("[class=favorite_contents]").change(function(){
     var img = $(this).next().attr('src');
     var key = name;
   if(favorite_check){
-    var favorite_html = '<span name="text'+name+'" class="char_info"><img src="'+img+'" alt="">'+text+'</span>'
+    var favorite_html = '<span name="text'+name+'" class="char_info fontfix_info"><img src="'+img+'" alt="">'+text+'</span>'
     // 要素追加
     $(".char_favorite_name").append(favorite_html);
     // ストレージ保存
@@ -1499,13 +1676,23 @@ $(".reflect_layout").click(function(){
     return false;
   }else{
     /*　OKの時の処理 */
+   // 　ストレージのレイアウトを読み込む
+    $("#load").removeClass("loaded");
     var layout = $(this).attr("name");
     object = JSON.parse(localStorage.getItem(layout));
-    stolageHuck(object);
-    triggers();
-    $(this).next().text("反映しました");
+    
+    if(object == null){
+      $(this).next().text("保存されているデータがありません");
+      $("#load").addClass("loaded");
+    }else{
+      // ストレージの内容にハック
+      stolageHuck(object);
+      // 念の為リロード
+      location.reload();
+      // triggers();
+      $(this).next().text("反映しました");
+    }
   }
-
 });
 
 // トリガー実行

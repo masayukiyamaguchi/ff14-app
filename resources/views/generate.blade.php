@@ -21,9 +21,18 @@
 
 </head>
 <body>
+<!-- ローディング画面 -->
+<div id="load">
+　<div>G</div>
+  <div>N</div>
+  <div>I</div>
+  <div>D</div>
+  <div>A</div>
+  <div>O</div>
+  <div>L</div>
+</div>
+
 <div id="dragArea">
-
-
 
 
 <!-- ヘッダー -->
@@ -58,41 +67,41 @@
 
         <!-- キャラ名 -->
         <div class="char_name_div">
-            <span class="first_last_name char_name dragg position first_last_name char_name_bg fontfix">{{$char_name}}</span>
-            <span class="first_name char_name dragg position display_none char_name_bg fontfix">{{$char_first_name}}</span>
-            <span class="last_name char_name dragg position display_none char_name_bg fontfix">{{$char_last_name}}</span>
+            <span class="first_last_name char_name dragg position first_last_name char_name_bg fontfix_name">{{$char_name}}</span>
+            <span class="first_name char_name dragg position display_none char_name_bg fontfix_name" >{{$char_first_name}}</span>
+            <span class="last_name char_name dragg position display_none char_name_bg fontfix_name" >{{$char_last_name}}</span>
         </div>
         <!-- メインジョブ -->
         <div class="char_main_job_span dragg position">
-            <span class="char_main_job char_info main_job_bg_h">メインジョブ</span>
+            <span class="char_main_job char_info main_job_bg_h fontfix_info">メインジョブ</span>
             <span class="char_main_job_icon"><img class="char_main_job_icon_img main_job_bg" src="img\jobicon\mainjob\paladin.png" alt=""></span>
-            <span class="char_main_name char_info main_job_bg">ナイト</span>
+            <span class="char_main_name char_info main_job_bg fontfix_info">ナイト</span>
         </div>
 
         <!-- サーバー -->
         <div class="char_server_span dragg position">
-            <span class="char_server char_info server_bg_h">サーバー</span>
-            <span class="char_server_name char_info server_bg">{{$char_server}}({{$char_world}})</span>
+            <span class="char_server char_info server_bg_h fontfix_info">サーバー</span>
+            <span class="char_server_name char_info server_bg fontfix_info">{{$char_server}}({{$char_world}})</span>
         </div>
 
         <!-- 種族 -->
         <div class="char_race_span dragg position">
-            <span class="char_race char_info race_bg_h">種族/性別</span>
-            <span class="char_race_name char_info race_bg">{{$char_race}}<span class="char_gender race_bg">{{$char_gender}}</span></span>
-            <span class="char_tribe_name char_info race_bg">({{$char_tribe}})</span>
+            <span class="char_race char_info race_bg_h fontfix_info">種族/性別</span>
+            <span class="char_race_name char_info race_bg fontfix_info">{{$char_race}}<span class="char_gender race_bg fontfix_info">{{$char_gender}}</span></span>
+            <span class="char_tribe_name char_info race_bg fontfix_info">({{$char_tribe}})</span>
         </div>
 
         <!-- フリーカンパニー -->
         <div class="char_freecompany_span dragg position">
-            <span class="char_freecompany char_info freecompany_bg_h">フリーカンパニー</span>
-            <span class="char_freecompany_name char_info freecompany_bg">{{$char_freecompany}}</span>
+            <span class="char_freecompany char_info freecompany_bg_h fontfix_info">フリーカンパニー</span>
+            <span class="char_freecompany_name char_info freecompany_bg fontfix_info">{{$char_freecompany}}</span>
         </div>
 
 
         <!-- 好きなこと --> 
         <div class="char_favorite_span dragg position">       
         <div class="char_favorite_div">
-            <span class="char_favorite char_info favorite_bg_h">お気に入りコンテンツ</span>
+            <span class="char_favorite char_info favorite_bg_h fontfix_info">お気に入りコンテンツ</span>
             <span class="char_favorite_name favorite_bg">
                 <span name=text001 class="char_info"><img src="img\faveriteicon\faverite001.png" alt="">レベリング・</span>
                 <span name=text015 class="char_info"><img src="img\faveriteicon\faverite015.png" alt="">メインストーリー・</span>
@@ -104,8 +113,8 @@
         <!-- コメント -->
         <div class="char_comment_span dragg position"> 
         <div class="char_comment_div">
-            <span class="char_comment char_info comment_bg_h">コメント</span>
-            <span class="char_comment_name comment_bg char_info">
+            <span class="char_comment char_info comment_bg_h fontfix_info">コメント</span>
+            <span class="char_comment_name comment_bg char_info fontfix_info">
                 <span class="char_comment_text">まったり楽しんでます(*´∀｀)<br>よろしくおねがいします！<br></span>
             </span>
         </div>
@@ -120,7 +129,7 @@
             @endforeach
 
             @foreach($job_levels as $job_level)
-                <span class="job_level_{{$job_level['icn']}} job_bg fontfix">{{$job_level['level']}}</span>            
+                <span class="job_level_{{$job_level['icn']}} job_bg fontfix_level">{{$job_level['level']}}</span>            
             @endforeach
         </div>
         </div>
