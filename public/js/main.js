@@ -6,6 +6,19 @@ window.onload = function() {
 
 $(function() {
 
+// トップページ
+/* aタグをサブミット */
+
+$('.btn-shine').click( function(){
+  var action = $( this ).attr("href");
+  $('#formInput').attr({"action":action}).submit();
+  $("#load").removeClass("loaded");
+});
+
+   
+
+
+
 // 初期値
 var default_setting = {
   'char_comment_span_x':'28',
@@ -90,6 +103,13 @@ var default_setting = {
   'char_flame_div_c':'0',
   'char_flame_div_d':'4',
 }
+
+// テンプレート初期値設定
+localStorage.setItem("layout91", JSON.stringify({"copyright_span_white_x":"3","char_main_job_span_x":"28","freecompany_bg_c":"1","main_job_bg_c":"1","char_main_job_span_y":"1","job_bg_c":"1","text004_c":"0","char_favorite_b":"rgb(0, 0, 0)","select_main_job_p":"paladin ナイト img/jobicon/01/paladin.png","favorite_bg_c":"1","server_bg_c":"1","char_name_s":"35.7px","text006_c":"0","first_name_x":"36","char_comment_b":"rgb(0, 0, 0)","text005_c":"0","char_comment_span_x":"28","char_freecompany_span_y":"-12","text007_c":"0","button_line_minus_n":"0","text010_c":"0","text011_c":"0","char_name_b":"rgba(0, 0, 0)","first_last_name_x":"36","copyright_span_white_y":"527","copyright_span_black_y":"527","race_bg_c":"1","button_left_n":"0","char_comment_name_b":"rgb(0, 0, 0)","char_comment_span_y":"50","char_message_x":"495","text003_c":"0","text014_c":"0","first_last_name_y":"18","char_favorite_span_x":"26","char_race_span_x":"26","text001_c":"1","job_icon_list_color_const_e":"#ff5722","job_icon_list_font_name_f":"\"Noto Sans JP\", sans-serif","white_cambas_x":"-1","comment_bg_c":"1","white_cambas_b":"rgba(255, 255, 255, 0.59)","job_icon_img_d":"0","char_job_icon_span_y":"16","char_freecompany_span_x":"-12","text002_c":"1","char_server_span_x":"-14","char_flame_div_d":"4","first_name_y":"18","char_name_f":"\"Noto Sans JP\", sans-serif","char_main_name_b":"rgb(0, 0, 0)","char_info_c":"0","char_job_icon_span_x":"28","text015_c":"1","copy_black_bg_c":"0","char_name_d":"7","copyright_span_black_x":"3","position_radio_r":"0","char_name_c":"0","text009_c":"0","text008_c":"0","char_message_y":"171","copy_white_bg_c":"0","text013_c":"0","last_name_x":"182","char_favorite_name_b":"rgb(0, 0, 0)","char_race_span_y":"-11","last_name_y":"18","text012_c":"0","white_cambas_h":"540","char_info_b":"rgb(0, 0, 0)","button_up_n":"0","button_minus_n":"0","white_cambas_y":"-547","job_icon_list_color_e":"#000000","char_comment_text_t":"まったり楽しんでます(*´∀｀)<br>よろしくおねがします！<br>","white_cambas_w":"481","char_flame_div_c":"0","char_info_d":"0","char_favorite_span_y":"-28","char_server_span_y":"0"}));
+localStorage.setItem("layout92", JSON.stringify({"copyright_span_white_x":"3","char_main_job_span_x":"28","freecompany_bg_c":"1","main_job_bg_c":"1","char_main_job_span_y":"1","job_bg_c":"1","text004_c":"0","char_favorite_b":"rgb(255, 255, 255)","select_main_job_p":"paladin ナイト img/jobicon/01/paladin.png","favorite_bg_c":"1","server_bg_c":"1","char_name_s":"35.7px","text006_c":"0","first_name_x":"36","char_comment_b":"rgb(255, 255, 255)","text005_c":"0","char_comment_span_x":"28","char_freecompany_span_y":"-12","text007_c":"0","button_line_minus_n":"0","text010_c":"0","text011_c":"0","char_name_b":"rgb(255, 255, 255)","first_last_name_x":"36","copyright_span_white_y":"527","copyright_span_black_y":"527","race_bg_c":"1","button_left_n":"-1","char_comment_name_b":"rgb(255, 255, 255)","char_comment_span_y":"50","char_message_x":"495","text003_c":"0","text014_c":"0","first_last_name_y":"18","char_favorite_span_x":"26","char_race_span_x":"26","text001_c":"1","job_icon_list_color_const_e":"#ff5722","job_icon_list_font_name_f":"\"Noto Sans JP\", sans-serif","white_cambas_x":"-1","comment_bg_c":"1","white_cambas_b":"rgba(0, 0, 0, 0.59)","job_icon_img_d":"0","char_job_icon_span_y":"16","char_freecompany_span_x":"-12","text002_c":"1","char_server_span_x":"-14","char_flame_div_d":"4","first_name_y":"18","char_name_f":"\"Noto Sans JP\", sans-serif","char_main_name_b":"rgb(255, 255, 255)","char_info_c":"0","char_job_icon_span_x":"28","text015_c":"1","copy_black_bg_c":"0","char_name_d":"7","copyright_span_black_x":"3","position_radio_r":"0","char_name_c":"0","text009_c":"0","text008_c":"0","char_message_y":"171","copy_white_bg_c":"0","text013_c":"0","last_name_x":"182","char_favorite_name_b":"rgb(255, 255, 255)","char_race_span_y":"-11","last_name_y":"18","text012_c":"0","white_cambas_h":"540","char_info_b":"rgb(255, 255, 255)","button_up_n":"0","button_minus_n":"0","white_cambas_y":"-547","job_icon_list_color_e":"#ffebee","char_comment_text_t":"まったり楽しんでます(*´∀｀)<br>よろしくおねがします！<br>","white_cambas_w":"481","char_flame_div_c":"0","char_info_d":"0","char_favorite_span_y":"-28","char_server_span_y":"0"}));
+localStorage.setItem("layout93", JSON.stringify({"copyright_span_white_x":"3","char_main_job_span_x":"28","freecompany_bg_c":"1","main_job_bg_c":"1","char_main_job_span_y":"1","job_bg_c":"1","text004_c":"0","char_favorite_b":"rgb(136, 14, 79)","select_main_job_p":"paladin ナイト img/jobicon/01/paladin.png","favorite_bg_c":"1","server_bg_c":"1","char_name_s":"35.7px","text006_c":"0","first_name_x":"36","char_comment_b":"rgb(136, 14, 79)","text005_c":"0","char_comment_span_x":"28","char_freecompany_span_y":"-12","text007_c":"0","button_line_minus_n":"0","text010_c":"0","text011_c":"0","char_name_b":"rgb(233, 30, 99)","first_last_name_x":"35","copyright_span_white_y":"527","copyright_span_black_y":"527","race_bg_c":"1","button_left_n":"3","char_comment_name_b":"rgb(236, 64, 122)","char_comment_span_y":"50","char_message_x":"495","text003_c":"0","text014_c":"0","first_last_name_y":"12","char_favorite_span_x":"26","char_race_span_x":"26","text001_c":"1","job_icon_list_color_const_e":"#e91e63","job_icon_list_font_name_f":"\"Hachi Maru Pop\", cursive","white_cambas_x":"-1","comment_bg_c":"1","white_cambas_b":"rgba(248, 187, 208, 0.85)","job_icon_img_d":"2","char_job_icon_span_y":"16","char_freecompany_span_x":"-12","text002_c":"1","char_server_span_x":"-14","char_flame_div_d":"4","first_name_y":"18","char_name_f":"\"Hachi Maru Pop\", cursive","char_main_name_b":"rgb(236, 64, 122)","char_info_c":"1","char_job_icon_span_x":"28","text015_c":"1","copy_black_bg_c":"0","char_name_d":"9","copyright_span_black_x":"3","position_radio_r":"0","char_name_c":"0","text009_c":"0","text008_c":"0","char_message_y":"171","copy_white_bg_c":"0","text013_c":"0","last_name_x":"182","char_favorite_name_b":"rgb(236, 64, 122)","char_race_span_y":"-11","last_name_y":"18","text012_c":"0","white_cambas_h":"540","char_info_b":"rgb(136, 14, 79)","button_up_n":"0","button_minus_n":"0","white_cambas_y":"-547","job_icon_list_color_e":"#ffffff","char_comment_text_t":"まったり楽しんでます(*´∀｀)<br>よろしくおねがします！<br>","white_cambas_w":"481","char_flame_div_c":"0","char_info_d":"4","char_favorite_span_y":"-28","char_server_span_y":"0"}));
+localStorage.setItem("layout94", JSON.stringify({"copyright_span_white_x":"3","char_main_job_span_x":"28","freecompany_bg_c":"1","main_job_bg_c":"1","char_main_job_span_y":"1","job_bg_c":"1","text004_c":"0","char_favorite_b":"rgb(1, 87, 155)","select_main_job_p":"paladin ナイト img/jobicon/01/paladin.png","favorite_bg_c":"1","server_bg_c":"1","char_name_s":"35.7px","text006_c":"0","first_name_x":"36","char_comment_b":"rgb(1, 87, 155)","text005_c":"0","char_comment_span_x":"28","char_freecompany_span_y":"-12","text007_c":"0","button_line_minus_n":"0","text010_c":"0","text011_c":"0","char_name_b":"rgb(13, 71, 161)","first_last_name_x":"37","copyright_span_white_y":"527","copyright_span_black_y":"527","race_bg_c":"1","button_left_n":"3","char_comment_name_b":"rgb(2, 136, 209)","char_comment_span_y":"50","char_message_x":"495","text003_c":"0","text014_c":"0","first_last_name_y":"24","char_favorite_span_x":"26","char_race_span_x":"26","text001_c":"1","job_icon_list_color_const_e":"#03a9f4","job_icon_list_font_name_f":"\"Hachi Maru Pop\", cursive","white_cambas_x":"-1","comment_bg_c":"1","white_cambas_b":"rgba(187, 222, 251, 0.85)","job_icon_img_d":"1","char_job_icon_span_y":"16","char_freecompany_span_x":"-12","text002_c":"1","char_server_span_x":"-14","char_flame_div_d":"3","first_name_y":"18","char_name_f":"Righteous, cursive","char_main_name_b":"rgb(2, 136, 209)","char_info_c":"1","char_job_icon_span_x":"28","text015_c":"1","copy_black_bg_c":"0","char_name_d":"9","copyright_span_black_x":"3","position_radio_r":"0","char_name_c":"0","text009_c":"0","text008_c":"0","char_message_y":"171","copy_white_bg_c":"0","text013_c":"0","last_name_x":"182","char_favorite_name_b":"rgb(2, 136, 209)","char_race_span_y":"-11","last_name_y":"18","text012_c":"0","white_cambas_h":"540","char_info_b":"rgb(13, 71, 161)","button_up_n":"0","button_minus_n":"0","white_cambas_y":"-547","job_icon_list_color_e":"#000000","char_comment_text_t":"まったり楽しんでます(*´∀｀)<br>よろしくおねがします！<br>","white_cambas_w":"481","char_flame_div_c":"0","char_info_d":"6","char_favorite_span_y":"-28","char_server_span_y":"0"}));
+localStorage.setItem("layout95", JSON.stringify({"copyright_span_white_x":"3","char_main_job_span_x":"460","freecompany_bg_c":"0","main_job_bg_c":"1","char_main_job_span_y":"210","job_bg_c":"1","text004_c":"0","char_favorite_b":"rgb(255, 255, 255)","select_main_job_p":"paladin ナイト img/jobicon/01/paladin.png","favorite_bg_c":"1","server_bg_c":"1","char_name_s":"70.7px","text006_c":"0","first_name_x":"465","char_comment_b":"rgb(255, 255, 255)","text005_c":"0","char_comment_span_x":"47","char_freecompany_span_y":"-19","text007_c":"0","button_line_minus_n":"-7","text010_c":"0","text011_c":"0","char_name_b":"rgb(213, 0, 249)","first_last_name_x":"37","copyright_span_white_y":"527","copyright_span_black_y":"527","race_bg_c":"1","button_left_n":"3","char_comment_name_b":"rgb(255, 255, 255)","char_comment_span_y":"-83","char_message_x":"495","text003_c":"0","text014_c":"0","first_last_name_y":"24","char_favorite_span_x":"43","char_race_span_x":"713","text001_c":"1","job_icon_list_color_const_e":"#03a9f4","job_icon_list_font_name_f":"\"Reggae One\", cursive","white_cambas_x":"42","comment_bg_c":"1","white_cambas_b":"rgba(103, 58, 183, 0.41)","job_icon_img_d":"2","char_job_icon_span_y":"26","char_freecompany_span_x":"-167","text002_c":"1","char_server_span_x":"444","char_flame_div_d":"2","first_name_y":"277","char_name_f":"\"Rock Salt\", cursive","char_main_name_b":"rgb(255, 111, 0)","char_info_c":"1","char_job_icon_span_x":"38","text015_c":"1","copy_black_bg_c":"0","char_name_d":"10","copyright_span_black_x":"3","position_radio_r":"0","char_name_c":"1","text009_c":"0","text008_c":"0","char_message_y":"171","copy_white_bg_c":"0","text013_c":"0","last_name_x":"590","char_favorite_name_b":"rgb(255, 248, 225)","char_race_span_y":"-105","last_name_y":"373","text012_c":"0","white_cambas_h":"195","char_info_b":"rgb(191, 54, 12)","button_up_n":"12","button_minus_n":"5","white_cambas_y":"-501","job_icon_list_color_e":"#bf360c","char_comment_text_t":"まったり楽しんでます(*´∀｀)<br>よろしくおねがします！<br>","white_cambas_w":"353","char_flame_div_c":"0","char_info_d":"7","char_favorite_span_y":"-172","char_server_span_y":"217"}));
 
   // ストレージの内容を読み込み
   var storage_object = loadStorage();
@@ -313,6 +333,10 @@ stolageHuck(storage_object);
       }
 
     });
+
+    // テンプレートの初期化と代入
+
+
   }
 
   // データの内容にストレージを上書き
@@ -445,35 +469,35 @@ stolageHuck(storage_object);
   var cunst =localStorage.getItem("job_icon_list_color_const_e");
   job_color_change(nomal,cunst);
   function job_color_change(nomal,counst){
-    if($('.job_level_gladiator').text()=='0'){$('.job_level_gladiator').text('－').css('color',nomal);}else if(Number($('.job_level_gladiator').text())<=9 && Number($('.job_level_gladiator').text())>0){$('.job_level_gladiator').css('left','+=5').css('color',nomal);}else if($('.job_level_paladin').text()=='80'){$('.job_level_paladin').css('color',counst);}else{$('.job_level_paladin,.job_level_gladiator').css('color',nomal);}
-    if($('.job_level_marauder').text()=='0'){$('.job_level_marauder').text('－').css('color',nomal);}else if(Number($('.job_level_marauder').text())<=9 && Number($('.job_level_marauder').text())>0){$('.job_level_marauder').css('left','+=5').css('color',nomal);}else if($('.job_level_warrior').text()=='80'){$('.job_level_warrior').css('color',counst);}else{$('.job_level_warrior,.job_level_marauder').css('color',nomal);}
-    if($('.job_level_darkknight').text()=='0'){$('.job_level_darkknight').text('－').css('color',nomal);}else if(Number($('.job_level_darkknight').text())<=9 && Number($('.job_level_darkknight').text())>0){$('.job_level_darkknight').css('left','+=5').css('color',nomal);}else if($('.job_level_darkknight').text()=='80'){$('.job_level_darkknight').css('color',counst);}else{$('.job_level_darkknight,.job_level_darkknight').css('color',nomal);}
-    if($('.job_level_gunbreaker').text()=='0'){$('.job_level_gunbreaker').text('－').css('color',nomal);}else if(Number($('.job_level_gunbreaker').text())<=9 && Number($('.job_level_gunbreaker').text())>0){$('.job_level_gunbreaker').css('left','+=5').css('color',nomal);}else if($('.job_level_gunbreaker').text()=='80'){$('.job_level_gunbreaker').css('color',counst);}else{$('.job_level_gunbreaker,.job_level_gunbreaker').css('color',nomal);}
-    if($('.job_level_pugilist').text()=='0'){$('.job_level_pugilist').text('－').css('color',nomal);}else if(Number($('.job_level_pugilist').text())<=9 && Number($('.job_level_pugilist').text())>0){$('.job_level_pugilist').css('left','+=5').css('color',nomal);}else if($('.job_level_monk').text()=='80'){$('.job_level_monk').css('color',counst);}else{$('.job_level_monk,.job_level_pugilist').css('color',nomal);}
-    if($('.job_level_lancer').text()=='0'){$('.job_level_lancer').text('－').css('color',nomal);}else if(Number($('.job_level_lancer').text())<=9 && Number($('.job_level_lancer').text())>0){$('.job_level_lancer').css('left','+=5').css('color',nomal);}else if($('.job_level_dragoon').text()=='80'){$('.job_level_dragoon').css('color',counst);}else{$('.job_level_dragoon,.job_level_lancer').css('color',nomal);}
-    if($('.job_level_rogue').text()=='0'){$('.job_level_rogue').text('－').css('color',nomal);}else if(Number($('.job_level_rogue').text())<=9 && Number($('.job_level_rogue').text())>0){$('.job_level_rogue').css('left','+=5').css('color',nomal);}else if($('.job_level_ninja').text()=='80'){$('.job_level_ninja').css('color',counst);}else{$('.job_level_ninja,.job_level_rogue').css('color',nomal);}
-    if($('.job_level_samurai').text()=='0'){$('.job_level_samurai').text('－').css('color',nomal);}else if(Number($('.job_level_samurai').text())<=9 && Number($('.job_level_samurai').text())>0){$('.job_level_samurai').css('left','+=5').css('color',nomal);}else if($('.job_level_samurai').text()=='80'){$('.job_level_samurai').css('color',counst);}else{$('.job_level_samurai,.job_level_samurai').css('color',nomal);}
-    if($('.job_level_conjurer').text()=='0'){$('.job_level_conjurer').text('－').css('color',nomal);}else if(Number($('.job_level_conjurer').text())<=9 && Number($('.job_level_conjurer').text())>0){$('.job_level_conjurer').css('left','+=5').css('color',nomal);}else if($('.job_level_whitemage').text()=='80'){$('.job_level_whitemage').css('color',counst);}else{$('.job_level_whitemage,.job_level_conjurer').css('color',nomal);}
-    if($('.job_level_scholar').text()=='0'){$('.job_level_scholar').text('－').css('color',nomal);}else if(Number($('.job_level_scholar').text())<=9 && Number($('.job_level_scholar').text())>0){$('.job_level_scholar').css('left','+=5').css('color',nomal);}else if($('.job_level_scholar').text()=='80'){$('.job_level_scholar').css('color',counst);}else{$('.job_level_scholar,.job_level_scholar').css('color',nomal);}
-    if($('.job_level_astrologian').text()=='0'){$('.job_level_astrologian').text('－').css('color',nomal);}else if(Number($('.job_level_astrologian').text())<=9 && Number($('.job_level_astrologian').text())>0){$('.job_level_astrologian').css('left','+=5').css('color',nomal);}else if($('.job_level_astrologian').text()=='80'){$('.job_level_astrologian').css('color',counst);}else{$('.job_level_astrologian,.job_level_astrologian').css('color',nomal);}
-    if($('.job_level_archer').text()=='0'){$('.job_level_archer').text('－').css('color',nomal);}else if(Number($('.job_level_archer').text())<=9 && Number($('.job_level_archer').text())>0){$('.job_level_archer').css('left','+=5').css('color',nomal);}else if($('.job_level_bard').text()=='80'){$('.job_level_bard').css('color',counst);}else{$('.job_level_bard,.job_level_archer').css('color',nomal);}
-    if($('.job_level_machinist').text()=='0'){$('.job_level_machinist').text('－').css('color',nomal);}else if(Number($('.job_level_machinist').text())<=9 && Number($('.job_level_machinist').text())>0){$('.job_level_machinist').css('left','+=5').css('color',nomal);}else if($('.job_level_machinist').text()=='80'){$('.job_level_machinist').css('color',counst);}else{$('.job_level_machinist,.job_level_machinist').css('color',nomal);}
-    if($('.job_level_dancer').text()=='0'){$('.job_level_dancer').text('－').css('color',nomal);}else if(Number($('.job_level_dancer').text())<=9 && Number($('.job_level_dancer').text())>0){$('.job_level_dancer').css('left','+=5').css('color',nomal);}else if($('.job_level_dancer').text()=='80'){$('.job_level_dancer').css('color',counst);}else{$('.job_level_dancer,.job_level_dancer').css('color',nomal);}
-    if($('.job_level_thaumaturge').text()=='0'){$('.job_level_thaumaturge').text('－').css('color',nomal);}else if(Number($('.job_level_thaumaturge').text())<=9 && Number($('.job_level_thaumaturge').text())>0){$('.job_level_thaumaturge').css('left','+=5').css('color',nomal);}else if($('.job_level_blackmage').text()=='80'){$('.job_level_blackmage').css('color',counst);}else{$('.job_level_blackmage,.job_level_thaumaturge').css('color',nomal);}
-    if($('.job_level_arcanist').text()=='0'){$('.job_level_arcanist').text('－').css('color',nomal);}else if(Number($('.job_level_arcanist').text())<=9 && Number($('.job_level_arcanist').text())>0){$('.job_level_arcanist').css('left','+=5').css('color',nomal);}else if($('.job_level_summoner').text()=='80'){$('.job_level_summoner').css('color',counst);}else{$('.job_level_summoner,.job_level_arcanist').css('color',nomal);}
-    if($('.job_level_redmage').text()=='0'){$('.job_level_redmage').text('－').css('color',nomal);}else if(Number($('.job_level_redmage').text())<=9 && Number($('.job_level_redmage').text())>0){$('.job_level_redmage').css('left','+=5').css('color',nomal);}else if($('.job_level_redmage').text()=='80'){$('.job_level_redmage').css('color',counst);}else{$('.job_level_redmage,.job_level_redmage').css('color',nomal);}
-    if($('.job_level_bluemage').text()=='0'){$('.job_level_bluemage').text('－').css('color',nomal);}else if(Number($('.job_level_bluemage').text())<=9 && Number($('.job_level_bluemage').text())>0){$('.job_level_bluemage').css('left','+=5').css('color',nomal);}else if($('.job_level_bluemage').text()=='70'){$('.job_level_bluemage').css('color',counst);}else{$('.job_level_bluemage,.job_level_bluemage').css('color',nomal);}
-    if($('.job_level_carpenter').text()=='0'){$('.job_level_carpenter').text('－').css('color',nomal);}else if(Number($('.job_level_carpenter').text())<=9 && Number($('.job_level_carpenter').text())>0){$('.job_level_carpenter').css('left','+=5').css('color',nomal);}else if($('.job_level_carpenter').text()=='80'){$('.job_level_carpenter').css('color',counst);}else{$('.job_level_carpenter,.job_level_carpenter').css('color',nomal);}
-    if($('.job_level_blacksmith').text()=='0'){$('.job_level_blacksmith').text('－').css('color',nomal);}else if(Number($('.job_level_blacksmith').text())<=9 && Number($('.job_level_blacksmith').text())>0){$('.job_level_blacksmith').css('left','+=5').css('color',nomal);}else if($('.job_level_blacksmith').text()=='80'){$('.job_level_blacksmith').css('color',counst);}else{$('.job_level_blacksmith,.job_level_blacksmith').css('color',nomal);}
-    if($('.job_level_armorer').text()=='0'){$('.job_level_armorer').text('－').css('color',nomal);}else if(Number($('.job_level_armorer').text())<=9 && Number($('.job_level_armorer').text())>0){$('.job_level_armorer').css('left','+=5').css('color',nomal);}else if($('.job_level_armorer').text()=='80'){$('.job_level_armorer').css('color',counst);}else{$('.job_level_armorer,.job_level_armorer').css('color',nomal);}
-    if($('.job_level_goldsmith').text()=='0'){$('.job_level_goldsmith').text('－').css('color',nomal);}else if(Number($('.job_level_goldsmith').text())<=9 && Number($('.job_level_goldsmith').text())>0){$('.job_level_goldsmith').css('left','+=5').css('color',nomal);}else if($('.job_level_goldsmith').text()=='80'){$('.job_level_goldsmith').css('color',counst);}else{$('.job_level_goldsmith,.job_level_goldsmith').css('color',nomal);}
-    if($('.job_level_leatherworker').text()=='0'){$('.job_level_leatherworker').text('－').css('color',nomal);}else if(Number($('.job_level_leatherworker').text())<=9 && Number($('.job_level_leatherworker').text())>0){$('.job_level_leatherworker').css('left','+=5').css('color',nomal);}else if($('.job_level_leatherworker').text()=='80'){$('.job_level_leatherworker').css('color',counst);}else{$('.job_level_leatherworker,.job_level_leatherworker').css('color',nomal);}
-    if($('.job_level_weaver').text()=='0'){$('.job_level_weaver').text('－').css('color',nomal);}else if(Number($('.job_level_weaver').text())<=9 && Number($('.job_level_weaver').text())>0){$('.job_level_weaver').css('left','+=5').css('color',nomal);}else if($('.job_level_weaver').text()=='80'){$('.job_level_weaver').css('color',counst);}else{$('.job_level_weaver,.job_level_weaver').css('color',nomal);}
-    if($('.job_level_alchemist').text()=='0'){$('.job_level_alchemist').text('－').css('color',nomal);}else if(Number($('.job_level_alchemist').text())<=9 && Number($('.job_level_alchemist').text())>0){$('.job_level_alchemist').css('left','+=5').css('color',nomal);}else if($('.job_level_alchemist').text()=='80'){$('.job_level_alchemist').css('color',counst);}else{$('.job_level_alchemist,.job_level_alchemist').css('color',nomal);}
-    if($('.job_level_culinarian').text()=='0'){$('.job_level_culinarian').text('－').css('color',nomal);}else if(Number($('.job_level_culinarian').text())<=9 && Number($('.job_level_culinarian').text())>0){$('.job_level_culinarian').css('left','+=5').css('color',nomal);}else if($('.job_level_culinarian').text()=='80'){$('.job_level_culinarian').css('color',counst);}else{$('.job_level_culinarian,.job_level_culinarian').css('color',nomal);}
-    if($('.job_level_miner').text()=='0'){$('.job_level_miner').text('－').css('color',nomal);}else if(Number($('.job_level_miner').text())<=9 && Number($('.job_level_miner').text())>0){$('.job_level_miner').css('left','+=5').css('color',nomal);}else if($('.job_level_miner').text()=='80'){$('.job_level_miner').css('color',counst);}else{$('.job_level_miner,.job_level_miner').css('color',nomal);}
-    if($('.job_level_botanist').text()=='0'){$('.job_level_botanist').text('－').css('color',nomal);}else if(Number($('.job_level_botanist').text())<=9 && Number($('.job_level_botanist').text())>0){$('.job_level_botanist').css('left','+=5').css('color',nomal);}else if($('.job_level_botanist').text()=='80'){$('.job_level_botanist').css('color',counst);}else{$('.job_level_botanist,.job_level_botanist').css('color',nomal);}
-    if($('.job_level_fisher').text()=='0'){$('.job_level_fisher').text('－').css('color',nomal);}else if(Number($('.job_level_fisher').text())<=9 && Number($('.job_level_fisher').text())>0){$('.job_level_fisher').css('left','+=5').css('color',nomal);}else if($('.job_level_fisher').text()=='80'){$('.job_level_fisher').css('color',counst);}else{$('.job_level_fisher,.job_level_fisher').css('color',nomal);}
+    if($('.job_level_gladiator').text()=='0'){$('.job_level_gladiator').text('－').css('color',nomal);}else if(Number($('.job_level_gladiator').text())<=9 && Number($('.job_level_gladiator').text())>0){$('.job_level_gladiator').css('left','+=2').css('color',nomal);}else if($('.job_level_paladin').text()=='80'){$('.job_level_paladin').css('color',counst);}else{$('.job_level_paladin,.job_level_gladiator').css('color',nomal);}
+    if($('.job_level_marauder').text()=='0'){$('.job_level_marauder').text('－').css('color',nomal);}else if(Number($('.job_level_marauder').text())<=9 && Number($('.job_level_marauder').text())>0){$('.job_level_marauder').css('left','+=2').css('color',nomal);}else if($('.job_level_warrior').text()=='80'){$('.job_level_warrior').css('color',counst);}else{$('.job_level_warrior,.job_level_marauder').css('color',nomal);}
+    if($('.job_level_darkknight').text()=='0'){$('.job_level_darkknight').text('－').css('color',nomal);}else if(Number($('.job_level_darkknight').text())<=9 && Number($('.job_level_darkknight').text())>0){$('.job_level_darkknight').css('left','+=2').css('color',nomal);}else if($('.job_level_darkknight').text()=='80'){$('.job_level_darkknight').css('color',counst);}else{$('.job_level_darkknight,.job_level_darkknight').css('color',nomal);}
+    if($('.job_level_gunbreaker').text()=='0'){$('.job_level_gunbreaker').text('－').css('color',nomal);}else if(Number($('.job_level_gunbreaker').text())<=9 && Number($('.job_level_gunbreaker').text())>0){$('.job_level_gunbreaker').css('left','+=2').css('color',nomal);}else if($('.job_level_gunbreaker').text()=='80'){$('.job_level_gunbreaker').css('color',counst);}else{$('.job_level_gunbreaker,.job_level_gunbreaker').css('color',nomal);}
+    if($('.job_level_pugilist').text()=='0'){$('.job_level_pugilist').text('－').css('color',nomal);}else if(Number($('.job_level_pugilist').text())<=9 && Number($('.job_level_pugilist').text())>0){$('.job_level_pugilist').css('left','+=2').css('color',nomal);}else if($('.job_level_monk').text()=='80'){$('.job_level_monk').css('color',counst);}else{$('.job_level_monk,.job_level_pugilist').css('color',nomal);}
+    if($('.job_level_lancer').text()=='0'){$('.job_level_lancer').text('－').css('color',nomal);}else if(Number($('.job_level_lancer').text())<=9 && Number($('.job_level_lancer').text())>0){$('.job_level_lancer').css('left','+=2').css('color',nomal);}else if($('.job_level_dragoon').text()=='80'){$('.job_level_dragoon').css('color',counst);}else{$('.job_level_dragoon,.job_level_lancer').css('color',nomal);}
+    if($('.job_level_rogue').text()=='0'){$('.job_level_rogue').text('－').css('color',nomal);}else if(Number($('.job_level_rogue').text())<=9 && Number($('.job_level_rogue').text())>0){$('.job_level_rogue').css('left','+=2').css('color',nomal);}else if($('.job_level_ninja').text()=='80'){$('.job_level_ninja').css('color',counst);}else{$('.job_level_ninja,.job_level_rogue').css('color',nomal);}
+    if($('.job_level_samurai').text()=='0'){$('.job_level_samurai').text('－').css('color',nomal);}else if(Number($('.job_level_samurai').text())<=9 && Number($('.job_level_samurai').text())>0){$('.job_level_samurai').css('left','+=2').css('color',nomal);}else if($('.job_level_samurai').text()=='80'){$('.job_level_samurai').css('color',counst);}else{$('.job_level_samurai,.job_level_samurai').css('color',nomal);}
+    if($('.job_level_conjurer').text()=='0'){$('.job_level_conjurer').text('－').css('color',nomal);}else if(Number($('.job_level_conjurer').text())<=9 && Number($('.job_level_conjurer').text())>0){$('.job_level_conjurer').css('left','+=2').css('color',nomal);}else if($('.job_level_whitemage').text()=='80'){$('.job_level_whitemage').css('color',counst);}else{$('.job_level_whitemage,.job_level_conjurer').css('color',nomal);}
+    if($('.job_level_scholar').text()=='0'){$('.job_level_scholar').text('－').css('color',nomal);}else if(Number($('.job_level_scholar').text())<=9 && Number($('.job_level_scholar').text())>0){$('.job_level_scholar').css('left','+=2').css('color',nomal);}else if($('.job_level_scholar').text()=='80'){$('.job_level_scholar').css('color',counst);}else{$('.job_level_scholar,.job_level_scholar').css('color',nomal);}
+    if($('.job_level_astrologian').text()=='0'){$('.job_level_astrologian').text('－').css('color',nomal);}else if(Number($('.job_level_astrologian').text())<=9 && Number($('.job_level_astrologian').text())>0){$('.job_level_astrologian').css('left','+=2').css('color',nomal);}else if($('.job_level_astrologian').text()=='80'){$('.job_level_astrologian').css('color',counst);}else{$('.job_level_astrologian,.job_level_astrologian').css('color',nomal);}
+    if($('.job_level_archer').text()=='0'){$('.job_level_archer').text('－').css('color',nomal);}else if(Number($('.job_level_archer').text())<=9 && Number($('.job_level_archer').text())>0){$('.job_level_archer').css('left','+=2').css('color',nomal);}else if($('.job_level_bard').text()=='80'){$('.job_level_bard').css('color',counst);}else{$('.job_level_bard,.job_level_archer').css('color',nomal);}
+    if($('.job_level_machinist').text()=='0'){$('.job_level_machinist').text('－').css('color',nomal);}else if(Number($('.job_level_machinist').text())<=9 && Number($('.job_level_machinist').text())>0){$('.job_level_machinist').css('left','+=2').css('color',nomal);}else if($('.job_level_machinist').text()=='80'){$('.job_level_machinist').css('color',counst);}else{$('.job_level_machinist,.job_level_machinist').css('color',nomal);}
+    if($('.job_level_dancer').text()=='0'){$('.job_level_dancer').text('－').css('color',nomal);}else if(Number($('.job_level_dancer').text())<=9 && Number($('.job_level_dancer').text())>0){$('.job_level_dancer').css('left','+=2').css('color',nomal);}else if($('.job_level_dancer').text()=='80'){$('.job_level_dancer').css('color',counst);}else{$('.job_level_dancer,.job_level_dancer').css('color',nomal);}
+    if($('.job_level_thaumaturge').text()=='0'){$('.job_level_thaumaturge').text('－').css('color',nomal);}else if(Number($('.job_level_thaumaturge').text())<=9 && Number($('.job_level_thaumaturge').text())>0){$('.job_level_thaumaturge').css('left','+=2').css('color',nomal);}else if($('.job_level_blackmage').text()=='80'){$('.job_level_blackmage').css('color',counst);}else{$('.job_level_blackmage,.job_level_thaumaturge').css('color',nomal);}
+    if($('.job_level_arcanist').text()=='0'){$('.job_level_arcanist').text('－').css('color',nomal);}else if(Number($('.job_level_arcanist').text())<=9 && Number($('.job_level_arcanist').text())>0){$('.job_level_arcanist').css('left','+=2').css('color',nomal);}else if($('.job_level_summoner').text()=='80'){$('.job_level_summoner').css('color',counst);}else{$('.job_level_summoner,.job_level_arcanist').css('color',nomal);}
+    if($('.job_level_redmage').text()=='0'){$('.job_level_redmage').text('－').css('color',nomal);}else if(Number($('.job_level_redmage').text())<=9 && Number($('.job_level_redmage').text())>0){$('.job_level_redmage').css('left','+=2').css('color',nomal);}else if($('.job_level_redmage').text()=='80'){$('.job_level_redmage').css('color',counst);}else{$('.job_level_redmage,.job_level_redmage').css('color',nomal);}
+    if($('.job_level_bluemage').text()=='0'){$('.job_level_bluemage').text('－').css('color',nomal);}else if(Number($('.job_level_bluemage').text())<=9 && Number($('.job_level_bluemage').text())>0){$('.job_level_bluemage').css('left','+=2').css('color',nomal);}else if($('.job_level_bluemage').text()=='70'){$('.job_level_bluemage').css('color',counst);}else{$('.job_level_bluemage,.job_level_bluemage').css('color',nomal);}
+    if($('.job_level_carpenter').text()=='0'){$('.job_level_carpenter').text('－').css('color',nomal);}else if(Number($('.job_level_carpenter').text())<=9 && Number($('.job_level_carpenter').text())>0){$('.job_level_carpenter').css('left','+=2').css('color',nomal);}else if($('.job_level_carpenter').text()=='80'){$('.job_level_carpenter').css('color',counst);}else{$('.job_level_carpenter,.job_level_carpenter').css('color',nomal);}
+    if($('.job_level_blacksmith').text()=='0'){$('.job_level_blacksmith').text('－').css('color',nomal);}else if(Number($('.job_level_blacksmith').text())<=9 && Number($('.job_level_blacksmith').text())>0){$('.job_level_blacksmith').css('left','+=2').css('color',nomal);}else if($('.job_level_blacksmith').text()=='80'){$('.job_level_blacksmith').css('color',counst);}else{$('.job_level_blacksmith,.job_level_blacksmith').css('color',nomal);}
+    if($('.job_level_armorer').text()=='0'){$('.job_level_armorer').text('－').css('color',nomal);}else if(Number($('.job_level_armorer').text())<=9 && Number($('.job_level_armorer').text())>0){$('.job_level_armorer').css('left','+=2').css('color',nomal);}else if($('.job_level_armorer').text()=='80'){$('.job_level_armorer').css('color',counst);}else{$('.job_level_armorer,.job_level_armorer').css('color',nomal);}
+    if($('.job_level_goldsmith').text()=='0'){$('.job_level_goldsmith').text('－').css('color',nomal);}else if(Number($('.job_level_goldsmith').text())<=9 && Number($('.job_level_goldsmith').text())>0){$('.job_level_goldsmith').css('left','+=2').css('color',nomal);}else if($('.job_level_goldsmith').text()=='80'){$('.job_level_goldsmith').css('color',counst);}else{$('.job_level_goldsmith,.job_level_goldsmith').css('color',nomal);}
+    if($('.job_level_leatherworker').text()=='0'){$('.job_level_leatherworker').text('－').css('color',nomal);}else if(Number($('.job_level_leatherworker').text())<=9 && Number($('.job_level_leatherworker').text())>0){$('.job_level_leatherworker').css('left','+=2').css('color',nomal);}else if($('.job_level_leatherworker').text()=='80'){$('.job_level_leatherworker').css('color',counst);}else{$('.job_level_leatherworker,.job_level_leatherworker').css('color',nomal);}
+    if($('.job_level_weaver').text()=='0'){$('.job_level_weaver').text('－').css('color',nomal);}else if(Number($('.job_level_weaver').text())<=9 && Number($('.job_level_weaver').text())>0){$('.job_level_weaver').css('left','+=2').css('color',nomal);}else if($('.job_level_weaver').text()=='80'){$('.job_level_weaver').css('color',counst);}else{$('.job_level_weaver,.job_level_weaver').css('color',nomal);}
+    if($('.job_level_alchemist').text()=='0'){$('.job_level_alchemist').text('－').css('color',nomal);}else if(Number($('.job_level_alchemist').text())<=9 && Number($('.job_level_alchemist').text())>0){$('.job_level_alchemist').css('left','+=2').css('color',nomal);}else if($('.job_level_alchemist').text()=='80'){$('.job_level_alchemist').css('color',counst);}else{$('.job_level_alchemist,.job_level_alchemist').css('color',nomal);}
+    if($('.job_level_culinarian').text()=='0'){$('.job_level_culinarian').text('－').css('color',nomal);}else if(Number($('.job_level_culinarian').text())<=9 && Number($('.job_level_culinarian').text())>0){$('.job_level_culinarian').css('left','+=2').css('color',nomal);}else if($('.job_level_culinarian').text()=='80'){$('.job_level_culinarian').css('color',counst);}else{$('.job_level_culinarian,.job_level_culinarian').css('color',nomal);}
+    if($('.job_level_miner').text()=='0'){$('.job_level_miner').text('－').css('color',nomal);}else if(Number($('.job_level_miner').text())<=9 && Number($('.job_level_miner').text())>0){$('.job_level_miner').css('left','+=2').css('color',nomal);}else if($('.job_level_miner').text()=='80'){$('.job_level_miner').css('color',counst);}else{$('.job_level_miner,.job_level_miner').css('color',nomal);}
+    if($('.job_level_botanist').text()=='0'){$('.job_level_botanist').text('－').css('color',nomal);}else if(Number($('.job_level_botanist').text())<=9 && Number($('.job_level_botanist').text())>0){$('.job_level_botanist').css('left','+=2').css('color',nomal);}else if($('.job_level_botanist').text()=='80'){$('.job_level_botanist').css('color',counst);}else{$('.job_level_botanist,.job_level_botanist').css('color',nomal);}
+    if($('.job_level_fisher').text()=='0'){$('.job_level_fisher').text('－').css('color',nomal);}else if(Number($('.job_level_fisher').text())<=9 && Number($('.job_level_fisher').text())>0){$('.job_level_fisher').css('left','+=2').css('color',nomal);}else if($('.job_level_fisher').text()=='80'){$('.job_level_fisher').css('color',counst);}else{$('.job_level_fisher,.job_level_fisher').css('color',nomal);}
   }
 
   // 初期値にチェックを入れておく
@@ -514,10 +538,15 @@ stolageHuck(storage_object);
 
   // 画像保存
   $("#camvas_button").click(function(){
+    // ロード画面出す
+    $("#load").removeClass("loaded");
+
+    // テキスト調整
     var name_num = font_fix("fontfix_name");
     var info_num = font_fix("fontfix_info");
     var level_num = font_fix("fontfix_level");
     html2canvas(document.querySelector("#camvas"), {
+    
     // 画像調整
     width: 960,
     height: 540
@@ -525,26 +554,29 @@ stolageHuck(storage_object);
       canvas.toBlob(blob => {
         $("#download").attr("download", `${document.title}.png`).attr("href", window.URL.createObjectURL(blob));
         $('a#download')[0].click();
-    })
-    })
+    });
+    });
 
     font_retun("fontfix_name",name_num);
     font_retun("fontfix_info",info_num);
     font_retun("fontfix_level",level_num);
 
+    // ロード画面消す
+    $("#load").delay(5000).queue(function(){
+      $(this).addClass("loaded").dequeue();
+    });
+    
+    
   });
+
+
 
 
   // 保存前の文字位置調整
   function font_fix(fontfix){
-    slide_point = font2slide(parseInt($("."+fontfix).css("font-size")),$("."+fontfix).css("font-family"));
-    
-    // 調整値を入れてみたがだめだったｗ
-    if(fontfix == "fontfix_name"){
-    }else{
-      slide_point += 2;
-    }
-    
+    slide_point = font2slide(parseInt($("."+fontfix).css("font-size")),$("."+fontfix).css("font-family"),fontfix);
+    // なんか文字が移動しなくなったので入れる
+    slide_point = 0.0;
     $("."+fontfix).css("top","-="+slide_point+"px");
     return slide_point;
   }
@@ -553,75 +585,204 @@ stolageHuck(storage_object);
     $("."+fontfix).css("top","+="+slide_point+"px");
   }
 
-  function font2slide(i,f){
-    console.log(i);
-    console.log(f);
+  function font2slide(i,f,fontfix){
     switch(f){
       case 'Alice, serif':
-        return Math.round(i*0.035893754);
+        num = Math.round(i*0.035893754);
+        // 調整値
+        if(fontfix == "fontfix_level"){
+          num -= 0;
+        }
+        return num;
 
       case '"Bungee Inline", cursive':
-        return Math.round(i*0.782483848);
+        num = Math.round(i*0.782483848);
+        // 調整値
+        if(fontfix == "fontfix_level"){
+          num -= 13;
+        }
+        return num;
 
       case '"Elsie Swash Caps", cursive':
-        return Math.round(i*0.043072505);      
+        num = Math.round(i*0.043072505);
+        // 調整値
+        if(fontfix == "fontfix_level"){
+          num -= 0;
+        }
+        return num;
 
       case '"IM Fell English", serif':
-        return Math.round(i*0.078966260);
+        num = Math.round(i*0.078966260);
+        // 調整値
+        if(fontfix == "fontfix_level"){
+          num -= 1;
+        }
+        return num;
 
       case 'Kalam, cursive':
-        return Math.round(i*0.208183776);
+        num = Math.round(i*0.208183776);
+        // 調整値
+        if(fontfix == "fontfix_level"){
+          num -= 4;
+        }
+        return num;
 
       case '"Leckerli One", cursive':
-        return Math.round(i*0.093323762);
+        num = Math.round(i*0.093323762);
+        // 調整値
+        if(fontfix == "fontfix_level"){
+          num -= 1;
+        }
+        return num;
 
       case 'Metamorphous, cursive':
-        return Math.round(i*0.064608758);      
+        num = Math.round(i*0.064608758);
+        // 調整値
+        if(fontfix == "fontfix_level"){
+          num -= 0;
+        }
+        return num;      
 
       case '"Noto Sans JP", sans-serif':
-        return Math.round(i*0.165111271);
+        num = Math.round(i*0.165111271);
+        // 調整値
+        if(fontfix == "fontfix_level"){
+          num -= 2;
+        }else if(fontfix == "fontfix_info"){
+          num -= 1;
+        }
+        return num;  
 
       case 'Nunito, sans-serif':
-        return Math.round(i*0.100502513);
+        num = Math.round(i*0.100502513);
+        // 調整値
+        if(fontfix == "fontfix_level"){
+          num -= 1;
+        }
+        return num;  
 
       case 'Righteous, cursive':
-        return Math.round(i*0.064608758);
+        num = Math.round(i*0.064608758);
+        // 調整値
+        if(fontfix == "fontfix_level"){
+          num -= 0;
+        }
+        return num;  
 
       case '"Rock Salt", cursive':
-        return Math.round(i*0.545585068);
+        console.log("kitayo");
+        num = Math.round(i*0.545585068);
+        // 調整値
+        if(fontfix == "fontfix_level"){
+          num -= 7;
+        }
+        return num; 
 
       case 'Sacramento, cursive':
-        return Math.round(i*0.172290022);      
+        num = Math.round(i*0.172290022);
+        // 調整値
+        if(fontfix == "fontfix_level"){
+          num -= 2;
+        }
+        return num;       
 
       case '"Sorts Mill Goudy", serif':
-        return Math.round(i*0.150753769);
+        num = Math.round(i*0.150753769);
+        // 調整値
+        if(fontfix == "fontfix_level"){
+          num -= 2;
+        }
+        return num;
 
       case '"Sawarabi Mincho", sans-serif':
-        return Math.round(i*0.165111271);
+        num = Math.round(i*0.165111271);
+        // 調整値
+        if(fontfix == "fontfix_level"){
+          num -= 2;
+        }else if(fontfix == "fontfix_info"){
+          num -= 1;
+        }
+        return num; 
 
       case '"Kosugi Maru", sans-serif':
-        return Math.round(i*0.000000000);
+        num = Math.round(i*0.000000000);
+        // 調整値
+        if(fontfix == "fontfix_level"){
+          num -= -1;
+        }else if(fontfix == "fontfix_info"){
+          num -= -1;
+        }
+        return num; 
 
       case '"Potta One", cursive':
-        return Math.round(i*0.172290022);
+        num = Math.round(i*0.172290022);
+        // 調整値
+        if(fontfix == "fontfix_level"){
+          num -= 3;
+        }else if(fontfix == "fontfix_info"){
+          num -= 1;
+        }
+        return num; 
 
       case '"Hachi Maru Pop", cursive':
-        return Math.round(i*0.165111271);
+        num = Math.round(i*0.165111271);
+        // 調整値
+        if(fontfix == "fontfix_level"){
+          num -= 2;
+        }else if(fontfix == "fontfix_info"){
+          num -= 1;
+        }
+        return num; 
 
       case '"Yusei Magic", sans-serif':
-        return Math.round(i*0.172290022);
+        num = Math.round(i*0.172290022);
+        // 調整値
+        if(fontfix == "fontfix_level"){
+          num -= 2;
+        }else if(fontfix == "fontfix_info"){
+          num -= 1;
+        }
+        return num; 
 
       case '"RocknRoll One", sans-serif':
-        return Math.round(i*0.172290022);
+        num = Math.round(i*0.172290022);
+        // 調整値
+        if(fontfix == "fontfix_level"){
+          num -= 2;
+        }else if(fontfix == "fontfix_info"){
+          num -= 1;
+        }
+        return num; 
 
       case '"Reggae One", cursive':
-        return Math.round(i*0.165111271);
+        num = Math.round(i*0.165111271);
+        // 調整値
+        if(fontfix == "fontfix_level"){
+          num -= 2;
+        }else if(fontfix == "fontfix_info"){
+          num -= 1;
+        }
+        return num; 
 
       case 'Stick, sans-serif':
-        return Math.round(i*0.172290022);
+        num = Math.round(i*0.172290022);
+        // 調整値
+        if(fontfix == "fontfix_level"){
+          num -= 2;
+        }else if(fontfix == "fontfix_info"){
+          num -= 1;
+        }
+        return num; 
 
       case 'DotGothic16, sans-serif':
-        return Math.round(i*0.172290022);
+        num = Math.round(i*0.172290022);
+        // 調整値
+        if(fontfix == "fontfix_level"){
+          num -= 2;
+        }else if(fontfix == "fontfix_info"){
+          num -= 1;
+        }
+        return num; 
       
     }
   }
@@ -1655,11 +1816,12 @@ $("[class=mhover_bg_text]").hover(
 
 // 現在のレイアウトをストレージへ保存
 $(".save_layout").click(function(){
-  if(!confirm('現在のレイアウトを保存します。\n上書きされますがよろしいですか？')){
+  var layout_text = $(this).val();
+  if(!confirm('現在のレイアウトを保存します。\n'+layout_text+'の内容は上書きされますがよろしいですか？')){
     /* キャンセルの時の処理 */
     return false;
   }else{
-    /*　OKの時の処理 */
+    /* OKの時の処理 */
     var layout = $(this).attr("name");
     object = JSON.stringify(loadStorage());
     localStorage.removeItem(layout);
@@ -1671,7 +1833,8 @@ $(".save_layout").click(function(){
 
 // 保存してあるレイアウトを反映
 $(".reflect_layout").click(function(){
-  if(!confirm('レイアウトを反映させます。\n編集中の内容は失われますがよろしいですか？')){
+  var layout_text = $(this).attr("lavel");
+  if(!confirm(layout_text+'を反映させます。\n編集中の内容は失われますがよろしいですか？')){
     /* キャンセルの時の処理 */
     return false;
   }else{
@@ -1690,7 +1853,7 @@ $(".reflect_layout").click(function(){
       // 念の為リロード
       location.reload();
       // triggers();
-      $(this).next().text("反映しました");
+      $(this).next().text("反映中・・・");
     }
   }
 });
@@ -1701,10 +1864,6 @@ function triggers(){
 
 // 各種トリガー実行
 // $('li[class^=select_job_][name="warrior"]').trigger('click');
-
-// 情報フォント
-var v = localStorage.getItem("char_info_d");  
-$('[name=char_info_radio]:eq('+v+')').trigger('click');
 
 // ジョブアイコン
 var v = localStorage.getItem("job_icon_img_d");  
@@ -1738,7 +1897,12 @@ for(var i=1 ; i<=15 ;i++ ){
   }
 }
 
-  // データ表示
+// 情報フォント
+var v = localStorage.getItem("char_info_d");  
+$('[name=char_info_radio]:eq('+v+')').trigger('click');
+
+
+// データ表示
 // データの配列
 var targets = ["main_job_bg","server_bg","race_bg","freecompany_bg","favorite_bg","comment_bg","job_bg","copy_white_bg","copy_black_bg",];
 

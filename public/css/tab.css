@@ -14,11 +14,13 @@
 .new-widget{
 	margin: 0px;
 	border: 1px solid #ddd;
-  border-top: 0;
-	background-color: #fff;
+  	border-top: 0;
+	background-color: rgb(44, 44, 44);
 	/*padding: 7px;*/
 	width: 100%;
 	clear: both;
+	height:680px ;
+	color: white;
 }
 .new-widget ul{
 	/* display: none; */

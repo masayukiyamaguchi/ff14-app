@@ -98,11 +98,11 @@
 
 @keyframes move {
   0% {
-    left:0;
+    right:0;
     opacity:0;
   }
   35% {
-    left: 41%; 
+    right: 41%; 
     -moz-transform:rotate(0deg);
     -webkit-transform:rotate(0deg);
     -o-transform:rotate(0deg);
@@ -110,7 +110,7 @@
     opacity:1;
   }
   65% {
-    left:59%; 
+    right:59%; 
     -moz-transform:rotate(0deg); 
     -webkit-transform:rotate(0deg); 
     -o-transform:rotate(0deg);
@@ -118,7 +118,7 @@
     opacity:1;
   }
   100% {
-    left:100%; 
+    right:100%; 
     -moz-transform:rotate(-180deg); 
     -webkit-transform:rotate(-180deg); 
     -o-transform:rotate(-180deg); 
@@ -129,23 +129,23 @@
 
 @-moz-keyframes move {
   0% {
-    left:0; 
+    right:0; 
     opacity:0;
   }
   35% {
-    left:41%; 
+    right:41%; 
     -moz-transform:rotate(0deg); 
     transform:rotate(0deg);
     opacity:1;
   }
   65% {
-    left:59%; 
+    right:59%; 
     -moz-transform:rotate(0deg); 
     transform:rotate(0deg);
     opacity:1;
   }
   100% {
-    left:100%; 
+    right:100%; 
     -moz-transform:rotate(-180deg); 
     transform:rotate(-180deg);
     opacity:0;
@@ -154,23 +154,23 @@
 
 @-webkit-keyframes move {
   0% {
-    left:0; 
+    right:0; 
     opacity:0;
   }
   35% {
-    left:41%; 
+    right:41%; 
     -webkit-transform:rotate(0deg); 
     transform:rotate(0deg); 
     opacity:1;
   }
   65% {
-    left:59%; 
+    right:59%; 
     -webkit-transform:rotate(0deg); 
     transform:rotate(0deg); 
     opacity:1;
   }
   100% {
-    left:100%;
+    right:100%;
     -webkit-transform:rotate(-180deg); 
     transform:rotate(-180deg); 
     opacity:0;
@@ -179,39 +179,55 @@
 
 @-o-keyframes move {
   0% {
-    left:0; 
+    right:0; 
     opacity:0;
   }
   35% {
-    left:41%; 
+    right:41%; 
     -o-transform:rotate(0deg); 
     transform:rotate(0deg); 
     opacity:1;
   }
   65% {
-    left:59%; 
+    right:59%; 
     -o-transform:rotate(0deg); 
     transform:rotate(0deg); 
     opacity:1;
   }
   100% {
-    left:100%; 
+    right:100%; 
     -o-transform:rotate(-180deg); 
     transform:rotate(-180deg); 
     opacity:0;
   }
 }
 
-
-
+body{
+    margin: 0px;
+    background-color: rgb(56, 56, 56);
+}
 .header_div{
-    background-size:  cover;  
-    background-image:url("/img/header_bg.png");
+    width: 100%;
+    height: 380px;
+}
+.header_div_generate{
+    width: 100%;
+    height: 190px;
+}
+
+.header_generate{
+    width: 100%;    
 }
 
 .main_div{
     margin-top: 20px;
-    height: 1000px;
+    height: 450px;
+    width: 100%;
+    overflow: hidden;
+    color: white;
+}
+.main_generate_div{
+    height: 750px;
     width: 100%;
     overflow: hidden;
 }
@@ -220,6 +236,71 @@
     float: left;
     width: 380px;    /* floatに、width 指定は必須です。*/
 }
+
+
+.input_data_div {
+    border-radius: 5px;
+    padding: 20px 20px;
+    box-shadow: 3px 3px 3px rgb(0 0 0 / 40%);
+    margin-top: 30px;
+    background-image: linear-gradient(to bottom,#5C5B5C 0,#2B2B2B 31%);
+
+}
+
+
+.help_icon_img{
+    width: 20px;
+}
+
+.index_icon_img{
+    width: 25px;
+}
+
+.input_data_div_div{
+    padding-left: 200px;
+}
+
+.input_data_table{
+    display: table;
+}
+.input_data_table td,th{
+    padding-top: 20px;
+}
+
+.error_text{
+    color: red;
+    padding-left: 50px;
+}
+
+.top_right_menu{
+    padding-left: 50px;
+    padding-top: 20px;
+}
+
+.top_right_menu_help{
+    padding-left: 20px;
+}
+
+.ss_size{
+    padding-left: 20px;
+    color: rgb(101,110,255);
+}
+
+.top_right_menu{
+    margin-top: 20px;
+}
+.how_to_use img{
+	margin-right:10px;
+	vertical-align: middle;
+}
+.how_to_use span{
+	vertical-align: middle;
+}
+.how_to_use_text{
+    font-size: 40px;
+    margin-left: -10px;
+}
+
 
 .contents{
     float: left;
@@ -245,31 +326,42 @@
     font-family: 'Noto Sans JP', sans-serif;
 }
 
-.generate_button_div{
-    margin-left: 150px;
-    margin-top: 20px;
-}
-
-.generate_button{
-    font-size: 18px;
+/* ジェネレートボタン */
+ /* ここから下がボタンのCSS　*/
+  .btn-shine {
+    color: #FFF;
     display: inline-block;
-    background: #ffffff;
-    color: #cc99ff;
-    width: 80px;
-    height: 80px;
-    border: double 4px #cc99ff;
-    border-radius: 50%;
-    text-align: center;
-    overflow: hidden;
-    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 45px;
+    width: 200px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    outline: 1px solid;
+    outline-color: rgba(255, 255, 255, 0.5);
+    outline-offset: 0px;
+    text-shadow: none;
+    transition: all 1.2s cubic-bezier(0.2, 1, 0.2, 1);
+  }
+  
+  .btn-shine:hover {
+    border-color: #FFF;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
+    outline-color: transparent;
+    outline-offset: 12px;
+    text-shadow: 2px 2px 3px #000;
+  } 
+  
+  .generate_button{
+      text-align: center;
+      padding-top: 50px;
+      padding-left: 185px;
   }
 
-.generate_button:hover{
-    background: #cc99ff;
-    color: #ffffff;
-    border: double 4px #ffffff;
-    border-radius: 50%;
-}
+
+
 
 .ccard_div{
     position: relative;
@@ -1062,8 +1154,41 @@
     width: 960px;
 }
 
+/* テンプレート */
+.template_div{
+    padding-left: 20px;
+    padding-top: 5px;
+}
+
+.template_table{
+    width: 100%;
+    text-align: center;
+}
+
+.template_table img{
+    width: 140px;
+}
+
+.template_table p{
+    margin-top: -7px;
+}
+
+.template_img td{
+
+}
+.template_text td{
+
+}
 
 
+
+/* 保存ポタン */
+.save_img{
+    position: absolute;
+    left:380px;
+    top:610px;
+    text-align: center;
+}
 
 
 
@@ -1114,6 +1239,49 @@
 /* ライトメニュー */
 /* 基本 */
 
+/* 元に戻す */
+#default_setting{
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+h2{
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: rgb(255, 138, 138);
+    font-family: 'Hachi Maru Pop', cursive;
+    font-weight: bold;
+}
+
+h3{
+    margin-top: 5px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+    color: rgb(255, 209, 209);
+    font-family: 'Hachi Maru Pop', cursive;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.howto_text p{
+    padding-left: 20px;
+}
+
+.howto_movie p{
+    padding-left: 20px;
+}
+
+
+
+.menu_indent{
+    padding-left: 20px;    
+}
+
+.char_name_transparent_value_span_white{
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
 /* 枠線をつける */
 #transparent_value2_white{
     width: 250px;
@@ -1122,10 +1290,28 @@
 .slyder_attention{
     font-size: 10px;
     color: red;
+    margin-top: 0px;
 }
 
 .mouse_hover_bg{
     background-color: rgb(255, 124, 124 , 0.5);
+}
+
+/* キャラ名 */
+.char_name_fontsize_span{
+    margin-top: -10px;
+    margin-left: 20px;
+}
+
+.char_name_fontcolor_span{
+    margin-top: -10px;
+    margin-left: 20px;
+}
+
+.char_name_fonta{
+    margin-top: -10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
 }
 
 
@@ -1178,8 +1364,23 @@
     line-height:0
 }
 
+.char_info_font_div{
+    margin-top: -30px;
+    margin-left: 20px;
+}
+
 .char_info{
     font-family: 'Noto Sans JP', sans-serif;
+}
+
+.char_info_h_span{
+    margin-top: 0px;
+    margin-left: 20px;
+}
+
+.char_text_h_span{
+    margin-top: 0px;
+    margin-left: 20px;
 }
 
 #wkSlider2{
@@ -1189,9 +1390,80 @@
     width: 220px;
 }
 
+/* コンテンツ */
+.char_favorite_h_span{
+    margin-top: 0px;
+    margin-left: 20px;
+}
+
+.char_favorite_text_h_span{
+    margin-top: 0px;
+    margin-left: 20px;
+}
+
+.menu_indent_favorite{
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+/* コメント */
+.char_comment_h_span{
+    margin-top: 0px;
+    margin-left: 20px;
+}
+
+.char_comment_text_h_span{
+    margin-top: 0px;
+    margin-left: 20px;
+}
+
+.menu_indent_comment{
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+/* ジョブアイコン */
+.job_icon_list_span{
+    margin-top: 0px;
+    margin-left: 20px;
+}
+
+.job_icon_list_font_div{
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.job_level_attention{
+    margin-left: 20px;
+    font-size: 5px;
+}
+
+.tweak_table{
+    text-align: center;
+    width: 370px;
+}
+
+.job_icon_list_color{
+    margin-top: 0px;
+    margin-left: 20px;
+}
+
+.job_icon_list_color_const{
+    margin-top: 0px;
+    margin-left: 20px;
+}
+
+/* 保存 */
+.save_comment{
+    padding-left: 20px;
+}
+
+
 /* メインジョブ */
 .main_job_select_div ul li{
     list-style: none;
+    padding-left: 20px;
 
 }
 
@@ -1326,7 +1598,31 @@
     color: red;
 }
 
+/* ツイッターボタン */
+.twitter-share_div{
+    position: absolute;
+    left:595px;
+    top:625px;
+    text-align: center;
+}
 
+
+.footer_div{
+    width: 100%;
+    margin-top: 50px;
+    color: white;
+    text-align: center;
+    font-size: 13px;
+}
+
+.generate_footer_div{
+    width: 100%;
+    margin-right: 175px;
+    margin-top: -15px;
+    color: white;
+    text-align: center;
+    font-size: 13px;
+}
 
 
 

@@ -17,33 +17,34 @@
     <script src="/js/imageview.js"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/material-design-inspired-color-picker@1.7.2/dist/md-color-picker.min.js"></script> 
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
     <!-- <script src="{{asset('/js/coffee_cookie.js') }}"></script> -->
-
 </head>
+
 <body>
 <!-- ローディング画面 -->
 <div id="load">
-　<div>G</div>
-  <div>N</div>
-  <div>I</div>
-  <div>D</div>
-  <div>A</div>
+　<div>L</div>
   <div>O</div>
-  <div>L</div>
+  <div>A</div>
+  <div>D</div>
+  <div>I</div>
+  <div>N</div>
+  <div>G</div>
 </div>
 
 <div id="dragArea">
 
 
 <!-- ヘッダー -->
-<div class="header_div">
+<div class="header_div_generate">
     <div class="title_div">
-        <span class="title_span">FF14キャラクターカード</span>
+        <img class="header_generate" src="/img/header_bg3.png" alt="">
     </div>
 </div>
 
 <!-- メイン部分 -->
-<div class="main_div">
+<div class="main_generate_div">
 
     <!-- レフトメニュー -->
     <div class="left_menu">
@@ -141,6 +142,25 @@
         </div>
         </div>
 
+        <!-- 保存ボタン -->
+        <!-- <div class="save_img">
+            <button id="camvas_button">保存</button>
+            <a id="download" href=""></a>
+        </div> -->
+
+
+
+        <div class="save_img">
+            <div class="btn-shine" id="camvas_button">Save Image</div>
+            <a id="download" href=""></a>
+        </div>
+
+        <div class="twitter-share_div">
+            <!-- Twitterボタン -->
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="【ページのURL】" data-text="よろしく" data-via="" data-size="default" data-related="" data-count="" data-hashtags="キャラクターカード #キャラカ">Tweet</a> 
+        </div>
+
+
         <!-- コピーライト -->
         <span class="copyright_span_white display_none  copy_white_bg dragg position">(C) SQUARE ENIX CO., LTD. All Rights Reserved.</span>        
         <span class="copyright_span_black display_none  copy_black_bg dragg position">(C) SQUARE ENIX CO., LTD. All Rights Reserved.</span>        
@@ -154,14 +174,10 @@
         @foreach($char_achievements as $char_achievement)
             <span class="achievements_span">{{$char_achievement["title"]}}<img src="img\achievements\{{$char_achievement['ID']}}.png" alt=""></span>
         @endforeach
-        </div> -->
-            
-        
+        </div> -->          
+    
     </div>
     </div>
-
-
-
 
 </div>
 <!-- コンテンツココまで -->
@@ -169,70 +185,114 @@
 
 <!-- ライトメニュー -->
 <div class="rigth_menu">
+<div id='container'>   
+    
+<!-- コメント -->
+<div class='widget'>
+<div id='使い方' class="tab-content">
+    <h2>【使い方】</h2>
+    <div class="howto_text">
+        <p>①テンプレートを選択</p>
+        <p>②「基本」以下のタブで編集！</p>
+        <p>②【SAVE IMAGE】ボタンで画像を保存</p>
+        <p>③Twitterボタンでつぶやく！</p>
+        <p>※画像内ドラッグ＆ドロップで位置を調整できます</p>
+    </div>
+    <div class="howto_movie">
+        <h2>【動画】</h2>
+        <p>~準備中~</p>
+    </div>
+    <div class="howto_movie">
+        <h2>【テンプレート】</h2>
 
-<div id='container'>    
+        <div class="template_div">
+            <table class="template_table">
+                <tr class="template_img">
+                    <td><img name="layout91" lavel="Usual"  class="reflect_layout"  src="/img/template/template1.png" alt=""><p>Usual</p></td>
+                    <td><img name="layout92" lavel="Darkness"  class="reflect_layout"  src="/img/template/template2.png" alt=""><p>Darkness</p></td>
+                    <td></td>                    
+                </tr>
+            
+                <tr class="template_img">
+                    <td><img name="layout93" lavel="Cute"  class="reflect_layout"  src="/img/template/template3.png" alt=""><p>Cute</p></td>
+                    <td><img name="layout94" lavel="Cool"  class="reflect_layout"  src="/img/template/template4.png" alt=""><p>Cool</p></td>
+                    <td><img name="layout95" lavel="Rock"  class="reflect_layout" src="/img/template/template5.png" alt=""><p>Rock</p></td>
+                </tr>         
+            </table>   
+        </div>
+
+    </div>
+</div>
+</div>
 
 <div class='widget'>
   <div id='基本' class="tab-content">
 
-<!-- 保存ボタン -->
-<button id="camvas_button">保存</button>
-<a id="download" href="">ダウンロード</a>
-<button id="default_setting">元に戻す</button>
-
+<button id="default_setting">全て元に戻す</button>
+<span class="slyder_attention">(レイアウトが崩れた場合はこのボタンで初期化してください)</span>
   <!-- 位置 -->
   
-    <p class="test">データ位置<span class="slyder_attention">(レイアウトが崩れた場合は「元に戻す」で初期化してください)</span></p>
-    <input type="radio" class="position_radio_left" name="position_radio" value="left">左寄せ
-    <input type="radio" class="position_radio_right" name="position_radio" value="rigth">右寄せ
+    <h2>【データ位置】</h2>
+    <div class="menu_indent">
+        <input type="radio" class="position_radio_left" name="position_radio" value="left">左寄せ
+        <input type="radio" class="position_radio_right" name="position_radio" value="rigth">右寄せ
+    </div>
 
-    <p>データ表示</p>
-    <input class="mhover_bg" type="checkbox" name="data_display" data="main_job_bg"><span class="mhover_bg" name="data_display" data="main_job_bg">メインジョブ</span>
-    <input class="mhover_bg" type="checkbox" name="data_display" data="server_bg"><span class="mhover_bg" name="data_display" data="server_bg">サーバー</span>
-    <input class="mhover_bg" type="checkbox" name="data_display" data="race_bg"><span class="mhover_bg" name="data_display" data="race_bg">種族</span>
-    <input class="mhover_bg" type="checkbox" name="data_display" data="freecompany_bg"><span class="mhover_bg" name="data_display" data="freecompany_bg">FC</span><br>
-    <input class="mhover_bg" type="checkbox" name="data_display" data="favorite_bg"><span class="mhover_bg" name="data_display" data="favorite_bg">コンテンツ</span>
-    <input class="mhover_bg" type="checkbox" name="data_display" data="comment_bg"><span class="mhover_bg" name="data_display" data="comment_bg">コメント</span>
-    <input class="mhover_bg" type="checkbox" name="data_display" data="job_bg"><span class="mhover_bg" name="data_display" data="job_bg">ジョブレベル</span><br>
-    <input class="mhover_bg" type="checkbox" name="data_display" data="copy_white_bg"><span class="mhover_bg" name="data_display" data="copy_white_bg">コピーライト(白)</span>
-    <input class="mhover_bg" type="checkbox" name="data_display" data="copy_black_bg"><span class="mhover_bg" name="data_display" data="copy_black_bg">コピーライト(黒)</span>
-
+    <h2>【データ表示】</h2>
+    <div class="menu_indent">
+        <input class="mhover_bg" type="checkbox" name="data_display" data="main_job_bg"><span class="mhover_bg" name="data_display" data="main_job_bg">メインジョブ</span>
+        <input class="mhover_bg" type="checkbox" name="data_display" data="server_bg"><span class="mhover_bg" name="data_display" data="server_bg">サーバー</span>
+        <input class="mhover_bg" type="checkbox" name="data_display" data="race_bg"><span class="mhover_bg" name="data_display" data="race_bg">種族</span>
+        <input class="mhover_bg" type="checkbox" name="data_display" data="freecompany_bg"><span class="mhover_bg" name="data_display" data="freecompany_bg">FC</span><br>
+        <input class="mhover_bg" type="checkbox" name="data_display" data="favorite_bg"><span class="mhover_bg" name="data_display" data="favorite_bg">コンテンツ</span>
+        <input class="mhover_bg" type="checkbox" name="data_display" data="comment_bg"><span class="mhover_bg" name="data_display" data="comment_bg">コメント</span>
+        <input class="mhover_bg" type="checkbox" name="data_display" data="job_bg"><span class="mhover_bg" name="data_display" data="job_bg">ジョブレベル</span><br>
+        <input class="mhover_bg" type="checkbox" name="data_display" data="copy_white_bg"><span class="mhover_bg" name="data_display" data="copy_white_bg">コピーライト(白)</span>
+        <input class="mhover_bg" type="checkbox" name="data_display" data="copy_black_bg"><span class="mhover_bg" name="data_display" data="copy_black_bg">コピーライト(黒)</span>
+    </div>
 
     <!-- 色変更 -->
-    <p class="mhover_bg" data="back_img_bg">背景色</p>
+    <h2 class="mhover_bg" data="back_img_bg">【背景色】</h2>
         <!-- <span id="colorPicker_color_white"></span> -->
-    <input type="checkbox" name="white_cambas">サイズを変更する
-    <span class="slyder_attention">※右下のつまみで調整できます</span>    
-    <span class="char_name_fontsize_span_white">
-    <md-color-picker id="colorPicker_white" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
-    </span>
+    <div class="menu_indent">    
+        <input type="checkbox" name="white_cambas">サイズを変更する
+        <span class="slyder_attention">※右下のつまみで調整できます</span>    
+        <span class="char_name_fontsize_span_white">
+        <md-color-picker id="colorPicker_white" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
+        </span>
+    </div>
 
     <!-- 透明度変更 -->
-    <p>背景透明度:<span id="transparent_value_white"></span></p>
-    <span class="char_name_transparent_value_span_white">
+    <h2>【背景透明度】<span id="transparent_value_white"></span></h2>
+    <div class="char_name_transparent_value_span_white">
         <div id="transparent_value2_white"></div>
-    </span>
-    <p class="slyder_attention">※ゆっくり動かしてね！</p>
+        <p class="slyder_attention">※ゆっくり動かしてね！</p>        
+    </div>
+    
 
 
+    <h2>
+        <span class="mhover_bg" data="flame_bg">【フレーム】</span>
+    </h2>
 
-    <span class="mhover_bg" data="flame_bg">フレーム</span>
     <!-- フレームを消す -->
-    <input type="checkbox" name="flame_onoff">フレームを消す
-    <span class="flame_span">
-        <p class="flame_p">
-            <input type="radio" name="flame_radio" value="001"><img class="flame_s" src="/img/flame/flame_s/flame001.png" alt="">
-            <input type="radio" name="flame_radio" value="002"><img class="flame_s" src="/img/flame/flame_s/flame002.png" alt="">
-            <input type="radio" name="flame_radio" value="003"><img class="flame_s" src="/img/flame/flame_s/flame003.png" alt="">
-            <input type="radio" name="flame_radio" value="004"><img class="flame_s" src="/img/flame/flame_s/flame004.png" alt="">
-        </p>
-        <p class="flame_p">
-            <input type="radio" name="flame_radio" value="005"><img class="flame_s" src="/img/flame/flame_s/flame004.png" alt="">
-            <input type="radio" name="flame_radio" value="006"><img class="flame_s" src="/img/flame/flame_s/flame005.png" alt="">
-            <input type="radio" name="flame_radio" value="007"><img class="flame_s" src="/img/flame/flame_s/flame006.png" alt="">
-            <input type="radio" name="flame_radio" value="008"><img class="flame_s" src="/img/flame/flame_s/flame007.png" alt="">
-        </p>
-    </span>
+    <div class="menu_indent">  
+        <input type="checkbox" name="flame_onoff">フレームを消す
+        <span class="flame_span">
+            <p class="flame_p">
+                <input type="radio" name="flame_radio" value="001"><img class="flame_s" src="/img/flame/flame_s/flame001.png" alt="">
+                <input type="radio" name="flame_radio" value="002"><img class="flame_s" src="/img/flame/flame_s/flame002.png" alt="">
+                <input type="radio" name="flame_radio" value="003"><img class="flame_s" src="/img/flame/flame_s/flame003.png" alt="">
+                <input type="radio" name="flame_radio" value="004"><img class="flame_s" src="/img/flame/flame_s/flame004.png" alt="">
+            </p>
+            <p class="flame_p">
+                <input type="radio" name="flame_radio" value="005"><img class="flame_s" src="/img/flame/flame_s/flame005.png" alt="">
+                <input type="radio" name="flame_radio" value="006"><img class="flame_s" src="/img/flame/flame_s/flame006.png" alt="">
+                <input type="radio" name="flame_radio" value="007"><img class="flame_s" src="/img/flame/flame_s/flame007.png" alt="">
+                <input type="radio" name="flame_radio" value="008"><img class="flame_s" src="/img/flame/flame_s/flame008.png" alt="">
+            </p>
+        </span>
+    </div>
 
 
 
@@ -245,55 +305,65 @@
   <div id='キャラ名' class="tab-content" data="char_name_bg">
     <!-- キャラ名 -->
     <!-- フォント変更 -->
-    <p class="mhover_bg" data="char_name_bg">フォント</p>
-    <span class="char_name_font_span">
-        <p class="char_name_font_p">
-            <input type="radio" name="char_name_radio" value="Alice"><span class="Alice">Alice</span>
-            <input type="radio" name="char_name_radio" value="Bungee"><span class="Bungee">Bungee</span>
-            <input type="radio" name="char_name_radio" value="Elsie"><span class="Elsie">Elsie</span>
-            <input type="radio" name="char_name_radio" value="IMFell"><span class="IMFell">IMFell</span>
-            <input type="radio" name="char_name_radio" value="Kalam"><span class="Kalam">Kalam</span>
-        </p>
-        <p class="char_name_font_p">
-            <input type="radio" name="char_name_radio" value="Leckerli"><span class="Leckerli">Leckerli</span>
-            <input type="radio" name="char_name_radio" value="Metamorphous"><span class="Metamorphous">Metamo</span>
-            <input type="radio" name="char_name_radio" value="Noto"><span class="Noto">Noto</span>
-            <input type="radio" name="char_name_radio" value="Nunito"><span class="Nunito">Nunito</span>
-            <input type="radio" name="char_name_radio" value="Righteous"><span class="Righteous">Right</span>
-        </p>
-        <p class="char_name_font_p">
-            <input type="radio" name="char_name_radio" value="Rock"><span class="Rock">Rock</span>
-            <input type="radio" name="char_name_radio" value="Sacramento"><span class="Sacramento">Sacrame</span>
-            <input type="radio" name="char_name_radio" value="Sorts"><span class="Sorts">Sorts</span>
-        </p>
-    </span>
+    <h2 class="mhover_bg" data="char_name_bg">【フォント】</h2>
+    <div class="menu_indent">  
+        <span class="char_name_font_span">
+            <p class="char_name_font_p">
+                <input type="radio" name="char_name_radio" value="Alice"><span class="Alice">Alice</span>
+                <input type="radio" name="char_name_radio" value="Bungee"><span class="Bungee">Bungee</span>
+                <input type="radio" name="char_name_radio" value="Elsie"><span class="Elsie">Elsie</span>
+                <input type="radio" name="char_name_radio" value="IMFell"><span class="IMFell">IMFell</span>
+                <input type="radio" name="char_name_radio" value="Kalam"><span class="Kalam">Kalam</span>
+            </p>
+            <p class="char_name_font_p">
+                <input type="radio" name="char_name_radio" value="Leckerli"><span class="Leckerli">Leckerli</span>
+                <input type="radio" name="char_name_radio" value="Metamorphous"><span class="Metamorphous">Metamo</span>
+                <input type="radio" name="char_name_radio" value="Noto"><span class="Noto">Noto</span>
+                <input type="radio" name="char_name_radio" value="Nunito"><span class="Nunito">Nunito</span>
+                <input type="radio" name="char_name_radio" value="Righteous"><span class="Righteous">Right</span>
+            </p>
+            <p class="char_name_font_p">
+                <input type="radio" name="char_name_radio" value="Rock"><span class="Rock">Rock</span>
+                <input type="radio" name="char_name_radio" value="Sacramento"><span class="Sacramento">Sacrame</span>
+                <input type="radio" name="char_name_radio" value="Sorts"><span class="Sorts">Sorts</span>
+            </p>
+        </span>
+    </div>
+
 
     <!-- 大きさ変更 -->
-    <p class="mhover_bg" data="char_name_bg">大きさ:<span id="wkValue"></span></p>
-    <span class="char_name_fontsize_span">
+    <h2>
+        <p class="mhover_bg" data="char_name_bg">【大きさ】<span id="wkValue"></span></p>
+    </h2>
+    <div class="char_name_fontsize_span">
         <div id="wkSlider2"></div>
-        
-    </span>
+    </div>
 
 
     <!-- 色変更 -->
-    <p class="mhover_bg" data="char_name_bg">色</p>
-    <span class="char_name_fontsize_span">
-    <md-color-picker id="colorPicker" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
-    </span>
+    <h2>
+        <p class="mhover_bg" data="char_name_bg">【キャラ名の色】</p>
+    </h2>
+    <div class="char_name_fontcolor_span">
+        <md-color-picker id="colorPicker" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
+    </div>
 
 
     <!-- 透明度変更 -->
-    <p class="mhover_bg" data="char_name_bg">透明度:<span id="transparent_value"></span></p>
-    <span class="char_name_transparent_value_span">
+    <h2>
+        <p class="mhover_bg" data="char_name_bg">【透明度】<span id="transparent_value"></span></p>
+        <span class="char_name_transparent_value_span"></span>
+    </h2>
+    <div class="char_name_fonta">
         <div id="transparent_value2"></div>
-    </span>
+    </div>
+    
 
     <!-- 名前分割 -->
-    <input type="checkbox" name="name_split">キャラ名を分割する
-
-
-    <br><br><br><br>
+    <h2>【キャラ名分割】</h2>
+    <div class="menu_indent">  
+        <input type="checkbox" name="name_split">キャラ名を分割する
+    </div>
 
 </div>
 </div>
@@ -303,7 +373,7 @@
   <div id='情報' class="tab-content">
 
   <!-- メインジョブ -->
-    <p class="mhover_bg" data="main_job_bg">メインジョブ</p>
+    <h2 class="mhover_bg" data="main_job_bg">【メインジョブ】</h2>
     <div class="main_job_select_div">
         <ul class="main_job_select_ul">   
     		<li>
@@ -394,43 +464,43 @@
  
 
   <!-- 文字情報 -->
-  <p class="mhover_bg" data="main_job_bg server_bg race_bg freecompany_bg favorite_bg comment_bg">フォント
-      <input type="checkbox" name="font_bold_check">太字にする
-　</p>
+  <h2 class="mhover_bg" data="main_job_bg server_bg race_bg freecompany_bg favorite_bg comment_bg">【フォント】</h2>
+  <div class="menu_indent">   
+    <input type="checkbox" name="font_bold_check">太字にする
+  </div>　
   
-    <span class="char_info_font_span">
-        <p class="char_info_font_p">
-            <input type="radio" name="char_info_radio" value="Noto"><span class="Noto">Noto</span>
-            <input type="radio" name="char_info_radio" value="Sawarabi"><span class="Sawarabi">Sawarabi</span>
-            <input type="radio" name="char_info_radio" value="Kosugi"><span class="Kosugi">Kosugi</span>
-            <input type="radio" name="char_info_radio" value="Potta"><span class="Potta">Potta</span>
-            <input type="radio" name="char_info_radio" value="Hachi"><span class="Hachi">Hachi</span>
-        </p>
-        <p class="char_name_font_p">
-            <input type="radio" name="char_info_radio" value="Yusei"><span class="Yusei">Yusei</span>
-            <input type="radio" name="char_info_radio" value="RocknRol"><span class="RocknRol">RocknRol</span>
-            <input type="radio" name="char_info_radio" value="Reggae"><span class="Reggae">Reggae</span>
-            <input type="radio" name="char_info_radio" value="Stick"><span class="Stick">Stick</span>
-            <input type="radio" name="char_info_radio" value="Dot"><span class="Dot">Dot</span>
-        </p>
-        <p>
-            <button class="char_info_font_toname">キャラ名にも反映</button>
-        </p>
-    </span>
+    <div class="char_info_font_div">
+        <span class="char_info_font_span">
+            <p class="char_info_font_p">
+                <input type="radio" name="char_info_radio" value="Noto"><span class="Noto">Noto</span>
+                <input type="radio" name="char_info_radio" value="Sawarabi"><span class="Sawarabi">Sawarabi</span>
+                <input type="radio" name="char_info_radio" value="Kosugi"><span class="Kosugi">Kosugi</span>
+                <input type="radio" name="char_info_radio" value="Potta"><span class="Potta">Potta</span>
+                <input type="radio" name="char_info_radio" value="Hachi"><span class="Hachi">Hachi</span>
+            </p>
+            <p class="char_name_font_p">
+                <input type="radio" name="char_info_radio" value="Yusei"><span class="Yusei">Yusei</span>
+                <input type="radio" name="char_info_radio" value="RocknRol"><span class="RocknRol">RocknRol</span>
+                <input type="radio" name="char_info_radio" value="Reggae"><span class="Reggae">Reggae</span>
+                <input type="radio" name="char_info_radio" value="Stick"><span class="Stick">Stick</span>
+                <input type="radio" name="char_info_radio" value="Dot"><span class="Dot">Dot</span>
+            </p>
+            <p>
+                <button class="char_info_font_toname">キャラ名にも同じフォントを反映</button>
+            </p>
+        </span>
+    </div>
     
-  <p class="mhover_bg" data="main_job_bg_h server_bg_h race_bg_h freecompany_bg_h">見出し</p>
+  <h2 class="mhover_bg" data="main_job_bg_h server_bg_h race_bg_h freecompany_bg_h">【見出しの色】</h2>
   <!-- <p>色:<span id="char_info_h_span"></span></p> -->
-　<span class="char_info_h_span">
-　  <md-color-picker id="char_info_h" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
-　</span>
+ <div class="char_info_h_span">
+   <md-color-picker id="char_info_h" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
+ </div>
 
-　<p class="mhover_bg_text" data="main_job_bg server_bg race_bg freecompany_bg">テキスト</p>
-  <p>色</p>
-　<span class="char_text_h_span">
-　  <md-color-picker id="char_text_h" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
-　</span>
-
-
+ <h2 class="mhover_bg_text" data="main_job_bg server_bg race_bg freecompany_bg">【テキストの色】</h2>
+ <div class="char_text_h_span">
+    <md-color-picker id="char_text_h" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
+ </div>
 
   </div>
 </div>
@@ -439,86 +509,84 @@
 
 <!-- コンテンツ -->
 <div class='widget'>
-  <div id='コンテンツ' class="tab-content">
+<div id='コンテンツ' class="tab-content">
 
-  <p class="mhover_bg" data="favorite_bg">お気に入りコンテンツ</p>
-    <span class="favorite_contents_span">
-        <input class="favorite_contents" type="checkbox" name="001" value="レベリング・"><img class="favorite_contents_img" src="img\faveriteicon\faverite001.png" alt="">レベリング
-        <input class="favorite_contents" type="checkbox" name="015" value="メインストーリー・"><img class="favorite_contents_img" src="img\faveriteicon\faverite015.png" alt="">メインストーリー
-        <input class="favorite_contents" type="checkbox" name="002" value="クラフター・"><img class="favorite_contents_img" src="img\faveriteicon\faverite002.png" alt="">クラフター<br>
-        <input class="favorite_contents" type="checkbox" name="003" value="ギャザラー・"><img class="favorite_contents_img" src="img\faveriteicon\faverite003.png" alt="">ギャザラー
-        <input class="favorite_contents" type="checkbox" name="004" value="グルポ・"><img class="favorite_contents_img" src="img\faveriteicon\faverite004.png" alt="">グルポ
-        <input class="favorite_contents" type="checkbox" name="005" value="ミラプリ・"><img class="favorite_contents_img" src="img\faveriteicon\faverite005.png" alt="">ミラプリ
-        <input class="favorite_contents" type="checkbox" name="006" value="おしゃべり・"><img class="favorite_contents_img" src="img\faveriteicon\faverite006.png" alt="">おしゃべり<br>
-        <input class="favorite_contents" type="checkbox" name="007" value="ハウジング・"><img class="favorite_contents_img" src="img\faveriteicon\faverite007.png" alt="">ハウジング
-        <input class="favorite_contents" type="checkbox" name="008" value="ゴールドソーサー・"><img class="favorite_contents_img" src="img\faveriteicon\faverite008.png" alt="">ゴールドソーサー
-        <input class="favorite_contents" type="checkbox" name="009" value="演奏・"><img class="favorite_contents_img" src="img\faveriteicon\faverite009.png" alt="">演奏<br>
-        <input class="favorite_contents" type="checkbox" name="010" value="トレハン・"><img class="favorite_contents_img" src="img\faveriteicon\faverite010.png" alt="">トレハン
-        <input class="favorite_contents" type="checkbox" name="011" value="討伐/討滅戦・"><img class="favorite_contents_img" src="img\faveriteicon\faverite011.png" alt="">討伐/討滅戦
-        <input class="favorite_contents" type="checkbox" name="012" value="零式・"><img class="favorite_contents_img" src="img\faveriteicon\faverite012.png" alt="">零式
-        <input class="favorite_contents" type="checkbox" name="013" value="絶・"><img class="favorite_contents_img" src="img\faveriteicon\faverite013.png" alt="">絶
-        <input class="favorite_contents" type="checkbox" name="014" value="PvP・"><img class="favorite_contents_img" src="img\faveriteicon\faverite014.png" alt="">PvP
-    </span>    
+    <h2 class="mhover_bg" data="favorite_bg">【お気に入りコンテンツ】</h2>
+    <div class="menu_indent_favorite">  
+        <span class="favorite_contents_span">
+            <input class="favorite_contents" type="checkbox" name="001" value="レベリング・"><img class="favorite_contents_img" src="img\faveriteicon\faverite001.png" alt="">レベリング
+            <input class="favorite_contents" type="checkbox" name="015" value="メインストーリー・"><img class="favorite_contents_img" src="img\faveriteicon\faverite015.png" alt="">メインストーリー
+            <input class="favorite_contents" type="checkbox" name="002" value="クラフター・"><img class="favorite_contents_img" src="img\faveriteicon\faverite002.png" alt="">クラフター<br>
+            <input class="favorite_contents" type="checkbox" name="003" value="ギャザラー・"><img class="favorite_contents_img" src="img\faveriteicon\faverite003.png" alt="">ギャザラー
+            <input class="favorite_contents" type="checkbox" name="004" value="グルポ・"><img class="favorite_contents_img" src="img\faveriteicon\faverite004.png" alt="">グルポ
+            <input class="favorite_contents" type="checkbox" name="005" value="ミラプリ・"><img class="favorite_contents_img" src="img\faveriteicon\faverite005.png" alt="">ミラプリ
+            <input class="favorite_contents" type="checkbox" name="006" value="おしゃべり・"><img class="favorite_contents_img" src="img\faveriteicon\faverite006.png" alt="">おしゃべり<br>
+            <input class="favorite_contents" type="checkbox" name="007" value="ハウジング・"><img class="favorite_contents_img" src="img\faveriteicon\faverite007.png" alt="">ハウジング
+            <input class="favorite_contents" type="checkbox" name="008" value="ゴールドソーサー・"><img class="favorite_contents_img" src="img\faveriteicon\faverite008.png" alt="">ゴールドソーサー
+            <input class="favorite_contents" type="checkbox" name="009" value="演奏・"><img class="favorite_contents_img" src="img\faveriteicon\faverite009.png" alt="">演奏<br>
+            <input class="favorite_contents" type="checkbox" name="010" value="トレハン・"><img class="favorite_contents_img" src="img\faveriteicon\faverite010.png" alt="">トレハン
+            <input class="favorite_contents" type="checkbox" name="011" value="討伐/討滅戦・"><img class="favorite_contents_img" src="img\faveriteicon\faverite011.png" alt="">討伐/討滅戦
+            <input class="favorite_contents" type="checkbox" name="012" value="零式・"><img class="favorite_contents_img" src="img\faveriteicon\faverite012.png" alt="">零式
+            <input class="favorite_contents" type="checkbox" name="013" value="絶・"><img class="favorite_contents_img" src="img\faveriteicon\faverite013.png" alt="">絶
+            <input class="favorite_contents" type="checkbox" name="014" value="PvP・"><img class="favorite_contents_img" src="img\faveriteicon\faverite014.png" alt="">PvP
+        </span>  
+    </div>  
 
-  <p class="mhover_bg" data="favorite_bg_h">見出し</p>
-　<span class="char_favorite_h_span">
-　  <md-color-picker id="char_favorite_h" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
-　</span>
+    <h3 class="mhover_bg" data="favorite_bg_h">見出しの色</h3>
+    <div class="char_favorite_h_span">
+      <md-color-picker id="char_favorite_h" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
+   </div>
 
-　<p class="mhover_bg_text" data="favorite_bg">テキスト</p>
-　<span class="char_favorite_text_h_span">
-　  <md-color-picker id="char_favorite_text_h" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
-　</span>
-
-  </div>
-</div>
+   <h3 class="mhover_bg_text" data="favorite_bg">テキストの色</h3>
+   <div class="char_favorite_text_h_span">
+     <md-color-picker id="char_favorite_text_h" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
+   </div>
 
 
-<!-- コメント -->
-<div class='widget'>
-<div id='コメント' class="tab-content">
-    
-    <p class="mhover_bg" data="comment_bg">コメント</p>
+   <h2 class="mhover_bg" data="comment_bg">【コメント】</h2>
+    <div class="menu_indent_comment">  
     <span class="comment_contents_span">
         <textarea name="char_comment" id="char_comment" cols="40" rows="3">
 まったり楽しんでます(*´∀｀)
 よろしくおねがします！</textarea>
     </span>
+    </div>
 
-    <p class="mhover_bg" data="comment_bg_h">見出し</p>
-    <span class="char_comment_h_span">
+    <h3 class="mhover_bg" data="comment_bg_h">見出しの色</h3>
+    <div class="char_comment_h_span">
         <md-color-picker id="char_comment_h" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
-    </span>
+    </div>
 
-    <p class="mhover_bg_text" data="comment_bg">テキスト</p>
-    <span class="char_comment_text_h_span">
+    <h3 class="mhover_bg_text" data="comment_bg">テキストの色</h3>
+    <div class="char_comment_text_h_span">
         <md-color-picker id="char_comment_text_h" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
-    </span>
-    
-</div>
-</div>
+    </div>
 
+</div>
+</div>
 
 
 <!-- ジョブ -->
 <div class='widget'>
   <div id='ジョブ' class="tab-content">
-  <p class="mhover_bg" data="job_bg_h">ジョブアイコン</p>
-  <span class="job_icon_list_span">
-        <p class="job_icon_list_p">
+  <h2 class="mhover_bg" data="job_bg_h">【ジョブアイコン】</h2>
+  <div class="job_icon_list_span">
+        <div class="job_icon_list_p">
             <input type="radio" name="job_icon_list" value="01"><span class="job_icon_list"><img src="/img/jobicon/01/paladin.png" alt=""></span>
             <input type="radio" name="job_icon_list" value="02"><span class="job_icon_list"><img src="/img/jobicon/02/paladin.png" alt=""></span>
             <input type="radio" name="job_icon_list" value="03"><span class="job_icon_list"><img src="/img/jobicon/03/paladin.png" alt=""></span>
             <input type="radio" name="job_icon_list" value="04"><span class="job_icon_list"><img src="/img/jobicon/04/paladin.png" alt=""></span>
-        </p> 
-  </span>
+        </div> 
+  </div>
 
-    <p class="mhover_bg_text" data="job_bg">フォント</p>
-  　<button class="job_icon_list_font_name">キャラ名　と同じフォントにする</button>
-    <button class="job_icon_list_font_info">キャラ情報と同じフォントにする</button>
+    <h2 class="mhover_bg_text" data="job_bg">【フォント】</h2>
+    <div class="job_icon_list_font_div">
+        <button class="job_icon_list_font_name">キャラ名　と同じフォントにする</button>
+        <button class="job_icon_list_font_info">キャラ情報と同じフォントにする</button>
+    </div>
 
-　<p class="mhover_bg" data="job_bg">微調整</p>
-  <table>
+ <h2 class="mhover_bg" data="job_bg">【微調整】</h2><span class="job_level_attention">フォントによってズレるので微調整してください</span>
+  <table class="tweak_table">
     <tr>
         <td class="mhover_bg_text" data="job_bg">位置</td>
         <td class="mhover_bg_text" data="job_bg">大きさ</td>
@@ -556,20 +624,20 @@
   </table>
 
 
-  <p class="mhover_bg_text" data="job_bg">通常の色</p>
-  <p>色</p>
-　<span class="job_icon_list_color">
-　  <md-color-picker id="job_icon_list_color" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
-　</span>
+  <h2 class="mhover_bg_text" data="job_bg">【LV.80以下の色】</h2>
+    <div class="job_icon_list_color">
+      <md-color-picker id="job_icon_list_color" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
+    </div>
 
-　<p class="mhover_bg_text" data="job_bg">カンストジョブの色</p>
-  <p>色</p>
-　<span class="job_icon_list_color_const">
-　  <md-color-picker id="job_icon_list_color_const" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
-　</span>
+  <h2 class="mhover_bg_text" data="job_bg">【カンストLV.の色】</h2>
+    <div class="job_icon_list_color_const">
+      <md-color-picker id="job_icon_list_color_const" color-margin="4" colors-per-row="11" color-size="30" default-tint="500" fixedMinHeight="true" palette="material-full" use-spectrum-picker="true" value="#000000"></md-color-picker>
+    </div>
+
+    <p>※色を変更すると、1ケタレベルの位置がズレる不具合が確認されています。ズレた場合はページの更新（F5キー）をすると正式な位置へ戻ります。m_ _m<br>（設定は保存されたまま反映されます）</p>
 
 
-  </div>
+</div>
 </div>
 
 
@@ -579,29 +647,45 @@
 <div class='widget'>
     <div id='保存' class="tab-content">
         <p>
-          <span class="save_layout_span">レイアウト1</span>
-          <button name="layout01" class="save_layout">保存</button>
-          <button name="layout01" class="reflect_layout">反映</button>
-          <span class="save_layout_span_comment01"></span>
+          <h2 class="save_layout_span">【レイアウト1】</h2>
+          <div class="menu_indent">  
+            <button name="layout01" value="レイアウト1" class="save_layout">保存</button>
+            <button name="layout01" lavel="レイアウト1"  class="reflect_layout">反映</button>
+            <span class="save_layout_span_comment01"></span>
+          </div>
         </p>
         <p>
-          <span class="save_layout_span">レイアウト2</span>
-          <button name="layout02" class="save_layout">保存</button>
-          <button name="layout02" class="reflect_layout">反映</button>
-          <span class="save_layout_span_comment02"></span>
+          <h2 class="save_layout_span">【レイアウト2】</h2>
+          <div class="menu_indent">  
+            <button name="layout02" value="レイアウト2"  class="save_layout">保存</button>
+            <button name="layout02" lavel="レイアウト2"  class="reflect_layout">反映</button>
+            <span class="save_layout_span_comment02"></span>
+          </div>
         </p>
         <p>
-          <span class="save_layout_span">レイアウト3</span>
-          <button name="layout03" class="save_layout">保存</button>
-          <button name="layout03" class="reflect_layout">反映</button>
-          <span class="save_layout_span_comment03"></span>
+          <h2 class="save_layout_span">【レイアウト3】</h2>
+          <div class="menu_indent">  
+            <button name="layout03" value="レイアウト3"  class="save_layout">保存</button>
+            <button name="layout03" lavel="レイアウト3"  class="reflect_layout">反映</button>
+            <span class="save_layout_span_comment03"></span>
+          </div>
         </p>
         <p>
-          <span class="save_layout_span">レイアウト4</span>
-          <button name="layout04" class="save_layout">保存</button>
-          <button name="layout04" class="reflect_layout">反映</button>
-          <span class="save_layout_span_comment04"></span>
+          <h2 class="save_layout_span">【レイアウト4】</h2>
+          <div class="menu_indent">  
+            <button name="layout04" value="レイアウト4"  class="save_layout">保存</button>
+            <button name="layout04" lavel="レイアウト4"  class="reflect_layout">反映</button>
+            <span class="save_layout_span_comment04"></span>
+          </div>
         </p>
+
+        <p class="save_comment">
+            【保存】をすると、現在のレイアウトを保存しておけます。<br>
+            【反映】で保存したレイアウトを呼び出せます。<br><br>
+            別のスクリーンショットで、同じレイアウトを<br>
+            適応したい場合などにご活用ください。
+        </p>
+
     </div>
 </div>
 
@@ -625,9 +709,10 @@
 
 <!-- フッター -->
 <div class="footer">
-
-
-
+    <div class="generate_footer_div">
+    <hr class="footer_hr" color="#ffb744">
+        <div>Copyright (C) 2021 SQUARE ENIX CO., LTD. All Rights Reserved. </div>
+    </div>
 </div>
 <!-- フッターココまで -->
 
