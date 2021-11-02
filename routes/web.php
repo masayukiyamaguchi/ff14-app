@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+//TOPページルート
 Route::get('/',"IndexController@index")->name("index");
-Route::post('/',"GenerateController@index")->name("generate");
+
+//ccardルート
+Route::get('/ccard/',"CCard\IndexController@index")->name("index");
+Route::post('/ccard/',"CCard\GenerateController@index")->name("generate");
 

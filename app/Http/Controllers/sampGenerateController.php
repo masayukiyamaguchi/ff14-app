@@ -14,7 +14,7 @@ class GenerateController extends Controller
         $loadstone_id = $_POST["loadstone_id"];
 
         if($loadstone_id==""){
-            return view("index",["error"=>"Lodestone IDを入れてください"]);
+            return view("ccard.index",["error"=>"Lodestone IDを入れてください"]);
         }
 
         // API利用の宣言
@@ -26,7 +26,7 @@ class GenerateController extends Controller
 
         // ロドストIDが不正だった場合
         if($seach_datas=="error"){
-            return view("index",["error"=>"Lodestone IDが不正です"]);
+            return view("ccard.index",["error"=>"Lodestone IDが不正です"]);
         }
 
          // キャラ名
@@ -65,7 +65,7 @@ class GenerateController extends Controller
         $file_name = $_FILES['file_upload']['name'];
 
         if($file_name==""){
-            return view("index",["error"=>"スクショを選択してください"]);
+            return view("ccard.index",["error"=>"スクショを選択してください"]);
         }
 
         $file_type = $_FILES['file_upload']['type'];
@@ -75,7 +75,7 @@ class GenerateController extends Controller
         if(exif_imagetype($file_tmp_name)){
             // dump("success");
         }else{
-            return view("index",["error"=>"画像ファイルを選択してください"]);
+            return view("ccard.index",["error"=>"画像ファイルを選択してください"]);
         }
         
         $file_error = $_FILES['file_upload']['error'];
@@ -87,7 +87,7 @@ class GenerateController extends Controller
         if(move_uploaded_file($file_tmp_name,$save_dir)){
             // dump("success");
         }else{
-            return view("index",["error"=>"アップロード失敗:".$file_error]);
+            return view("ccard.index",["error"=>"アップロード失敗:".$file_error]);
         }
 
         // // fflogsデータ
@@ -118,7 +118,7 @@ class GenerateController extends Controller
         // $save_path = "img/test2.png";
         // $img->save($save_path,100);
 
-        return view("generate",
+        return view("ccard.generate",
             [
                 "char_name"=>$char_name,
                 "char_first_name"=>$char_first_name,
