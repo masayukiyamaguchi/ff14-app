@@ -1,0 +1,43 @@
+/*ヘッダー*/
+#main_top_header
+{
+    position: fixed;
+    width: 100%;
+    z-index: 1
+}
+
+.main_top_header
+{
+    height: 55px;
+    background-color: rgb(24, 24, 24);
+    display: flex;
+    justify-content: center;
+}
+
+.main_top_header_menu
+{
+    width: 1300px;
+    display: flex;
+}
+
+.main_top_header_menu_logo
+{
+
+}
+.main_top_header_menu_button
+{
+
+}
+
+.main_top_header_menu_button_ul li
+{
+    display: inline-block;
+    color: white;
+}
+
+.main_top_header_menu_logo_img
+{
+    padding-top: 4px;
+    margin-left: -10px;
+    width: 120px;
+}

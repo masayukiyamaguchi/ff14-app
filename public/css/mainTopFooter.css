@@ -1,0 +1,16 @@
+/*フッター*/
+#main_top_footer
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: static;
+    width: 100%;
+    background-color: rgb(24, 24, 24);
+}
+
+.main_top_footer
+{
+    text-align: center;
+    color: white;
+
+}

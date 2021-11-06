@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+    
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <title>FF14キャラクターカード|Final Fantasy Xiv Character card generator</title>
     <link rel="stylesheet" href="/css/main.css">
     <link href="/css/lightbox.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/mainTopHeader.css">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/js/main.js"></script>
@@ -26,7 +28,11 @@
 </div>
 
 <!-- ヘッダー -->
+<!--共通ヘッダー-->
+@component('components.commonHeaderMenu')
+@endcomponent
 <div class="header_div"><img src="/img/header_bg.png" alt=""></div>
+
 
 <!-- メイン部分 -->
 <div class="main_div">
@@ -40,7 +46,7 @@
 
 <div class="contents">
 
-
+    <p class="atention_lodestonid">現在、不具合があり調整中ですm m ご迷惑おかけします。</p>
 
 
     <form id=formInput action="{{route('generate')}}" method="post" enctype="multipart/form-data">

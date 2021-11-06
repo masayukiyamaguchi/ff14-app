@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 
 //TOPページルート
-Route::get('/',"IndexController@index")->name("index");
+Route::get('/',"Top\IndexController@index")->name("index");
 
 //ccardルート
 Route::get('/ccard/',"CCard\IndexController@index")->name("index");

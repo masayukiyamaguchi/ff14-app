@@ -14,17 +14,19 @@ class GenerateController extends Controller
     public function index(Request $request){
 
         $loadstone_id = $_POST["loadstone_id"];
+      
 
         if($loadstone_id==""){
             return view("ccard.index",["error"=>"Lodestone IDを入れてください"]);
         }
 
         // API利用の宣言
-        $api = new \XIVAPI\XIVAPI();
+        $api = new \XIVAPI\XIVAPI();        
 
         // データの抽出
         $seachdata = new Seachdata;
-        $seach_datas = $seachdata->searchdata($loadstone_id);
+        
+        $seach_datas = $seachdata->searchdata($loadstone_id);        
 
         // ロドストIDが不正だった場合
         if($seach_datas=="error"){
