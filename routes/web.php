@@ -21,3 +21,5 @@ Route::get('/',"Top\IndexController@index")->name("index");
 Route::get('/ccard/',"CCard\IndexController@index")->name("index");
 Route::post('/ccard/',"CCard\GenerateController@index")->name("generate");
 
+//MovieSearchルート
+Route::get('/moviesearch/',"MovieSearch\IndexController@index")->name("index");

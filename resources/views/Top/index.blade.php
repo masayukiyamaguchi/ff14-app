@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/css/top/top.css">
+    <link rel="stylesheet" href="/css/Top/top.css">
     <link rel="stylesheet" href="/css/mainTopHeader.css">
     <link rel="stylesheet" href="/css/mainTopFooter.css">
 
@@ -41,14 +41,14 @@
                                     <a href="/ccard/">
                                         <img src="\images\Top\template3.png" alt="">
                                     </a>
-                                    <h2>Caracter Card Generater</h2>
+                                    <h2>キャラクターカードジェネレーター</h2>
                                     <p>キャラクターカーを生成できます！</p>
                                 </li>
                                 <li class="contents_card_li">
-                                    <a href="/">
+                                    <a href="/moviesearch/">
                                         <img src="\images\Top\nowcreating.jpg" alt="">
                                     </a>
-                                    <h2>Comming Soon</h2>
+                                    <h2>攻略動画検索</h2>
                                     <p>現在制作中！</p>
                                 </li>
                                 <li class="contents_card_li">
