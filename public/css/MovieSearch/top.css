@@ -38,6 +38,20 @@
 
 }
 
+/*上にスペースをあける*/
+.mainContents_container_left div
+{
+    padding-top: 5px;
+}
+
+.mainContents_container_left div:first-child
+{
+    padding-top: 0px;
+}
+
+
+
+
 .left_menu_h1 img
 {
     width: 100%;
@@ -59,6 +73,30 @@
     position: relative;
 
 }
+
+.shadowbringers
+{
+    display: none;
+}
+
+.stormblood
+{
+    display: none;
+}
+
+.heavensward
+{
+    display: none;
+}
+
+
+.arealmreborn
+{
+    display: none;
+}
+
+
+
 
 .left_menu_h2_span
 {
@@ -109,7 +147,6 @@
     background-color: rgb(33, 33, 33);
     color: white;
 
-
 }
 
 /*リストフィルター*/
@@ -129,6 +166,8 @@
     border-right: transparent;
 }
 
+
+
 .movie_list_filter_ul li{
   color: #fff;
   background-color: #eb6100;
@@ -142,15 +181,63 @@
 /*ムービーリスト*/
 .movie_list_ul
 {
-    width: 100%;
     display: -webkit-flex;
     display: flex;
-
+    padding-right: 20px;
 }
 
 .movie_list_ul li
 {
     list-style: none;
     width: 100%;
+    margin: 0px 10px 0px;
 }
 
+.movie_list_samneil img
+{
+    width:100%;
+}
+
+.movie_list_p
+{
+    margin-top: -10px;  
+    display: flex;  
+}
+
+.movie_list_p span
+{
+    vertical-align: top;
+    margin-left: 5px;
+}
+
+.movie_list_channelname
+{
+    margin-left: 20px;
+}
+
+.movie_list_icon img
+{
+    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+    width:  40px;       /* ※縦横を同値に */
+    height: 40px;       /* ※縦横を同値に */    
+}
+
+.movie_list_title
+{
+    display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+
+}
+
+.movie_list_channelname
+{
+    padding-left: 30px;
+    display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow: hidden;
+    color: rgb(160, 160, 160);
+    font-size: 14px;
+}

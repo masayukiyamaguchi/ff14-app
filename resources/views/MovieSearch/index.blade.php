@@ -32,8 +32,10 @@
                 
                 <!-- レフト　-->
                 <div class="mainContents_container_left">
+
+                    <div id="shadowbringers">
                     <p class="left_menu_h1"><img src="\images\moviesearch\shadowbringers.png" alt=""></p>
-                    <p class="left_menu_h2"> <span class="left_menu_h2_span">希望の園エデン：再生編</span> </p>
+                    <p class="left_menu_h2 shadowbringers"> <span class="left_menu_h2_span">希望の園エデン：再生編</span> </p>
                     <ul class="left_menu_ul">
                         <li>暗闇の雲</li>
                         <li>影の王</li>
@@ -42,22 +44,112 @@
                         <li>闇の巫女</li>
                     </ul>
                     
-                    <p class="left_menu_h2"> <span class="left_menu_h2_span">希望の園エデン：共鳴編</span> </p>
+                    <p class="left_menu_h2 shadowbringers"> <span class="left_menu_h2_span">希望の園エデン：共鳴編</span> </p>
                     <ul class="left_menu_ul">
                         <li>ラムウ</li>
-                        <li>イフリート＆ガルーダ</li>
+                        <li>イフリート ガルーダ</li>
                         <li>ダークアイドル</li>
                         <li>シヴァ</li>
                     </ul>
 
-                    <p class="left_menu_h2"> <span class="left_menu_h2_span">希望の園エデン：覚醒編</span> </p>
+                    <p class="left_menu_h2 shadowbringers"> <span class="left_menu_h2_span">希望の園エデン：覚醒編</span> </p>
                     <ul class="left_menu_ul">
                         <li>エデン・プライム</li>
                         <li>ヴォイドウォーカー</li>
                         <li>リヴァイアサン</li>
                         <li>タイタン</li>
                     </ul>
+                    </div>
+
+                    <div id="stormblood">
+                    <p class="left_menu_h1"><img src="\images\moviesearch\stormblood.png" alt=""></p>
+                    <p class="left_menu_h2 stormblood"> <span class="left_menu_h2_span">次元の狭間オメガ：アルファ編</span> </p>
+                    <ul class="left_menu_ul">
+                        <li>カオス</li>
+                        <li>ミドガルズオルム</li>
+                        <li>オメガ</li>
+                        <li>オメガM オメガF</li>
+                        <li>オメガ</li>
+                    </ul>
                     
+                    <p class="left_menu_h2 stormblood"> <span class="left_menu_h2_span">次元の狭間オメガ：シグマ編</span> </p>
+                    <ul class="left_menu_ul">
+                        <li>魔列車</li>
+                        <li>チャダルヌーク</li>
+                        <li>ガーディアン</li>
+                        <li>ケフカ</li>
+                        <li>ゴッド・ケフカ</li>
+                    </ul>
+
+                    <p class="left_menu_h2 stormblood"> <span class="left_menu_h2_span">次元の狭間オメガ：デルタ編</span> </p>
+                    <ul class="left_menu_ul">
+                        <li>アルテ・ロイテ</li>
+                        <li>カタストロフィー</li>
+                        <li>ハリカルナッソス</li>
+                        <li>エクスデス</li>
+                        <li>ネオ・エクスデス</li>
+                    </ul>
+                    </div>
+
+                    <div id="heavensward">
+                    <p class="left_menu_h1"><img src="\images\moviesearch\heavensward.png" alt=""></p>
+                    <p class="left_menu_h2 heavensward"> <span class="left_menu_h2_span">機工城アレキサンダー：天動編</span> </p>
+                    <ul class="left_menu_ul">
+                        <li>リファビッシャー</li>
+                        <li>傭兵のレイムブリクス</li>
+                        <li>クルーズチェイサー</li>
+                        <li>アレキサンダー・プライム</li>
+                    </ul>
+                    
+                    <p class="left_menu_h2 heavensward"> <span class="left_menu_h2_span">機工城アレキサンダー：律動編</span> </p>
+                    <ul class="left_menu_ul">
+                        <li>奇才のラットフィンクス</li>
+                        <li>4体</li>
+                        <li>万能のクイックシンクス</li>
+                        <li>ブルートジャスティス</li>
+                    </ul>
+
+                    <p class="left_menu_h2 heavensward"> <span class="left_menu_h2_span">機工城アレキサンダー：起動編</span> </p>
+                    <ul class="left_menu_ul">
+                        <li>オプレッサー</li>
+                        <li>機工兵団</li>
+                        <li>リビングリキッド</li>
+                        <li>マニピュレーター</li>
+                    </ul>
+                    </div>
+
+
+                    <div id="arealmreborn">
+                    <p class="left_menu_h1"><img src="\images\moviesearch\arealmreborn.png" alt=""></p>
+                    <p class="left_menu_h2 arealmreborn"> <span class="left_menu_h2_span">大迷宮バハムート：真成編</span> </p>
+                    <ul class="left_menu_ul">
+                        <li>イムドゥグド</li>
+                        <li>カーリア</li>
+                        <li>フェニックス</li>
+                        <li>バハムート・プライム</li>
+                    </ul>
+                    
+                    <p class="left_menu_h2 arealmreborn"> <span class="left_menu_h2_span">大迷宮バハムート：侵攻編</span> </p>
+                    <ul class="left_menu_ul">
+                        <li>ラフレシア</li>
+                        <li>メリュジーヌ</li>
+                        <li>アバター</li>
+                        <li>ネール・デウス・ダーナス</li>
+                    </ul>
+
+                    <p class="left_menu_h2 arealmreborn"> <span class="left_menu_h2_span">大迷宮バハムート：邂逅編</span> </p>
+                    <ul class="left_menu_ul">
+                        <li>カドゥケウス</li>
+                        <li>防疫システム</li>
+                        <li>雑魚戦</li>
+                        <li>ツインタニア</li>
+                    </ul>
+                    </div>
+
+
+
+
+
 
                 </div>
 
@@ -76,35 +168,82 @@
 
                     <!-- 動画リスト部分　-->
                     <ul class="movie_list_ul">
-
                         <li>
-                            <iframe width="360" height="200" src="https://www.youtube.com/embed/zknxNR97IdA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <p class="movie_list_samneil"><img src="\images\moviesearch\samplesamneil.jpg" alt=""></p>
                             <p class="movie_list_p">
-                                <span class="movie_list_icon">〇</span>
-                                <span class="movie_list_titole">title</span>
+                                <span class="movie_list_icon"><img src="\images\moviesearch\samplechannelsamneil.jpg" alt=""></span>
+                                <span class="movie_list_title">金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡</span>
                             </p>
-                            <p class="movie_list_p movie_list_comment">comment</p>
+                            <p class="movie_list_p movie_list_channelname">チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名</p>
                         </li>
 
-                        <li><iframe width="360" height="200" src="https://www.youtube.com/embed/zknxNR97IdA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
-                        <li><iframe width="360" height="200" src="https://www.youtube.com/embed/zknxNR97IdA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
-                        <li><iframe width="360" height="200" src="https://www.youtube.com/embed/zknxNR97IdA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+                        <li>
+                            <p class="movie_list_samneil"><img src="\images\moviesearch\samplesamneil.jpg" alt=""></p>
+                            <p class="movie_list_p">
+                                <span class="movie_list_icon"><img src="\images\moviesearch\samplechannelsamneil.jpg" alt=""></span>
+                                <span class="movie_list_title">金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡</span>
+                            </p>
+                            <p class="movie_list_p movie_list_channelname">チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名</p>
+                        </li>
+
+                        <li>
+                            <p class="movie_list_samneil"><img src="\images\moviesearch\samplesamneil.jpg" alt=""></p>
+                            <p class="movie_list_p">
+                                <span class="movie_list_icon"><img src="\images\moviesearch\samplechannelsamneil.jpg" alt=""></span>
+                                <span class="movie_list_title">金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡</span>
+                            </p>
+                            <p class="movie_list_p movie_list_channelname">チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名</p>
+                        </li>
+
+                        <li>
+                            <p class="movie_list_samneil"><img src="\images\moviesearch\samplesamneil.jpg" alt=""></p>
+                            <p class="movie_list_p">
+                                <span class="movie_list_icon"><img src="\images\moviesearch\samplechannelsamneil.jpg" alt=""></span>
+                                <span class="movie_list_title">金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡</span>
+                            </p>
+                            <p class="movie_list_p movie_list_channelname">チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名</p>
+                        </li>
                     </ul>
 
                     <ul class="movie_list_ul">
-                        <li>21</li>
-                        <li>22</li>
-                        <li>23</li>
-                        <li>24</li>
+                        <li>
+                            <p class="movie_list_samneil"><img src="\images\moviesearch\samplesamneil.jpg" alt=""></p>
+                            <p class="movie_list_p">
+                                <span class="movie_list_icon"><img src="\images\moviesearch\samplechannelsamneil.jpg" alt=""></span>
+                                <span class="movie_list_title">金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡</span>
+                            </p>
+                            <p class="movie_list_p movie_list_channelname">チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名</p>
+                        </li>
+
+                        <li>
+                            <p class="movie_list_samneil"><img src="\images\moviesearch\samplesamneil.jpg" alt=""></p>
+                            <p class="movie_list_p">
+                                <span class="movie_list_icon"><img src="\images\moviesearch\samplechannelsamneil.jpg" alt=""></span>
+                                <span class="movie_list_title">金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡</span>
+                            </p>
+                            <p class="movie_list_p movie_list_channelname">チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名</p>
+                        </li>
+
+                        <li>
+                            <p class="movie_list_samneil"><img src="\images\moviesearch\samplesamneil.jpg" alt=""></p>
+                            <p class="movie_list_p">
+                                <span class="movie_list_icon"><img src="\images\moviesearch\samplechannelsamneil.jpg" alt=""></span>
+                                <span class="movie_list_title">金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡</span>
+                            </p>
+                            <p class="movie_list_p movie_list_channelname">チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名</p>
+                        </li>
+
+                        <li>
+                            <p class="movie_list_samneil"><img src="\images\moviesearch\samplesamneil.jpg" alt=""></p>
+                            <p class="movie_list_p">
+                                <span class="movie_list_icon"><img src="\images\moviesearch\samplechannelsamneil.jpg" alt=""></span>
+                                <span class="movie_list_title">金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡</span>
+                            </p>
+                            <p class="movie_list_p movie_list_channelname">チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名</p>
+                        </li>
                     </ul>
-
-                    <ul class="movie_list_ul">
-                        <li>31</li>
-                        <li>32</li>
-                        <li>33</li>
-                        <li>34</li>
-                    </ul>                        
-
+                    
+                
                 </div>
 
 
