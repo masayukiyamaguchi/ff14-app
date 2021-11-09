@@ -15,11 +15,22 @@ use Illuminate\Support\Facades\Route;
 
 
 //TOPページルート
-Route::get('/',"Top\IndexController@index")->name("index");
+Route::get('/',"Top\IndexController@index");
 
 //ccardルート
 Route::get('/ccard/',"CCard\IndexController@index")->name("index");
 Route::post('/ccard/',"CCard\GenerateController@index")->name("generate");
 
 //MovieSearchルート
-Route::get('/moviesearch/',"MovieSearch\IndexController@index")->name("index");
+Route::get('/moviesearch/',"MovieSearch\IndexController@index");
+
+Route::get('/moviesearch/postcontents/',"MovieSearch\MoviePostController@Index");
+Route::post('moviesearch/postcontents/create',"MovieSearch\MoviePostController@InsertData");
+
+
+Route::get('/moviesearch/{movie_id}/',"MovieSearch\MoviePlayController@index");
+
+
+
+
+

@@ -6,17 +6,18 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\moviesearch\Moviesearch_data;
 
-class IndexController extends Controller
+class MoviePlayController extends Controller
 {
     //
-
-    public function index()
+    public function index($id)
     {
-        //クエリビルダーの記述
-        $searchdatas = Moviesearch_data::orderBy("id","DESC")->take(8)->get();
 
-        return view("MovieSearch.index",["searchdatas"=>$searchdatas]);
+        //クエリビルダーの記述
+        $all = Moviesearch_data::where("id",$id)->get();
+
+        return view("MovieSearch.movieplay",["id"=>$id , "all"=>$all]);
     }
 
     
+
 }

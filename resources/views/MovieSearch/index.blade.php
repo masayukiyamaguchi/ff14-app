@@ -167,84 +167,46 @@
                     </div>
 
                     <!-- 動画リスト部分　-->
-                    <ul class="movie_list_ul">
-                        <li>
-                            <p class="movie_list_samneil"><img src="\images\moviesearch\samplesamneil.jpg" alt=""></p>
-                            <p class="movie_list_p">
-                                <span class="movie_list_icon"><img src="\images\moviesearch\samplechannelsamneil.jpg" alt=""></span>
-                                <span class="movie_list_title">金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡</span>
-                            </p>
-                            <p class="movie_list_p movie_list_channelname">チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名</p>
-                        </li>
+                    <div class="movie_list">
+                    @foreach ($searchdatas as $index => $searchdata)
 
-                        <li>
-                            <p class="movie_list_samneil"><img src="\images\moviesearch\samplesamneil.jpg" alt=""></p>
-                            <p class="movie_list_p">
-                                <span class="movie_list_icon"><img src="\images\moviesearch\samplechannelsamneil.jpg" alt=""></span>
-                                <span class="movie_list_title">金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡</span>
-                            </p>
-                            <p class="movie_list_p movie_list_channelname">チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名</p>
-                        </li>
+                    @if ($index%4 == 0)
+                        <ul class="movie_list_ul">                     
+                    @endif
+                        
+                        <div class="movie_list_div">
+                            <li>
+                                <div class="movie_list_samneil">
+                                    <a href="/moviesearch/{{ $searchdata["movie_id"] }}/">
+                                        <img src="{{ $searchdata["samneil_img"] }}" alt="{{ $searchdata["movie_title"] }}">
+                                    </a>
+                                </div>
+                                <div class="movie_list_detail">
+                                    <div class="movie_list_detail_channelicon">
+                                        <img src="{{ $searchdata["channel_img"] }}" alt="{{ $searchdata["channel_name"] }}">
+                                    </div>
+                                    <div class="movie_list_detail_text">                                        
+                                        <div class="movie_list_detail_text_title">
+                                            <a href="/moviesearch/{{ $searchdata["movie_id"] }}/">
+                                                {{ $searchdata["movie_title"] }}
+                                            </a>
+                                        </div>
+                                        <div class="movie_list_detail_text_channelname">
+                                            {{ $searchdata["channel_name"] }}
+                                        </div>
+                                    </div>
+                                </div>                            
+                            </li>
+                        </div>
 
-                        <li>
-                            <p class="movie_list_samneil"><img src="\images\moviesearch\samplesamneil.jpg" alt=""></p>
-                            <p class="movie_list_p">
-                                <span class="movie_list_icon"><img src="\images\moviesearch\samplechannelsamneil.jpg" alt=""></span>
-                                <span class="movie_list_title">金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡</span>
-                            </p>
-                            <p class="movie_list_p movie_list_channelname">チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名</p>
-                        </li>
+                    @if ($index%4 == 3)
+                         </ul>
+                    @endif
 
-                        <li>
-                            <p class="movie_list_samneil"><img src="\images\moviesearch\samplesamneil.jpg" alt=""></p>
-                            <p class="movie_list_p">
-                                <span class="movie_list_icon"><img src="\images\moviesearch\samplechannelsamneil.jpg" alt=""></span>
-                                <span class="movie_list_title">金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡</span>
-                            </p>
-                            <p class="movie_list_p movie_list_channelname">チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名</p>
-                        </li>
-                    </ul>
+                                   
+                    @endforeach
+                    </div>
 
-                    <ul class="movie_list_ul">
-                        <li>
-                            <p class="movie_list_samneil"><img src="\images\moviesearch\samplesamneil.jpg" alt=""></p>
-                            <p class="movie_list_p">
-                                <span class="movie_list_icon"><img src="\images\moviesearch\samplechannelsamneil.jpg" alt=""></span>
-                                <span class="movie_list_title">金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡</span>
-                            </p>
-                            <p class="movie_list_p movie_list_channelname">チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名</p>
-                        </li>
-
-                        <li>
-                            <p class="movie_list_samneil"><img src="\images\moviesearch\samplesamneil.jpg" alt=""></p>
-                            <p class="movie_list_p">
-                                <span class="movie_list_icon"><img src="\images\moviesearch\samplechannelsamneil.jpg" alt=""></span>
-                                <span class="movie_list_title">金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡</span>
-                            </p>
-                            <p class="movie_list_p movie_list_channelname">チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名</p>
-                        </li>
-
-                        <li>
-                            <p class="movie_list_samneil"><img src="\images\moviesearch\samplesamneil.jpg" alt=""></p>
-                            <p class="movie_list_p">
-                                <span class="movie_list_icon"><img src="\images\moviesearch\samplechannelsamneil.jpg" alt=""></span>
-                                <span class="movie_list_title">金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡</span>
-                            </p>
-                            <p class="movie_list_p movie_list_channelname">チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名</p>
-                        </li>
-
-                        <li>
-                            <p class="movie_list_samneil"><img src="\images\moviesearch\samplesamneil.jpg" alt=""></p>
-                            <p class="movie_list_p">
-                                <span class="movie_list_icon"><img src="\images\moviesearch\samplechannelsamneil.jpg" alt=""></span>
-                                <span class="movie_list_title">金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡</span>
-                            </p>
-                            <p class="movie_list_p movie_list_channelname">チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名チャンネル名</p>
-                        </li>
-                    </ul>
-                    
-                
-                </div>
 
 
 

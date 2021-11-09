@@ -179,61 +179,60 @@
 
 
 /*ムービーリスト*/
+.movie_list
+{
+    width: 100%;
+}
+
 .movie_list_ul
 {
-    display: -webkit-flex;
     display: flex;
     padding-right: 20px;
+}
+
+.movie_list_div
+{
+    width: 25%;
 }
 
 .movie_list_ul li
 {
     list-style: none;
-    width: 100%;
     margin: 0px 10px 0px;
 }
 
 .movie_list_samneil img
 {
-    width:100%;
+    width: 100%;
 }
 
-.movie_list_p
+.movie_list_detail
 {
-    margin-top: -10px;  
-    display: flex;  
+    display: flex;
 }
 
-.movie_list_p span
-{
-    vertical-align: top;
-    margin-left: 5px;
-}
-
-.movie_list_channelname
-{
-    margin-left: 20px;
-}
-
-.movie_list_icon img
+.movie_list_detail_channelicon img
 {
     border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
     width:  40px;       /* ※縦横を同値に */
     height: 40px;       /* ※縦横を同値に */    
 }
 
-.movie_list_title
+.movie_list_detail_text
+{
+    margin-left: 5px;
+}
+
+.movie_list_detail_text_title
 {
     display: -webkit-box;
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 2;
 	overflow: hidden;
-
 }
 
-.movie_list_channelname
+.movie_list_detail_text_channelname
 {
-    padding-left: 30px;
     display: -webkit-box;
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 1;
@@ -241,3 +240,10 @@
     color: rgb(160, 160, 160);
     font-size: 14px;
 }
+
+.movie_list_div a
+{
+    color : inherit;
+    text-decoration: none;
+}
+
