@@ -48,7 +48,7 @@
                         </div>
 
                         <div class="formfield_inputfield">
-                            <form action="postcontents/create"  method="post" class="formfield_inputfield_form">
+                            <form action="create"  method="post" class="formfield_inputfield_form">
                                 
                                 @csrf
 
