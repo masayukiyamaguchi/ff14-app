@@ -58,6 +58,12 @@
     margin-left: 10px;
 }
 
+.error_messase
+{
+    color: red;
+}
+
+
 .formfield_inputfield_form > div
 {
     margin-top: 10px;

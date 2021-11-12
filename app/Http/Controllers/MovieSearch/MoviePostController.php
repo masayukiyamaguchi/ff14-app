@@ -9,6 +9,7 @@ use App\Models\moviesearch\Moviesearch_data;
 use Google_Client;
 use Google_Service_YouTube;
 
+
 class MoviePostController extends Controller
 {
 
@@ -25,6 +26,23 @@ class MoviePostController extends Controller
         //データの取得
         $alldatas = $request->all();
         $movie_url = $alldatas["movie_url"];
+
+        //ムービーURLを動画IDに変換
+        $movie_ID = $this -> urlToId($movie_url);
+
+        //すでに同じムービーURLがあったらエラーを返す
+        $all = Moviesearch_data::where("movie_id",$movie_ID)->get();
+        $error = array();
+        if(isset($all[0]["movie_id"]))
+        {            
+            $error[] =  "すでに投稿済みの動画です";
+            return redirect()->back()->withInput()->withErrors($error);
+        }else
+        {
+
+        }
+        
+
 
         if(array_key_exists("bool_vc",$alldatas))
         {
@@ -60,8 +78,7 @@ class MoviePostController extends Controller
         $play_job = $alldatas["play_job"];
         $contents = $alldatas["contents"];
 
-        //ムービーURLを動画IDに変換
-        $movie_ID = $this -> urlToId($movie_url);
+        
 
 
         //エラーならエラーコードを返す

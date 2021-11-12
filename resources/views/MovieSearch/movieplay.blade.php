@@ -36,32 +36,36 @@
                     <div class="mainContents_container_left_contents">
                         
                         <div class="main_movie_iflame">
-                            <iframe width="1280" height="720" src="https://www.youtube.com/embed/RbTsVd07cUk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe 
+                                width="1280" 
+                                height="720" 
+                                src="https://www.youtube.com/embed/{{ $id }}?autoplay=1"
+                                title="YouTube video player" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
                         </div>
 
                         <div class="main_movie_detail">
 
                             <div class="main_movie_detail_title">
-                                金ネジキクリアまでの軌跡
+                                {{ $all["movie_title"] }}
                             </div>
 
                             <div class="main_movie_detail_channelinfo">
 
                                 <div class="main_movie_detail_channelinfo_channelicon">
-                                    <img src="https://yt3.ggpht.com/ytc/AKedOLQTGeggt5tp-l3ynVXC8F1s1y18x9pMRiccw_9y_g=s240-c-k-c0x00ffffff-no-rj" alt="">
+                                    <img src="{{ $all["channel_img"] }}" alt="">
                                 </div>
 
                                 <div class="main_movie_detail_channelinfo_text">
                                     <div class="main_movie_detail_channelinfo_text_channelname">
-                                        チャンネル名
+                                        {{ $all["channel_name"] }}
                                     </div>
     
                                     <div class="main_movie_detail_channelinfo_text_moviediscription">
-                                        ネジキクリアなんか一切目指さない。<br>
-                                        高い目標を持ち過ぎると、ネジキはうまくいかないと思っている。<br>
-                                        何気ない一戦を過ごして勝ち、それで42連勝あたりに優勝争いをしていたら、<br>
-                                        さあ、目指そうと。<br>
-                                        ▼うんこちゃん/加藤純一Twitter\nhttps://twitter.com/unkochan1234567<br>
+                                        {!! nl2br(e($all["movie_discription"])) !!}
                                     </div>
                                 </div>
 

@@ -48,7 +48,20 @@
                         </div>
 
                         <div class="formfield_inputfield">
-                            <form action="create"  method="post" class="formfield_inputfield_form">
+
+                            <div class="error_messase">
+                                @if ($errors->any())
+                                 <ul>
+                                @foreach ($errors->all() as $error)
+                                
+                                <li>{{ $error }}</li>
+                                
+                                @endforeach
+                                </ul>
+                                @endif
+                            </div>
+
+                            <form action="postcontents/create"  method="post" class="formfield_inputfield_form">
                                 
                                 @csrf
 
@@ -56,7 +69,7 @@
                                     <div class="input_movie_url_text">
                                         動画URL
                                     </div>
-                                    <div class="input_movie_url_input">
+                                    <div class="input_movie_url_input">                                        
                                         <input type="text" name="movie_url">
                                     </div>
                                 </div>

@@ -201,9 +201,16 @@
     margin: 0px 10px 0px;
 }
 
+.movie_list_samneil
+{
+}
+
 .movie_list_samneil img
 {
-    width: 100%;
+    width: 38vh;
+    height: 21vh;
+    object-fit: cover;
+
 }
 
 .movie_list_detail

@@ -13,9 +13,8 @@ class MoviePlayController extends Controller
     {
 
         //クエリビルダーの記述
-        $all = Moviesearch_data::where("id",$id)->get();
-
-        return view("MovieSearch.movieplay",["id"=>$id , "all"=>$all]);
+        $all = Moviesearch_data::where("movie_id",$id)->get();
+        return view("MovieSearch.movieplay",["id"=>$id , "all"=>$all[0]]);
     }
 
     
