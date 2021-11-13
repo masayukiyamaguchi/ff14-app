@@ -269,7 +269,9 @@ body{
 
 .error_text{
     color: red;
-    padding-left: 50px;
+    text-align: center;
+    margin-top: -0px;
+    margin-bottom: -10px;
 }
 
 .top_right_menu{
@@ -357,7 +359,7 @@ body{
   .generate_button{
       text-align: center;
       padding-top: 50px;
-      padding-left: 185px;
+      padding-left: 0px;
   }
 
 

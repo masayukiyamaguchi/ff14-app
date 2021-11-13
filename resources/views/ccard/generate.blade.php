@@ -99,7 +99,7 @@
         <!-- メインジョブ -->
         <div class="char_main_job_span dragg position">
             <span class="char_main_job char_info main_job_bg_h fontfix_info">メインジョブ</span>
-            <span class="char_main_job_icon"><img class="char_main_job_icon_img main_job_bg" src="img\jobicon\mainjob\paladin.png" alt=""></span>
+            <span class="char_main_job_icon"><img class="char_main_job_icon_img main_job_bg" src="/img/jobicon/mainjob/paladin.png" alt=""></span>
             <span class="char_main_name char_info main_job_bg fontfix_info">ナイト</span>
         </div>
 
@@ -128,9 +128,9 @@
         <div class="char_favorite_div">
             <span class="char_favorite char_info favorite_bg_h fontfix_info">お気に入りコンテンツ</span>
             <span class="char_favorite_name favorite_bg">
-                <span name=text001 class="char_info"><img src="img\faveriteicon\faverite001.png" alt="">レベリング・</span>
-                <span name=text015 class="char_info"><img src="img\faveriteicon\faverite015.png" alt="">メインストーリー・</span>
-                <span name=text002 class="char_info"><img src="img\faveriteicon\faverite002.png" alt="">クラフター・</span>
+                <span name=text001 class="char_info"><img src="/img/faveriteicon/faverite001.png" alt="">レベリング・</span>
+                <span name=text015 class="char_info"><img src="/img/faveriteicon/faverite015.png" alt="">メインストーリー・</span>
+                <span name=text002 class="char_info"><img src="/img/faveriteicon/faverite002.png" alt="">クラフター・</span>
             </span>
         </div>
         </div>
@@ -402,53 +402,53 @@
         <ul class="main_job_select_ul">   
     		<li>
                 <div class="select_main_job">
-                    <img class="select_main_job_img select_main_job_img_change" src="img/jobicon/01/paladin.png" alt="">
+                    <img class="select_main_job_img select_main_job_img_change" src="/img/jobicon/01/paladin.png" alt="">
                     <plus class="select_main_job_name">ナイト</plus>
                     <plus class="select_main_job_plus">+</plus></div>
 
     			<ul class="main_job_select_ul main_job_select_font display_none">
                     <li>-TANK-</li>
-                    <li><img class="select_main_job_img" src="img/jobicon/01/1dot.png" alt=""><plus class="select_main_job_name_li"></plus></li>
-    				<li class="select_job_tank" name="paladin"><img class="select_main_job_img" src="img/jobicon/01/paladin.png" alt=""><plus class="select_main_job_name_li">ナイト</plus></li>
-    				<li class="select_job_tank" name="warrior"><img class="select_main_job_img" src="img/jobicon/01/warrior.png" alt=""><plus class="select_main_job_name_li">戦士</plus></li>
-                    <li class="select_job_tank" name="darkknight"><img class="select_main_job_img" src="img/jobicon/01/darkknight.png" alt=""><plus class="select_main_job_name_li">暗黒騎士</plus></li>
-                    <li class="select_job_tank" name="gunbreaker"><img class="select_main_job_img" src="img/jobicon/01/gunbreaker.png" alt=""><plus class="select_main_job_name_li">ガンブレイカー</plus></li>
+                    <li><img class="select_main_job_img" src="/img/jobicon/01/1dot.png" alt=""><plus class="select_main_job_name_li"></plus></li>
+    				<li class="select_job_tank" name="paladin"><img class="select_main_job_img" src="/img/jobicon/01/paladin.png" alt=""><plus class="select_main_job_name_li">ナイト</plus></li>
+    				<li class="select_job_tank" name="warrior"><img class="select_main_job_img" src="/img/jobicon/01/warrior.png" alt=""><plus class="select_main_job_name_li">戦士</plus></li>
+                    <li class="select_job_tank" name="darkknight"><img class="select_main_job_img" src="/img/jobicon/01/darkknight.png" alt=""><plus class="select_main_job_name_li">暗黒騎士</plus></li>
+                    <li class="select_job_tank" name="gunbreaker"><img class="select_main_job_img" src="/img/jobicon/01/gunbreaker.png" alt=""><plus class="select_main_job_name_li">ガンブレイカー</plus></li>
                     <li>-HEALER-</li>
-                    <li><img class="select_main_job_img" src="img/jobicon/01/1dot.png" alt=""><plus class="select_main_job_name_li"></plus></li>                    
-                    <li class="select_job_healer" name="whitemage"><img class="select_main_job_img" src="img/jobicon/01/whitemage.png" alt=""><plus class="select_main_job_name_li">白魔道士</plus></li>
-                    <li class="select_job_healer" name="scholar"><img class="select_main_job_img" src="img/jobicon/01/scholar.png" alt=""><plus class="select_main_job_name_li">学者</plus></li>
-                    <li class="select_job_healer" name="astrologian"><img class="select_main_job_img" src="img/jobicon/01/astrologian.png" alt=""><plus class="select_main_job_name_li">占星術士</plus></li>
-                    <li><img class="select_main_job_img" src="img/jobicon/01/1dot.png" alt=""><plus class="select_main_job_name_li"></plus></li>
+                    <li><img class="select_main_job_img" src="/img/jobicon/01/1dot.png" alt=""><plus class="select_main_job_name_li"></plus></li>                    
+                    <li class="select_job_healer" name="whitemage"><img class="select_main_job_img" src="/img/jobicon/01/whitemage.png" alt=""><plus class="select_main_job_name_li">白魔道士</plus></li>
+                    <li class="select_job_healer" name="scholar"><img class="select_main_job_img" src="/img/jobicon/01/scholar.png" alt=""><plus class="select_main_job_name_li">学者</plus></li>
+                    <li class="select_job_healer" name="astrologian"><img class="select_main_job_img" src="/img/jobicon/01/astrologian.png" alt=""><plus class="select_main_job_name_li">占星術士</plus></li>
+                    <li><img class="select_main_job_img" src="/img/jobicon/01/1dot.png" alt=""><plus class="select_main_job_name_li"></plus></li>
                     <li>-DPS-</li>
-                    <li><img class="select_main_job_img" src="img/jobicon/01/1dot.png" alt=""><plus class="select_main_job_name_li"></plus></li>
-                    <li class="select_job_dps" name="monk"><img class="select_main_job_img" src="img/jobicon/01/monk.png" alt=""><plus class="select_main_job_name_li">モンク</plus></li>
-                    <li class="select_job_dps" name="dragoon"><img class="select_main_job_img" src="img/jobicon/01/dragoon.png" alt=""><plus class="select_main_job_name_li">竜騎士</plus></li>
-                    <li class="select_job_dps" name="ninja"><img class="select_main_job_img" src="img/jobicon/01/ninja.png" alt=""><plus class="select_main_job_name_li">忍者</plus></li>
-                    <li class="select_job_dps" name="samurai"><img class="select_main_job_img" src="img/jobicon/01/samurai.png" alt=""><plus class="select_main_job_name_li">侍</plus></li>
-                    <li class="select_job_dps" name="bard"><img class="select_main_job_img" src="img/jobicon/01/bard.png" alt=""><plus class="select_main_job_name_li">吟遊詩人</plus></li>
-                    <li class="select_job_dps" name="machinist"><img class="select_main_job_img" src="img/jobicon/01/machinist.png" alt=""><plus class="select_main_job_name_li">機工士</plus></li>
-                    <li class="select_job_dps" name="dancer"><img class="select_main_job_img" src="img/jobicon/01/dancer.png" alt=""><plus class="select_main_job_name_li">踊り子</plus></li>
-                    <li><img class="select_main_job_img" src="img/jobicon/01/1dot.png" alt=""><plus class="select_main_job_name_li"></plus></li>
-                    <li class="select_job_dps" name="blackmage"><img class="select_main_job_img" src="img/jobicon/01/blackmage.png" alt=""><plus class="select_main_job_name_li">黒魔道士</plus></li>
-                    <li class="select_job_dps" name="summoner"><img class="select_main_job_img" src="img/jobicon/01/summoner.png" alt=""><plus class="select_main_job_name_li">召喚士</plus></li>
-                    <li class="select_job_dps" name="redmage"><img class="select_main_job_img" src="img/jobicon/01/redmage.png" alt=""><plus class="select_main_job_name_li">赤魔道士</plus></li>
-                    <li><img class="select_main_job_img" src="img/jobicon/01/1dot.png" alt=""><plus class="select_main_job_name_li"></plus></li>
-                    <!-- <li class="select_job_dps" name="bluemage"><img class="select_main_job_img" src="img/jobicon/01/bluemage.png" alt=""><plus class="select_main_job_name_li">青魔道士</plus></li> -->
+                    <li><img class="select_main_job_img" src="/img/jobicon/01/1dot.png" alt=""><plus class="select_main_job_name_li"></plus></li>
+                    <li class="select_job_dps" name="monk"><img class="select_main_job_img" src="/img/jobicon/01/monk.png" alt=""><plus class="select_main_job_name_li">モンク</plus></li>
+                    <li class="select_job_dps" name="dragoon"><img class="select_main_job_img" src="/img/jobicon/01/dragoon.png" alt=""><plus class="select_main_job_name_li">竜騎士</plus></li>
+                    <li class="select_job_dps" name="ninja"><img class="select_main_job_img" src="/img/jobicon/01/ninja.png" alt=""><plus class="select_main_job_name_li">忍者</plus></li>
+                    <li class="select_job_dps" name="samurai"><img class="select_main_job_img" src="/img/jobicon/01/samurai.png" alt=""><plus class="select_main_job_name_li">侍</plus></li>
+                    <li class="select_job_dps" name="bard"><img class="select_main_job_img" src="/img/jobicon/01/bard.png" alt=""><plus class="select_main_job_name_li">吟遊詩人</plus></li>
+                    <li class="select_job_dps" name="machinist"><img class="select_main_job_img" src="/img/jobicon/01/machinist.png" alt=""><plus class="select_main_job_name_li">機工士</plus></li>
+                    <li class="select_job_dps" name="dancer"><img class="select_main_job_img" src="/img/jobicon/01/dancer.png" alt=""><plus class="select_main_job_name_li">踊り子</plus></li>
+                    <li><img class="select_main_job_img" src="/img/jobicon/01/1dot.png" alt=""><plus class="select_main_job_name_li"></plus></li>
+                    <li class="select_job_dps" name="blackmage"><img class="select_main_job_img" src="/img/jobicon/01/blackmage.png" alt=""><plus class="select_main_job_name_li">黒魔道士</plus></li>
+                    <li class="select_job_dps" name="summoner"><img class="select_main_job_img" src="/img/jobicon/01/summoner.png" alt=""><plus class="select_main_job_name_li">召喚士</plus></li>
+                    <li class="select_job_dps" name="redmage"><img class="select_main_job_img" src="/img/jobicon/01/redmage.png" alt=""><plus class="select_main_job_name_li">赤魔道士</plus></li>
+                    <li><img class="select_main_job_img" src="/img/jobicon/01/1dot.png" alt=""><plus class="select_main_job_name_li"></plus></li>
+                    <!-- <li class="select_job_dps" name="bluemage"><img class="select_main_job_img" src="/img/jobicon/01/bluemage.png" alt=""><plus class="select_main_job_name_li">青魔道士</plus></li> -->
                     <li>-CRAFTER-</li>
-                    <li><img class="select_main_job_img" src="img/jobicon/01/1dot.png" alt=""><plus class="select_main_job_name_li"></plus></li>
-                    <li class="select_job_crafter" name="carpenter"><img class="select_main_job_img" src="img/jobicon/01/carpenter.png" alt=""><plus class="select_main_job_name_li">木工師</plus></li>
-                    <li class="select_job_crafter" name="blacksmith"><img class="select_main_job_img" src="img/jobicon/01/blacksmith.png" alt=""><plus class="select_main_job_name_li">鍛冶師</plus></li>
-                    <li class="select_job_crafter" name="armorer"><img class="select_main_job_img" src="img/jobicon/01/armorer.png" alt=""><plus class="select_main_job_name_li">甲冑師</plus></li>
-                    <li class="select_job_crafter" name="goldsmith"><img class="select_main_job_img" src="img/jobicon/01/goldsmith.png" alt=""><plus class="select_main_job_name_li">彫金師</plus></li>
-    				<li class="select_job_crafter" name="leatherworker"><img class="select_main_job_img" src="img/jobicon/01/leatherworker.png" alt=""><plus class="select_main_job_name_li">革細工師</plus></li>
-    				<li class="select_job_crafter" name="weaver"><img class="select_main_job_img" src="img/jobicon/01/weaver.png" alt=""><plus class="select_main_job_name_li">裁縫師</plus></li>
-    				<li class="select_job_crafter" name="alchemist"><img class="select_main_job_img" src="img/jobicon/01/alchemist.png" alt=""><plus class="select_main_job_name_li">錬金術師</plus></li>
-    				<li class="select_job_crafter" name="culinarian"><img class="select_main_job_img" src="img/jobicon/01/culinarian.png" alt=""><plus class="select_main_job_name_li">調理師</plus></li>
+                    <li><img class="select_main_job_img" src="/img/jobicon/01/1dot.png" alt=""><plus class="select_main_job_name_li"></plus></li>
+                    <li class="select_job_crafter" name="carpenter"><img class="select_main_job_img" src="/img/jobicon/01/carpenter.png" alt=""><plus class="select_main_job_name_li">木工師</plus></li>
+                    <li class="select_job_crafter" name="blacksmith"><img class="select_main_job_img" src="/img/jobicon/01/blacksmith.png" alt=""><plus class="select_main_job_name_li">鍛冶師</plus></li>
+                    <li class="select_job_crafter" name="armorer"><img class="select_main_job_img" src="/img/jobicon/01/armorer.png" alt=""><plus class="select_main_job_name_li">甲冑師</plus></li>
+                    <li class="select_job_crafter" name="goldsmith"><img class="select_main_job_img" src="/img/jobicon/01/goldsmith.png" alt=""><plus class="select_main_job_name_li">彫金師</plus></li>
+    				<li class="select_job_crafter" name="leatherworker"><img class="select_main_job_img" src="/img/jobicon/01/leatherworker.png" alt=""><plus class="select_main_job_name_li">革細工師</plus></li>
+    				<li class="select_job_crafter" name="weaver"><img class="select_main_job_img" src="/img/jobicon/01/weaver.png" alt=""><plus class="select_main_job_name_li">裁縫師</plus></li>
+    				<li class="select_job_crafter" name="alchemist"><img class="select_main_job_img" src="/img/jobicon/01/alchemist.png" alt=""><plus class="select_main_job_name_li">錬金術師</plus></li>
+    				<li class="select_job_crafter" name="culinarian"><img class="select_main_job_img" src="/img/jobicon/01/culinarian.png" alt=""><plus class="select_main_job_name_li">調理師</plus></li>
                     <li>-GATHERER-</li>
-                    <li><img class="select_main_job_img" src="img/jobicon/01/1dot.png" alt=""><plus class="select_main_job_name_li"></plus></li>
-    				<li class="select_job_gatherer" name="miner"><img class="select_main_job_img" src="img/jobicon/01/miner.png" alt=""><plus class="select_main_job_name_li">採掘師</plus></li>
-                    <li class="select_job_gatherer" name="botanist"><img class="select_main_job_img" src="img/jobicon/01/botanist.png" alt=""><plus class="select_main_job_name_li">園芸師</plus></li>
-                    <li class="select_job_gatherer" name="fisher"><img class="select_main_job_img" src="img/jobicon/01/fisher.png" alt=""><plus class="select_main_job_name_li">釣師</plus></li>
+                    <li><img class="select_main_job_img" src="/img/jobicon/01/1dot.png" alt=""><plus class="select_main_job_name_li"></plus></li>
+    				<li class="select_job_gatherer" name="miner"><img class="select_main_job_img" src="/img/jobicon/01/miner.png" alt=""><plus class="select_main_job_name_li">採掘師</plus></li>
+                    <li class="select_job_gatherer" name="botanist"><img class="select_main_job_img" src="/img/jobicon/01/botanist.png" alt=""><plus class="select_main_job_name_li">園芸師</plus></li>
+                    <li class="select_job_gatherer" name="fisher"><img class="select_main_job_img" src="/img/jobicon/01/fisher.png" alt=""><plus class="select_main_job_name_li">釣師</plus></li>
 
     			</ul>
 
@@ -538,21 +538,21 @@
     <h2 class="mhover_bg" data="favorite_bg">【お気に入りコンテンツ】</h2>
     <div class="menu_indent_favorite">  
         <span class="favorite_contents_span">
-            <input class="favorite_contents" type="checkbox" name="001" value="レベリング・"><img class="favorite_contents_img" src="img\faveriteicon\faverite001.png" alt="">レベリング
-            <input class="favorite_contents" type="checkbox" name="015" value="メインストーリー・"><img class="favorite_contents_img" src="img\faveriteicon\faverite015.png" alt="">メインストーリー
-            <input class="favorite_contents" type="checkbox" name="002" value="クラフター・"><img class="favorite_contents_img" src="img\faveriteicon\faverite002.png" alt="">クラフター<br>
-            <input class="favorite_contents" type="checkbox" name="003" value="ギャザラー・"><img class="favorite_contents_img" src="img\faveriteicon\faverite003.png" alt="">ギャザラー
-            <input class="favorite_contents" type="checkbox" name="004" value="グルポ・"><img class="favorite_contents_img" src="img\faveriteicon\faverite004.png" alt="">グルポ
-            <input class="favorite_contents" type="checkbox" name="005" value="ミラプリ・"><img class="favorite_contents_img" src="img\faveriteicon\faverite005.png" alt="">ミラプリ
-            <input class="favorite_contents" type="checkbox" name="006" value="おしゃべり・"><img class="favorite_contents_img" src="img\faveriteicon\faverite006.png" alt="">おしゃべり<br>
-            <input class="favorite_contents" type="checkbox" name="007" value="ハウジング・"><img class="favorite_contents_img" src="img\faveriteicon\faverite007.png" alt="">ハウジング
-            <input class="favorite_contents" type="checkbox" name="008" value="ゴールドソーサー・"><img class="favorite_contents_img" src="img\faveriteicon\faverite008.png" alt="">ゴールドソーサー
-            <input class="favorite_contents" type="checkbox" name="009" value="演奏・"><img class="favorite_contents_img" src="img\faveriteicon\faverite009.png" alt="">演奏<br>
-            <input class="favorite_contents" type="checkbox" name="010" value="トレハン・"><img class="favorite_contents_img" src="img\faveriteicon\faverite010.png" alt="">トレハン
-            <input class="favorite_contents" type="checkbox" name="011" value="討伐/討滅戦・"><img class="favorite_contents_img" src="img\faveriteicon\faverite011.png" alt="">討伐/討滅戦
-            <input class="favorite_contents" type="checkbox" name="012" value="零式・"><img class="favorite_contents_img" src="img\faveriteicon\faverite012.png" alt="">零式
-            <input class="favorite_contents" type="checkbox" name="013" value="絶・"><img class="favorite_contents_img" src="img\faveriteicon\faverite013.png" alt="">絶
-            <input class="favorite_contents" type="checkbox" name="014" value="PvP・"><img class="favorite_contents_img" src="img\faveriteicon\faverite014.png" alt="">PvP
+            <input class="favorite_contents" type="checkbox" name="001" value="レベリング・"><img class="favorite_contents_img" src="/img/faveriteicon/faverite001.png" alt="">レベリング
+            <input class="favorite_contents" type="checkbox" name="015" value="メインストーリー・"><img class="favorite_contents_img" src="/img/faveriteicon/faverite015.png" alt="">メインストーリー
+            <input class="favorite_contents" type="checkbox" name="002" value="クラフター・"><img class="favorite_contents_img" src="/img/faveriteicon/faverite002.png" alt="">クラフター<br>
+            <input class="favorite_contents" type="checkbox" name="003" value="ギャザラー・"><img class="favorite_contents_img" src="/img/faveriteicon/faverite003.png" alt="">ギャザラー
+            <input class="favorite_contents" type="checkbox" name="004" value="グルポ・"><img class="favorite_contents_img" src="/img/faveriteicon/faverite004.png" alt="">グルポ
+            <input class="favorite_contents" type="checkbox" name="005" value="ミラプリ・"><img class="favorite_contents_img" src="/img/faveriteicon/faverite005.png" alt="">ミラプリ
+            <input class="favorite_contents" type="checkbox" name="006" value="おしゃべり・"><img class="favorite_contents_img" src="/img/faveriteicon/faverite006.png" alt="">おしゃべり<br>
+            <input class="favorite_contents" type="checkbox" name="007" value="ハウジング・"><img class="favorite_contents_img" src="/img/faveriteicon/faverite007.png" alt="">ハウジング
+            <input class="favorite_contents" type="checkbox" name="008" value="ゴールドソーサー・"><img class="favorite_contents_img" src="/img/faveriteicon/faverite008.png" alt="">ゴールドソーサー
+            <input class="favorite_contents" type="checkbox" name="009" value="演奏・"><img class="favorite_contents_img" src="/img/faveriteicon/faverite009.png" alt="">演奏<br>
+            <input class="favorite_contents" type="checkbox" name="010" value="トレハン・"><img class="favorite_contents_img" src="/img/faveriteicon/faverite010.png" alt="">トレハン
+            <input class="favorite_contents" type="checkbox" name="011" value="討伐/討滅戦・"><img class="favorite_contents_img" src="/img/faveriteicon/faverite011.png" alt="">討伐/討滅戦
+            <input class="favorite_contents" type="checkbox" name="012" value="零式・"><img class="favorite_contents_img" src="/img/faveriteicon/faverite012.png" alt="">零式
+            <input class="favorite_contents" type="checkbox" name="013" value="絶・"><img class="favorite_contents_img" src="/img/faveriteicon/faverite013.png" alt="">絶
+            <input class="favorite_contents" type="checkbox" name="014" value="PvP・"><img class="favorite_contents_img" src="/img/faveriteicon/faverite014.png" alt="">PvP
         </span>  
     </div>  
 

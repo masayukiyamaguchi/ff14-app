@@ -85,14 +85,16 @@ class GenerateController extends Controller
         $file_error = $_FILES['file_upload']['error'];
 
         // 保存場所、ファイル名の正規化
-        $save_dir = 'storage/images/'.basename($file_name);
+        $save_dir = '/storage/images/'.basename($file_name);
 
         // 画像ファイルのアップロード
-        if(move_uploaded_file($file_tmp_name,$save_dir)){
+        if(move_uploaded_file($file_tmp_name,".".$save_dir)){
             // dump("success");
         }else{
             return view("ccard.index",["error"=>"アップロード失敗:".$file_error]);
         }
+
+
 
         // // fflogsデータ
         // $fflogs_datas = $seachdata->fflogsdata();

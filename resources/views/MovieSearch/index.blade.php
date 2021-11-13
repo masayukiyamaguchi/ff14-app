@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <link rel="stylesheet" href="/css/moviesearch/top.css">
     <link rel="stylesheet" href="/css/mainTopHeader.css">
     <link rel="stylesheet" href="/css/mainTopFooter.css">
@@ -14,6 +16,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/js/moviesearch/main.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
 
 
     <title>FF14-APP|FinalFantasyXIVのアプリサイト</title>
@@ -37,11 +40,11 @@
                     <p class="left_menu_h1"><img src="\images\moviesearch\shadowbringers.png" alt=""></p>
                     <p class="left_menu_h2 shadowbringers"> <span class="left_menu_h2_span">希望の園エデン：再生編</span> </p>
                     <ul class="left_menu_ul">
-                        <li>暗闇の雲</li>
-                        <li>影の王</li>
-                        <li>フェイトブレイカー</li>
-                        <li>プロミス・オブ・エデン</li>
-                        <li>闇の巫女</li>
+                        <li data-cpmtemts="EdensPromise01">暗闇の雲</li>
+                        <li data-cpmtemts="EdensPromise02">影の王</li>
+                        <li data-cpmtemts="EdensPromise03">フェイトブレイカー</li>
+                        <li data-cpmtemts="EdensPromise04">プロミス・オブ・エデン</li>
+                        <li data-cpmtemts="EdensPromise05">闇の巫女</li>
                     </ul>
                     
                     <p class="left_menu_h2 shadowbringers"> <span class="left_menu_h2_span">希望の園エデン：共鳴編</span> </p>

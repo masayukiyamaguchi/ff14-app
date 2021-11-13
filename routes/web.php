@@ -22,12 +22,15 @@ Route::get('/ccard/',"CCard\IndexController@index")->name("index");
 Route::post('/ccard/',"CCard\GenerateController@index")->name("generate");
 
 //MovieSearchルート
+//top
 Route::get('/moviesearch/',"MovieSearch\IndexController@index");
+Route::post('/moviesearch/moviesearchajax',"MovieSearch\IndexController@ajax");
 
+//投稿画面
 Route::get('/moviesearch/postcontents/',"MovieSearch\MoviePostController@Index");
 Route::post('moviesearch/postcontents/create',"MovieSearch\MoviePostController@InsertData");
 
-
+//プレイ画面
 Route::get('/moviesearch/{movie_id}/',"MovieSearch\MoviePlayController@index");
 
 
