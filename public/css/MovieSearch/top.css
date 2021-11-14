@@ -33,7 +33,7 @@
 .mainContents_container_left
 {
     width: 12.5%;
-    height: 1500px;
+    min-height: 1500px;
     color: white;
 
 }

@@ -15,7 +15,7 @@ class IndexController extends Controller
         //クエリビルダーの記述
         $searchdatas = Moviesearch_data::
             where("contents","EdensPromise01")
-            ->orderBy("id","ASC")->take(8)
+            ->orderBy("id","ASC")->take(50)
             ->get();
 
         return view("MovieSearch.index",["searchdatas"=>$searchdatas]);
@@ -29,7 +29,7 @@ class IndexController extends Controller
 
         $searchdatas = Moviesearch_data::
             where("contents",$dataCpmtemts)
-            ->orderBy("id","ASC")->take(8)
+            ->orderBy("id","ASC")->take(50)
             ->get();
 
         return $searchdatas;

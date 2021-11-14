@@ -151,14 +151,90 @@
                                         コンテンツ
                                     </div>
 
-                                    <div class="contents_input">
+                                    <div class="contents_input_version">
+                                        <select name="version" id="version">
+                                            <option value="shadowbringers">漆黒</option>
+                                            <option value="stormblood">紅蓮</option>
+                                            <option value="heavensward">蒼天</option>
+                                            <option value="arealmreborn">新生</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="contents_input_contentsname">
+                                        <select name="contentsname" id="contentsname">
+                                            <option value="EdensPromise" class="shadowbringers">再生編</option>
+                                            <option value="EdensVerse" class="shadowbringers">共鳴編</option>
+                                            <option value="EdensGate" class="shadowbringers">覚醒編</option>
+                                            <option value="Alphascape" class="stormblood">アルファ編</option>
+                                            <option value="Sigmascape" class="stormblood">シグマ編</option>
+                                            <option value="Deltascape" class="stormblood">デルタ編</option>
+                                            <option value="TheSouloftheCreator" class="heavensward">天動編</option>
+                                            <option value="TheBurdenoftheSon" class="heavensward">律動編</option>
+                                            <option value="TheFistoftheFather" class="heavensward">起動編</option>
+                                            <option value="TheFinalCoilofBahamut" class="arealmreborn">真成編</option>
+                                            <option value="TheSecondCoilofBahamut" class="arealmreborn">侵攻編</option>
+                                            <option value="TheBindingCoilofBahamut" class="arealmreborn">邂逅編</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="contents_input_contents">
                                         <select name="contents" id="contents">
-                                            <option value="EdensPromise01">1層</option>
-                                            <option value="EdensPromise02">2層</option>
-                                            <option value="EdensPromise03">3層</option>
-                                            <option value="EdensPromise04f">4層前半</option>
-                                            <option value="EdensPromise04l">4層後半</option>
-                                            <option value="EdensPromise04fl">4層前後半</option>
+                                            <option value="EdensPromise01" class="EdensPromise">1層</option>
+                                            <option value="EdensPromise02" class="EdensPromise">2層</option>
+                                            <option value="EdensPromise03" class="EdensPromise">3層</option>
+                                            <option value="EdensPromise04" class="EdensPromise">4層前半</option>
+                                            <option value="EdensPromise05" class="EdensPromise">4層後半</option>
+                                            <option value="EdensPromise06" class="EdensPromise">4層前後半</option>
+                                            <option value="EdensVerse01" class="EdensVerse">1層</option>
+                                            <option value="EdensVerse02" class="EdensVerse">2層</option>
+                                            <option value="EdensVerse03" class="EdensVerse">3層</option>
+                                            <option value="EdensVerse04" class="EdensVerse">4層</option>
+                                            <option value="EdensGate01" class="EdensGate">1層</option>
+                                            <option value="EdensGate02" class="EdensGate">2層</option>
+                                            <option value="EdensGate03" class="EdensGate">3層</option>
+                                            <option value="EdensGate04" class="EdensGate">4層</option>
+                                            <option value="Alphascape01" class="Alphascape">1層</option>
+                                            <option value="Alphascape02" class="Alphascape">2層</option>
+                                            <option value="Alphascape03" class="Alphascape">3層</option>
+                                            <option value="Alphascape04" class="Alphascape">4層前半</option>
+                                            <option value="Alphascape05" class="Alphascape">4層後半</option>
+                                            <option value="Alphascape06" class="Alphascape">4層前後半</option>
+                                            <option value="Sigmascape01" class="Sigmascape">1層</option>
+                                            <option value="Sigmascape02" class="Sigmascape">2層</option>
+                                            <option value="Sigmascape03" class="Sigmascape">3層</option>
+                                            <option value="Sigmascape04" class="Sigmascape">4層前半</option>
+                                            <option value="Sigmascape05" class="Sigmascape">4層後半</option>
+                                            <option value="Sigmascape06" class="Sigmascape">4層前後半</option>
+                                            <option value="Deltascape01" class="Deltascape">1層</option>
+                                            <option value="Deltascape02" class="Deltascape">2層</option>
+                                            <option value="Deltascape03" class="Deltascape">3層</option>
+                                            <option value="Deltascape04" class="Deltascape">4層前半</option>
+                                            <option value="Deltascape05" class="Deltascape">4層後半</option>
+                                            <option value="Deltascape06" class="Deltascape">4層前後半</option>
+                                            <option value="TheSouloftheCreator01" class="TheSouloftheCreator">1層</option>
+                                            <option value="TheSouloftheCreator02" class="TheSouloftheCreator">2層</option>
+                                            <option value="TheSouloftheCreator03" class="TheSouloftheCreator">3層</option>
+                                            <option value="TheSouloftheCreator04" class="TheSouloftheCreator">4層</option>
+                                            <option value="TheBurdenoftheSon01" class="TheBurdenoftheSon">1層</option>
+                                            <option value="TheBurdenoftheSon02" class="TheBurdenoftheSon">2層</option>
+                                            <option value="TheBurdenoftheSon03" class="TheBurdenoftheSon">3層</option>
+                                            <option value="TheBurdenoftheSon04" class="TheBurdenoftheSon">4層</option>
+                                            <option value="TheFistoftheFather01" class="TheFistoftheFather">1層</option>
+                                            <option value="TheFistoftheFather02" class="TheFistoftheFather">2層</option>
+                                            <option value="TheFistoftheFather03" class="TheFistoftheFather">3層</option>
+                                            <option value="TheFistoftheFather04" class="TheFistoftheFather">4層</option>
+                                            <option value="TheFinalCoilofBahamut01" class="TheFinalCoilofBahamut">1層</option>
+                                            <option value="TheFinalCoilofBahamut02" class="TheFinalCoilofBahamut">2層</option>
+                                            <option value="TheFinalCoilofBahamut03" class="TheFinalCoilofBahamut">3層</option>
+                                            <option value="TheFinalCoilofBahamut04" class="TheFinalCoilofBahamut">4層</option>
+                                            <option value="TheSecondCoilofBahamut01" class="TheSecondCoilofBahamut">1層</option>
+                                            <option value="TheSecondCoilofBahamut02" class="TheSecondCoilofBahamut">2層</option>
+                                            <option value="TheSecondCoilofBahamut03" class="TheSecondCoilofBahamut">3層</option>
+                                            <option value="TheSecondCoilofBahamut04" class="TheSecondCoilofBahamut">4層</option>
+                                            <option value="TheBindingCoilofBahamut01" class="TheBindingCoilofBahamut">1層</option>
+                                            <option value="TheBindingCoilofBahamut02" class="TheBindingCoilofBahamut">2層</option>
+                                            <option value="TheBindingCoilofBahamut03" class="TheBindingCoilofBahamut">3層</option>
+                                            <option value="TheBindingCoilofBahamut04" class="TheBindingCoilofBahamut">4層</option>
                                         </select>
                                     </div>
                                 </div>

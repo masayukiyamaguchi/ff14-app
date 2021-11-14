@@ -49,18 +49,18 @@
                     
                     <p class="left_menu_h2 shadowbringers"> <span class="left_menu_h2_span">希望の園エデン：共鳴編</span> </p>
                     <ul class="left_menu_ul">
-                        <li>ラムウ</li>
-                        <li>イフリート ガルーダ</li>
-                        <li>ダークアイドル</li>
-                        <li>シヴァ</li>
+                        <li data-cpmtemts="EdensVerse01">ラムウ</li>
+                        <li data-cpmtemts="EdensVerse02">イフリート ガルーダ</li>
+                        <li data-cpmtemts="EdensVerse03">ダークアイドル</li>
+                        <li data-cpmtemts="EdensVerse04">シヴァ</li>
                     </ul>
 
                     <p class="left_menu_h2 shadowbringers"> <span class="left_menu_h2_span">希望の園エデン：覚醒編</span> </p>
                     <ul class="left_menu_ul">
-                        <li>エデン・プライム</li>
-                        <li>ヴォイドウォーカー</li>
-                        <li>リヴァイアサン</li>
-                        <li>タイタン</li>
+                        <li data-cpmtemts="EdensGate01">エデン・プライム</li>
+                        <li data-cpmtemts="EdensGate02">ヴォイドウォーカー</li>
+                        <li data-cpmtemts="EdensGate03">リヴァイアサン</li>
+                        <li data-cpmtemts="EdensGate04">タイタン</li>
                     </ul>
                     </div>
 
@@ -68,29 +68,29 @@
                     <p class="left_menu_h1"><img src="\images\moviesearch\stormblood.png" alt=""></p>
                     <p class="left_menu_h2 stormblood"> <span class="left_menu_h2_span">次元の狭間オメガ：アルファ編</span> </p>
                     <ul class="left_menu_ul">
-                        <li>カオス</li>
-                        <li>ミドガルズオルム</li>
-                        <li>オメガ</li>
-                        <li>オメガM オメガF</li>
-                        <li>オメガ</li>
+                        <li data-cpmtemts="Alphascape01">カオス</li>
+                        <li data-cpmtemts="Alphascape02">ミドガルズオルム</li>
+                        <li data-cpmtemts="Alphascape03">オメガ</li>
+                        <li data-cpmtemts="Alphascape04">オメガM オメガF</li>
+                        <li data-cpmtemts="Alphascape05">オメガ</li>
                     </ul>
                     
                     <p class="left_menu_h2 stormblood"> <span class="left_menu_h2_span">次元の狭間オメガ：シグマ編</span> </p>
                     <ul class="left_menu_ul">
-                        <li>魔列車</li>
-                        <li>チャダルヌーク</li>
-                        <li>ガーディアン</li>
-                        <li>ケフカ</li>
-                        <li>ゴッド・ケフカ</li>
+                        <li data-cpmtemts="Sigmascape01">魔列車</li>
+                        <li data-cpmtemts="Sigmascape02">チャダルヌーク</li>
+                        <li data-cpmtemts="Sigmascape03">ガーディアン</li>
+                        <li data-cpmtemts="Sigmascape04">ケフカ</li>
+                        <li data-cpmtemts="Sigmascape05">ゴッド・ケフカ</li>
                     </ul>
 
                     <p class="left_menu_h2 stormblood"> <span class="left_menu_h2_span">次元の狭間オメガ：デルタ編</span> </p>
                     <ul class="left_menu_ul">
-                        <li>アルテ・ロイテ</li>
-                        <li>カタストロフィー</li>
-                        <li>ハリカルナッソス</li>
-                        <li>エクスデス</li>
-                        <li>ネオ・エクスデス</li>
+                        <li data-cpmtemts="Deltascape01">アルテ・ロイテ</li>
+                        <li data-cpmtemts="Deltascape02">カタストロフィー</li>
+                        <li data-cpmtemts="Deltascape03">ハリカルナッソス</li>
+                        <li data-cpmtemts="Deltascape04">エクスデス</li>
+                        <li data-cpmtemts="Deltascape05">ネオ・エクスデス</li>
                     </ul>
                     </div>
 
@@ -98,26 +98,26 @@
                     <p class="left_menu_h1"><img src="\images\moviesearch\heavensward.png" alt=""></p>
                     <p class="left_menu_h2 heavensward"> <span class="left_menu_h2_span">機工城アレキサンダー：天動編</span> </p>
                     <ul class="left_menu_ul">
-                        <li>リファビッシャー</li>
-                        <li>傭兵のレイムブリクス</li>
-                        <li>クルーズチェイサー</li>
-                        <li>アレキサンダー・プライム</li>
+                        <li data-cpmtemts="TheSouloftheCreator01">リファビッシャー</li>
+                        <li data-cpmtemts="TheSouloftheCreator02">傭兵のレイムブリクス</li>
+                        <li data-cpmtemts="TheSouloftheCreator03">クルーズチェイサー</li>
+                        <li data-cpmtemts="TheSouloftheCreator04">アレキサンダー・プライム</li>
                     </ul>
                     
                     <p class="left_menu_h2 heavensward"> <span class="left_menu_h2_span">機工城アレキサンダー：律動編</span> </p>
                     <ul class="left_menu_ul">
-                        <li>奇才のラットフィンクス</li>
-                        <li>4体</li>
-                        <li>万能のクイックシンクス</li>
-                        <li>ブルートジャスティス</li>
+                        <li data-cpmtemts="TheBurdenoftheSon01">奇才のラットフィンクス</li>
+                        <li data-cpmtemts="TheBurdenoftheSon02">4体</li>
+                        <li data-cpmtemts="TheBurdenoftheSon03">万能のクイックシンクス</li>
+                        <li data-cpmtemts="TheBurdenoftheSon04">ブルートジャスティス</li>
                     </ul>
 
                     <p class="left_menu_h2 heavensward"> <span class="left_menu_h2_span">機工城アレキサンダー：起動編</span> </p>
                     <ul class="left_menu_ul">
-                        <li>オプレッサー</li>
-                        <li>機工兵団</li>
-                        <li>リビングリキッド</li>
-                        <li>マニピュレーター</li>
+                        <li data-cpmtemts="TheFistoftheFather01">オプレッサー</li>
+                        <li data-cpmtemts="TheFistoftheFather02">機工兵団</li>
+                        <li data-cpmtemts="TheFistoftheFather03">リビングリキッド</li>
+                        <li data-cpmtemts="TheFistoftheFather04">マニピュレーター</li>
                     </ul>
                     </div>
 
@@ -126,26 +126,26 @@
                     <p class="left_menu_h1"><img src="\images\moviesearch\arealmreborn.png" alt=""></p>
                     <p class="left_menu_h2 arealmreborn"> <span class="left_menu_h2_span">大迷宮バハムート：真成編</span> </p>
                     <ul class="left_menu_ul">
-                        <li>イムドゥグド</li>
-                        <li>カーリア</li>
-                        <li>フェニックス</li>
-                        <li>バハムート・プライム</li>
+                        <li data-cpmtemts="TheFinalCoilofBahamut01">イムドゥグド</li>
+                        <li data-cpmtemts="TheFinalCoilofBahamut02">カーリア</li>
+                        <li data-cpmtemts="TheFinalCoilofBahamut03">フェニックス</li>
+                        <li data-cpmtemts="TheFinalCoilofBahamut04">バハムート・プライム</li>
                     </ul>
                     
                     <p class="left_menu_h2 arealmreborn"> <span class="left_menu_h2_span">大迷宮バハムート：侵攻編</span> </p>
                     <ul class="left_menu_ul">
-                        <li>ラフレシア</li>
-                        <li>メリュジーヌ</li>
-                        <li>アバター</li>
-                        <li>ネール・デウス・ダーナス</li>
+                        <li data-cpmtemts="TheSecondCoilofBahamut01">ラフレシア</li>
+                        <li data-cpmtemts="TheSecondCoilofBahamut02">メリュジーヌ</li>
+                        <li data-cpmtemts="TheSecondCoilofBahamut03">アバター</li>
+                        <li data-cpmtemts="TheSecondCoilofBahamut04">ネール・デウス・ダーナス</li>
                     </ul>
 
                     <p class="left_menu_h2 arealmreborn"> <span class="left_menu_h2_span">大迷宮バハムート：邂逅編</span> </p>
                     <ul class="left_menu_ul">
-                        <li>カドゥケウス</li>
-                        <li>防疫システム</li>
-                        <li>雑魚戦</li>
-                        <li>ツインタニア</li>
+                        <li data-cpmtemts="TheBindingCoilofBahamut01">カドゥケウス</li>
+                        <li data-cpmtemts="TheBindingCoilofBahamut02">防疫システム</li>
+                        <li data-cpmtemts="TheBindingCoilofBahamut03">雑魚戦</li>
+                        <li data-cpmtemts="TheBindingCoilofBahamut04">ツインタニア</li>
                     </ul>
                     </div>
 
@@ -170,13 +170,12 @@
                     </div>
 
                     <!-- 動画リスト部分　-->
-                    <div class="movie_list">
+                    <div class="movie_list">                    
                     @foreach ($searchdatas as $index => $searchdata)
 
                     @if ($index%4 == 0)
                         <ul class="movie_list_ul">                     
-                    @endif
-                        
+                    @endif                        
                         <div class="movie_list_div">
                             <li>
                                 <div class="movie_list_samneil">
@@ -203,7 +202,7 @@
                         </div>
 
                     @if ($index%4 == 3)
-                         </ul>
+                        </ul>
                     @endif
 
                                    

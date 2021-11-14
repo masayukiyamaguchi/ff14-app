@@ -11,9 +11,7 @@ use Google_Service_YouTube;
 
 
 class MoviePostController extends Controller
-{
-
-
+{    
 
     public function Index()
     {
@@ -22,7 +20,6 @@ class MoviePostController extends Controller
 
     public function InsertData(Request $request)
     {
-
         //データの取得
         $alldatas = $request->all();
         $movie_url = $alldatas["movie_url"];
@@ -31,17 +28,18 @@ class MoviePostController extends Controller
         $movie_ID = $this -> urlToId($movie_url);
 
         //すでに同じムービーURLがあったらエラーを返す
-        $all = Moviesearch_data::where("movie_id",$movie_ID)->get();
+        $existData = Moviesearch_data::where("movie_id",$movie_ID)->first();
         $error = array();
-        if(isset($all[0]["movie_id"]))
-        {            
-            $error[] =  "すでに投稿済みの動画です";
+        if(isset($existData["movie_id"]))
+        {   
+            //データのアップデートを行う
+            $error = $this-> DataUpData($existData,$movie_ID);
             return redirect()->back()->withInput()->withErrors($error);
+
         }else
         {
 
-        }
-        
+        }    
 
 
         if(array_key_exists("bool_vc",$alldatas))
@@ -79,8 +77,6 @@ class MoviePostController extends Controller
         $contents = $alldatas["contents"];
 
         
-
-
         //エラーならエラーコードを返す
         if($movie_ID == "error")
         {
@@ -88,25 +84,28 @@ class MoviePostController extends Controller
         }
 
 
-        //APIで動画データを取得        
+        //APIで動画データを取得
         $datas = $this-> YoutubeApiGetData($movie_ID);
 
         //チャンネル
-        $channeldatas = $this-> YoutubeApiGetDataChannel($datas["channelId"]);
-
+        $channeldatas = $this-> YoutubeApiGetDataChannel($datas[0]["channelId"]);
 
         //サムネイル画像の大きさチェック
-        $samneil_img_size = $this-> ImageSizeCheck($datas["thumbnails"]);
-        $channel_img_size = $this-> ImageSizeCheck($channeldatas["thumbnails"]);
+        $samneil_img_size = $this-> ImageSizeCheck($datas[0]["thumbnails"]);
+        $channel_img_size = $this-> ImageSizeCheck($channeldatas[0]["thumbnails"]);
 
 
-        $movie_title = $datas["title"];
-        $channel_name = $datas["channelTitle"];
-        $samneil_img = $datas["thumbnails"][$samneil_img_size]["url"];
-        $channel_img = $channeldatas["thumbnails"][$channel_img_size]["url"];
-        $channel_id = $datas["channelId"];
+        $movie_title = $datas[0]["title"];
+        $channel_name = $datas[0]["channelTitle"];
+        $samneil_img = $datas[0]["thumbnails"][$samneil_img_size]["url"];
+        $channel_img = $channeldatas[0]["thumbnails"][$channel_img_size]["url"];
+        $member_num = $channeldatas[1]["subscriberCount"];
+        $channel_id = $datas[0]["channelId"];
 
-        $movie_discription_data =  $datas["localized"]["description"];
+        $view_count = $datas[1]["viewCount"];
+        $good_num = $datas[1]["likeCount"];
+
+        $movie_discription_data =  $datas[0]["localized"]["description"];
 
    
 
@@ -124,15 +123,15 @@ class MoviePostController extends Controller
         $datas -> bool_clear = $bool_clear;
         $datas -> bool_act = $bool_act;
         //$datas -> gimick_process = "";
-        //$datas -> view_count = 1000;
-        //$datas -> good_num = 1000;
-        //$datas -> member_num = 1000;
+        $datas -> view_count = $view_count;
+        $datas -> good_num = $good_num;
+        $datas -> member_num = $member_num;
         $datas -> play_job = $play_job;
         $datas -> contents = $contents;
 
         $datas -> save();
-
-       return view("MovieSearch.post.postdone",["alldata"=>$datas]);
+        
+        return view("MovieSearch.post.postdone",["alldata"=>$datas]);
         
 
     }
@@ -176,14 +175,17 @@ class MoviePostController extends Controller
         $youtube = new Google_Service_YouTube($client);
 
         // 必要情報を引数に持たせ、listSearchで検索して動画一覧を取得
-        $items = $youtube->videos->listVideos('snippet', [
+        $items = $youtube->videos->listVideos('snippet,statistics', [
             'id'  => $ID,
         ]);
 
         // 連想配列だと扱いづらいのでcollection化して処理
         $snippets = collect($items->getItems())->pluck('snippet')->all();
+        $dataall[0] = $snippets[0];
+        $statistics = collect($items->getItems())->pluck('statistics')->all();
+        $dataall[1] =  $statistics[0];
 
-        return $snippets[0];
+        return $dataall;
 
     }
 
@@ -198,14 +200,17 @@ class MoviePostController extends Controller
                 $youtube = new Google_Service_YouTube($client);
         
                 // 必要情報を引数に持たせ、listSearchで検索して動画一覧を取得
-                $items = $youtube->channels->listChannels('snippet', [
+                $items = $youtube->channels->listChannels('snippet,statistics', [
                     'id'  => $ID,
-                ]);
+                ]);                
         
                 // 連想配列だと扱いづらいのでcollection化して処理
                 $snippets = collect($items->getItems())->pluck('snippet')->all();
+                $dataall[0] = $snippets[0];
+                $statistics = collect($items->getItems())->pluck('statistics')->all();
+                $dataall[1] =  $statistics[0];
 
-                return $snippets[0];
+                return $dataall;
     }
 
 
@@ -229,6 +234,43 @@ class MoviePostController extends Controller
             return "default";
         }
         
+    }
+
+
+    //データの更新プログラム（視聴回数、登録者数、高評価数）
+    public function DataUpData($existData,$movie_ID)
+    {
+        //APIで動画データを取得
+        $datas = $this-> YoutubeApiGetData($movie_ID);
+
+        //チャンネル
+        $channeldatas = $this-> YoutubeApiGetDataChannel($datas[0]["channelId"]);
+
+        //いろいろアップデートするなら以下を変更（個々の値がエラーになってる！！）
+        $movie_title = $datas[0]["title"];
+        $channel_name = $datas[0]["channelTitle"];
+        $samneil_img = $datas[0]["thumbnails"][$samneil_img_size]["url"];
+        $channel_img = $channeldatas[0]["thumbnails"][$channel_img_size]["url"];
+        $movie_discription_data =  $datas[0]["localized"]["description"];
+        $member_num = $channeldatas[1]["subscriberCount"];
+        $view_count = $datas[1]["viewCount"];
+        $good_num = $datas[1]["likeCount"];
+
+        $existData -> movie_title = $movie_title;
+        $existData -> channel_name = $channel_name;
+        $existData -> samneil_img = $samneil_img;
+        $existData -> channel_img = $channel_img;
+        $existData -> movie_discription = $movie_discription_data;
+        $existData -> view_count = $view_count;
+        $existData -> good_num = $good_num;
+        $existData -> member_num = $member_num;
+
+        //記録
+        $existData -> save();
+
+        $error[] =  "更新完了";
+        return $error[0];
+
     }
 
 

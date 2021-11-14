@@ -99,7 +99,34 @@ $(function() {
 
     function RemakeMovieList(data)
     {
-       
+        $(".movie_list").empty();
+
+        $.each(data,function(index,data){
+
+        //枠形成
+        if(index%4==0){
+            $('.movie_list').last().append('<ul class="movie_list_ul">');
+        }        
+        $('.movie_list_ul').last().append('<div class="movie_list_div">');
+        $('.movie_list_div').last().append('<li>');
+        $('.movie_list_div li').last().append('<div class="movie_list_samneil">');
+        $('.movie_list_samneil').last().after('<div class="movie_list_detail">');
+        $('.movie_list_detail').last().append('<div class="movie_list_detail_channelicon">');
+        $('.movie_list_detail_channelicon').last().after('<div class="movie_list_detail_text">');
+        $('.movie_list_detail_text').last().append('<div class="movie_list_detail_text_title">');
+        $('.movie_list_detail_text_title').last().after('<div class="movie_list_detail_text_channelname">');
+
+        //コンテンツ生成
+        $('.movie_list_samneil').last().append('<img src="'+data["samneil_img"]+'" alt="'+data["movie_title"]+'">');
+        $('.movie_list_samneil img').last().wrap('<a href="/moviesearch/'+data["movie_id"]+'/">');
+
+        $('.movie_list_detail_channelicon').last().append('<img src="'+data["channel_img"]+'" alt="'+data["movie_title"]+'">');
+
+        $('.movie_list_detail_text_title').last().append('<a href="/moviesearch/'+data["movie_id"]+'/">'+data["movie_title"]+'</a>');
+        
+        $('.movie_list_detail_text_channelname').last().append(data["channel_name"]);        
+
+        });
 
     }
 
@@ -139,6 +166,39 @@ $(function() {
         }
     }
 
+
+    //moviepostページのjs
+    //コンテンツの変更
+    $(".contents_input_version").change(function()
+    {
+        //１段目バージョンを変更　取得
+        var dataVersion =  $('.contents_input_version option:selected').val();
+
+        //いったん全部消す
+        $(".contents_input_contentsname option").css("display","none");
+        //選んだバージョンだけ表示
+        $(".contents_input_contentsname").find("."+dataVersion).css("display","block");
+        //一番上の選択肢をセット
+        var contentsname = $(".contents_input_contentsname").find("."+dataVersion).first().val();
+        $("#contentsname").val(contentsname);
+        $(".contents_input_contentsname").change();
+    });
+
+    $(".contents_input_contentsname").change(function ()
+    {
+        //１段目バージョンを変更　取得
+        var contentsname =  $('.contents_input_contentsname option:selected').val();
+        //いったん全部消す
+        $(".contents_input_contents option").css("display","none");
+        //選んだバージョンだけ表示
+        $(".contents_input_contents").find("."+contentsname).css("display","block");
+        //一番上の選択肢をセット
+        var contents = $(".contents_input_contents").find("."+contentsname).first().val();
+        $("#contents").val(contents);  
+    });
+
+
+
     //初回実行
 
     //最初のメニューは開いておく
@@ -150,6 +210,9 @@ $(function() {
     $(".left_menu_h2").first().css("background-color",leftMenuColrOnMouse);
     $(".left_menu_ul li").first().css("background-color",leftMenuColrOnMouse);
 
-
+    //入力フォーム最初のバージョンをセット
+    var version =  $('.contents_input_version option:selected').val();
+    $("#version").val(version);
+    $(".contents_input_version").change();
     
 });
