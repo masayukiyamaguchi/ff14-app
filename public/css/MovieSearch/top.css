@@ -247,6 +247,16 @@
     font-size: 14px;
 }
 
+.movie_list_detail_view_count
+{
+    display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow: hidden;
+    color: rgb(160, 160, 160);
+    font-size: 14px;
+}
+
 .movie_list_div a
 {
     color : inherit;

@@ -70,7 +70,7 @@
     margin-left: 30px;
 }
 
-.input_movie_url,.bool_vc_input,.bool_guide_input,.bool_clear_input,.bool_act_input,.play_job,.contents
+.input_movie_url,.bool_vc_input,.bool_guide_input,.bool_clear_input,.bool_act_input,.play_job,.contents,.string_guide_input,.language_input
 {
     display: flex;
 }

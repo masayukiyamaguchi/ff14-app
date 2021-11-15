@@ -5,6 +5,9 @@ $(function() {
     var mainContentsColor = "rgb(33, 33, 33)";
 
     var activeLeftMenu = 0;
+    var sort_view_count = "DESC";
+    var sort_published_at = "NONE";
+    var filter_bool_vc = "NONE";
 
     //レフトメニューオンマウス
     $(".left_menu_h2").hover(
@@ -42,10 +45,10 @@ $(function() {
         $(this).css("background-color",leftMenuColrOnMouse);
 
         //ajax
-        AjaxLeftMenuClick($(this).attr("data-cpmtemts"));
+        AjaxMenuClick();
 
     })
-    
+
    
     //レフトメニュークリック
     $(".left_menu_h2").click(function()
@@ -70,8 +73,11 @@ $(function() {
 
 
     //非同期処理
-    function AjaxLeftMenuClick(dataCpmtemts)
+    function AjaxMenuClick()
     {
+        //コンテンツを検索
+        var dataContents = $(".left_menu_ul li").eq(activeLeftMenu).attr("data-contents");
+
         $.ajax({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -80,7 +86,10 @@ $(function() {
             type: 'post',
             dataType: "json",
             data: {
-                dataCpmtemts:dataCpmtemts,
+                dataContents:dataContents,
+                sort_view_count:sort_view_count,
+                sort_published_at:sort_published_at,
+                filter_bool_vc:filter_bool_vc,
               },
         })
         // Ajaxリクエスト成功時の処理
@@ -115,6 +124,7 @@ $(function() {
         $('.movie_list_detail_channelicon').last().after('<div class="movie_list_detail_text">');
         $('.movie_list_detail_text').last().append('<div class="movie_list_detail_text_title">');
         $('.movie_list_detail_text_title').last().after('<div class="movie_list_detail_text_channelname">');
+        $('.movie_list_detail_text_channelname').last().after('<div class="movie_list_detail_view_count">');
 
         //コンテンツ生成
         $('.movie_list_samneil').last().append('<img src="'+data["samneil_img"]+'" alt="'+data["movie_title"]+'">');
@@ -124,7 +134,9 @@ $(function() {
 
         $('.movie_list_detail_text_title').last().append('<a href="/moviesearch/'+data["movie_id"]+'/">'+data["movie_title"]+'</a>');
         
-        $('.movie_list_detail_text_channelname').last().append(data["channel_name"]);        
+        $('.movie_list_detail_text_channelname').last().append(data["channel_name"]);
+
+        $('.movie_list_detail_view_count').last().append(data["view_count_str"]+"・"+data["published_at_str"]);
 
         });
 
@@ -199,8 +211,75 @@ $(function() {
 
 
 
-    //初回実行
+    //ソート：再生回数
+    $("#sort_view_count").click(function(){
 
+        sort_view_count = sortButtonCheck(sort_view_count);
+        sort_published_at = "NONE";
+
+        //ajax
+        AjaxMenuClick();
+    
+    });
+    
+    //ソート：投稿日
+    $("#sort_published_at").click(function(){
+
+        sort_published_at = sortButtonCheck(sort_published_at);
+        sort_view_count = "NONE";
+
+        //ajax
+        AjaxMenuClick();
+
+    });
+
+    //フィルター：ボイスチャット
+    $("#filter_bool_vc").click(function(){
+
+        filter_bool_vc = filterButtonCheckBool(filter_bool_vc);
+
+        //ajax
+        AjaxMenuClick();
+
+    });
+
+
+    //ボタンの状態を逆にする
+    function sortButtonCheck(sort_)
+    {
+        if(sort_ == "NONE")
+        {
+            sort_ = "DESC";
+        }else if(sort_ == "DESC")
+        {
+            sort_ = "ASC";
+        }else
+        {
+            sort_ = "DESC";
+        }
+        return sort_;
+    }
+    
+
+    //ボタンの状態を変更する
+    function filterButtonCheckBool(filter_)
+    {
+        if(filter_ == "NONE")
+        {
+            filter_ = "true";
+        }else if(filter_ == "true")
+        {
+            filter_ = "false";
+        }else
+        {
+            filter_ = "NONE";
+        }
+        return filter_;
+    }
+
+
+
+    //初回実行
     //最初のメニューは開いておく
     var nowVarsitonName = $(".mainContents_container_left div:first-child").attr("id");
     ChangeDisplayCss("#"+nowVarsitonName+" .left_menu_h2"); 
@@ -214,5 +293,7 @@ $(function() {
     var version =  $('.contents_input_version option:selected').val();
     $("#version").val(version);
     $(".contents_input_version").change();
+
+
     
 });

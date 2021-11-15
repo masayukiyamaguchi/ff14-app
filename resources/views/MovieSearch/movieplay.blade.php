@@ -53,6 +53,10 @@
                                 {{ $all["movie_title"] }}
                             </div>
 
+                            <div class="main_movie_detail_view_count">
+                                {{ $all["view_count_numformat"] }} 回視聴・{{ $all["published_at_str"] }}
+                            </div>
+
                             <div class="main_movie_detail_channelinfo">
 
                                 <div class="main_movie_detail_channelinfo_channelicon">
@@ -62,6 +66,10 @@
                                 <div class="main_movie_detail_channelinfo_text">
                                     <div class="main_movie_detail_channelinfo_text_channelname">
                                         {{ $all["channel_name"] }}
+                                    </div>
+
+                                    <div class="main_movie_detail_channelinfo_member_num">
+                                        チャンネル登録者数 {{ $all["member_num_str"] }}
                                     </div>
     
                                     <div class="main_movie_detail_channelinfo_text_moviediscription">

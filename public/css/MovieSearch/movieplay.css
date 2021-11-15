@@ -52,6 +52,16 @@
     padding-top: 5px;
 }
 
+.main_movie_detail_view_count
+{
+    font-size: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: rgb(160, 160, 160);
+    
+}
+
+
 .main_movie_detail_channelinfo
 {
     display:inline-flex;
@@ -69,14 +79,22 @@
 
 .main_movie_detail_channelinfo_text
 {
-    padding-top: 7px;
-    padding-left: 5px;
+    
+    padding-left: 10px;
 }
 
 .main_movie_detail_channelinfo_text_channelname
 {
     font-size: 15px;
 }
+
+.main_movie_detail_channelinfo_member_num
+{
+    font-size: 12.5px;
+    color: rgb(160, 160, 160);
+}
+
+
 
 .main_movie_detail_channelinfo_text_moviediscription
 {

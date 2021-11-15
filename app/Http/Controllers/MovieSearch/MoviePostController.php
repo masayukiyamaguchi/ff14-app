@@ -10,6 +10,7 @@ use Google_Client;
 use Google_Service_YouTube;
 
 
+//データベースのカラムにデータを追加した場合は　「APIで動画データを取得」以下と　「データの更新プログラム」以下２か所を編集
 class MoviePostController extends Controller
 {    
 
@@ -49,7 +50,8 @@ class MoviePostController extends Controller
         {
             $bool_vc = false;
         }
-
+        
+        /*
         if(array_key_exists("bool_guide",$alldatas))
         {
             $bool_guide = true;
@@ -57,7 +59,8 @@ class MoviePostController extends Controller
         {
             $bool_guide = false;
         }
-
+        */
+        
         if(array_key_exists("bool_clear",$alldatas))
         {
             $bool_clear = true;
@@ -73,6 +76,10 @@ class MoviePostController extends Controller
         {
             $bool_act = false;
         }
+
+        $string_guide = $alldatas["string_guide"];
+        $language = $alldatas["language"];
+
         $play_job = $alldatas["play_job"];
         $contents = $alldatas["contents"];
 
@@ -86,7 +93,7 @@ class MoviePostController extends Controller
 
         //APIで動画データを取得
         $datas = $this-> YoutubeApiGetData($movie_ID);
-
+ 
         //チャンネル
         $channeldatas = $this-> YoutubeApiGetDataChannel($datas[0]["channelId"]);
 
@@ -106,8 +113,7 @@ class MoviePostController extends Controller
         $good_num = $datas[1]["likeCount"];
 
         $movie_discription_data =  $datas[0]["localized"]["description"];
-
-   
+        $published_at = $datas[0]["publishedAt"]; 
 
         //取得したデータからデータベースへ入れるデータへ変換
         $datas = new Moviesearch_data();
@@ -119,13 +125,16 @@ class MoviePostController extends Controller
         $datas -> channel_id = $channel_id;
         $datas -> movie_discription = $movie_discription_data;
         $datas -> bool_vc = $bool_vc;
-        $datas -> bool_guide = $bool_guide;
+        //$datas -> bool_guide = $bool_guide;
         $datas -> bool_clear = $bool_clear;
         $datas -> bool_act = $bool_act;
         //$datas -> gimick_process = "";
         $datas -> view_count = $view_count;
         $datas -> good_num = $good_num;
         $datas -> member_num = $member_num;
+        $datas -> string_guide = $string_guide;
+        $datas -> language = $language;
+        $datas -> published_at = $published_at;
         $datas -> play_job = $play_job;
         $datas -> contents = $contents;
 
@@ -237,7 +246,7 @@ class MoviePostController extends Controller
     }
 
 
-    //データの更新プログラム（視聴回数、登録者数、高評価数）
+    //データの更新プログラム
     public function DataUpData($existData,$movie_ID)
     {
         //APIで動画データを取得
@@ -246,13 +255,18 @@ class MoviePostController extends Controller
         //チャンネル
         $channeldatas = $this-> YoutubeApiGetDataChannel($datas[0]["channelId"]);
 
-        //いろいろアップデートするなら以下を変更（個々の値がエラーになってる！！）
+        //サムネイル画像の大きさチェック
+        $samneil_img_size = $this-> ImageSizeCheck($datas[0]["thumbnails"]);
+        $channel_img_size = $this-> ImageSizeCheck($channeldatas[0]["thumbnails"]);
+
+        //いろいろアップデートするなら以下を変更
         $movie_title = $datas[0]["title"];
         $channel_name = $datas[0]["channelTitle"];
         $samneil_img = $datas[0]["thumbnails"][$samneil_img_size]["url"];
         $channel_img = $channeldatas[0]["thumbnails"][$channel_img_size]["url"];
         $movie_discription_data =  $datas[0]["localized"]["description"];
         $member_num = $channeldatas[1]["subscriberCount"];
+        $published_at = $datas[0]["publishedAt"];
         $view_count = $datas[1]["viewCount"];
         $good_num = $datas[1]["likeCount"];
 
@@ -264,6 +278,7 @@ class MoviePostController extends Controller
         $existData -> view_count = $view_count;
         $existData -> good_num = $good_num;
         $existData -> member_num = $member_num;
+        $existData -> published_at = $published_at;
 
         //記録
         $existData -> save();
@@ -271,6 +286,21 @@ class MoviePostController extends Controller
         $error[] =  "更新完了";
         return $error[0];
 
+    }
+
+
+    //アップデートバッチ
+    public function DataUpdateBach()
+    {
+        $data_movie_ID_all = Moviesearch_data::all()->pluck("movie_id");
+
+        foreach($data_movie_ID_all as $data_movie_ID)
+        {
+            $existData = Moviesearch_data::where("movie_id",$data_movie_ID)->first();
+            $ret = $this-> DataUpData($existData,$data_movie_ID);
+        }
+        dump("data updata complete");
+        return view("MovieSearch.post.postdone",["alldata"=>$data_movie_ID]);
     }
 
 

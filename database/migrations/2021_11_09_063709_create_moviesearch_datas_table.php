@@ -49,6 +49,18 @@ class CreateMoviesearchDatasTable extends Migration
 
             //解説
             $table->boolean("bool_guide");
+            
+            //解説2
+            $table->string("string_guide");
+
+            //顔出し
+            $table->string("string_Appearance");
+
+            //言語
+            $table->string("language");
+
+            //クリアータイム
+            $table->int("clear_time")->nullable();
 
             //クリアー
             $table->boolean("bool_clear");
@@ -67,6 +79,9 @@ class CreateMoviesearchDatasTable extends Migration
 
             //チャンネル登録者数
             $table->integer("member_num")->nullable();
+
+            //動画投稿日
+            $table->string("published_at");
 
             //deleted_at
             $table->softDeletes();

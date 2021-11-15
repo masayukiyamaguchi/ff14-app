@@ -17,9 +17,13 @@ use Illuminate\Support\Facades\Route;
 //TOPページルート
 Route::get('/',"Top\IndexController@index");
 
+
+
 //ccardルート
 Route::get('/ccard/',"CCard\IndexController@index")->name("index");
 Route::post('/ccard/',"CCard\GenerateController@index")->name("generate");
+
+
 
 //MovieSearchルート
 //top
@@ -30,8 +34,13 @@ Route::post('/moviesearch/moviesearchajax',"MovieSearch\IndexController@ajax");
 Route::get('/moviesearch/postcontents/',"MovieSearch\MoviePostController@Index");
 Route::post('moviesearch/postcontents/create',"MovieSearch\MoviePostController@InsertData");
 
+//データアップデートアクセス
+Route::get('/moviesearch/dataupdataaccess',"MovieSearch\MoviePostController@DataUpdateBach");
+
 //プレイ画面
 Route::get('/moviesearch/{movie_id}/',"MovieSearch\MoviePlayController@index");
+
+
 
 
 

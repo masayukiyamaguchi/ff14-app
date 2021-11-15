@@ -74,15 +74,34 @@
                                     </div>
                                 </div>
 
-                                <div class="bool_vc">
-                                    <div class="bool_vc_input">
-                                        <input type="checkbox" name="bool_vc" id="bool_vc">
-                                        <div class="bool_vc_text">
-                                            ボイスチャット
+                                <div class="string_guide">
+                                    <div class="string_guide_input">
+                                        <div class="string_guide_text">
+                                            解説
                                         </div>
+                                        <select name="string_guide" id="string_guide">
+                                            <option class="nonevoice" value="nonevoice">なし</option>
+                                            <option class="yukkuri" value="yukkuri">ゆっくり</option>
+                                            <option class="jigoe" value="jigoe">地声解説</option>
+                                            <option class="jimaku" value="jimaku">字幕のみ</option>
+                                        </select>
                                     </div>
                                 </div>
 
+                                <div class="language">
+                                    <div class="language_input">
+                                        <div class="language_text">
+                                            言語
+                                        </div>
+                                        <select name="language" id="language">
+                                            <option class="language_jp" value="language_jp">日本語</option>
+                                            <option class="language_en" value="">英語</option>
+                                            <option class="language_ot" value="">その他</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!--
                                 <div class="bool_guide">
                                     <div class="bool_guide_input">
                                         <input type="checkbox" name="bool_guide" id="bool_guide">
@@ -91,6 +110,16 @@
                                         </div>
                                     </div>
                                 </div>
+                            -->
+
+                            <div class="bool_vc">
+                                <div class="bool_vc_input">
+                                    <input type="checkbox" name="bool_vc" id="bool_vc">
+                                    <div class="bool_vc_text">
+                                        ボイスチャット
+                                    </div>
+                                </div>
+                            </div>
 
                                 <div class="bool_clear">
                                     <div class="bool_clear_input">
