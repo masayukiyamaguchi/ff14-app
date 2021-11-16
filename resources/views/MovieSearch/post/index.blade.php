@@ -82,7 +82,7 @@
                                         <select name="string_guide" id="string_guide">
                                             <option class="nonevoice" value="nonevoice">なし</option>
                                             <option class="yukkuri" value="yukkuri">ゆっくり</option>
-                                            <option class="jigoe" value="jigoe">地声解説</option>
+                                            <option class="jigoe" value="jigoe">本人解説</option>
                                             <option class="jimaku" value="jimaku">字幕のみ</option>
                                         </select>
                                     </div>

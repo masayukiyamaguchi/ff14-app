@@ -17,6 +17,8 @@
     <script src="/js/moviesearch/main.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
 
 
     <title>FF14-APP|FinalFantasyXIVのアプリサイト</title>
@@ -161,15 +163,120 @@
                 <div class="mainContents_container_center">
 
                     <div class="movie_list_filter">
-                        <ul class="movie_list_filter_ul">
-                            <li id="sort_view_count">ソート再生回数順</li>
-                            <li id="sort_published_at">投稿日順</li>
-                            <li id="filter_bool_vc">ボイスチャット</li>
-                            <li id="filter_play_job">ジョブ</li>
-                            <li id="filter_string_guide">解説</li>
-                            <li id="filter_bool_clear">クリアー</li>
-                            <li id="filter_bool_act">DPS表示</li>
-                            <li id="filter_language">言語</li>
+                        <ul class="movie_list_filter_ul">   
+                            <div class="movie_list_filter_ul_div filter_div">
+                                <li class="movie_list_filter_icon"><img src="\images\moviesearch\filtericonimage.png" alt=""></li>
+                                <li class="movie_list_filter_button"  id="filter_play_job">ジョブ:ALL</li>
+                                
+                                <!-- ジョブ　-->
+                                <div class="filter_play_job_menu">
+                                    <div class="filter_play_job_menu_div">
+                                        <div class="filter_play_job_menu_div_top">
+                                            <div class="filter_play_job_menu_div_tank">
+                                                <div class="filter_play_job_menu_div_titletank">                                                    
+                                                    タンク
+                                                </div>
+                                                <div class="filter_play_job_menu_div_icontank">
+                                                    <ul>
+                                                        <li data-job="paladin" class="play_job_icon"><img src="\images\moviesearch\paladin.png" alt=""></li>
+                                                        <li data-job="warrior" class="play_job_icon"><img src="\images\moviesearch\warrior.png" alt=""></li>
+                                                        <li data-job="dark knight" class="play_job_icon"><img src="\images\moviesearch\darkknight.png" alt=""></li>
+                                                        <li data-job="gunbreaker" class="play_job_icon"><img src="\images\moviesearch\gunbreaker.png" alt=""></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            
+                                            <div  class="filter_play_job_menu_div_healer">
+                                                <div class="filter_play_job_menu_div_titlehealer">
+                                                    ヒーラー
+                                                </div>
+                                                <div class="filter_play_job_menu_div_iconhealer">
+                                                    <ul>
+                                                        <li data-job="white mage" class="play_job_icon"><img src="\images\moviesearch\whitemage.png" alt=""></li>
+                                                        <li data-job="scholar" class="play_job_icon"><img src="\images\moviesearch\scholar.png" alt=""></li>
+                                                        <li data-job="astrologian" class="play_job_icon"><img src="\images\moviesearch\astrologian.png" alt=""></li>
+                                                        <li data-job="sage" class="play_job_icon"><img src="\images\moviesearch\sage.png" alt=""></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="filter_play_job_menu_div_middle">
+                                            <div class="filter_play_job_menu_div_titledps">
+                                                アタッカー
+                                            </div>
+                                            <div class="filter_play_job_menu_div_dps">
+
+                                                <div class="filter_play_job_menu_div_melee">
+                                                    <div class="filter_play_job_menu_div_titlemelee">
+                                                        近接DPS
+                                                    </div>
+                                                    <div class="filter_play_job_menu_div_iconmelee">
+                                                        <ul>
+                                                            <li data-job="dragoon" class="play_job_icon"><img src="\images\moviesearch\dragoon.png" alt=""></li>
+                                                            <li data-job="monk" class="play_job_icon"><img src="\images\moviesearch\monk.png" alt=""></li>
+                                                            <li data-job="ninja" class="play_job_icon"><img src="\images\moviesearch\ninja.png" alt=""></li>
+                                                            <li data-job="samurai" class="play_job_icon"><img src="\images\moviesearch\samurai.png" alt=""></li>
+                                                            <li data-job="reaper" class="play_job_icon"><img src="\images\moviesearch\reaper.png" alt=""></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>  
+
+                                                <div class="filter_play_job_menu_div_range">
+                                                    <div class="filter_play_job_menu_div_titlerange">
+                                                        レンジ
+                                                    </div>
+                                                    <div class="filter_play_job_menu_div_iconrange">
+                                                        <ul>
+                                                            <li data-job="bard" class="play_job_icon"><img src="\images\moviesearch\bard.png" alt=""></li>
+                                                            <li data-job="machinist" class="play_job_icon"><img src="\images\moviesearch\machinist.png" alt=""></li>
+                                                            <li data-job="dancer" class="play_job_icon"><img src="\images\moviesearch\dancer.png" alt=""></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>                                               
+                                            </div>
+
+                                            <div class="filter_play_job_menu_div_dps">
+                                                <div class="filter_play_job_menu_div_caster">
+                                                    <div class="filter_play_job_menu_div_titlecaster">
+                                                        キャスター
+                                                    </div>
+                                                    <div class="filter_play_job_menu_div_iconcaster">
+                                                        <ul>
+                                                            <li data-job="black mage" class="play_job_icon"><img src="\images\moviesearch\blackmage.png" alt=""></li>
+                                                            <li data-job="summoner" class="play_job_icon"><img src="\images\moviesearch\summoner.png" alt=""></li>
+                                                            <li data-job="red mage" class="play_job_icon"><img src="\images\moviesearch\redmage.png" alt=""></li>
+                                                            <li data-job="blue mage" class="play_job_icon"><img src="\images\moviesearch\bluemage.png" alt=""></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>                              
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <li class="movie_list_filter_button" id="filter_bool_vc">VC:ALL</li>
+                                <li class="movie_list_filter_button"  id="filter_string_guide">解説:ALL</li>
+                                <div class="filter_string_guide_menu">
+                                    <ul>
+                                        <li data-value="ALL">ALL</li>
+                                        <li data-value="ゆっくり">　ゆっくり</li>
+                                        <li data-value="本人">　本人解説</li>
+                                        <li data-value="字幕">　字幕のみ</li>
+                                        <li data-value="なし">　解説なし</li>
+                                    </ul>
+                                </div>
+                                <li class="movie_list_filter_button"  id="filter_bool_act">DPS表示:ALL</li>
+                                <li class="movie_list_filter_button"  id="filter_bool_clear">クリアー:ALL</li>
+                                <li class="movie_list_filter_button"  id="filter_language">言語:ALL</li>
+                                <li class="movie_list_filter_button"  id="filter_delete">×</li>
+                            </div>
+                            <div class="movie_list_filter_ul_div sort_div">
+                                <li class="movie_list_filter_icon"><img src="\images\moviesearch\sorticonimage.png" alt=""></li>
+                                <li class="movie_list_filter_button"  id="sort_view_count">再生回数：多い</li>
+                                <li class="movie_list_filter_button"  id="sort_published_at">投稿日</li>
+                            </div>
                         </ul>
                     </div>
 
