@@ -153,7 +153,7 @@
                                         <select name="play_job" id="play_job">
                                             <option class="tank" value="paladin">ナイト</option>
                                             <option class="tank" value="warrior">戦士</option>
-                                            <option class="tank" value="dark knight">暗黒騎士</option>
+                                            <option class="tank" value="darkknight">暗黒騎士</option>
                                             <option class="tank" value="gunbreaker">ガンブレイカー</option>
                                             <option class="dps" value="monk">モンク</option>
                                             <option class="dps" value="dragoon">竜騎士</option>
@@ -163,11 +163,11 @@
                                             <option class="dps" value="bard">吟遊詩人</option>
                                             <option class="dps" value="machinist">機工士</option>
                                             <option class="dps" value="dancer">踊り子</option>
-                                            <option class="dps" value="black mage">黒魔道士</option>
+                                            <option class="dps" value="blackmage">黒魔道士</option>
                                             <option class="dps" value="summoner">召喚士</option>
-                                            <option class="dps" value="red mage">赤魔道士</option>
-                                            <option class="dps" value="blue mage">青魔道士</option>
-                                            <option class="healer" value="white mage">白魔道士</option>
+                                            <option class="dps" value="redmage">赤魔道士</option>
+                                            <option class="dps" value="bluemage">青魔道士</option>
+                                            <option class="healer" value="whitemage">白魔道士</option>
                                             <option class="healer" value="scholar">学者</option>
                                             <option class="healer" value="astrologian">占星術士</option>
                                             <option class="healer" value="sage">賢者</option>

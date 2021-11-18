@@ -19,8 +19,6 @@
     <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
-
-
     <title>FF14-APP|FinalFantasyXIVのアプリサイト</title>
 
 </head>
@@ -178,10 +176,10 @@
                                                 </div>
                                                 <div class="filter_play_job_menu_div_icontank">
                                                     <ul>
-                                                        <li data-job="paladin" class="play_job_icon"><img src="\images\moviesearch\paladin.png" alt=""></li>
-                                                        <li data-job="warrior" class="play_job_icon"><img src="\images\moviesearch\warrior.png" alt=""></li>
-                                                        <li data-job="dark knight" class="play_job_icon"><img src="\images\moviesearch\darkknight.png" alt=""></li>
-                                                        <li data-job="gunbreaker" class="play_job_icon"><img src="\images\moviesearch\gunbreaker.png" alt=""></li>
+                                                        <li data-stat="on" data-job="paladin" class="play_job_icon"><img src="\images\moviesearch\paladin.png" alt=""></li>
+                                                        <li data-stat="on" data-job="warrior" class="play_job_icon"><img src="\images\moviesearch\warrior.png" alt=""></li>
+                                                        <li data-stat="on" data-job="darkknight" class="play_job_icon"><img src="\images\moviesearch\darkknight.png" alt=""></li>
+                                                        <li data-stat="on" data-job="gunbreaker" class="play_job_icon"><img src="\images\moviesearch\gunbreaker.png" alt=""></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -192,10 +190,10 @@
                                                 </div>
                                                 <div class="filter_play_job_menu_div_iconhealer">
                                                     <ul>
-                                                        <li data-job="white mage" class="play_job_icon"><img src="\images\moviesearch\whitemage.png" alt=""></li>
-                                                        <li data-job="scholar" class="play_job_icon"><img src="\images\moviesearch\scholar.png" alt=""></li>
-                                                        <li data-job="astrologian" class="play_job_icon"><img src="\images\moviesearch\astrologian.png" alt=""></li>
-                                                        <li data-job="sage" class="play_job_icon"><img src="\images\moviesearch\sage.png" alt=""></li>
+                                                        <li data-stat="on" data-job="whitemage" class="play_job_icon"><img src="\images\moviesearch\whitemage.png" alt=""></li>
+                                                        <li data-stat="on" data-job="scholar" class="play_job_icon"><img src="\images\moviesearch\scholar.png" alt=""></li>
+                                                        <li data-stat="on" data-job="astrologian" class="play_job_icon"><img src="\images\moviesearch\astrologian.png" alt=""></li>
+                                                        <li data-stat="on" data-job="sage" class="play_job_icon"><img src="\images\moviesearch\sage.png" alt=""></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -213,11 +211,11 @@
                                                     </div>
                                                     <div class="filter_play_job_menu_div_iconmelee">
                                                         <ul>
-                                                            <li data-job="dragoon" class="play_job_icon"><img src="\images\moviesearch\dragoon.png" alt=""></li>
-                                                            <li data-job="monk" class="play_job_icon"><img src="\images\moviesearch\monk.png" alt=""></li>
-                                                            <li data-job="ninja" class="play_job_icon"><img src="\images\moviesearch\ninja.png" alt=""></li>
-                                                            <li data-job="samurai" class="play_job_icon"><img src="\images\moviesearch\samurai.png" alt=""></li>
-                                                            <li data-job="reaper" class="play_job_icon"><img src="\images\moviesearch\reaper.png" alt=""></li>
+                                                            <li data-stat="on" data-job="dragoon" class="play_job_icon"><img src="\images\moviesearch\dragoon.png" alt=""></li>
+                                                            <li data-stat="on" data-job="monk" class="play_job_icon"><img src="\images\moviesearch\monk.png" alt=""></li>
+                                                            <li data-stat="on" data-job="ninja" class="play_job_icon"><img src="\images\moviesearch\ninja.png" alt=""></li>
+                                                            <li data-stat="on" data-job="samurai" class="play_job_icon"><img src="\images\moviesearch\samurai.png" alt=""></li>
+                                                            <li data-stat="on" data-job="reaper" class="play_job_icon"><img src="\images\moviesearch\reaper.png" alt=""></li>
                                                         </ul>
                                                     </div>
                                                 </div>  
@@ -228,28 +226,44 @@
                                                     </div>
                                                     <div class="filter_play_job_menu_div_iconrange">
                                                         <ul>
-                                                            <li data-job="bard" class="play_job_icon"><img src="\images\moviesearch\bard.png" alt=""></li>
-                                                            <li data-job="machinist" class="play_job_icon"><img src="\images\moviesearch\machinist.png" alt=""></li>
-                                                            <li data-job="dancer" class="play_job_icon"><img src="\images\moviesearch\dancer.png" alt=""></li>
+                                                            <li data-stat="on" data-job="bard" class="play_job_icon"><img src="\images\moviesearch\bard.png" alt=""></li>
+                                                            <li data-stat="on" data-job="machinist" class="play_job_icon"><img src="\images\moviesearch\machinist.png" alt=""></li>
+                                                            <li data-stat="on" data-job="dancer" class="play_job_icon"><img src="\images\moviesearch\dancer.png" alt=""></li>
                                                         </ul>
                                                     </div>
                                                 </div>                                               
                                             </div>
 
-                                            <div class="filter_play_job_menu_div_dps">
-                                                <div class="filter_play_job_menu_div_caster">
-                                                    <div class="filter_play_job_menu_div_titlecaster">
-                                                        キャスター
+                                            <div class="filter_play_job_menu_div_bottom">
+                                                <div class="filter_play_job_menu_div_dps">
+                                                    <div class="filter_play_job_menu_div_caster">
+                                                        <div class="filter_play_job_menu_div_titlecaster">
+                                                            キャスター
+                                                        </div>
+                                                        <div class="filter_play_job_menu_div_iconcaster">
+                                                            <ul>
+                                                                <li data-stat="on" data-job="blackmage" class="play_job_icon"><img src="\images\moviesearch\blackmage.png" alt=""></li>
+                                                                <li data-stat="on" data-job="summoner" class="play_job_icon"><img src="\images\moviesearch\summoner.png" alt=""></li>
+                                                                <li data-stat="on" data-job="redmage" class="play_job_icon"><img src="\images\moviesearch\redmage.png" alt=""></li>
+                                                                <li data-stat="on" data-job="bluemage" class="play_job_icon"><img src="\images\moviesearch\bluemage.png" alt=""></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>                              
+                                                </div>
+
+                                                <div class="filter_play_job_menu_all_button">
+                                                    <div class="filter_play_job_menu_all_button_active">
+                                                        <div class="filter_play_job_menu_all_button_active_button">全て選択</div>
                                                     </div>
-                                                    <div class="filter_play_job_menu_div_iconcaster">
-                                                        <ul>
-                                                            <li data-job="black mage" class="play_job_icon"><img src="\images\moviesearch\blackmage.png" alt=""></li>
-                                                            <li data-job="summoner" class="play_job_icon"><img src="\images\moviesearch\summoner.png" alt=""></li>
-                                                            <li data-job="red mage" class="play_job_icon"><img src="\images\moviesearch\redmage.png" alt=""></li>
-                                                            <li data-job="blue mage" class="play_job_icon"><img src="\images\moviesearch\bluemage.png" alt=""></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>                              
+                                                    <div class="filter_play_job_menu_all_button_inactive">
+                                                        <div class="filter_play_job_menu_all_button_inactive_button">全て解除</div>
+                                                    </div>                                                    
+                                                </div>
+                                                <div class="filter_play_job_menu_enter">
+                                                    <div class="filter_play_job_menu_enter_button">
+                                                        <div class="enter_text">決定</div>
+                                                    </div>                                                    
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -329,6 +343,9 @@
             </div>
         </div>
     </div>
+
+    
+    
 
     <!--共通フッター-->
     @component('components.commonFooterMenu')

@@ -204,6 +204,11 @@
     
 }
 
+.filter_play_job_menu > div
+{
+    display: none;
+}
+
 /*ジョブメニューの背景*/
 .filter_play_job_menu_div
 {
@@ -224,9 +229,10 @@
 /*タンク*/
 .filter_play_job_menu_div_titletank
 {
-    background-color: rgb(47, 0, 255);
+    background-color: rgb(25, 0, 134);
     padding-left: 10px;
-    padding-top: 2px
+    padding-top: 2px;
+    border-radius:7px;
 }
 
 .filter_play_job_menu_div_icontank ul
@@ -252,7 +258,8 @@
 {
     background-color: rgb(0, 116, 35);
     padding-left: 10px;
-    padding-top: 2px
+    padding-top: 2px;
+    border-radius:7px;
 }
 
 .filter_play_job_menu_div_iconhealer ul
@@ -277,19 +284,21 @@
 
 .filter_play_job_menu_div_titledps
 {
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(141, 0, 0);
     padding-left: 10px;
     padding-top: 2px;
     margin-top: 10px;
+    border-radius:7px;
 }
 
 .filter_play_job_menu_div_titlemelee
 {
-    background-color: rgba(255, 0, 0 ,0.5);
+    background-color: rgba(128, 0, 0, 0.5);
     padding-left: 10px;
     padding-top: 2px;
     margin-top: 10px;
     font-size: 12px;
+    border-radius:7px;
 }
 
 .filter_play_job_menu_div_iconmelee ul
@@ -319,11 +328,12 @@
 
 .filter_play_job_menu_div_titlerange
 {
-    background-color: rgba(255, 0, 0 ,0.5);
+    background-color: rgba(128, 0, 0, 0.5);
     padding-left: 10px;
     padding-top: 2px;
     margin-top: 10px;
     font-size: 12px;
+    border-radius:7px;
 }
 
 .filter_play_job_menu_div_iconrange ul
@@ -341,6 +351,11 @@
 }
 
 /*キャスター*/
+.filter_play_job_menu_div_bottom
+{
+    display: flex;
+}
+
 .filter_play_job_menu_div_caster
 {
     padding-left: 10px;
@@ -348,11 +363,12 @@
 
 .filter_play_job_menu_div_titlecaster
 {
-    background-color: rgba(255, 0, 0 ,0.5);
+    background-color: rgba(128, 0, 0, 0.5);
     padding-left: 10px;
     padding-top: 2px;
     margin-top: 10px;
     font-size: 12px;
+    border-radius:7px;
 }
 
 .filter_play_job_menu_div_iconcaster ul
@@ -385,6 +401,48 @@
     padding: 3px 50px 3px 3px;
 }
 
+.filter_play_job_menu_all_button
+{
+
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.filter_play_job_menu_all_button_active_button
+{
+    background-color: rgba(255, 0, 0, 0.25);
+    padding-top: 2px;
+    border-radius:7px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.filter_play_job_menu_all_button_inactive
+{
+    padding-top: 5px;
+}
+
+.filter_play_job_menu_all_button_inactive_button
+{
+    background-color: rgba(4, 0, 255, 0.25);
+    padding-top: 2px;
+    border-radius:7px;
+    padding-left: 20px;
+    padding-right: 20px; 
+}
+
+.filter_play_job_menu_enter{
+    padding-top: 15px;
+    padding-left: 10px;
+}
+
+.filter_play_job_menu_enter_button{
+    background-color: rgba(255, 255, 255, 0.377);
+    color: black;
+    border-radius:7px;
+    padding: 17px 20px;
+    font-weight: bold;
+}
 
 
 

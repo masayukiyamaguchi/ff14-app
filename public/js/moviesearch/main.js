@@ -16,25 +16,28 @@ $(function() {
     var filter_play_job = [
         "paladin",
         "warrior",
-        "dark knight",
+        "darkknight",
         "gunbreaker",
         "monk",
         "dragoon",
         "ninja",
         "samurai",
         "reaper",
-        "white mage",
+        "whitemage",
         "scholar",
         "astrologian",
         "sage",
         "bard",
         "machinist",
         "dancer",
-        "black mage",
+        "blackmage",
         "summoner",
-        "red mage",
-        "blue mage",
+        "redmage",
+        "bluemage",
+        "NONE"
     ];
+
+    var filterData;
 
  
     //レフトメニューオンマウス
@@ -106,6 +109,16 @@ $(function() {
         //コンテンツを検索
         var dataContents = $(".left_menu_ul li").eq(activeLeftMenu).attr("data-contents");
 
+        localStorage["sort_view_count"] = sort_view_count;
+        localStorage["sort_published_at"] = sort_published_at;
+        localStorage["filter_bool_vc"] = filter_bool_vc;
+        localStorage["filter_string_guide"] = filter_string_guide;
+        localStorage["filter_bool_clear"] = filter_bool_clear;
+        localStorage["filter_bool_act"] = filter_bool_act;
+        localStorage["filter_language"] = filter_language;
+        filter_play_job_json = JSON.stringify(filter_play_job, undefined, 1);
+        localStorage["filter_play_job"] =  filter_play_job_json;
+
         $.ajax({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -128,8 +141,10 @@ $(function() {
         // Ajaxリクエスト成功時の処理
         .done(function(data) {
             // Laravel内で処理された結果がdataに入って返ってくる
-
             RemakeMovieList(data);
+
+            //内容を記録しておく
+            filterData = data;
 
         })
         // Ajaxリクエスト失敗時の処理
@@ -138,7 +153,7 @@ $(function() {
         });
     }
 
-
+    //ajax後にページを再生成
     function RemakeMovieList(data)
     {
         $(".movie_list").empty();
@@ -172,9 +187,7 @@ $(function() {
         $('.movie_list_detail_view_count').last().append(data["view_count_str"]+"・"+data["published_at_str"]);
 
         });
-
     }
-
 
 
     $(".left_menu_h1").click(function(){
@@ -266,20 +279,28 @@ $(function() {
     });
 
 
-
-
     //フィルターメニュー
     //ソート：ジョブ
     $(document).on('click',function(e) {
+
         if(!$(e.target).closest('#filter_play_job,.filter_play_job_menu').length) {
-          // ターゲット要素の外側をクリックした時の操作
-          $(".filter_play_job_menu div").slideUp(100);
+            
+            // ターゲット要素の外側をクリックした時の操作            
+            $(".filter_play_job_menu > div").slideUp(100);
+            //ajax
+            AjaxMenuClick();
+
         } else {
-          // ターゲット要素をクリックした時の操作
-          $(".filter_play_job_menu div").slideDown(100);
-          
+            // ターゲット要素をクリックした時の操作
+            //決定ボタンは無視する
+            if(e.target.className == "enter_text" || e.target.className == "filter_play_job_menu_enter_button")
+            {
+            }else{
+                $(".filter_play_job_menu > div").slideDown(100);
+            }            
         }
     });
+
 
     //引数の配列のジョブを削除
     function DeleteJobList(deletejoblist)
@@ -298,10 +319,120 @@ $(function() {
     //アイコンクリック
     $(".play_job_icon").click(function(){
 
+        //裏の変数の調整
         var jobdata = $(this).attr("data-job");
         JobListScrutiny(jobdata);
+
+        //アイコン見た目変更
+        if($(this).attr("data-stat") == "on")
+        {
+            $(this).attr("data-stat","off");
+            $(this).css("filter","opacity(20%)")
+        }else{
+            $(this).attr("data-stat","on");
+            $(this).css("filter","opacity(100%)")
+        }        
    });
 
+
+   //アイコンホバー
+   $(".play_job_icon").hover(function(){
+       if($(this).attr("data-stat") == "on"){
+           //オンの時　のる
+            $(this).css("filter","brightness(200%) opacity(100%)");
+       }else{
+           //オフの時　のる
+            $(this).css("filter","brightness(200%) opacity(20%)");
+       }
+        
+   },
+   function(){
+       if($(this).attr("data-stat") == "on"){
+            //オンの時　はなれる
+            $(this).css("filter","brightness(100%) opacity(100%)");
+       }else{
+            //オフの時　はなれる
+            $(this).css("filter","brightness(100%) opacity(20%)");
+       }
+        
+   });
+
+
+   //アイコンホバー 見出し
+   //アイコンホバー 見出し
+   $(".filter_play_job_menu_div_titletank").hover(function(){
+        //オンの時　のる
+        $(this).css("background-color","rgb(47, 0, 255)");
+   },
+   function(){
+        //オンの時　はなれる
+        $(this).css("background-color","rgb(25, 0, 134)");
+       }        
+   );
+
+   $(".filter_play_job_menu_div_titlehealer").hover(function(){
+    //オンの時　のる
+        $(this).css("background-color","rgb(0, 155, 46)");
+    },
+    function(){
+        //オンの時　はなれる
+        $(this).css("background-color","rgb(0, 116, 35)");
+       }        
+    );
+
+    $(".filter_play_job_menu_div_titledps").hover(function(){
+    //オンの時　のる
+        $(this).css("background-color","rgb(255, 0, 0)");
+    },
+    function(){
+        //オンの時　はなれる
+        $(this).css("background-color","rgb(141, 0, 0)");
+       }        
+    );
+    
+    $(".filter_play_job_menu_div_titlemelee,.filter_play_job_menu_div_titlerange,.filter_play_job_menu_div_titlecaster").hover(function(){
+    //オンの時　のる
+        $(this).css("background-color","rgba(255, 0, 0)");
+    },
+    function(){
+        //オンの時　はなれる
+        $(this).css("background-color","rgba(128, 0, 0, 0.5)");
+       }        
+    );
+
+    $(".filter_play_job_menu_all_button_active_button").hover(function(){
+    //オンの時　のる
+        $(this).css("background-color","rgb(255, 0, 0)");
+    },
+    function(){
+        //オンの時　はなれる
+        $(this).css("background-color","rgba(255, 0, 0, 0.25)");
+       }        
+    );
+
+    $(".filter_play_job_menu_all_button_inactive_button").hover(function(){
+    //オンの時　のる
+        $(this).css("background-color","rgba(4, 0, 255)");
+    },
+    function(){
+        //オンの時　はなれる
+        $(this).css("background-color","rgba(4, 0, 255, 0.25)");
+       }        
+    );
+
+    $(".filter_play_job_menu_enter_button").hover(function(){
+    //オンの時　のる
+        $(this).css("background-color","rgb(255, 255, 255)");
+    },
+    function(){
+        //オンの時　はなれる
+        $(this).css("background-color","rgba(255, 255, 255, 0.377)");
+       }        
+    );
+
+
+
+   
     //存在するかどうか確認と削除
     function JobListScrutiny(jobdata)
     {
@@ -318,15 +449,67 @@ $(function() {
         }
     }
 
-    //見出しクリックの動作
+
+    //見出しクリック時のアクション
     $(".filter_play_job_menu_div_titletank").click(function(){
-        var tankJobList = ["paladin","warrior","dark knight","gunbreaker"];
+        var JobList = ["paladin","warrior","darkknight","gunbreaker"];
+        HClickAction(JobList,0);
+    });
+
+    $(".filter_play_job_menu_div_titlehealer").click(function(){
+        var JobList = ["whitemage","scholar","astrologian","sage"];
+        HClickAction(JobList,0);
+    });
+
+    $(".filter_play_job_menu_div_titledps").click(function(){
+        var JobList =  ["monk","dragoon","ninja","samurai","reaper","bard","machinist","dancer","blackmage","summoner","redmage","bluemage"];
+        HClickAction(JobList,0);
+    });
+
+    $(".filter_play_job_menu_div_titlemelee").click(function(){
+        var JobList = ["monk","dragoon","ninja","samurai","reaper"];
+        HClickAction(JobList,0);
+    });
+
+    $(".filter_play_job_menu_div_titlerange").click(function(){
+        var JobList = ["bard","machinist","dancer",];
+        HClickAction(JobList,0);
+    });
+
+    $(".filter_play_job_menu_div_titlecaster").click(function(){
+        var JobList = ["blackmage","summoner","redmage","bluemage"];
+        HClickAction(JobList,0);
+    });
+
+    $(".filter_play_job_menu_all_button_active_button").click(function(){
+        var JobList = ["paladin","warrior","darkknight","gunbreaker","monk","dragoon","ninja","samurai","reaper","whitemage","scholar","astrologian","sage","bard","machinist","dancer","blackmage","summoner","redmage","bluemage"];
+        HClickAction(JobList,1);
+    });
+
+    $(".filter_play_job_menu_all_button_inactive_button").click(function(){
+        var JobList = ["paladin","warrior","darkknight","gunbreaker","monk","dragoon","ninja","samurai","reaper","whitemage","scholar","astrologian","sage","bard","machinist","dancer","blackmage","summoner","redmage","bluemage"];
+        HClickAction(JobList,2);
+    });
+
+    $(".filter_play_job_menu_enter_button div").click(function(){
+        //ajax
+        AjaxMenuClick();
+        $(".filter_play_job_menu > div").slideUp(100);
+    });
+
+
+
+    //見出しクリックの動作関数
+    function HClickAction(JobList,allFlag){
+
         var existCount = 0;
+        var existJob = [];
         var notExistJob = [];
         
-        tankJobList.forEach(job => {
+        JobList.forEach(job => {
             if(JobListScrutinyArray(job))
             {
+                existJob.push(job);
                 existCount++
             }else
             {                
@@ -334,24 +517,42 @@ $(function() {
             }            
         });
 
+        //全て〇〇の場合
+        if(allFlag == 1)
+        {
+            //notExistJobをオンにする
+            AddJobList(notExistJob);
+            JobIconChange(notExistJob);
+            return 0;
+        }else if(allFlag == 2){
+            //existJobをオフにする
+            DeleteJobList(existJob);
+            JobIconChange(existJob);
+            return 0;
+        }
+
+
+
         if(existCount == 0)
         {
-            //全部オン
-            AddJobList(tankJobList);
+            //全部オンにする
+            AddJobList(JobList);
+            JobIconChange(JobList);
 
-        }else if(existCount == 4)
+        }else if(existCount == JobList.length)
         {
-            //全部オフ
-            DeleteJobList(tankJobList);
+            //全部オフにする
+            DeleteJobList(JobList);
+            JobIconChange(JobList);
 
         }else
         {
-            //notExistJobをオン
+            //notExistJobをオンにする
             AddJobList(notExistJob);
+            JobIconChange(notExistJob);
         }
-    });
 
-    
+    };
 
     
     //存在するかどうか(配列)
@@ -369,9 +570,25 @@ $(function() {
 
     }
 
+    //配列を受け取って、アイコンを　オン⇔オフにする
+    function JobIconChange(joblist)
+    {
+        joblist.forEach(job => {
+            //スペースを削除
+            job = job.replace(/ /g, "");
 
-
-
+            //オンの時　オフにする
+            if($("[data-job="+job+"]").attr("data-stat") == "on"){
+                $("[data-job="+job+"]").attr("data-stat","off");
+                $("[data-job="+job+"]").css("filter","brightness(100%) opacity(20%)");
+            }else{
+            //オフの時　オンにする
+                $("[data-job="+job+"]").attr("data-stat","on");
+                $("[data-job="+job+"]").css("filter","brightness(100%) opacity(100%)");
+            }
+            
+        });
+    }
 
 
 
@@ -634,7 +851,7 @@ $(function() {
     //フィルタークリアー
     $("#filter_delete").click(function(){
         filter_bool_vc = "NONE";
-        filter_play_job = "NONE";
+        filter_play_job = filter_play_job = ["paladin","warrior","darkknight","gunbreaker","monk","dragoon","ninja","samurai","reaper","whitemage","scholar","astrologian","sage","bard","machinist","dancer","blackmage","summoner","redmage","bluemage","NONE"];
         filter_string_guide = "NONE";
         filter_bool_clear = "NONE";
         filter_bool_act = "NONE";
@@ -650,6 +867,8 @@ $(function() {
         $("#filter_bool_clear").css("background-color","#444444");
         $("#filter_language").text("言語:ALL");
         $("#filter_language").css("background-color","#444444");
+        $(".play_job_icon").attr("data-stat","on");
+        $(".play_job_icon").css("filter","opacity(100%)");
 
         //ajax
         AjaxMenuClick();
@@ -709,5 +928,37 @@ $(function() {
 
     //最初のソートの色を調整
     $("#sort_view_count").css("background-color","rgb(165, 42, 42)");
+
+
+    //ローカルストレージの内容を読み込む
+    if(localStorage["sort_view_count"] != null){
+        sort_view_count = localStorage["sort_view_count"];
+    }
+    if(localStorage["sort_published_at"] != null){
+        sort_published_at = localStorage["sort_published_at"];
+    }
+    if(localStorage["filter_bool_vc"] != null){
+        filter_bool_vc = localStorage["filter_bool_vc"];
+    }
+    if(localStorage["filter_string_guide"] != null){
+        filter_string_guide = localStorage["filter_string_guide"];
+    }
+    if(localStorage["filter_bool_clear"] != null){
+        filter_bool_clear = localStorage["filter_bool_clear"];
+    }
+    if(localStorage["filter_bool_act"] != null){
+        filter_bool_act = localStorage["filter_bool_act"];
+    }
+    if(localStorage["filter_language"] != null){
+        filter_language = localStorage["filter_language"];
+    }if(localStorage["filter_play_job"] != null){
+        filter_play_job_json = localStorage["filter_play_job"];
+        filter_play_job = JSON.parse(filter_play_job_json);
+    }
+    
+
+    //ajax
+    AjaxMenuClick();
+    
     
 });

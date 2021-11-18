@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/css/mainTopFooter.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="/js/moviesearch/main.js"></script>
+    <script src="/js/moviesearch/movieplay.js"></script>
 
 
 
