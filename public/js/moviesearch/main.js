@@ -3,8 +3,16 @@ $(function() {
     var leftMenuColor = "rgb(24, 24, 24)";
     var leftMenuColrOnMouse = "rgb(56, 56, 56)";
     var mainContentsColor = "rgb(33, 33, 33)";
+    var colorRed = "rgb(165, 42, 42)";
+    var colorBlue = "rgb(42, 50, 165)";
+    var colorGray = "#444444";
 
+    //コンテンツを検索
+    var activeSeries = $(".mainContents_container_left div").eq(0).attr("id");
+    var activePart = $(".left_menu_h2 span").attr("data-activePart");
     var activeLeftMenu = 0;
+    var dataContents = $(".left_menu_ul li").eq(0).attr("data-contents");
+
     var sort_view_count = "DESC";
     var sort_published_at = "NONE";
     var filter_bool_vc = "NONE";
@@ -37,9 +45,13 @@ $(function() {
         "NONE"
     ];
 
-    var filterData;
+    var all_jobs = ["paladin","warrior","darkknight","gunbreaker","monk","dragoon","ninja","samurai","reaper","whitemage","scholar","astrologian","sage","bard","machinist","dancer","blackmage","summoner","redmage","bluemage","NONE"];
+    var jobNum = all_jobs.length;
 
- 
+
+    var favorite_movie_array = ["NONE"];
+
+
     //レフトメニューオンマウス
     $(".left_menu_h2").hover(
         function(){
@@ -75,6 +87,16 @@ $(function() {
         //自分だけ色を付ける
         $(this).css("background-color",leftMenuColrOnMouse);
 
+        //何をクリックされたかを取得
+        activeSeries = $(this).parent().parent().attr("id");
+        activePart = $(this).parent().prev().find("span").attr("data-activePart");
+        dataContents = $(this).attr("data-contents");
+
+        //ローカルストレージ保存
+        localStorage["activeSeries"] = activeSeries;
+        localStorage["activePart"] = activePart;
+        localStorage["dataContents"] = dataContents;
+
         //ajax
         AjaxMenuClick();
 
@@ -106,9 +128,6 @@ $(function() {
     //非同期処理
     function AjaxMenuClick()
     {
-        //コンテンツを検索
-        var dataContents = $(".left_menu_ul li").eq(activeLeftMenu).attr("data-contents");
-
         localStorage["sort_view_count"] = sort_view_count;
         localStorage["sort_published_at"] = sort_published_at;
         localStorage["filter_bool_vc"] = filter_bool_vc;
@@ -171,8 +190,14 @@ $(function() {
         $('.movie_list_detail').last().append('<div class="movie_list_detail_channelicon">');
         $('.movie_list_detail_channelicon').last().after('<div class="movie_list_detail_text">');
         $('.movie_list_detail_text').last().append('<div class="movie_list_detail_text_title">');
-        $('.movie_list_detail_text_title').last().after('<div class="movie_list_detail_text_channelname">');
-        $('.movie_list_detail_text_channelname').last().after('<div class="movie_list_detail_view_count">');
+
+
+        $('.movie_list_detail_text').last().append('<div class="movie_list_detail_text_channelname_div">');
+
+        $('.movie_list_detail_text_channelname_div').last().append('<div class="movie_list_detail_text_channelname">');
+        $('.movie_list_detail_text_channelname_div').last().after('<div class="movie_list_detail_view_count">');
+        $('.movie_list_detail_text_channelname').last().after('<div class="movie_list_favorite_div">');
+        $('.movie_list_favorite_div').last().append('<div data-id="'+data["movie_id"]+'" class="movie_list_favorite">');
 
         //コンテンツ生成
         $('.movie_list_samneil').last().append('<img src="'+data["samneil_img"]+'" alt="'+data["movie_title"]+'">');
@@ -183,11 +208,94 @@ $(function() {
         $('.movie_list_detail_text_title').last().append('<a href="/moviesearch/'+data["movie_id"]+'/">'+data["movie_title"]+'</a>');
         
         $('.movie_list_detail_text_channelname').last().append(data["channel_name"]);
+        $(".movie_list_favorite").last().append("★");
 
         $('.movie_list_detail_view_count').last().append(data["view_count_str"]+"・"+data["published_at_str"]);
 
+        
+
         });
+
+        //スターに色を付ける
+        StarCheck();
+
     }
+
+    //スターに色を付ける
+    function StarCheck(){
+        if(localStorage["favorite_movie"] != null){
+            favorite_movie_json = localStorage["favorite_movie"];
+            favorite_movie = JSON.parse(favorite_movie_json);        
+            
+            favorite_movie.forEach(movie_id => {     
+                $('[data-id="'+movie_id+'"]').css("color","rgb(251, 255, 0)");
+            });
+        }
+    }
+
+
+    //★マーククリック
+    $(document).on("click",".movie_list_favorite",function(){        
+
+        favorite_movie_json = localStorage["favorite_movie"];
+
+        if(favorite_movie_json == null){
+            favorite_movie_array = ["NONE"];
+        }else{
+            favorite_movie_array = JSON.parse(favorite_movie_json);
+        }
+
+        //off
+        if($(this).css("color") == "rgb(251, 255, 0)")
+        {
+            $(this).css("color","rgb(107, 107, 107)");
+
+            var removals = [$(this).attr("data-id")];
+            favorite_movie_array = favorite_movie_array.filter(function(v){
+              return ! removals.includes(v);
+            });
+
+            $("#pop").text("★解除しました。");
+            $("#pop").css("background-color",colorBlue);
+
+        //on
+        }else{
+            $(this).css("color","rgb(251, 255, 0)");
+
+            //バグ防止のため存在を確認
+            if($.inArray($(this).attr("data-id"), favorite_movie_array)<0){
+                favorite_movie_array.push($(this).attr("data-id"));
+            };
+            
+            $("#pop").text("★追加しました！");
+            $("#pop").css("background-color",colorRed);
+        }
+
+        //ストレージに保存
+        favorite_movie_array.sort();
+        favorite_movie_json = JSON.stringify(favorite_movie_array, undefined, 1);
+        localStorage["favorite_movie"] =  favorite_movie_json;
+
+    });
+
+    //★hover
+    $(document).on("mouseenter", ".movie_list_favorite", function (eo) {
+        $('body').append('<div id="pop">★お気に入りに追加します</div>');
+        $('#pop').show();
+        $(window).mousemove( function(e){
+            var x = e.pageX;
+            var y = e.pageY-40;
+            $('#pop').css({left:x+'px',top:y+'px','z-index':'100'});
+        });
+
+    });
+
+    $(document).on("mouseleave", ".movie_list_favorite", function (eo) {
+        $('#pop').remove();
+        $('#pop').remove();
+        $('#pop').remove();
+    });
+
 
 
     $(".left_menu_h1").click(function(){
@@ -284,9 +392,19 @@ $(function() {
     $(document).on('click',function(e) {
 
         if(!$(e.target).closest('#filter_play_job,.filter_play_job_menu').length) {
+
+            //ターゲット外で例外を追加　↓これはajaxしない
+            if(e.target.className == "movie_list_favorite")
+            {
+                return 0;
+            }
             
             // ターゲット要素の外側をクリックした時の操作            
             $(".filter_play_job_menu > div").slideUp(100);
+
+            //フィルターの表示を変更
+            FilterJobChange();
+
             //ajax
             AjaxMenuClick();
 
@@ -300,6 +418,20 @@ $(function() {
             }            
         }
     });
+
+    //フィルターの表示を変更
+    function FilterJobChange(){
+        if(filter_play_job.length < jobNum)
+        {
+            $("#filter_play_job").text("ジョブ:一部");
+            $("#filter_play_job").css("background-color","rgb(42, 50, 165)");            
+        }else{
+            $("#filter_play_job").text("ジョブ:ALL");
+            $("#filter_play_job").css("background-color","#444444");
+            
+        }
+    }
+
 
 
     //引数の配列のジョブを削除
@@ -323,16 +455,25 @@ $(function() {
         var jobdata = $(this).attr("data-job");
         JobListScrutiny(jobdata);
 
-        //アイコン見た目変更
-        if($(this).attr("data-stat") == "on")
-        {
-            $(this).attr("data-stat","off");
-            $(this).css("filter","opacity(20%)")
-        }else{
-            $(this).attr("data-stat","on");
-            $(this).css("filter","opacity(100%)")
-        }        
+        //アイコンの見え方変更
+        PlayJobIconChange(jobdata);
+          
    });
+
+   //アイコン見た目変更
+   function PlayJobIconChange(jobdata)
+   {
+        //アイコン見た目変更
+        if($("[data-job="+jobdata+"]").attr("data-stat") == "on")
+        {
+            $("[data-job="+jobdata+"]").attr("data-stat","off");
+            $("[data-job="+jobdata+"]").css("filter","opacity(20%)")
+        }else{
+            $("[data-job="+jobdata+"]").attr("data-stat","on");
+            $("[data-job="+jobdata+"]").css("filter","opacity(100%)")
+        }      
+   }
+
 
 
    //アイコンホバー
@@ -492,9 +633,14 @@ $(function() {
     });
 
     $(".filter_play_job_menu_enter_button div").click(function(){
+        
+        //フィルターの表示を変更
+        FilterJobChange();
+
         //ajax
         AjaxMenuClick();
         $(".filter_play_job_menu > div").slideUp(100);
+
     });
 
 
@@ -600,107 +746,107 @@ $(function() {
         sort_view_count = sortButtonCheck(sort_view_count);
         
         //表示の変更
-        switch(sort_view_count)
-        {            
-            case "DESC":
-                $(this).text("再生回数：多い");
-                $(this).css("background-color","rgb(165, 42, 42)");
-                break;
-
-            case "ASC":
-                $(this).text("再生回数：少い");
-                $(this).css("background-color","rgb(42, 50, 165)");
-                break;            
-        }
+        SortViewCountDisplay(sort_view_count);
 
         //ほかのソートを調整        
         sort_published_at = "NONE";
         $("#sort_published_at").text("投稿日");
-        $("#sort_published_at").css("background-color","#444444");
+        $("#sort_published_at").css("background-color",colorGray);
 
 
         //ajax
         AjaxMenuClick();
     
     });
+
+    //表示の変更
+    function SortViewCountDisplay(sort_view_count)
+    {
+        //表示の変更
+        switch(sort_view_count)
+        {            
+            case "DESC":
+                $("#sort_view_count").text("再生回数：多い");
+                $("#sort_view_count").css("background-color",colorRed);
+                break;
+
+            case "ASC":
+                $("#sort_view_count").text("再生回数：少い");
+                $("#sort_view_count").css("background-color",colorBlue);
+                break;   
+                
+            case "NONE":
+                $("#sort_view_count").text("再生回数");
+                $("#sort_view_count").css("background-color",colorGray);
+                break;
+        }
+    }
+
+
     
     //ソート：投稿日
     $("#sort_published_at").click(function(){
 
         sort_published_at = sortButtonCheck(sort_published_at);
 
-        switch(sort_published_at)
-        {            
-            case "DESC":
-                $(this).text("投稿日：新しい");
-                $(this).css("background-color","rgb(165, 42, 42)");
-                break;
-
-            case "ASC":
-                $(this).text("投稿日：古い");
-                $(this).css("background-color","rgb(42, 50, 165)");
-                break;            
-        }
+        SortPublishedAtDisplay(sort_published_at);
 
         sort_view_count = "NONE";
         $("#sort_view_count").text("再生回数");
-        $("#sort_view_count").css("background-color","#444444");
+        $("#sort_view_count").css("background-color",colorGray);
 
         //ajax
         AjaxMenuClick();
 
     });
+
+
+    //表示の変更
+    function SortPublishedAtDisplay(sort_published_at)
+    {
+        switch(sort_published_at)
+        {            
+            case "DESC":
+                $("#sort_published_at").text("投稿日：新しい");
+                $("#sort_published_at").css("background-color",colorRed);
+                SortViewCountDisplay("NONE");
+                break;
+
+            case "ASC":
+                $("#sort_published_at").text("投稿日：古い");
+                $("#sort_published_at").css("background-color",colorBlue);
+                SortViewCountDisplay("NONE");
+                break;       
+                
+            case "NONE":
+                $("#sort_published_at").text("投稿日");
+                $("#sort_published_at").css("background-color",colorGray);
+                break;
+        }
+    }
+
+
+
 
     //フィルター：ボイスチャット
     $("#filter_bool_vc").click(function(){
 
         filter_bool_vc = filterButtonCheckBool(filter_bool_vc);
 
-        switch(filter_bool_vc)
-        {            
-            case "NONE":
-                $(this).text("VC:ALL");
-                $(this).css("background-color","#444444");
-                break;
-
-            case "true":
-                $(this).text("VC:あり");
-                $(this).css("background-color","rgb(165, 42, 42)");
-                break;
-                
-            case "false":
-                $(this).text("VC:なし");
-                $(this).css("background-color","rgb(42, 50, 165)");
-                break;
-        }
+        BoolDisplayChange(filter_bool_vc,"#filter_bool_vc","VC:ALL","VC:あり","VC:なし");
 
         //ajax
         AjaxMenuClick();
 
-    });
+    });    
+
 
     //フィルター：DPS表示
     $("#filter_bool_act").click(function(){
 
         filter_bool_act = filterButtonCheckBool(filter_bool_act);
 
-        switch(filter_bool_act)
-        {            
-            case "NONE":
-                $(this).text("DPS表示:ALL");
-                $(this).css("background-color","#444444");
-                break;
-
-            case "true":
-                $(this).text("DPS表示:あり");
-                $(this).css("background-color","rgb(165, 42, 42)");
-                break;
-                
-            case "false":
-                $(this).text("DPS表示:なし");
-                $(this).css("background-color","rgb(42, 50, 165)");
-                break;
-        }
+        BoolDisplayChange(filter_bool_act,"#filter_bool_act","DPS表示:ALL","DPS表示:あり","DPS表示:なし");
 
         //ajax
         AjaxMenuClick();
@@ -712,23 +858,7 @@ $(function() {
 
         filter_bool_clear = filterButtonCheckBool(filter_bool_clear);
 
-        switch(filter_bool_clear)
-        {            
-            case "NONE":
-                $(this).text("クリアー:ALL");
-                $(this).css("background-color","#444444");
-                break;
-
-            case "true":
-                $(this).text("クリアー:踏破");
-                $(this).css("background-color","rgb(165, 42, 42)");
-                break;
-                
-            case "false":
-                $(this).text("クリアー:未クリア");
-                $(this).css("background-color","rgb(42, 50, 165)");
-                break;
-        }
+        BoolDisplayChange(filter_bool_clear,"#filter_bool_clear","クリアー:ALL","クリアー:踏破","クリアー:未クリア");
 
         //ajax
         AjaxMenuClick();
@@ -750,40 +880,50 @@ $(function() {
     //小メニュークリック時の動作
     $(".filter_string_guide_menu li").click(function(){
         var clickButtonValue = $(this).attr("data-value");
-        $("#filter_string_guide").text("解説:"+clickButtonValue);
 
-        switch(clickButtonValue)
-        {
-            case "ALL":
-                $("#filter_string_guide").css("background-color","#444444");
-                filter_string_guide = "NONE"
-                break;
-            
-            case "ゆっくり":
-                $("#filter_string_guide").css("background-color","rgb(165, 42, 42)");
-                filter_string_guide = "yukkuri"
-                break;
-            
-            case "本人":
-                $("#filter_string_guide").css("background-color","rgb(165, 42, 42)");
-                filter_string_guide = "jigoe"
-                break;
-
-            case "字幕":
-                $("#filter_string_guide").css("background-color","rgb(165, 42, 42)");
-                filter_string_guide = "jimaku"
-                break;
-
-            case "なし":
-                $("#filter_string_guide").css("background-color","rgb(42, 50, 165)");
-                filter_string_guide = "nonevoice"
-                break            
-        }
+        StringGuideMenu(clickButtonValue);
 
         //ajax
         AjaxMenuClick();
 
     })
+
+    //ディスプレイ変更(解説)
+    function StringGuideMenu(clickButtonValue){        
+
+        switch(clickButtonValue)
+        {
+            case "NONE":
+                $("#filter_string_guide").css("background-color","#444444");
+                filter_string_guide = "NONE";
+                $("#filter_string_guide").text("解説:ALL");
+                break;
+            
+            case "yukkuri":
+                $("#filter_string_guide").css("background-color","rgb(165, 42, 42)");
+                filter_string_guide = "yukkuri";
+                $("#filter_string_guide").text("解説:ゆっくり");
+                break;
+            
+            case "jigoe":
+                $("#filter_string_guide").css("background-color","rgb(165, 42, 42)");
+                filter_string_guide = "jigoe";
+                $("#filter_string_guide").text("解説:本人");
+                break;
+
+            case "jimaku":
+                $("#filter_string_guide").css("background-color","rgb(165, 42, 42)");
+                filter_string_guide = "jimaku";
+                $("#filter_string_guide").text("解説:字幕");
+                break;
+
+            case "nonevoice":
+                $("#filter_string_guide").css("background-color","rgb(42, 50, 165)");
+                filter_string_guide = "nonevoice";
+                $("#filter_string_guide").text("解説:なし");
+                break            
+        }
+    }
 
     //小メニューアニメーション
     $(".filter_string_guide_menu li").hover(function(){        
@@ -824,28 +964,33 @@ $(function() {
 
         filter_language = filterButtonCheckBool(filter_language);
 
-        switch(filter_language)
-        {            
-            case "NONE":
-                $(this).text("言語:ALL");
-                $(this).css("background-color","#444444");
-                break;
-
-            case "true":
-                $(this).text("言語:日本語");
-                $(this).css("background-color","rgb(165, 42, 42)");
-                break;
-                
-            case "false":
-                $(this).text("言語:ENGLISH");
-                $(this).css("background-color","rgb(42, 50, 165)");
-                break;
-        }
+        BoolDisplayChange(filter_language,"#filter_language","言語:ALL","言語:日本語","言語:ENGLISH");
 
         //ajax
         AjaxMenuClick();
 
     });
+
+    //ディスプレイ変更関数
+    function BoolDisplayChange(filter_bool,id_filter,c_none,c_true,c_false){
+        switch(filter_bool)
+        {            
+            case "NONE":
+                $(id_filter).text(c_none);
+                $(id_filter).css("background-color","#444444");
+                break;
+
+            case "true":
+                $(id_filter).text(c_true);
+                $(id_filter).css("background-color","rgb(165, 42, 42)");
+                break;
+                
+            case "false":
+                $(id_filter).text(c_false);
+                $(id_filter).css("background-color","rgb(42, 50, 165)");
+                break;
+        }
+    }
 
 
     //フィルタークリアー
@@ -912,53 +1057,111 @@ $(function() {
 
 
     //初回実行
+    //最初のソートの色を調整
+    $("#sort_view_count").css("background-color","rgb(165, 42, 42)");
+
+    //ローカルストレージの内容を読み込む
+    if(localStorage["activeSeries"] != null){
+        activeSeries = localStorage["activeSeries"];
+        //$("#"+activeSeries+" img").trigger("click");
+    }
+    if(localStorage["activePart"] != null){
+        activePart = localStorage["activePart"];
+        //$("[data-activePart = "+activePart+" ]").trigger("click");
+    }
+    if(localStorage["dataContents"] != null){
+        dataContents = localStorage["dataContents"];
+        //$("[data-contents = "+dataContents+" ]").trigger("click");
+        activeLeftMenu = $(".left_menu_ul li").index($("[data-contents = "+dataContents+" ]"));
+    }
+    if(localStorage["sort_view_count"] != null){
+        sort_view_count = localStorage["sort_view_count"];
+        SortViewCountDisplay(sort_view_count);
+    }
+    if(localStorage["sort_published_at"] != null){
+        sort_published_at = localStorage["sort_published_at"];
+        SortPublishedAtDisplay(sort_published_at);
+    }
+    if(localStorage["filter_bool_vc"] != null){
+        filter_bool_vc = localStorage["filter_bool_vc"];
+        BoolDisplayChange(filter_bool_vc,"#filter_bool_vc","VC:ALL","VC:あり","VC:なし");
+    }
+    if(localStorage["filter_string_guide"] != null){
+        filter_string_guide = localStorage["filter_string_guide"];
+        StringGuideMenu(filter_string_guide);
+    }
+    if(localStorage["filter_bool_clear"] != null){
+        filter_bool_clear = localStorage["filter_bool_clear"];
+        BoolDisplayChange(filter_bool_clear,"#filter_bool_clear","クリアー:ALL","クリアー:踏破","クリアー:未クリア");
+    }
+    if(localStorage["filter_bool_act"] != null){
+        filter_bool_act = localStorage["filter_bool_act"];
+        BoolDisplayChange(filter_bool_act,"#filter_bool_act","DPS表示:ALL","DPS表示:あり","DPS表示:なし");
+    }
+    if(localStorage["filter_language"] != null){
+        filter_language = localStorage["filter_language"];
+        BoolDisplayChange(filter_language,"#filter_language","言語:ALL","言語:日本語","言語:ENGLISH");
+    }
+    if(localStorage["filter_play_job"] != null){
+        filter_play_job_json = localStorage["filter_play_job"];
+        filter_play_job = JSON.parse(filter_play_job_json);
+        
+        all_jobs.forEach(job => {
+            
+            if($.inArray(job, filter_play_job)<0){
+                PlayJobIconChange(job);
+            }    
+
+        });
+    }
+
+
+
+    
+
     //最初のメニューは開いておく
-    var nowVarsitonName = $(".mainContents_container_left div:first-child").attr("id");
-    ChangeDisplayCss("#"+nowVarsitonName+" .left_menu_h2"); 
-    $(".left_menu_ul").first().css("display","block");
+    ChangeDisplayCss("#"+activeSeries+" .left_menu_h2"); 
+    $("[data-activePart = "+activePart+" ]").parent().next().css("display","block");
 
     //最初のメニューは色を変える
-    $(".left_menu_h2").first().css("background-color",leftMenuColrOnMouse);
-    $(".left_menu_ul li").first().css("background-color",leftMenuColrOnMouse);
-
+    $("[data-activePart = "+activePart+" ]").parent().css("background-color",leftMenuColrOnMouse);
+    $("[data-contents = "+dataContents+" ]").css("background-color",leftMenuColrOnMouse);
+    
     //入力フォーム最初のバージョンをセット
     var version =  $('.contents_input_version option:selected').val();
     $("#version").val(version);
     $(".contents_input_version").change();
 
-    //最初のソートの色を調整
-    $("#sort_view_count").css("background-color","rgb(165, 42, 42)");
-
-
-    //ローカルストレージの内容を読み込む
-    if(localStorage["sort_view_count"] != null){
-        sort_view_count = localStorage["sort_view_count"];
-    }
-    if(localStorage["sort_published_at"] != null){
-        sort_published_at = localStorage["sort_published_at"];
-    }
-    if(localStorage["filter_bool_vc"] != null){
-        filter_bool_vc = localStorage["filter_bool_vc"];
-    }
-    if(localStorage["filter_string_guide"] != null){
-        filter_string_guide = localStorage["filter_string_guide"];
-    }
-    if(localStorage["filter_bool_clear"] != null){
-        filter_bool_clear = localStorage["filter_bool_clear"];
-    }
-    if(localStorage["filter_bool_act"] != null){
-        filter_bool_act = localStorage["filter_bool_act"];
-    }
-    if(localStorage["filter_language"] != null){
-        filter_language = localStorage["filter_language"];
-    }if(localStorage["filter_play_job"] != null){
-        filter_play_job_json = localStorage["filter_play_job"];
-        filter_play_job = JSON.parse(filter_play_job_json);
-    }
-    
-
     //ajax
     AjaxMenuClick();
+
+    $(".testbutton").click(function(){
+        console.log("test");
+        $('input[name="favorite_list"]').val("favorite_movie");
+    });
+
+    
+
+    /* aタグpost */
+    $('#favoritelist a').on('click', function(){
+
+        favorite_movie_json = localStorage["favorite_movie"];
+
+        favorite_movie = $.parseJSON(favorite_movie_json);
+        
+        $("input[name='favorite_list']").val(favorite_movie);
+
+        var pageURL = $(this).attr('href');
+        $('form').attr('action',pageURL);
+        $('form').submit();
+        return false;
+    });
+
+
     
     
 });
+
+
+
+

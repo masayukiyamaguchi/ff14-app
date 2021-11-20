@@ -40,6 +40,28 @@
     padding-top: 25px;
 
 }
+.main_movie_iflame_wrap{
+    max-width: 98%; /* ここに動画の横幅を指定 */
+}
+
+.main_movie_iflame
+{
+    position: relative;
+    width:100%; /* 横幅は100%にしておく(ここを変えたい場合は実装コード2の方法を確認してください) */
+    height:0; /* 高さは0にしておく(padding-topで高さを指定するため) */
+    padding-top: 56.25%; /* 高さを指定(16:9) */
+    margin-bottom: 15px;
+}
+
+.main_movie_iflame iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+
 
 .main_movie_detail
 {
@@ -117,36 +139,107 @@
 
 }
 
+.searchlist{
+    border-color: rgb(172, 172, 172);
+    border: 1px solid;
+}
+
 .searchlist
 {
     margin-top: 25px;
     height: 720px;
-    overflow-y: scroll;
+    overflow-y: scroll;    
 
+}
+
+.searchlist_contents
+{
+    padding-right: 20px;
 }
 
 .searchlist_contents_one
 {
     display:inline-flex;
-    padding-bottom: 5px;
+
+    padding-top: 5px;
+    padding-left: 5px;
+    position: relative;
 }
-.searchlist_contents_samenil img
-{
+
+.searchlist_contents_index{
+    position: absolute;
+    top: 50%;
+    -webkit-transform : translateY(-50%);
+    transform : translateY(-50%);
+    font-size: 10px;
+}
+
+.searchlist_contents_samenil{
+    margin-left: 15px;
+}
+
+.searchlist_contents_samenil img{
     width: 170px;
 }
 
-.searchlist_contents_detail
-{
+.searchlist_contents_detail{
     padding-left: 10px;
+}
+
+.searchlist_contents_title{
+    font-size: 16px;
+    
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: white;
+}
+
+
+.searchlist_contents :hover
+{
+    background-color: rgb(92, 92, 92);
+}
+
+
+.searchlist_contents_channelname
+{
+    font-size: 13px;
+    color: rgb(160, 160, 160);
+}
+
+.searchlist_contents_view_count
+{
+    font-size: 13px;
+    color: rgb(160, 160, 160);
 }
 
 .searchlist_contents_title
 {
-    font-size: 18px;
+    display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
 }
 
-.searchlist_contents_channelname
+.searchlist_contents_samenil img
 {
-    font-size: 15px;
-    color: rgb(160, 160, 160);
+    width: 19vh;
+    height: 10.5vh;
+    object-fit: cover;
+
 }
+
+
+/* スクロールバー */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background: rgb(24, 24, 24);    
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: #c7c7c7;
+    border-radius: 5px;
+  }

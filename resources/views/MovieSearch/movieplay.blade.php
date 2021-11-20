@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="stylesheet" href="/css/moviesearch/movieplay.css">
     <link rel="stylesheet" href="/css/mainTopHeader.css">
@@ -35,6 +36,7 @@
 
                     <div class="mainContents_container_left_contents">
                         
+                        <div  class="main_movie_iflame_wrap">
                         <div class="main_movie_iflame">
                             <iframe 
                                 width="1280" 
@@ -45,6 +47,7 @@
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                 allowfullscreen>
                             </iframe>
+                        </div>
                         </div>
 
                         <div class="main_movie_detail">
@@ -96,7 +99,13 @@
 
                         <div class="searchlist_contents">
 
+                            
+                            <!--
+                            <a href="">
                             <div class="searchlist_contents_one">
+
+                                <div class="searchlist_contents_index">1</div>
+
                                 <div class="searchlist_contents_samenil">
                                     <img src="https://i.ytimg.com/vi/26mK2wk1TKs/maxresdefault.jpg" alt="">
                                 </div>
@@ -104,110 +113,24 @@
                                 <div class="searchlist_contents_detail">
                                    
                                     <div class="searchlist_contents_title">
-                                        金ネジキクリアまでの軌跡
+                                        金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡
                                     </div>
                                     <div class="searchlist_contents_channelname">
                                         チャンネル名
                                     </div>
-                                </div>
-                            </div>
-
-
-                            <div class="searchlist_contents_one">
-                                <div class="searchlist_contents_samenil">
-                                    <img src="https://i.ytimg.com/vi/26mK2wk1TKs/maxresdefault.jpg" alt="">
-                                </div>
-    
-                                <div class="searchlist_contents_detail">
-                                   
-                                    <div class="searchlist_contents_title">
-                                        金ネジキクリアまでの軌跡
+                                    <div class="searchlist_contents_view_count">
+                                        再生回数・公開日
                                     </div>
-                                    <div class="searchlist_contents_channelname">
-                                        チャンネル名
-                                    </div>                          
+                                    
                                 </div>
-                            </div>
 
-                            <div class="searchlist_contents_one">
-                                <div class="searchlist_contents_samenil">
-                                    <img src="https://i.ytimg.com/vi/26mK2wk1TKs/maxresdefault.jpg" alt="">
-                                </div>
-    
-                                <div class="searchlist_contents_detail">
-                                   
-                                    <div class="searchlist_contents_title">
-                                        金ネジキクリアまでの軌跡
-                                    </div>
-                                    <div class="searchlist_contents_channelname">
-                                        チャンネル名
-                                    </div>                          
-                                </div>
-                            </div>
 
-                            <div class="searchlist_contents_one">
-                                <div class="searchlist_contents_samenil">
-                                    <img src="https://i.ytimg.com/vi/26mK2wk1TKs/maxresdefault.jpg" alt="">
-                                </div>
-    
-                                <div class="searchlist_contents_detail">
-                                   
-                                    <div class="searchlist_contents_title">
-                                        金ネジキクリアまでの軌跡
-                                    </div>
-                                    <div class="searchlist_contents_channelname">
-                                        チャンネル名
-                                    </div>                          
-                                </div>
                             </div>
+                            </a>
 
-                            <div class="searchlist_contents_one">
-                                <div class="searchlist_contents_samenil">
-                                    <img src="https://i.ytimg.com/vi/26mK2wk1TKs/maxresdefault.jpg" alt="">
-                                </div>
-    
-                                <div class="searchlist_contents_detail">
-                                   
-                                    <div class="searchlist_contents_title">
-                                        金ネジキクリアまでの軌跡
-                                    </div>
-                                    <div class="searchlist_contents_channelname">
-                                        チャンネル名
-                                    </div>                          
-                                </div>
-                            </div>
+                            -->
 
-                            <div class="searchlist_contents_one">
-                                <div class="searchlist_contents_samenil">
-                                    <img src="https://i.ytimg.com/vi/26mK2wk1TKs/maxresdefault.jpg" alt="">
-                                </div>
-    
-                                <div class="searchlist_contents_detail">
-                                   
-                                    <div class="searchlist_contents_title">
-                                        金ネジキクリアまでの軌跡
-                                    </div>
-                                    <div class="searchlist_contents_channelname">
-                                        チャンネル名
-                                    </div>                          
-                                </div>
-                            </div>
 
-                            <div class="searchlist_contents_one">
-                                <div class="searchlist_contents_samenil">
-                                    <img src="https://i.ytimg.com/vi/26mK2wk1TKs/maxresdefault.jpg" alt="">
-                                </div>
-    
-                                <div class="searchlist_contents_detail">
-                                   
-                                    <div class="searchlist_contents_title">
-                                        金ネジキクリアまでの軌跡
-                                    </div>
-                                    <div class="searchlist_contents_channelname">
-                                        チャンネル名
-                                    </div>                          
-                                </div>
-                            </div>
 
                         </div>
 

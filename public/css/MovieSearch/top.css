@@ -49,6 +49,16 @@
     padding-top: 0px;
 }
 
+#favoritelist{
+    text-align: center;
+}
+
+#favoritelist a{
+    
+    color : inherit;
+    text-decoration: none;
+
+}
 
 
 
@@ -504,6 +514,11 @@
 	overflow: hidden;
 }
 
+.movie_list_detail_text_channelname_div{
+    display: flex;
+    justify-content: space-between;
+}
+
 .movie_list_detail_text_channelname
 {
     display: -webkit-box;
@@ -513,6 +528,22 @@
     color: rgb(160, 160, 160);
     font-size: 14px;
 }
+
+.movie_list_favorite
+{
+    padding-right: 20px;
+    color: rgb(107, 107, 107);
+    font-size: 15px;
+}
+
+.movie_list_favorite:hover
+{
+    cursor: pointer;
+    user-select: none;
+}
+
+
+
 
 .movie_list_detail_view_count
 {
@@ -529,4 +560,36 @@
     color : inherit;
     text-decoration: none;
 }
+
+
+
+/* スクロールバー */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background: rgb(24, 24, 24);    
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: #c7c7c7;
+    border-radius: 5px;
+  }
+
+/* ポップ */
+  #pop{
+    display:inline-block;
+    position:absolute;
+    
+    margin-top:15px;
+    margin-left:5px;
+
+    background:rgba(0,0,0,0.8);
+    color:#FFF;
+
+    margin-top:15px;
+    text-align:center;
+    border-radius:3px;
+    padding:5px;
+}
+
 

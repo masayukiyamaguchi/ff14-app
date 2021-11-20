@@ -40,6 +40,7 @@ class IndexController extends Controller
     {
         //クエリビルダーの記述
         $jsonRequest = $request->all();
+
         $dataContents = $jsonRequest["dataContents"];
         
         //ソート
@@ -199,6 +200,21 @@ class IndexController extends Controller
         $left10Slash = str_replace("-","/",$left10);
         return $left10Slash;
     }
+
+
+
+
+
+
+    public function test()
+    {        
+        return view("MovieSearch.test");
+    }
+
+
+
+
+
     
 
     

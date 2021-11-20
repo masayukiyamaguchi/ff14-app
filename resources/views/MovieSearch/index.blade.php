@@ -35,10 +35,19 @@
                 
                 <!-- レフト　-->
                 <div class="mainContents_container_left">
+                    
+                    <div id="favoritelist">
+                        <form action="" method="post">
+                            @csrf
+                            <input type="hidden" name="favorite_list" value="">
+                        </form>                            
+                        <a href="/moviesearch/favorite/">★お気に入りリスト★</a>                        
+                    </div>
+
 
                     <div id="shadowbringers">
                     <p class="left_menu_h1"><img src="\images\moviesearch\shadowbringers.png" alt=""></p>
-                    <p class="left_menu_h2 shadowbringers"> <span class="left_menu_h2_span">希望の園エデン：再生編</span> </p>
+                    <p class="left_menu_h2 shadowbringers"> <span data-activePart="EdensPromise" class="left_menu_h2_span">希望の園エデン：再生編</span> </p>
                     <ul class="left_menu_ul">
                         <li data-contents="EdensPromise01">暗闇の雲</li>
                         <li data-contents="EdensPromise02">影の王</li>
@@ -47,7 +56,7 @@
                         <li data-contents="EdensPromise05">闇の巫女</li>
                     </ul>
                     
-                    <p class="left_menu_h2 shadowbringers"> <span class="left_menu_h2_span">希望の園エデン：共鳴編</span> </p>
+                    <p class="left_menu_h2 shadowbringers"> <span data-activePart="EdensVerse" class="left_menu_h2_span">希望の園エデン：共鳴編</span> </p>
                     <ul class="left_menu_ul">
                         <li data-contents="EdensVerse01">ラムウ</li>
                         <li data-contents="EdensVerse02">イフリート ガルーダ</li>
@@ -55,7 +64,7 @@
                         <li data-contents="EdensVerse04">シヴァ</li>
                     </ul>
 
-                    <p class="left_menu_h2 shadowbringers"> <span class="left_menu_h2_span">希望の園エデン：覚醒編</span> </p>
+                    <p class="left_menu_h2 shadowbringers"> <span data-activePart="EdensGate" class="left_menu_h2_span">希望の園エデン：覚醒編</span> </p>
                     <ul class="left_menu_ul">
                         <li data-contents="EdensGate01">エデン・プライム</li>
                         <li data-contents="EdensGate02">ヴォイドウォーカー</li>
@@ -66,7 +75,7 @@
 
                     <div id="stormblood">
                     <p class="left_menu_h1"><img src="\images\moviesearch\stormblood.png" alt=""></p>
-                    <p class="left_menu_h2 stormblood"> <span class="left_menu_h2_span">次元の狭間オメガ：アルファ編</span> </p>
+                    <p class="left_menu_h2 stormblood"> <span data-activePart="Alphascape" class="left_menu_h2_span">次元の狭間オメガ：アルファ編</span> </p>
                     <ul class="left_menu_ul">
                         <li data-contents="Alphascape01">カオス</li>
                         <li data-contents="Alphascape02">ミドガルズオルム</li>
@@ -75,7 +84,7 @@
                         <li data-contents="Alphascape05">オメガ</li>
                     </ul>
                     
-                    <p class="left_menu_h2 stormblood"> <span class="left_menu_h2_span">次元の狭間オメガ：シグマ編</span> </p>
+                    <p class="left_menu_h2 stormblood"> <span data-activePart="Sigmascape" class="left_menu_h2_span">次元の狭間オメガ：シグマ編</span> </p>
                     <ul class="left_menu_ul">
                         <li data-contents="Sigmascape01">魔列車</li>
                         <li data-contents="Sigmascape02">チャダルヌーク</li>
@@ -84,7 +93,7 @@
                         <li data-contents="Sigmascape05">ゴッド・ケフカ</li>
                     </ul>
 
-                    <p class="left_menu_h2 stormblood"> <span class="left_menu_h2_span">次元の狭間オメガ：デルタ編</span> </p>
+                    <p class="left_menu_h2 stormblood"> <span data-activePart="Deltascape" class="left_menu_h2_span">次元の狭間オメガ：デルタ編</span> </p>
                     <ul class="left_menu_ul">
                         <li data-contents="Deltascape01">アルテ・ロイテ</li>
                         <li data-contents="Deltascape02">カタストロフィー</li>
@@ -96,7 +105,7 @@
 
                     <div id="heavensward">
                     <p class="left_menu_h1"><img src="\images\moviesearch\heavensward.png" alt=""></p>
-                    <p class="left_menu_h2 heavensward"> <span class="left_menu_h2_span">機工城アレキサンダー：天動編</span> </p>
+                    <p class="left_menu_h2 heavensward"> <span data-activePart="TheSouloftheCreator" class="left_menu_h2_span">機工城アレキサンダー：天動編</span> </p>
                     <ul class="left_menu_ul">
                         <li data-contents="TheSouloftheCreator01">リファビッシャー</li>
                         <li data-contents="TheSouloftheCreator02">傭兵のレイムブリクス</li>
@@ -104,7 +113,7 @@
                         <li data-contents="TheSouloftheCreator04">アレキサンダー・プライム</li>
                     </ul>
                     
-                    <p class="left_menu_h2 heavensward"> <span class="left_menu_h2_span">機工城アレキサンダー：律動編</span> </p>
+                    <p class="left_menu_h2 heavensward"> <span data-activePart="TheBurdenoftheSon" class="left_menu_h2_span">機工城アレキサンダー：律動編</span> </p>
                     <ul class="left_menu_ul">
                         <li data-contents="TheBurdenoftheSon01">奇才のラットフィンクス</li>
                         <li data-contents="TheBurdenoftheSon02">4体</li>
@@ -112,7 +121,7 @@
                         <li data-contents="TheBurdenoftheSon04">ブルートジャスティス</li>
                     </ul>
 
-                    <p class="left_menu_h2 heavensward"> <span class="left_menu_h2_span">機工城アレキサンダー：起動編</span> </p>
+                    <p class="left_menu_h2 heavensward"> <span data-activePart="TheFistoftheFather" class="left_menu_h2_span">機工城アレキサンダー：起動編</span> </p>
                     <ul class="left_menu_ul">
                         <li data-contents="TheFistoftheFather01">オプレッサー</li>
                         <li data-contents="TheFistoftheFather02">機工兵団</li>
@@ -124,7 +133,7 @@
 
                     <div id="arealmreborn">
                     <p class="left_menu_h1"><img src="\images\moviesearch\arealmreborn.png" alt=""></p>
-                    <p class="left_menu_h2 arealmreborn"> <span class="left_menu_h2_span">大迷宮バハムート：真成編</span> </p>
+                    <p class="left_menu_h2 arealmreborn"> <span data-activePart="TheFinalCoilofBahamut" class="left_menu_h2_span">大迷宮バハムート：真成編</span> </p>
                     <ul class="left_menu_ul">
                         <li data-contents="TheFinalCoilofBahamut01">イムドゥグド</li>
                         <li data-contents="TheFinalCoilofBahamut02">カーリア</li>
@@ -132,7 +141,7 @@
                         <li data-contents="TheFinalCoilofBahamut04">バハムート・プライム</li>
                     </ul>
                     
-                    <p class="left_menu_h2 arealmreborn"> <span class="left_menu_h2_span">大迷宮バハムート：侵攻編</span> </p>
+                    <p class="left_menu_h2 arealmreborn"> <span data-activePart="TheSecondCoilofBahamut" class="left_menu_h2_span">大迷宮バハムート：侵攻編</span> </p>
                     <ul class="left_menu_ul">
                         <li data-contents="TheSecondCoilofBahamut01">ラフレシア</li>
                         <li data-contents="TheSecondCoilofBahamut02">メリュジーヌ</li>
@@ -140,7 +149,7 @@
                         <li data-contents="TheSecondCoilofBahamut04">ネール・デウス・ダーナス</li>
                     </ul>
 
-                    <p class="left_menu_h2 arealmreborn"> <span class="left_menu_h2_span">大迷宮バハムート：邂逅編</span> </p>
+                    <p class="left_menu_h2 arealmreborn"> <span data-activePart="TheBindingCoilofBahamut" class="left_menu_h2_span">大迷宮バハムート：邂逅編</span> </p>
                     <ul class="left_menu_ul">
                         <li data-contents="TheBindingCoilofBahamut01">カドゥケウス</li>
                         <li data-contents="TheBindingCoilofBahamut02">防疫システム</li>
@@ -274,11 +283,11 @@
                                 <li class="movie_list_filter_button"  id="filter_string_guide">解説:ALL</li>
                                 <div class="filter_string_guide_menu">
                                     <ul>
-                                        <li data-value="ALL">ALL</li>
-                                        <li data-value="ゆっくり">　ゆっくり</li>
-                                        <li data-value="本人">　本人解説</li>
-                                        <li data-value="字幕">　字幕のみ</li>
-                                        <li data-value="なし">　解説なし</li>
+                                        <li data-value="NONE">ALL</li>
+                                        <li data-value="yukkuri">　ゆっくり</li>
+                                        <li data-value="jigoe">　本人解説</li>
+                                        <li data-value="jimaku">　字幕のみ</li>
+                                        <li data-value="nonevoice">　解説なし</li>
                                     </ul>
                                 </div>
                                 <li class="movie_list_filter_button"  id="filter_bool_act">DPS表示:ALL</li>
@@ -296,53 +305,14 @@
 
                     <!-- 動画リスト部分　-->
                     <div class="movie_list">                    
-                    @foreach ($searchdatas as $index => $searchdata)
 
-                    @if ($index%4 == 0)
-                        <ul class="movie_list_ul">                     
-                    @endif                        
-                        <div class="movie_list_div">
-                            <li>
-                                <div class="movie_list_samneil">
-                                    <a href="/moviesearch/{{ $searchdata["movie_id"] }}/">
-                                        <img src="{{ $searchdata["samneil_img"] }}" alt="{{ $searchdata["movie_title"] }}">
-                                    </a>
-                                </div>
-                                <div class="movie_list_detail">
-                                    <div class="movie_list_detail_channelicon">
-                                        <img src="{{ $searchdata["channel_img"] }}" alt="{{ $searchdata["channel_name"] }}">
-                                    </div>
-                                    <div class="movie_list_detail_text">                                        
-                                        <div class="movie_list_detail_text_title">
-                                            <a href="/moviesearch/{{ $searchdata["movie_id"] }}/">
-                                                {{ $searchdata["movie_title"] }}
-                                            </a>
-                                        </div>
-                                        <div class="movie_list_detail_text_channelname">
-                                            {{ $searchdata["channel_name"] }}
-                                        </div>
-                                        <div class="movie_list_detail_view_count">
-                                            {{ $searchdata["view_count_str"] }}・{{ $searchdata["published_at_str"] }}
-                                        </div>
-                                    </div>
-                                </div>                            
-                            </li>
-                        </div>
-
-                    @if ($index%4 == 3)
-                        </ul>
-                    @endif
-
-                                   
-                    @endforeach
                     </div>
-
-
-
 
             </div>
         </div>
     </div>
+
+
 
     
     
