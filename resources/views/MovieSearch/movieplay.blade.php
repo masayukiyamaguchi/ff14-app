@@ -67,10 +67,11 @@
                                 </div>
 
                                 <div class="main_movie_detail_channelinfo_text">
-                                    <div class="main_movie_detail_channelinfo_text_channelname">
-                                        {{ $all["channel_name"] }}
-                                    </div>
-
+                                    <a href="/moviesearch/channnel/{{ $all["channel_id"] }}">
+                                        <div class="main_movie_detail_channelinfo_text_channelname">
+                                            {{ $all["channel_name"] }}
+                                        </div>
+                                    </a>
                                     <div class="main_movie_detail_channelinfo_member_num">
                                         チャンネル登録者数 {{ $all["member_num_str"] }}
                                     </div>

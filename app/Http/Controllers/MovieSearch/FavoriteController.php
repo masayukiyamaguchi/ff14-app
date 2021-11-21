@@ -5,6 +5,8 @@ namespace App\Http\Controllers\MovieSearch;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\moviesearch\Moviesearch_data;
+use App\Models\moviesearch\Moviesearch_shorturl_data;
+
 
 class FavoriteController extends Controller
 {
@@ -17,8 +19,19 @@ class FavoriteController extends Controller
         
         //データを配列に整備
         $favorite_list = $alldatas["favorite_list"];
-        $favorite_list = explode(",", $favorite_list);     
+        $favorite_list = explode(",", $favorite_list);
+        
 
+        $all_datas = $this-> FavoriteListPageData($favorite_list); 
+        
+  
+        return view("MovieSearch.favorite",["all_datas"=>$all_datas]);
+
+    }
+
+
+    public function FavoriteListPageData($favorite_list)
+    {
         //クエリビルダーの記述
         $searchdatas = Moviesearch_data::
             whereIn('movie_id', $favorite_list)
@@ -88,11 +101,8 @@ class FavoriteController extends Controller
         $all_datas = array();
         $all_datas += array("searchdatas"=>$searchdata_sort);
         $all_datas += array("contentsDatas"=>$contents_datas_jp);
-        
-        dump($all_datas);        
 
-
-        return view("MovieSearch.favorite",["all_datas"=>$all_datas]);
+        return $all_datas;
 
     }
 
@@ -137,6 +147,152 @@ class FavoriteController extends Controller
     public function redirect()
     {
         return redirect('/moviesearch/');
+    }
+
+
+    //ajax
+    public function ajax(Request $request)
+    {
+        //クエリビルダーの記述
+        $jsonRequest = $request->all();
+        $favorite_list = implode(',', $jsonRequest["favorite_list"]);
+        
+        $searchdatas = Moviesearch_shorturl_data::
+            where("favorite_list",$favorite_list)
+            ->get();
+
+        if ($searchdatas->isEmpty()){
+        }else{
+
+            return $searchdatas[0];
+        }          
+
+
+
+        for($index = 1 ; $index >0 ; $index++){
+            $rand_str = substr(str_shuffle("-_abcdefghijkmnpqrstuvwxyz0123456789"), 0, 8);
+
+            $searchdatas_randurl = Moviesearch_shorturl_data::
+                where("random_url",$rand_str)
+                ->get();
+
+            if ($searchdatas_randurl->isEmpty()){
+                $index = -100;
+            }else{
+   
+            }  
+
+            if($index>500){
+                return 0;
+            }
+        }        
+
+
+
+        $datas = new Moviesearch_shorturl_data();
+        $datas -> favorite_list = $favorite_list;
+        $datas -> random_url = $rand_str;
+
+        $datas -> save();
+
+        /*
+        $dataContents = $jsonRequest["dataContents"];
+        
+        //ソート
+        $sort_view_count = $jsonRequest["sort_view_count"];
+        $sort_published_at = $jsonRequest["sort_published_at"];
+
+        if($sort_view_count != "NONE")
+        {
+            $orderBy = "view_count";
+            $orderBy_val = $sort_view_count;
+        }else if($sort_published_at != "NONE")
+        {
+            $orderBy = "published_at";
+            $orderBy_val = $sort_published_at;
+        }else{
+
+        }
+        
+        //フィルター
+        $filter_bool_vc = $jsonRequest["filter_bool_vc"];
+        $filter_bool_act = $jsonRequest["filter_bool_act"];
+        $filter_bool_clear = $jsonRequest["filter_bool_clear"];
+        $filter_string_guide = $jsonRequest["filter_string_guide"];
+        $filter_language = $jsonRequest["filter_language"];
+        $filter_play_job = $jsonRequest["filter_play_job"];
+        
+        $filter_bool_vc_array = $this ->FilterDoneBool($filter_bool_vc);
+        $filter_bool_act_array = $this ->FilterDoneBool($filter_bool_act);
+        $filter_bool_clear_array = $this ->FilterDoneBool($filter_bool_clear);
+        $filter_string_guide = $this ->FilterDoneGuide($filter_string_guide);
+        $filter_language = $this ->FilterDoneLanguage($filter_language);
+        $filter_play_job = $this ->FilterDonePlayJob($filter_play_job);
+
+         //データベースからデータの抽出
+        $searchdatas = Moviesearch_data::
+            where("contents",$dataContents)
+            ->whereIn("bool_vc",$filter_bool_vc_array)
+            ->whereIn("bool_act",$filter_bool_act_array)
+            ->whereIn("bool_clear",$filter_bool_clear_array)
+            ->whereIn("string_guide",$filter_string_guide)
+            ->whereIn("language",$filter_language)
+            ->whereIn("language",$filter_language)
+            ->whereIn("play_job",$filter_play_job)
+            ->orderBy($orderBy,$orderBy_val)
+            ->take(50)
+            ->get();
+
+        
+        //データの追加
+        foreach($searchdatas as $searchdata)
+        {
+            //視聴回数挿入
+            $view_count_str = $this -> numOfDigitsTo2($searchdata["view_count"]);
+            $searchdata -> view_count_str = $view_count_str;
+
+            //投稿日挿入
+            $published_at_str = $this -> DateToSlash($searchdata["published_at"]);
+            $searchdata -> published_at_str = $published_at_str;
+        }    
+
+        return $searchdatas;
+
+        */
+
+        return $datas;
+    }
+
+
+    //shorturlにアクセスした際の挙動
+    public function shorturl($id)
+    {
+
+        $searchdatas = Moviesearch_shorturl_data::
+            where("random_url",$id)
+            ->first();
+
+
+        $favorite_list_csv = $searchdatas["favorite_list"];
+
+
+        //csvToArray
+        //変数を改行毎の配列に変換
+        $favorite_list = explode("\n", $favorite_list_csv);
+
+        $aryCsv = [];
+        foreach($favorite_list as $key => $value){
+         //if($key == 0) continue; 1行目が見出しなど、取得したくない場合
+          if(!$value) continue; //空白行が含まれていたら除外
+           $aryCsv[] = explode(",", $value);
+        }
+
+        $all_datas = $this->FavoriteListPageData($aryCsv[0]);
+  
+        return view("MovieSearch.favorite",["all_datas"=>$all_datas]);
+
+
+
     }
 
 

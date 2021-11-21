@@ -40,6 +40,11 @@ Route::get('/moviesearch/dataupdataaccess',"MovieSearch\MoviePostController@Data
 //お気に入り画面
 Route::get('/moviesearch/favorite/',"MovieSearch\FavoriteController@redirect");//転送
 Route::post('/moviesearch/favorite/',"MovieSearch\FavoriteController@index");
+Route::post('/moviesearch/favoriteajax',"MovieSearch\FavoriteController@ajax");
+Route::get('/ms/{movie_id}/',"MovieSearch\FavoriteController@shorturl");
+
+//チャンネル画面
+Route::get('/moviesearch/channnel/{id}',"MovieSearch\IndexController@channel");
 
 //test
 Route::get('/moviesearch/test/',"MovieSearch\IndexController@test");

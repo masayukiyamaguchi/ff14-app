@@ -32,6 +32,34 @@ class IndexController extends Controller
 
         return view("MovieSearch.index",["searchdatas"=>$searchdatas]);
     }
+    
+
+    //チャンネルページへ
+    public function channel($id){
+        //クエリビルダーの記述
+        $searchdatas = Moviesearch_data::
+            where("channel_id",$id)
+            ->orderBy("published_at","DESC")
+            ->get();
+
+        foreach($searchdatas as $searchdata)
+        {
+            //視聴回数挿入
+            $view_count_str = $this -> numOfDigitsTo2($searchdata["view_count"]);
+            $searchdata -> view_count_str = $view_count_str;
+
+            //投稿日挿入
+            $published_at_str = $this -> DateToSlash($searchdata["published_at"]);
+            $searchdata -> published_at_str = $published_at_str;
+
+            //チャンネル登録者数
+            $member_num_str = $this -> ChannelnumOfDigitsTo2($searchdata["member_num"],"人","万人");
+            $searchdata -> member_num_str =$member_num_str;
+
+        }
+
+        return view("MovieSearch.channel",["searchdatas"=>$searchdatas]);
+    }
 
 
 
@@ -98,7 +126,7 @@ class IndexController extends Controller
 
             //投稿日挿入
             $published_at_str = $this -> DateToSlash($searchdata["published_at"]);
-            $searchdata -> published_at_str = $published_at_str;
+            $searchdata -> published_at_str = $published_at_str;            
         }    
 
         return $searchdatas;
@@ -202,6 +230,33 @@ class IndexController extends Controller
     }
 
 
+
+    //チャンネル登録者数の数変換
+    public function ChannelnumOfDigitsTo2($num,$unit1,$unit2)
+    {
+        if($num / 10000 <1 )
+        {
+            $ret = (string)$num.$unit1;
+            return $ret;
+
+        }else if($num / 100000 <1 )
+        {
+            $num = round($num/10000,2);
+            $ret = (string)($num) .$unit2;
+            return $ret;
+
+        }else if($num / 1000000 <1 )
+        {
+            $num = round($num/10000,1);
+            $ret = (string)($num).$unit2;
+            return $ret;
+
+        }else
+        {
+            $ret = (string)($num/10000).$unit2;
+            return $ret;
+        }
+    }
 
 
 

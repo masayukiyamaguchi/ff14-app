@@ -1,24 +1,3 @@
-.contents_header {
-    position: relative;
-    padding: 1rem .5rem;
-  }
-  
-.contents_header:after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 6px;
-    content: '';
-    border-radius: 3px;
-    background-image: -webkit-gradient(linear, right top, left top, from(#2af598), to(#009efd));
-    background-image: -webkit-linear-gradient(right, #2af598 0%, #009efd 100%);
-    background-image: linear-gradient(to left, #2af598 0%, #009efd 100%);
-  }
-
-
-
-
 /*フォント*/
 @import url('https://fonts.googleapis.com/css2?family=Wire+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap');
@@ -68,21 +47,6 @@
 .mainContents_container_left div:first-child
 {
     padding-top: 0px;
-}
-
-#favoritelist{
-    text-align: center;
-}
-
-#favoritelist a{
-    
-    color : inherit;
-    text-decoration: none;
-
-}
-
-.favoritelist_headerimg img{
-    width: 98%;
 }
 
 
@@ -157,6 +121,11 @@
 
 }
 
+.left_menu_ul a{
+    color : inherit;
+    text-decoration: none;
+}
+
 
 .left_menu_ul li
 {
@@ -175,12 +144,6 @@
     background-color: rgb(56, 56, 56);
 }
 
-.favorite_share_url input{
-    width: 80%;
-}
-
-
-
 
 
 /*中央コンテンツ*/
@@ -198,6 +161,54 @@
 {
     width: 100%;
 }
+
+.channel_header{
+    text-align: center;
+}
+
+.channel_header img{
+  width: 80%;
+  height: 20vh;
+  object-fit: cover;    
+}
+
+.channel_channelname{
+    margin-top: -6px;
+    padding-top: 15px;
+    padding-left: 190px;
+    padding-bottom: 15px;
+    background-color: rgb(70, 70, 70);
+}
+
+.channel_channelname_detail{
+    display: flex;
+}
+
+.channel_channelname_detail_text{
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.channel_channelname_detail_text_channelname{
+    font-size: 25px;
+}
+
+.movie_list_num{
+    padding-top: 10px;
+    padding-left: 30px;
+}
+
+
+
+.channel_channelname_detail_samneil img
+{
+    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+    width:  80px;       /* ※縦横を同値に */
+    height: 80px;       /* ※縦横を同値に */    
+
+}
+
+
 
 .movie_list_ul
 {

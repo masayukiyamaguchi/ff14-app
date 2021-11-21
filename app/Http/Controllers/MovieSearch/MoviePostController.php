@@ -97,15 +97,18 @@ class MoviePostController extends Controller
         //チャンネル
         $channeldatas = $this-> YoutubeApiGetDataChannel($datas[0]["channelId"]);
 
+
+
         //サムネイル画像の大きさチェック
         $samneil_img_size = $this-> ImageSizeCheck($datas[0]["thumbnails"]);
         $channel_img_size = $this-> ImageSizeCheck($channeldatas[0]["thumbnails"]);
-
 
         $movie_title = $datas[0]["title"];
         $channel_name = $datas[0]["channelTitle"];
         $samneil_img = $datas[0]["thumbnails"][$samneil_img_size]["url"];
         $channel_img = $channeldatas[0]["thumbnails"][$channel_img_size]["url"];
+        $channel_header_img = $channeldatas[2]["image"]["bannerExternalUrl"];
+
         $member_num = $channeldatas[1]["subscriberCount"];
         $channel_id = $datas[0]["channelId"];
 
@@ -121,6 +124,7 @@ class MoviePostController extends Controller
         $datas -> channel_name = $channel_name;
         $datas -> samneil_img = $samneil_img;
         $datas -> channel_img = $channel_img;
+        $datas -> channel_header_img = $channel_header_img;
         $datas -> movie_id = $movie_ID;
         $datas -> channel_id = $channel_id;
         $datas -> movie_discription = $movie_discription_data;
@@ -209,15 +213,19 @@ class MoviePostController extends Controller
                 $youtube = new Google_Service_YouTube($client);
         
                 // 必要情報を引数に持たせ、listSearchで検索して動画一覧を取得
-                $items = $youtube->channels->listChannels('snippet,statistics', [
+                $items = $youtube->channels->listChannels('snippet,statistics,brandingSettings', [
                     'id'  => $ID,
-                ]);                
+                ]);     
+                
+                
         
                 // 連想配列だと扱いづらいのでcollection化して処理
                 $snippets = collect($items->getItems())->pluck('snippet')->all();
                 $dataall[0] = $snippets[0];
                 $statistics = collect($items->getItems())->pluck('statistics')->all();
                 $dataall[1] =  $statistics[0];
+                $brandingSettings = collect($items->getItems())->pluck('brandingSettings')->all();
+                $dataall[2] =  $brandingSettings[0];
 
                 return $dataall;
     }
@@ -255,6 +263,8 @@ class MoviePostController extends Controller
         //チャンネル
         $channeldatas = $this-> YoutubeApiGetDataChannel($datas[0]["channelId"]);
 
+        dump($channeldatas);
+
         //サムネイル画像の大きさチェック
         $samneil_img_size = $this-> ImageSizeCheck($datas[0]["thumbnails"]);
         $channel_img_size = $this-> ImageSizeCheck($channeldatas[0]["thumbnails"]);
@@ -264,6 +274,13 @@ class MoviePostController extends Controller
         $channel_name = $datas[0]["channelTitle"];
         $samneil_img = $datas[0]["thumbnails"][$samneil_img_size]["url"];
         $channel_img = $channeldatas[0]["thumbnails"][$channel_img_size]["url"];
+
+        if(empty($channeldatas[2]["image"]["bannerExternalUrl"])){
+            $channel_header_img = "\images\moviesearch\samplesamneil.jpg";
+        }else{
+            $channel_header_img = $channeldatas[2]["image"]["bannerExternalUrl"];
+        }        
+
         $movie_discription_data =  $datas[0]["localized"]["description"];
         $member_num = $channeldatas[1]["subscriberCount"];
         $published_at = $datas[0]["publishedAt"];
@@ -274,6 +291,7 @@ class MoviePostController extends Controller
         $existData -> channel_name = $channel_name;
         $existData -> samneil_img = $samneil_img;
         $existData -> channel_img = $channel_img;
+        $existData -> channel_header_img = $channel_header_img;
         $existData -> movie_discription = $movie_discription_data;
         $existData -> view_count = $view_count;
         $existData -> good_num = $good_num;
@@ -302,6 +320,8 @@ class MoviePostController extends Controller
         dump("data updata complete");
         return view("MovieSearch.post.postdone",["alldata"=>$data_movie_ID]);
     }
+
+
 
 
 

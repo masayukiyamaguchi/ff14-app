@@ -9,12 +9,12 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link rel="stylesheet" href="/css/moviesearch/favorite.css">
+    <link rel="stylesheet" href="/css/moviesearch/channel.css">
     <link rel="stylesheet" href="/css/mainTopHeader.css">
     <link rel="stylesheet" href="/css/mainTopFooter.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="/js/moviesearch/favorite.js"></script>
+    <script src="/js/moviesearch/channel.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -36,36 +36,17 @@
                 <!-- レフト　-->
                 <div class="mainContents_container_left">
 
-                    <div id="favoritelist">
-                        <div class="favoritelist_headerimg">
-                            <img src="\images\moviesearch\favoritebutton.png" alt="">
-                        </div>
+                    <div id="left_menu">
 
                         <ul class="left_menu_ul">
-                            <a href="/moviesearch/favorite/">
-                                <li>
-                                    <form action="" method="post">
-                                        @csrf
-                                        <input type="hidden" name="favorite_list" value="">
-                                    </form>                            
-                                    リスト更新
-                                </li>
-                            </a>
 
-                            <li class="share_url_button">
-                                共有URL作成
-                            </li>
-                            <div class="favorite_share_url_div">                            
-                                <div class="favorite_share_url">
-                                    <input type="text" name="favorite_share_url" id="" value="">                                
-                                </div>
-                                <div class="favorite_share_url_copy">
-                                    <button>コピーする</button>
-                                </div>
-                            </div>
-                           
-                        </ul>
-                        
+                         <a href="/moviesearch/">
+                             <li>トップに戻る</li>
+                        </a>
+
+                         <li></li>
+                         <li></li>
+                        </ul>                       
                                                 
                     </div>
 
@@ -80,10 +61,33 @@
                      <!-- 動画リスト部分　-->
                      <div class="movie_list">
 
-                        @for($indexfor = 0;$indexfor < count($all_datas["searchdatas"]); $indexfor++)
-                            <div class="contents_header">{{$all_datas["contentsDatas"][$indexfor]}}</div>
+                        <div class="channel_header">
+                            <div class="channel_header_box">
+                                <img src="{{ $searchdatas[0]["channel_header_img"] }}" alt="">
+                            </div>
+                        </div>
 
-                            @foreach ($all_datas["searchdatas"][$indexfor] as $index => $searchdata)                               
+                        <div class="channel_channelname">
+                            <div class="channel_channelname_detail">
+                                <div class="channel_channelname_detail_samneil">
+                                    <img src="{{ $searchdatas[0]["channel_img"] }}" alt="">                                    
+                                </div>
+                                <div  class="channel_channelname_detail_text">
+                                    <div   class="channel_channelname_detail_text_channelname">
+                                        {{ $searchdatas[0]["channel_name"] }}　さんの登録動画一覧
+                                    </div>
+                                    <div   class="channel_channelname_detail_text_channelnum">
+                                        チャンネル登録者数　{{ $searchdatas[0]["member_num_str"] }}
+                                    </div>
+                                </div>
+                            </div>                           
+                        </div>
+
+                            <div class="movie_list_num">
+                                登録動画数　{{ count($searchdatas) }}件
+                            </div>
+
+                            @foreach ($searchdatas as $index => $searchdata)
                             
                             @if ($index%5 == 0)
                                 <ul class="movie_list_ul">
@@ -136,7 +140,7 @@
                             @endif   
                         
                         
-                        @endfor
+                        
                     </div>
 
             </div>
