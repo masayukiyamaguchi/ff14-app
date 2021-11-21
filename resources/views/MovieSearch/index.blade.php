@@ -41,7 +41,7 @@
                             @csrf
                             <input type="hidden" name="favorite_list" value="">
                         </form>                            
-                        <a href="/moviesearch/favorite/">★お気に入りリスト★</a>                        
+                        <a href="/moviesearch/favorite/"><img src="\images\moviesearch\favoritebutton.png" alt=""></a>                        
                     </div>
 
 

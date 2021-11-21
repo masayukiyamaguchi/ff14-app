@@ -38,6 +38,7 @@ Route::post('moviesearch/postcontents/create',"MovieSearch\MoviePostController@I
 Route::get('/moviesearch/dataupdataaccess',"MovieSearch\MoviePostController@DataUpdateBach");
 
 //お気に入り画面
+Route::get('/moviesearch/favorite/',"MovieSearch\FavoriteController@redirect");//転送
 Route::post('/moviesearch/favorite/',"MovieSearch\FavoriteController@index");
 
 //test
