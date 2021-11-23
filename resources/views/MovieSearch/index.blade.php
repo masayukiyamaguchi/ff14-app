@@ -8,16 +8,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 
     <link rel="stylesheet" href="/css/moviesearch/top.css">
     <link rel="stylesheet" href="/css/mainTopHeader.css">
     <link rel="stylesheet" href="/css/mainTopFooter.css">
+    <link rel="stylesheet" href="/css/moviesearch/mainmenu.css">
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/js/moviesearch/main.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
 
     <title>FF14-APP|FinalFantasyXIVのアプリサイト</title>
 
@@ -32,44 +37,40 @@
     <div id="mainContents">
         <div class="backgroundimage">
             <div class="mainContents_container">
-                
+
                 <!-- レフト　-->
                 <div class="mainContents_container_left">
-                    
-                    <div id="favoritelist">
-                        <form action="" method="post">
-                            @csrf
-                            <input type="hidden" name="favorite_list" value="">
-                        </form>                            
-                        <a href="/moviesearch/favorite/"><img src="\images\moviesearch\favoritebutton.png" alt=""></a>                        
-                    </div>
 
+                    <!-- メインメニュー　-->
+                    @component('components.commonMainMenu')
+                    @endcomponent
 
+    
                     <div id="shadowbringers">
                     <p class="left_menu_h1"><img src="\images\moviesearch\shadowbringers.png" alt=""></p>
                     <p class="left_menu_h2 shadowbringers"> <span data-activePart="EdensPromise" class="left_menu_h2_span">希望の園エデン：再生編</span> </p>
                     <ul class="left_menu_ul">
-                        <li data-contents="EdensPromise01">暗闇の雲</li>
-                        <li data-contents="EdensPromise02">影の王</li>
-                        <li data-contents="EdensPromise03">フェイトブレイカー</li>
-                        <li data-contents="EdensPromise04">プロミス・オブ・エデン</li>
-                        <li data-contents="EdensPromise05">闇の巫女</li>
+                        <li data-contents="EdensPromise01"><img src="\images\moviesearch\boss\bossimage048.png" alt="暗闇の雲">暗闇の雲</li>
+                        <li data-contents="EdensPromise02"><img src="\images\moviesearch\boss\bossimage049.png" alt="影の王">影の王</li>
+                        <li data-contents="EdensPromise03"><img src="\images\moviesearch\boss\bossimage050.png" alt="フェイトブレイカー">フェイトブレイカー</li>
+                        <li data-contents="EdensPromise04"><img src="\images\moviesearch\boss\bossimage051.png" alt="プロミス・オブ・エデン">プロミス・オブ・エデン</li>
+                        <li data-contents="EdensPromise05"><img src="\images\moviesearch\boss\bossimage052.png" alt="闇の巫女">闇の巫女</li>
                     </ul>
                     
                     <p class="left_menu_h2 shadowbringers"> <span data-activePart="EdensVerse" class="left_menu_h2_span">希望の園エデン：共鳴編</span> </p>
                     <ul class="left_menu_ul">
-                        <li data-contents="EdensVerse01">ラムウ</li>
-                        <li data-contents="EdensVerse02">イフリート ガルーダ</li>
-                        <li data-contents="EdensVerse03">ダークアイドル</li>
-                        <li data-contents="EdensVerse04">シヴァ</li>
+                        <li data-contents="EdensVerse01"><img src="\images\moviesearch\boss\bossimage044.png" alt="ラムウ">ラムウ</li>
+                        <li data-contents="EdensVerse02"><img src="\images\moviesearch\boss\bossimage045.png" alt="イフリート ガルーダ">イフリート ガルーダ</li>
+                        <li data-contents="EdensVerse03"><img src="\images\moviesearch\boss\bossimage046.png" alt="ダークアイドル">ダークアイドル</li>
+                        <li data-contents="EdensVerse04"><img src="\images\moviesearch\boss\bossimage047.png" alt="シヴァ">シヴァ</li>
                     </ul>
 
                     <p class="left_menu_h2 shadowbringers"> <span data-activePart="EdensGate" class="left_menu_h2_span">希望の園エデン：覚醒編</span> </p>
                     <ul class="left_menu_ul">
-                        <li data-contents="EdensGate01">エデン・プライム</li>
-                        <li data-contents="EdensGate02">ヴォイドウォーカー</li>
-                        <li data-contents="EdensGate03">リヴァイアサン</li>
-                        <li data-contents="EdensGate04">タイタン</li>
+                        <li data-contents="EdensGate01"><img src="\images\moviesearch\boss\bossimage040.png" alt="エデン・プライム">エデン・プライム</li>
+                        <li data-contents="EdensGate02"><img src="\images\moviesearch\boss\bossimage041.png" alt="ヴォイドウォーカー">ヴォイドウォーカー</li>
+                        <li data-contents="EdensGate03"><img src="\images\moviesearch\boss\bossimage040.png" alt="リヴァイアサン">リヴァイアサン</li>
+                        <li data-contents="EdensGate04"><img src="\images\moviesearch\boss\bossimage043.png" alt="タイタン">タイタン</li>
                     </ul>
                     </div>
 
@@ -77,29 +78,29 @@
                     <p class="left_menu_h1"><img src="\images\moviesearch\stormblood.png" alt=""></p>
                     <p class="left_menu_h2 stormblood"> <span data-activePart="Alphascape" class="left_menu_h2_span">次元の狭間オメガ：アルファ編</span> </p>
                     <ul class="left_menu_ul">
-                        <li data-contents="Alphascape01">カオス</li>
-                        <li data-contents="Alphascape02">ミドガルズオルム</li>
-                        <li data-contents="Alphascape03">オメガ</li>
-                        <li data-contents="Alphascape04">オメガM オメガF</li>
-                        <li data-contents="Alphascape05">オメガ</li>
+                        <li data-contents="Alphascape01"><img src="\images\moviesearch\boss\bossimage035.png" alt="カオス">カオス</li>
+                        <li data-contents="Alphascape02"><img src="\images\moviesearch\boss\bossimage036.png" alt="ミドガルズオルム">ミドガルズオルム</li>
+                        <li data-contents="Alphascape03"><img src="\images\moviesearch\boss\bossimage037.png" alt="オメガ">オメガ</li>
+                        <li data-contents="Alphascape04"><img src="\images\moviesearch\boss\bossimage038.png" alt="オメガM オメガF">オメガM オメガF</li>
+                        <li data-contents="Alphascape05"><img src="\images\moviesearch\boss\bossimage039.png" alt="オメガ最終形態">オメガ最終形態</li>
                     </ul>
                     
                     <p class="left_menu_h2 stormblood"> <span data-activePart="Sigmascape" class="left_menu_h2_span">次元の狭間オメガ：シグマ編</span> </p>
                     <ul class="left_menu_ul">
-                        <li data-contents="Sigmascape01">魔列車</li>
-                        <li data-contents="Sigmascape02">チャダルヌーク</li>
-                        <li data-contents="Sigmascape03">ガーディアン</li>
-                        <li data-contents="Sigmascape04">ケフカ</li>
-                        <li data-contents="Sigmascape05">ゴッド・ケフカ</li>
+                        <li data-contents="Sigmascape01"><img src="\images\moviesearch\boss\bossimage030.png" alt="魔列車">魔列車</li>
+                        <li data-contents="Sigmascape02"><img src="\images\moviesearch\boss\bossimage031.png" alt="チャダルヌーク">チャダルヌーク</li>
+                        <li data-contents="Sigmascape03"><img src="\images\moviesearch\boss\bossimage032.png" alt="ガーディアン">ガーディアン</li>
+                        <li data-contents="Sigmascape04"><img src="\images\moviesearch\boss\bossimage033.png" alt="ケフカ">ケフカ</li>
+                        <li data-contents="Sigmascape05"><img src="\images\moviesearch\boss\bossimage034.png" alt="ゴッド・ケフカ">ゴッド・ケフカ</li>
                     </ul>
 
                     <p class="left_menu_h2 stormblood"> <span data-activePart="Deltascape" class="left_menu_h2_span">次元の狭間オメガ：デルタ編</span> </p>
                     <ul class="left_menu_ul">
-                        <li data-contents="Deltascape01">アルテ・ロイテ</li>
-                        <li data-contents="Deltascape02">カタストロフィー</li>
-                        <li data-contents="Deltascape03">ハリカルナッソス</li>
-                        <li data-contents="Deltascape04">エクスデス</li>
-                        <li data-contents="Deltascape05">ネオ・エクスデス</li>
+                        <li data-contents="Deltascape01"><img src="\images\moviesearch\boss\bossimage025.png" alt="アルテ・ロイテ">アルテ・ロイテ</li>
+                        <li data-contents="Deltascape02"><img src="\images\moviesearch\boss\bossimage026.png" alt="カタストロフィー">カタストロフィー</li>
+                        <li data-contents="Deltascape03"><img src="\images\moviesearch\boss\bossimage027.png" alt="ハリカルナッソス">ハリカルナッソス</li>
+                        <li data-contents="Deltascape04"><img src="\images\moviesearch\boss\bossimage028.png" alt="エクスデス">エクスデス</li>
+                        <li data-contents="Deltascape05"><img src="\images\moviesearch\boss\bossimage029.png" alt="ネオ・エクスデス">ネオ・エクスデス</li>
                     </ul>
                     </div>
 
@@ -107,26 +108,26 @@
                     <p class="left_menu_h1"><img src="\images\moviesearch\heavensward.png" alt=""></p>
                     <p class="left_menu_h2 heavensward"> <span data-activePart="TheSouloftheCreator" class="left_menu_h2_span">機工城アレキサンダー：天動編</span> </p>
                     <ul class="left_menu_ul">
-                        <li data-contents="TheSouloftheCreator01">リファビッシャー</li>
-                        <li data-contents="TheSouloftheCreator02">傭兵のレイムブリクス</li>
-                        <li data-contents="TheSouloftheCreator03">クルーズチェイサー</li>
-                        <li data-contents="TheSouloftheCreator04">アレキサンダー・プライム</li>
+                        <li data-contents="TheSouloftheCreator01"><img src="\images\moviesearch\boss\bossimage021.png" alt="リファビッシャー">リファビッシャー</li>
+                        <li data-contents="TheSouloftheCreator02"><img src="\images\moviesearch\boss\bossimage022.png" alt="傭兵のレイムブリクス">傭兵のレイムブリクス</li>
+                        <li data-contents="TheSouloftheCreator03"><img src="\images\moviesearch\boss\bossimage023.png" alt="クルーズチェイサー">クルーズチェイサー</li>
+                        <li data-contents="TheSouloftheCreator04"><img src="\images\moviesearch\boss\bossimage024.png" alt="アレキサンダー・プライム">アレキサンダー・プライム</li>
                     </ul>
                     
                     <p class="left_menu_h2 heavensward"> <span data-activePart="TheBurdenoftheSon" class="left_menu_h2_span">機工城アレキサンダー：律動編</span> </p>
                     <ul class="left_menu_ul">
-                        <li data-contents="TheBurdenoftheSon01">奇才のラットフィンクス</li>
-                        <li data-contents="TheBurdenoftheSon02">4体</li>
-                        <li data-contents="TheBurdenoftheSon03">万能のクイックシンクス</li>
-                        <li data-contents="TheBurdenoftheSon04">ブルートジャスティス</li>
+                        <li data-contents="TheBurdenoftheSon01"><img src="\images\moviesearch\boss\bossimage017.png" alt="奇才のラットフィンクス">奇才のラットフィンクス</li>
+                        <li data-contents="TheBurdenoftheSon02"><img src="\images\moviesearch\boss\bossimage018.png" alt="4体">4体</li>
+                        <li data-contents="TheBurdenoftheSon03"><img src="\images\moviesearch\boss\bossimage019.png" alt="万能のクイックシンクス">万能のクイックシンクス</li>
+                        <li data-contents="TheBurdenoftheSon04"><img src="\images\moviesearch\boss\bossimage020.png" alt="ブルートジャスティス">ブルートジャスティス</li>
                     </ul>
 
                     <p class="left_menu_h2 heavensward"> <span data-activePart="TheFistoftheFather" class="left_menu_h2_span">機工城アレキサンダー：起動編</span> </p>
                     <ul class="left_menu_ul">
-                        <li data-contents="TheFistoftheFather01">オプレッサー</li>
-                        <li data-contents="TheFistoftheFather02">機工兵団</li>
-                        <li data-contents="TheFistoftheFather03">リビングリキッド</li>
-                        <li data-contents="TheFistoftheFather04">マニピュレーター</li>
+                        <li data-contents="TheFistoftheFather01"><img src="\images\moviesearch\boss\bossimage013.png" alt="オプレッサー">オプレッサー</li>
+                        <li data-contents="TheFistoftheFather02"><img src="\images\moviesearch\boss\bossimage014.png" alt="機工兵団">機工兵団</li>
+                        <li data-contents="TheFistoftheFather03"><img src="\images\moviesearch\boss\bossimage015.png" alt="リビングリキッド">リビングリキッド</li>
+                        <li data-contents="TheFistoftheFather04"><img src="\images\moviesearch\boss\bossimage016.png" alt="マニピュレーター">マニピュレーター</li>
                     </ul>
                     </div>
 
@@ -135,30 +136,33 @@
                     <p class="left_menu_h1"><img src="\images\moviesearch\arealmreborn.png" alt=""></p>
                     <p class="left_menu_h2 arealmreborn"> <span data-activePart="TheFinalCoilofBahamut" class="left_menu_h2_span">大迷宮バハムート：真成編</span> </p>
                     <ul class="left_menu_ul">
-                        <li data-contents="TheFinalCoilofBahamut01">イムドゥグド</li>
-                        <li data-contents="TheFinalCoilofBahamut02">カーリア</li>
-                        <li data-contents="TheFinalCoilofBahamut03">フェニックス</li>
-                        <li data-contents="TheFinalCoilofBahamut04">バハムート・プライム</li>
+                        <li data-contents="TheFinalCoilofBahamut01"><img src="\images\moviesearch\boss\bossimage009.png" alt="イムドゥグド">イムドゥグド</li>
+                        <li data-contents="TheFinalCoilofBahamut02"><img src="\images\moviesearch\boss\bossimage010.png" alt="カーリア">カーリア</li>
+                        <li data-contents="TheFinalCoilofBahamut03"><img src="\images\moviesearch\boss\bossimage011.png" alt="フェニックス">フェニックス</li>
+                        <li data-contents="TheFinalCoilofBahamut04"><img src="\images\moviesearch\boss\bossimage012.png" alt="バハムート・プライム">バハムート・プライム</li>
                     </ul>
                     
                     <p class="left_menu_h2 arealmreborn"> <span data-activePart="TheSecondCoilofBahamut" class="left_menu_h2_span">大迷宮バハムート：侵攻編</span> </p>
                     <ul class="left_menu_ul">
-                        <li data-contents="TheSecondCoilofBahamut01">ラフレシア</li>
-                        <li data-contents="TheSecondCoilofBahamut02">メリュジーヌ</li>
-                        <li data-contents="TheSecondCoilofBahamut03">アバター</li>
-                        <li data-contents="TheSecondCoilofBahamut04">ネール・デウス・ダーナス</li>
+                        <li data-contents="TheSecondCoilofBahamut01"><img src="\images\moviesearch\boss\bossimage005.png" alt="ラフレシア">ラフレシア</li>
+                        <li data-contents="TheSecondCoilofBahamut02"><img src="\images\moviesearch\boss\bossimage006.png" alt="メリュジーヌ">メリュジーヌ</li>
+                        <li data-contents="TheSecondCoilofBahamut03"><img src="\images\moviesearch\boss\bossimage007.png" alt="アバター">アバター</li>
+                        <li data-contents="TheSecondCoilofBahamut04"><img src="\images\moviesearch\boss\bossimage008.png" alt="ネール・デウス・ダーナス">ネール・デウス・ダーナス</li>
                     </ul>
 
                     <p class="left_menu_h2 arealmreborn"> <span data-activePart="TheBindingCoilofBahamut" class="left_menu_h2_span">大迷宮バハムート：邂逅編</span> </p>
                     <ul class="left_menu_ul">
-                        <li data-contents="TheBindingCoilofBahamut01">カドゥケウス</li>
-                        <li data-contents="TheBindingCoilofBahamut02">防疫システム</li>
-                        <li data-contents="TheBindingCoilofBahamut03">雑魚戦</li>
-                        <li data-contents="TheBindingCoilofBahamut04">ツインタニア</li>
+                        <li data-contents="TheBindingCoilofBahamut01"><img src="\images\moviesearch\boss\bossimage001.png" alt="カドゥケウス">カドゥケウス</li>
+                        <li data-contents="TheBindingCoilofBahamut02"><img src="\images\moviesearch\boss\bossimage002.png" alt="防疫システム">防疫システム</li>
+                        <li data-contents="TheBindingCoilofBahamut03"><img src="\images\moviesearch\boss\bossimage003.png" alt="雑魚戦">雑魚戦</li>
+                        <li data-contents="TheBindingCoilofBahamut04"><img src="\images\moviesearch\boss\bossimage004.png" alt="ツインタニア">ツインタニア</li>
                     </ul>
                     </div>
 
 
+                    <div class="menu_contact">
+                        <a href="mailto:info@ff14-app.com">お問い合わせ</a>
+                    </div>
 
 
 
@@ -283,11 +287,11 @@
                                 <li class="movie_list_filter_button"  id="filter_string_guide">解説:ALL</li>
                                 <div class="filter_string_guide_menu">
                                     <ul>
-                                        <li data-value="NONE">ALL</li>
-                                        <li data-value="yukkuri">　ゆっくり</li>
-                                        <li data-value="jigoe">　本人解説</li>
-                                        <li data-value="jimaku">　字幕のみ</li>
-                                        <li data-value="nonevoice">　解説なし</li>
+                                        <li data-value="NONE" id="guide_none">ALL</li>
+                                        <li data-value="yukkuri" id="guide_yukkuri">　ゆっくり</li>
+                                        <li data-value="jigoe" id="guide_jigoe">　本人解説</li>
+                                        <li data-value="jimaku" id="guide_jimaku">　字幕のみ</li>
+                                        <li data-value="nonevoice" id="guide_nonevoice">　解説なし</li>
                                     </ul>
                                 </div>
                                 <li class="movie_list_filter_button"  id="filter_bool_act">DPS表示:ALL</li>

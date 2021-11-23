@@ -44,21 +44,42 @@ $(document).on("click",".movie_list_favorite",function(){
 
 
 
-//★hover
+//★hoverポップ
 $(document).on("mouseenter", ".movie_list_favorite", function (eo) {
-    $('body').append('<div id="pop">★お気に入りに追加します</div>');
+    var text = '<div id="pop">★お気に入りに追加します</div>';
+    MouseHoverText(eo,text);
+});
+$(document).on("mouseleave", ".movie_list_favorite", function (eo) {$('#pop').remove();$('#pop').remove();$('#pop').remove();});
+
+//リスト更新
+$(document).on("mouseenter", "#list_fix", function (eo) {
+    var text = '<div id="pop">★マークを整理した後にクリックすると内容が更新されます</div>';
+    MouseHoverText(eo,text);
+});
+$(document).on("mouseleave", "#list_fix", function (eo) {$('#pop').remove();$('#pop').remove();$('#pop').remove();});
+
+//リスト更新
+$(document).on("mouseenter", "#list_share", function (eo) {
+    var text = '<div id="pop">自分のお気に入りリストを他の人と共有できます。<br>固定の参考動画の共有などにご利用ください！</div>';
+    MouseHoverText(eo,text);
+});
+$(document).on("mouseleave", "#list_share", function (eo) {$('#pop').remove();$('#pop').remove();$('#pop').remove();});
+
+
+//ポップアクション　関数
+function MouseHoverText(eo,text){
+    $('body').append(text);
     $('#pop').show();
     $(window).mousemove( function(e){
         var x = e.pageX;
         var y = e.pageY-40;
         $('#pop').css({left:x+'px',top:y+'px','z-index':'100'});
     });
-});
-$(document).on("mouseleave", ".movie_list_favorite", function (eo) {
-    $('#pop').remove();
-    $('#pop').remove();
-    $('#pop').remove();
-});
+}
+
+
+
+
 
 
 /* aタグpost */
@@ -132,6 +153,26 @@ $(".favorite_share_url_copy button").click(function(){
 });
 
 
+//★を黄色くする
+function StarMarking(){
+    favorite_movie = localStorage["favorite_movie"];
+    favorite_movie = JSON.parse(favorite_movie);
+    
+    favorite_movie.forEach(movie_id => {
+        $('[data-id="'+movie_id+'"]').css("color","rgb(251, 255, 0)");
+    });    
+}
+
+
+
+//読み込み時実行
+
+//メインメニュー色付け
+$(".left_menu_favorite").css("background-color","rgb(56,56,56)");
+
+
+//favorite_movie ストレージの内容は星に色を
+    StarMarking();
 
 
 

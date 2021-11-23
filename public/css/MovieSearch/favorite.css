@@ -1,3 +1,13 @@
+@media screen and (min-width: 767px) { /*ウィンドウ幅が767px以上の場合に適用*/
+
+
+/*フォント*/
+@import url('https://fonts.googleapis.com/css2?family=Wire+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
+
+
+/*見出し*/
 .contents_header {
     position: relative;
     padding: 1rem .5rem;
@@ -16,19 +26,11 @@
     background-image: linear-gradient(to left, #2af598 0%, #009efd 100%);
   }
 
-
-
-
-/*フォント*/
-@import url('https://fonts.googleapis.com/css2?family=Wire+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
-
-
 /*ページ*/
 #body
 {
     margin:0;
+    background-color: rgb(33, 33, 33);  
 }
 
 
@@ -65,38 +67,7 @@
     padding-top: 5px;
 }
 
-.mainContents_container_left div:first-child
-{
-    padding-top: 0px;
-}
 
-#favoritelist{
-    text-align: center;
-}
-
-#favoritelist a{
-    
-    color : inherit;
-    text-decoration: none;
-
-}
-
-.favoritelist_headerimg img{
-    width: 98%;
-}
-
-
-
-.left_menu_h1 img
-{
-    width: 100%;
-    margin:0px;/*上 左右 下*/
-    padding: 0px;
-    position: relative;
-    top: 0px;
-    margin-top: -20px;
-    margin-bottom: -20px;
-}
 
 .left_menu_h2
 {
@@ -108,29 +79,6 @@
     position: relative;
 
 }
-
-.shadowbringers
-{
-    display: none;
-}
-
-.stormblood
-{
-    display: none;
-}
-
-.heavensward
-{
-    display: none;
-}
-
-
-.arealmreborn
-{
-    display: none;
-}
-
-
 
 
 .left_menu_h2_span
@@ -178,6 +126,12 @@
 .favorite_share_url input{
     width: 80%;
 }
+
+.list_id_div{
+    text-align: center;
+}
+
+
 
 
 
@@ -331,3 +285,13 @@
 
 
 
+}/*ウィンドウ幅が767px以上の場合に適用*/
+
+
+
+@media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
+
+
+
+
+}/*ウィンドウ幅が最大479pxまでの場合に適用*/

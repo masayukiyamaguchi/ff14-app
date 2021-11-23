@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 
     <link rel="stylesheet" href="/css/moviesearch/movieplay.css">
     <link rel="stylesheet" href="/css/mainTopHeader.css">
@@ -56,22 +57,27 @@
                                 {{ $all["movie_title"] }}
                             </div>
 
-                            <div class="main_movie_detail_view_count">
-                                {{ $all["view_count_numformat"] }} 回視聴・{{ $all["published_at_str"] }}
+                            <div class="main_movie_detail_undertitle">
+                                <div class="main_movie_detail_view_count">
+                                    {{ $all["view_count_numformat"] }} 回視聴・{{ $all["published_at_str"] }}
+                                </div>
+                                <div data-id="{{ $all["movie_id"] }}" class="movie_list_favorite">
+                                    お気に入りに登録
+                                </div>
                             </div>
-
                             <div class="main_movie_detail_channelinfo">
 
                                 <div class="main_movie_detail_channelinfo_channelicon">
                                     <img src="{{ $all["channel_img"] }}" alt="">
                                 </div>
 
-                                <div class="main_movie_detail_channelinfo_text">
-                                    <a href="/moviesearch/channnel/{{ $all["channel_id"] }}">
-                                        <div class="main_movie_detail_channelinfo_text_channelname">
+                                <div class="main_movie_detail_channelinfo_text">                                    
+                                    <div class="main_movie_detail_channelinfo_text_channelname">                                            
+                                        <a href="/moviesearch/channnel/{{ $all["channel_id"] }}">
                                             {{ $all["channel_name"] }}
-                                        </div>
-                                    </a>
+                                        </a>
+                                    </div>
+                                    
                                     <div class="main_movie_detail_channelinfo_member_num">
                                         チャンネル登録者数 {{ $all["member_num_str"] }}
                                     </div>
@@ -86,6 +92,96 @@
                         </div>
 
 
+                        <div class="channel_list_div">
+                            
+                            <!--ムービーリスト　-->
+                            <div class="channel_list">
+
+                                <div class="channel_channelname">
+                                    <div class="channel_channelname_detail">
+                                        <div class="channel_channelname_detail_samneil">
+                                            <img src="{{ $searchdatas[0]["channel_img"] }}" alt="">                                    
+                                        </div>
+                                        <div  class="channel_channelname_detail_text">
+                                            <div   class="channel_channelname_detail_text_channelname">
+                                                {{ $searchdatas[0]["channel_name"] }}　さんの登録動画一覧
+                                            </div>
+                                            <div   class="channel_channelname_detail_text_channelnum">
+                                                チャンネル登録者数　{{ $searchdatas[0]["member_num_str"] }}
+                                            </div>
+                                        </div>
+                                    </div>                           
+                                </div>
+                            
+                                <div class="movie_list_num">
+                                    登録動画数　{{ count($searchdatas) }}件
+                                </div>
+                            
+                                @foreach ($searchdatas as $index => $searchdata)
+                                @if ($index%5 == 0)
+                                    <ul class="movie_list_ul">
+                                @endif                        
+                                    <div class="movie_list_div">
+                                        <li>
+                                            <div class="movie_list_samneil">
+                                                <a href="/moviesearch/{{ $searchdata["movie_id"] }}/">
+                                                    <img src="{{ $searchdata["samneil_img"] }}" alt="{{ $searchdata["movie_title"] }}">
+                                                </a>
+                                            </div>
+                                            <div class="movie_list_detail">
+                                                <div class="movie_list_detail_channelicon">
+                                                    <img src="{{ $searchdata["channel_img"] }}" alt="{{ $searchdata["channel_name"] }}">
+                                                </div>
+                                                <div class="movie_list_detail_text">                                        
+                                                    <div class="movie_list_detail_text_title">                                                    
+                                                        <a href="/moviesearch/{{ $searchdata["movie_id"] }}/">
+                                                            <div class="movie_list_detail_text_channelname">
+                                                                {{ $searchdata["movie_title"] }}
+                                                            </div>                                                       
+                                                        </a>                                                          
+                                                    </div>
+                                                    <div class="movie_list_detail_text_channelname_div">
+                                                        <div class="movie_list_detail_text_channelname">
+                                                            {{ $searchdata["channel_name"] }}
+                                                        </div>
+                                                        <div class="movie_list_favoritestar_div">
+                                                            <div data-id="{{ $searchdata["movie_id"] }}" class="movie_list_favoritestar">
+                                                                ★
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="movie_list_detail_view_count">
+                                                        {{ $searchdata["view_count_str"] }}・{{ $searchdata["published_at_str"] }}
+                                                    </div>
+                                                </div>
+                                            </div>                            
+                                        </li>
+                                    </div>
+                                
+                                @if ($index%5 == 4)
+                                    </ul>
+                                @endif 
+                                
+                                @endforeach
+                                
+                                @if ($index%5 < 4)
+                                    </ul>
+                                @endif   
+                                    
+                                    
+                                    
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+
                     </div>
                
 
@@ -96,46 +192,27 @@
                 <!-- センター　-->
                 <div class="mainContents_container_center">
 
-                    <div class="searchlist">
+                    <div class="searchlist_h1">
+                        フィルター済み動画リスト
+                    </div>
 
+                    <div class="searchlist">
                         <div class="searchlist_contents">
 
                             
-                            <!--
-                            <a href="">
-                            <div class="searchlist_contents_one">
-
-                                <div class="searchlist_contents_index">1</div>
-
-                                <div class="searchlist_contents_samenil">
-                                    <img src="https://i.ytimg.com/vi/26mK2wk1TKs/maxresdefault.jpg" alt="">
-                                </div>
-    
-                                <div class="searchlist_contents_detail">
-                                   
-                                    <div class="searchlist_contents_title">
-                                        金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡金ネジキクリアまでの軌跡
-                                    </div>
-                                    <div class="searchlist_contents_channelname">
-                                        チャンネル名
-                                    </div>
-                                    <div class="searchlist_contents_view_count">
-                                        再生回数・公開日
-                                    </div>
-                                    
-                                </div>
-
-
-                            </div>
-                            </a>
-
-                            -->
-
 
 
                         </div>
 
                     </div>
+
+
+
+
+
+
+
+
 
                 </div>
 

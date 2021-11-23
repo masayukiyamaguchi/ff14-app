@@ -1,7 +1,11 @@
+@media screen and (min-width: 767px) { /*ウィンドウ幅が767px以上の場合に適用*/
+
+
 /*フッター*/
 #main_top_footer
 {
     padding-top: 10px;
+    margin-top: 200px;
     padding-bottom: 10px;
     position: static;
     width: 100%;
@@ -14,3 +18,15 @@
     color: white;
 
 }
+
+
+}/*ウィンドウ幅が767px以上の場合に適用*/
+
+
+
+@media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
+
+
+
+
+}/*ウィンドウ幅が最大479pxまでの場合に適用*/

@@ -278,29 +278,140 @@ $(function() {
 
     });
 
-    //★hover
+    //★hoverポップ
     $(document).on("mouseenter", ".movie_list_favorite", function (eo) {
-        $('body').append('<div id="pop">★お気に入りに追加します</div>');
+        var text = '<div id="pop">★お気に入りに追加します</div>';
+        MouseHoverText(eo,text);
+    });
+    $(document).on("mouseleave", ".movie_list_favorite", function (eo) {$('#pop').remove();$('#pop').remove();$('#pop').remove();});
+
+    //お気に入りリスト
+    $(document).on("mouseenter", "#left_menu_favorite", function (eo) {
+        var text = '<div id="pop">登録した「お気に入り」リスト一覧ページ</div>';
+        MouseHoverText(eo,text);
+    });
+    $(document).on("mouseleave", "#left_menu_favorite", function (eo) {$('#pop').remove();$('#pop').remove();$('#pop').remove();});
+
+
+    //フィルタージョブ
+    $(document).on("mouseenter", "#filter_play_job", function (eo) {
+        var text = '<div id="pop">プレイしているジョブを選択できます</div>';
+        MouseHoverText(eo,text);
+    });
+    $(document).on("mouseleave", "#filter_play_job", function (eo) {$('#pop').remove();$('#pop').remove();$('#pop').remove();});
+
+    //フィルターVC
+    $(document).on("mouseenter", "#filter_bool_vc", function (eo) {
+        var text = '<div id="pop">ボイスチャットが動画にあり／なし</div>';
+        MouseHoverText(eo,text);
+    });
+    $(document).on("mouseleave", "#filter_bool_vc", function (eo) {$('#pop').remove();$('#pop').remove();$('#pop').remove();});
+
+     //フィルター解説
+     $(document).on("mouseenter", "#filter_string_guide", function (eo) {
+        var text = '<div id="pop">攻略の解説が動画にあり／なし</div>';
+        MouseHoverText(eo,text);
+    });
+    $(document).on("mouseleave", "#filter_string_guide", function (eo) {$('#pop').remove();$('#pop').remove();$('#pop').remove();});
+
+    //フィルター解説ALL
+    $(document).on("mouseenter", "#guide_none", function (eo) {
+        var text = '<div id="pop">すべての動画を選択</div>';
+        MouseHoverText(eo,text);
+    });
+    $(document).on("mouseleave", "#guide_none", function (eo) {$('#pop').remove();$('#pop').remove();$('#pop').remove();});
+
+    //フィルター解説ゆっくり
+    $(document).on("mouseenter", "#guide_yukkuri", function (eo) {
+        var text = '<div id="pop">ゆっくり音源による解説です。</div>';
+        MouseHoverText(eo,text);
+    });
+    $(document).on("mouseleave", "#guide_yukkuri", function (eo) {$('#pop').remove();$('#pop').remove();$('#pop').remove();});
+
+    //フィルター本人解説
+    $(document).on("mouseenter", "#guide_jigoe", function (eo) {
+        var text = '<div id="pop">投稿者の声による音声解説です。</div>';
+        MouseHoverText(eo,text);
+    });
+    $(document).on("mouseleave", "#guide_jigoe", function (eo) {$('#pop').remove();$('#pop').remove();$('#pop').remove();});
+
+    //フィルター字幕のみ
+    $(document).on("mouseenter", "#guide_jimaku", function (eo) {
+        var text = '<div id="pop">字幕のみで音声はない解説です。</div>';
+        MouseHoverText(eo,text);
+    });
+    $(document).on("mouseleave", "#guide_jimaku", function (eo) {$('#pop').remove();$('#pop').remove();$('#pop').remove();});
+
+    //フィルター解説なし
+    $(document).on("mouseenter", "#guide_nonevoice", function (eo) {
+        var text = '<div id="pop">解説はないプレイ動画です。</div>';
+        MouseHoverText(eo,text);
+    });
+    $(document).on("mouseleave", "#guide_nonevoice", function (eo) {$('#pop').remove();$('#pop').remove();$('#pop').remove();});
+
+    //フィルターDPS表示
+    $(document).on("mouseenter", "#filter_bool_act", function (eo) {
+        var text = '<div id="pop">DPS（ACT）の表示が動画にあり／なし</div>';
+        MouseHoverText(eo,text);
+    });
+    $(document).on("mouseleave", "#filter_bool_act", function (eo) {$('#pop').remove();$('#pop').remove();$('#pop').remove();});
+
+    //フィルターDPS表示
+    $(document).on("mouseenter", "#filter_bool_clear", function (eo) {
+        var text = '<div id="pop">クリアー動画か、全滅または時間切れ動画か</div>';
+        MouseHoverText(eo,text);
+    });
+    $(document).on("mouseleave", "#filter_bool_clear", function (eo) {$('#pop').remove();$('#pop').remove();$('#pop').remove();});
+
+    //フィルターDPS表示
+    $(document).on("mouseenter", "#filter_language", function (eo) {
+        var text = '<div id="pop">動画の言語表記が日本語／ENGLISH</div>';
+        MouseHoverText(eo,text);
+    });
+    $(document).on("mouseleave", "#filter_language", function (eo) {$('#pop').remove();$('#pop').remove();$('#pop').remove();});
+
+    //フィルターDPS表示
+    $(document).on("mouseenter", "#sort_view_count", function (eo) {
+        var text = '<div id="pop">再生回数（多い／少ない）順に並び替えをします</div>';
+        MouseHoverText(eo,text);
+    });
+    $(document).on("mouseleave", "#sort_view_count", function (eo) {$('#pop').remove();$('#pop').remove();$('#pop').remove();});
+
+     //フィルターDPS表示
+     $(document).on("mouseenter", "#sort_published_at", function (eo) {
+        var text = '<div id="pop">投稿日（新しい／古い）順に並び替えをします</div>';
+        MouseHoverText(eo,text);
+    });
+    $(document).on("mouseleave", "#sort_published_at", function (eo) {$('#pop').remove();$('#pop').remove();$('#pop').remove();});
+
+    //フィルター×
+    $(document).on("mouseenter", "#filter_delete", function (eo) {
+        var text = '<div id="pop">全てのフィルターを解除します（全ての動画を表示）</div>';
+        MouseHoverText(eo,text);
+    });
+    $(document).on("mouseleave", "#filter_delete", function (eo) {$('#pop').remove();$('#pop').remove();$('#pop').remove();});
+
+
+    //ポップアクション　関数
+    function MouseHoverText(eo,text){
+        $('body').append(text);
         $('#pop').show();
         $(window).mousemove( function(e){
             var x = e.pageX;
             var y = e.pageY-40;
             $('#pop').css({left:x+'px',top:y+'px','z-index':'100'});
         });
-
-    });
-
-    $(document).on("mouseleave", ".movie_list_favorite", function (eo) {
-        $('#pop').remove();
-        $('#pop').remove();
-        $('#pop').remove();
-    });
+    }
 
 
 
     $(".left_menu_h1").click(function(){
 
         var clickVarsionName = $(this).parent().attr("id");
+
+        //前ぐ暗くしてから、クリックを明るくする
+        $(".left_menu_h1 img").css("opacity","");
+        $(this).children("img").css("opacity","1.0");
         
         //開いていたら
         if($("#"+clickVarsionName+" .left_menu_h2").css("display")=="block")
@@ -371,7 +482,7 @@ $(function() {
             $(this).animate(
                 {
                   'backgroundColor': '#636363'
-                }, 70
+                }, 1
               );
         }        
     },
@@ -381,10 +492,11 @@ $(function() {
             $(this).animate(
                 {
                   'backgroundColor': '#444444'
-                }, 70
+                }, 1
               );
         }        
     });
+
 
 
     //フィルターメニュー
@@ -1063,6 +1175,7 @@ $(function() {
     //ローカルストレージの内容を読み込む
     if(localStorage["activeSeries"] != null){
         activeSeries = localStorage["activeSeries"];
+        $("#"+activeSeries).find("img").css("opacity","1.0");
         //$("#"+activeSeries+" img").trigger("click");
     }
     if(localStorage["activePart"] != null){
@@ -1107,16 +1220,21 @@ $(function() {
         filter_play_job = JSON.parse(filter_play_job_json);
         
         all_jobs.forEach(job => {
-            
+            var num = 0            
             if($.inArray(job, filter_play_job)<0){
                 PlayJobIconChange(job);
-            }    
-
+            }
         });
+
+        if(filter_play_job.length < all_jobs.length){
+            $("#filter_play_job").text("ジョブ:一部");
+            $("#filter_play_job").css("background-color","rgb(42, 50, 165)");     
+        }        
     }
 
 
-
+    //メインメニュー色付け
+    $(".left_menu_home").css("background-color","rgb(56,56,56)");
     
 
     //最初のメニューは開いておく

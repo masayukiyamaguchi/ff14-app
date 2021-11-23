@@ -1,3 +1,6 @@
+@media screen and (min-width: 767px) { /*ウィンドウ幅が767px以上の場合に適用*/
+
+
 /*ヘッダー*/
 #main_top_header
 {
@@ -20,10 +23,7 @@
     display: flex;
 }
 
-.main_top_header_menu_logo
-{
 
-}
 .main_top_header_menu_button
 {
 
@@ -35,9 +35,40 @@
     color: white;
 }
 
+.main_top_header_menu_logo
+{
+    position: absolute;
+    left: 20px;
+}
 .main_top_header_menu_logo_img
 {
     padding-top: 4px;
     margin-left: -10px;
     width: 120px;
 }
+
+
+.main_top_header_menu_logo_movieseach
+{
+
+}
+.main_top_header_menu_logo_img_movieseach
+{
+    position: absolute;
+    left: 257px;
+    padding-top: 4px;
+    width: 20vh;
+
+}
+
+
+}/*ウィンドウ幅が767px以上の場合に適用*/
+
+
+
+@media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
+
+
+
+
+}/*ウィンドウ幅が最大479pxまでの場合に適用*/

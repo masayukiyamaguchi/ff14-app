@@ -10,6 +10,16 @@
             </div>
 
 
+            <!--　moviesearch  -->
+            @if(strpos($_SERVER['REQUEST_URI'],'/moviesearch/') !== false || strpos($_SERVER['REQUEST_URI'],'/ms/') !== false)    
+            <div class="main_top_header_menu_logo_movieseach">
+                <a href="/moviesearch/">
+                    <img class="main_top_header_menu_logo_img_movieseach" src="\images\moviesearch\logomoviesearch.png" alt="">
+                </a>
+            </div>
+            @endif
+
+
             <div class="main_top_header_menu_button">
                 <ul class="main_top_header_menu_button_ul">
                     

@@ -1,3 +1,6 @@
+@media screen and (min-width: 767px) { /*ウィンドウ幅が767px以上の場合に適用*/
+
+
 /*フォント*/
 @import url('https://fonts.googleapis.com/css2?family=Wire+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap');
@@ -8,6 +11,7 @@
 #body
 {
     margin:0;
+    background-color: rgb(33, 33, 33);  
 }
 
 
@@ -43,12 +47,6 @@
 {
     padding-top: 5px;
 }
-
-.mainContents_container_left div:first-child
-{
-    padding-top: 0px;
-}
-
 
 
 .left_menu_h1 img
@@ -341,4 +339,13 @@
 }
 
 
+}/*ウィンドウ幅が767px以上の場合に適用*/
 
+
+
+@media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
+
+
+
+
+}/*ウィンドウ幅が最大479pxまでの場合に適用*/

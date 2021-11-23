@@ -21,7 +21,20 @@ class MoviePlayController extends Controller
 
         $all[0] -> published_at_str = $this -> DateToSlash($all[0]["published_at"]);
 
-        return view("MovieSearch.movieplay",["id"=>$id , "all"=>$all[0]]);
+
+
+        //チャンネル登録動画の取得
+        $channel_id = $all[0]["channel_id"];
+        $channel = app()->make('App\Http\Controllers\MovieSearch\IndexController');
+        $searchdatas = $channel -> ChannelReturnID($channel_id);
+
+
+        //前にどのページにいたか確認
+        //$prevurl = url()->previous();
+        //dump($prevurl);
+
+
+        return view("MovieSearch.movieplay",["id"=>$id , "all"=>$all[0], "searchdatas"=>$searchdatas]);
 
 
     }
@@ -61,6 +74,10 @@ class MoviePlayController extends Controller
         $left10Slash = str_replace("-","/",$left10);
         return $left10Slash;
     }
+
+
+    
+
 
     
 

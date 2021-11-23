@@ -19,12 +19,14 @@ class FavoriteController extends Controller
         
         //データを配列に整備
         $favorite_list = $alldatas["favorite_list"];
-        $favorite_list = explode(",", $favorite_list);
-        
+        $favorite_list = explode(",", $favorite_list);        
 
         $all_datas = $this-> FavoriteListPageData($favorite_list); 
         
   
+        //どこから来たかのデータを渡す
+        $all_datas += array("formController"=>"index");
+
         return view("MovieSearch.favorite",["all_datas"=>$all_datas]);
 
     }
@@ -288,7 +290,13 @@ class FavoriteController extends Controller
         }
 
         $all_datas = $this->FavoriteListPageData($aryCsv[0]);
-  
+
+        //どこから来たかのデータを渡す
+        $all_datas += array("formController"=>"shorturl");
+
+        //IDを渡す
+        $all_datas += array("id_data"=>$id);
+ 
         return view("MovieSearch.favorite",["all_datas"=>$all_datas]);
 
 

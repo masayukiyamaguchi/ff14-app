@@ -30,12 +30,19 @@ class IndexController extends Controller
             $searchdata -> published_at_str = $published_at_str;
         }
 
+
         return view("MovieSearch.index",["searchdatas"=>$searchdatas]);
     }
     
 
     //チャンネルページへ
     public function channel($id){
+
+        $searchdatas = $this -> ChannelReturnID($id);
+        return view("MovieSearch.channel",["searchdatas"=>$searchdatas]);
+    }
+
+    public function ChannelReturnID($id){
         //クエリビルダーの記述
         $searchdatas = Moviesearch_data::
             where("channel_id",$id)
@@ -58,7 +65,7 @@ class IndexController extends Controller
 
         }
 
-        return view("MovieSearch.channel",["searchdatas"=>$searchdatas]);
+        return $searchdatas;
     }
 
 

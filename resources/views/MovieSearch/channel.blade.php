@@ -8,16 +8,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
 
     <link rel="stylesheet" href="/css/moviesearch/channel.css">
     <link rel="stylesheet" href="/css/mainTopHeader.css">
     <link rel="stylesheet" href="/css/mainTopFooter.css">
+    <link rel="stylesheet" href="/css/moviesearch/mainmenu.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/js/moviesearch/channel.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>    
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
 
     <title>FF14-APP|FinalFantasyXIVのアプリサイト</title>
 
@@ -36,19 +40,9 @@
                 <!-- レフト　-->
                 <div class="mainContents_container_left">
 
-                    <div id="left_menu">
-
-                        <ul class="left_menu_ul">
-
-                         <a href="/moviesearch/">
-                             <li>トップに戻る</li>
-                        </a>
-
-                         <li></li>
-                         <li></li>
-                        </ul>                       
-                                                
-                    </div>
+                     <!-- メインメニュー　-->
+                     @component('components.commonMainMenu')
+                     @endcomponent
 
                 </div>
 
