@@ -26,7 +26,17 @@
 
 @media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
 
+.main_top_footer{
+    background-color: rgb(24,24,24);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 
+.main_top_copyrights{
+    text-align: center;
+    color: white;
+    font-size: 3vw;
+}
 
 
 }/*ウィンドウ幅が最大479pxまでの場合に適用*/

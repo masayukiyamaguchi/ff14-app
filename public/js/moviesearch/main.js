@@ -1276,6 +1276,32 @@ $(function() {
     });
 
 
+
+    // スマホメインメニュー
+    //const targetElement = document.getElementById('globalMenu');
+
+    $('.hamburger').click(function() {
+        $(this).toggleClass('active');
+ 
+        if ($(this).hasClass('active')) {
+            $('.globalMenuSp').addClass('active');
+            bodyScrollLock.disableBodyScroll(".globalMenuSp"); 
+
+        } else {
+            $('.globalMenuSp').removeClass('active');
+            bodyScrollLock.enableBodyScroll(".globalMenuSp");                       
+            
+        }       
+
+
+    });
+
+
+    $(".left_menu_ul li").click(function(){
+        $('.hamburger').trigger("click");
+    });
+
+
     
     
 });

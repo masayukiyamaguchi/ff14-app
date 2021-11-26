@@ -17,6 +17,11 @@
                     <img class="main_top_header_menu_logo_img_movieseach" src="\images\moviesearch\logomoviesearch.png" alt="">
                 </a>
             </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             @endif
 
 

@@ -50,6 +50,9 @@
 @endcomponent
 <div class="header_div"><img src="/img/header_bg.png" alt=""></div>
 
+<div class="attention">現在 スマホ対応調整中です。</div>
+<div class="attention">スマホの方は<br>「デスクトップ用WEB表示」<br>に切り替えてご覧ください。</div>
+
 <!-- メイン部分 -->
 <div class="main_div">
 

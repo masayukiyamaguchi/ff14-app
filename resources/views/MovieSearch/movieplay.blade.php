@@ -62,32 +62,36 @@
                                     {{ $all["view_count_numformat"] }} 回視聴・{{ $all["published_at_str"] }}
                                 </div>
                                 <div data-id="{{ $all["movie_id"] }}" class="movie_list_favorite">
-                                    お気に入りに登録
+                                    <span class="movie_list_favorite_span">お気に入りに登録</span>
                                 </div>
                             </div>
-                            <div class="main_movie_detail_channelinfo">
 
-                                <div class="main_movie_detail_channelinfo_channelicon">
-                                    <img src="{{ $all["channel_img"] }}" alt="">
-                                </div>
-
-                                <div class="main_movie_detail_channelinfo_text">                                    
-                                    <div class="main_movie_detail_channelinfo_text_channelname">                                            
-                                        <a href="/moviesearch/channnel/{{ $all["channel_id"] }}">
-                                            {{ $all["channel_name"] }}
-                                        </a>
+                            <div class="main_movie_detail_channelinfo_border">
+                                <div class="main_movie_detail_channelinfo">                                
+                                    <div class="main_movie_detail_channelinfo_channelicon">
+                                        <img src="{{ $all["channel_img"] }}" alt="">
                                     </div>
+
+                                    <div class="main_movie_detail_channelinfo_text">                                    
+                                        <div class="main_movie_detail_channelinfo_text_channelname">                                            
+                                            <a href="/moviesearch/channnel/{{ $all["channel_id"] }}">
+                                                {{ $all["channel_name"] }}
+                                            </a>
+                                        </div>
+
+                                        <div class="main_movie_detail_channelinfo_member_num">
+                                            チャンネル登録者数 {{ $all["member_num_str"] }}
+                                        </div>
                                     
-                                    <div class="main_movie_detail_channelinfo_member_num">
-                                        チャンネル登録者数 {{ $all["member_num_str"] }}
-                                    </div>
-    
-                                    <div class="main_movie_detail_channelinfo_text_moviediscription">
-                                        {!! nl2br(e($all["movie_discription"])) !!}
+                                        <div class="channelinfo_text_moviediscription_display_button">動画概要を表示</div>
+
+                                        <div class="main_movie_detail_channelinfo_text_moviediscription">
+                                            {!! nl2br(e($all["movie_discription"])) !!}
+                                        </div>
                                     </div>
                                 </div>
-
                             </div>
+                            
 
                         </div>
 

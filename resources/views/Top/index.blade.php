@@ -99,6 +99,7 @@
                                 </li>
                             </ul>
 
+                            <!--
                             <ul class="contents_card">
                                 <li class="contents_card_li">
                                     <a href="/">
@@ -253,6 +254,8 @@
                                     <p>現在制作中！！！！</p>
                                 </li>
                             </ul>
+
+                            -->
                             
                         </div>
                     </div>
@@ -260,7 +263,7 @@
                 </div>
 
                 <!-- ライト　-->
-                <div class="mainContents_container_right">right</div>
+                <div class="mainContents_container_right"></div>
 
 
             </div>
