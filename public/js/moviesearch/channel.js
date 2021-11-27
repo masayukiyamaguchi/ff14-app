@@ -119,17 +119,43 @@ function AjaxMenuClick()
 }
 
 
-//テキストエリアに共有URL表示
-function favorite_share_url_active(){
-    $('input[name="favorite_share_url"]').val("https://ff14-app.com/ms/"+filterData["random_url"]);
-}
+    //テキストエリアに共有URL表示
+    function favorite_share_url_active(){
+        $('input[name="favorite_share_url"]').val("https://ff14-app.com/ms/"+filterData["random_url"]);
+    }
 
-$(".favorite_share_url_copy button").click(function(){
-    //　テキストエリアを選択
-    $('input[name="favorite_share_url"]').select();
-    // コピー
-    document.execCommand('copy');
-});
+    $(".favorite_share_url_copy button").click(function(){
+        //　テキストエリアを選択
+        $('input[name="favorite_share_url"]').select();
+        // コピー
+        document.execCommand('copy');
+    });
+
+
+
+
+
+    // スマホメインメニュー
+    //const targetElement = document.getElementById('globalMenu');
+
+    $('.hamburger').click(function() {
+        $(this).toggleClass('active');
+ 
+        if ($(this).hasClass('active')) {
+            $('.globalMenuSp').addClass('active');
+            bodyScrollLock.disableBodyScroll(".globalMenuSp"); 
+
+        } else {
+            $('.globalMenuSp').removeClass('active');
+            bodyScrollLock.enableBodyScroll(".globalMenuSp");                       
+            
+        } 
+    });
+
+
+    $(".left_menu_ul li").click(function(){
+        $('.hamburger').trigger("click");
+    });
 
 
 

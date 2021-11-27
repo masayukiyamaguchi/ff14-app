@@ -165,18 +165,57 @@ function StarMarking(){
 
 
 
-//読み込み時実行
+    //読み込み時実行
 
-//メインメニュー色付け
-$(".left_menu_favorite").css("background-color","rgb(56,56,56)");
+    //メインメニュー色付け
+    $(".left_menu_favorite").css("background-color","rgb(56,56,56)");
 
 
-//favorite_movie ストレージの内容は星に色を
+    //favorite_movie ストレージの内容は星に色を
     StarMarking();
 
 
 
+    // スマホメインメニュー
+    //const targetElement = document.getElementById('globalMenu');
+
+    $('.hamburger').click(function() {
+        $(this).toggleClass('active');
+ 
+        if ($(this).hasClass('active')) {
+            $('.globalMenuSp').addClass('active');
+            bodyScrollLock.disableBodyScroll(".globalMenuSp"); 
+
+        } else {
+            $('.globalMenuSp').removeClass('active');
+            bodyScrollLock.enableBodyScroll(".globalMenuSp");                       
+            
+        } 
+    });
+
+
+    $(".left_menu_ul li").click(function(){       
+        if($(this).attr("class") != "share_url_button"){
+            $('.hamburger').trigger("click");
+        }
+        
+    });
+
+
+
+
+
+
+
+
+
+
+
 });
+
+
+
+
 
 
 

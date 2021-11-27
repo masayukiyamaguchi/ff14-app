@@ -241,10 +241,8 @@ $(function() {
         });    
     }
 
-    $(".main_movie_detail_channelinfo").click(function(){
-
-        console.log($(".main_movie_detail_channelinfo_text_moviediscription").css("display"));
-
+    $(".channelinfo_text_moviediscription_display_button").click(function(){
+        
         if($(".main_movie_detail_channelinfo_text_moviediscription").css("display")=="none"){
             $(".main_movie_detail_channelinfo_text_moviediscription").slideDown();
             $(".channelinfo_text_moviediscription_display_button").text("動画概要を閉じる");

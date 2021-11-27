@@ -17,6 +17,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/js/moviesearch/favorite.js"></script>
+    <script src="/js/moviesearch/bodyScrollLock.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -38,7 +39,7 @@
             <div class="mainContents_container">
                 
                <!-- レフト　-->
-               <div class="mainContents_container_left">
+               <div class="mainContents_container_left globalMenuSp" id="globalMenu">
 
                     <!-- メインメニュー　-->
                     @component('components.commonMainMenu')
@@ -93,6 +94,13 @@
 
                 <!-- センター　-->
                 <div class="mainContents_container_center">
+
+                    <div class="sp_h1">
+                        お気に入りリスト
+                        @if( $all_datas["formController"] == "shorturl")
+                        <div class="sp_h1_listid">リストID：{{ $all_datas["id_data"] }}</div>
+                        @endif
+                    </div>
                     
 
                      <!-- 動画リスト部分　-->

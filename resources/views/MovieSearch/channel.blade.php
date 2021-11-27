@@ -17,6 +17,8 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/js/moviesearch/channel.js"></script>
+    <script src="/js/moviesearch/bodyScrollLock.js"></script>
+    
 
     <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>    
@@ -38,7 +40,7 @@
             <div class="mainContents_container">
                 
                 <!-- レフト　-->
-                <div class="mainContents_container_left">
+                <div class="mainContents_container_left globalMenuSp" id="globalMenu">
 
                      <!-- メインメニュー　-->
                      @component('components.commonMainMenu')

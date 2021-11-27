@@ -8,7 +8,7 @@ $(function() {
     var colorGray = "#444444";
 
     //コンテンツを検索
-    var activeSeries = $(".mainContents_container_left div").eq(0).attr("id");
+    var activeSeries = $(".sp_scroll_area div").eq(0).attr("id");
     var activePart = $(".left_menu_h2 span").attr("data-activePart");
     var activeLeftMenu = 0;
     var dataContents = $(".left_menu_ul li").eq(0).attr("data-contents");
@@ -1177,15 +1177,21 @@ $(function() {
         activeSeries = localStorage["activeSeries"];
         $("#"+activeSeries).find("img").css("opacity","1.0");
         //$("#"+activeSeries+" img").trigger("click");
+    }else{
+        localStorage["activeSeries"] = activeSeries;
     }
     if(localStorage["activePart"] != null){
         activePart = localStorage["activePart"];
         //$("[data-activePart = "+activePart+" ]").trigger("click");
+    }else{
+        localStorage["activePart"] = activePart;
     }
     if(localStorage["dataContents"] != null){
         dataContents = localStorage["dataContents"];
         //$("[data-contents = "+dataContents+" ]").trigger("click");
         activeLeftMenu = $(".left_menu_ul li").index($("[data-contents = "+dataContents+" ]"));
+    }else{
+        localStorage["dataContents"] = dataContents;
     }
     if(localStorage["sort_view_count"] != null){
         sort_view_count = localStorage["sort_view_count"];
@@ -1232,6 +1238,12 @@ $(function() {
         }        
     }
 
+    if(localStorage["favorite_movie"] == null){
+        favorite_movie = ["NONE"];
+        favorite_movie_json = JSON.stringify(favorite_movie, undefined, 1);
+        localStorage["favorite_movie"] = favorite_movie_json;
+    }
+
 
     //メインメニュー色付け
     $(".left_menu_home").css("background-color","rgb(56,56,56)");
@@ -1254,7 +1266,6 @@ $(function() {
     AjaxMenuClick();
 
     $(".testbutton").click(function(){
-        console.log("test");
         $('input[name="favorite_list"]').val("favorite_movie");
     });
 

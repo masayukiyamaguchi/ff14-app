@@ -19,7 +19,9 @@
 #mainContents
 {
     position: initial;
+    
 }
+
 
 .backgroundimage
 {
@@ -36,10 +38,9 @@
 
 .mainContents_container_left
 {
-    width: 12.5%;
-    min-height: 1500px;
+    width: 12.5%;    
     color: white;
-
+    height: auto;
 }
 
 
@@ -1120,6 +1121,11 @@
         display: none;
     }
 
+    .left_menu_h1{
+        padding-bottom: 5px;
+    }
+
+
     .left_menu_h1 img
     {
         width: 100%;
@@ -1219,6 +1225,8 @@
         text-align: center;
         margin-top: 50px;
     }
+
+    
 
 
 

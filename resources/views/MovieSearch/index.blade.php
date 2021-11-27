@@ -171,6 +171,13 @@
                             <a href="mailto:info@ff14-app.com">お問い合わせ</a>
                         </div>
 
+                        <div class="main_top_header_menu_logo_sp">
+                            <a href="/">
+                                <img class="main_top_header_menu_logo_img" src="\images\Top\logo.png" alt="">
+                            </a>
+                        </div>
+
+
                     </div>
 
 
