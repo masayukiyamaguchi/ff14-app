@@ -53,7 +53,7 @@ $(function() {
         })
         // Ajaxリクエスト失敗時の処理
         .fail(function(data) {
-            alert('Ajaxリクエスト失敗');
+            //alert('Ajaxリクエスト失敗');
         });
     }
 
@@ -252,6 +252,128 @@ $(function() {
         }
 
     });
+
+
+
+
+    //動画を下へスワイプした時の動作
+    var playnow = false; 
+    /** 変数宣言 */
+	var moveY,modeX, posiY, posiX;
+
+    /** ②指が触れたか検知 */
+	$("#iflame_null_div").on("touchstart", start_check); 
+	/** ③指が動いたか検知 */
+	$("#iflame_null_div").on("touchmove", move_check); 
+	/** ④指が離れたか検知 */
+	$("#iflame_null_div").on("touchend", end_check);
+
+    // 座標取得処理
+	function getY(event){
+		//縦方向の座標を取得
+		return (event.originalEvent.touches[0].pageY);
+	} 
+	function getX(event){
+		//横方向の座標を取得
+		return (event.originalEvent.touches[0].pageX);
+	}
+
+    //タッチスタート
+    function start_check(event){
+        console.log("touchstart");
+        /** 現在の座標取得 */
+		posiY = getY(event);
+		posiX = getX(event); 
+		/** 移動距離状態を初期化 */
+		moveY = '';
+		moveX = ''; 
+		/** 表示メッセージを初期化 */
+		msgY = '';
+		msgX = '';
+    };
+
+    function move_check(event){
+        console.log("touchmove");
+        if (posiX - getX(event) > 70) // 70px以上移動でスワイプと判断
+		{
+			/** 右→左と判断 */
+			moveX = "left";
+		}
+		else if (posiX - getX(event) < -70)  // 70px以上移動でスワイプと判断
+		{
+			/** 左→右と判断 */			
+			moveX = "right";
+		} 
+		if (posiY - getY(event) > 70) // 70px以上移動でスワイプと判断
+		{
+			/** 下→上と判断 */
+			moveY = "top";
+		}
+		else if (posiY - getY(event) < -70)  // 70px以上移動でスワイプと判断
+		{
+			/** 上→下と判断 */			
+			moveY = "bottom";
+		}
+    };
+
+    function end_check(event){
+
+        console.log("touchend ");
+        
+        //動画の再生・停止           
+        if(playnow){
+            videoControl("pauseVideo"); 
+            playnow = false;
+        }else{
+            videoControl("playVideo"); 
+            playnow = true;
+        }
+
+        //方向によって動作
+        if (moveX == "left")
+		{
+			
+		}
+		else if (moveX == "right")
+		{
+			
+		}
+		else
+		{
+			
+		} 
+ 
+		if (moveY == "top")
+		{
+			
+		}
+		else if (moveY == "bottom")
+		{
+			window.location.href = "/moviesearch";
+		}
+		else
+		{
+			
+		}
+
+    };
+
+
+
+
+    
+
+    //クリックイベントで動画を操作
+    //再生
+    function videoControl(action){ 
+        var $playerWindow = $('#main_movie_iflame_id')[0].contentWindow;
+        $playerWindow.postMessage('{"event":"command","func":"'+action+'","args":""}', '*');
+    }
+
+    
+
+  
+    
 
 
 

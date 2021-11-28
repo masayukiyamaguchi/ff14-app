@@ -168,7 +168,7 @@ $(function() {
         })
         // Ajaxリクエスト失敗時の処理
         .fail(function(data) {
-            alert('Ajaxリクエスト失敗');
+            //alert('Ajaxリクエスト失敗');
         });
     }
 
@@ -513,7 +513,10 @@ $(function() {
             
             // ターゲット要素の外側をクリックした時の操作            
             $(".filter_play_job_menu > div").slideUp(100);
-
+            
+            //スクロール解除
+            bodyFixReset(); 
+            
             //フィルターの表示を変更
             FilterJobChange();
 
@@ -525,11 +528,47 @@ $(function() {
             //決定ボタンは無視する
             if(e.target.className == "enter_text" || e.target.className == "filter_play_job_menu_enter_button")
             {
+                //スクロール解除
+                bodyFixReset(); 
             }else{
                 $(".filter_play_job_menu > div").slideDown(100);
+                //スクロール禁止
+                bodyFix();
             }            
         }
     });
+
+    //以下、bodyを固定する関数
+    var bodyElm = $('body');
+    var scrollPosi;
+
+    function bodyFix() {
+      scrollPosi = $(window).scrollTop();
+      bodyElm.css({
+        'position': 'fixed',
+        'width': '100%',
+        'z-index': '1',
+        'top': -scrollPosi
+      });
+      console.log("tukeru");
+    }
+    
+    //以下、body固定を解除する関数
+    function bodyFixReset() {
+      bodyElm.css({
+        'position': 'relative',
+        'width': 'auto',
+        'top': 'auto'
+      });
+      //scroll位置を調整
+      $('html, body').scrollTop(scrollPosi);
+      console.log("kaizyo");
+    }
+
+
+
+
+
 
     //フィルターの表示を変更
     function FilterJobChange(){
@@ -945,7 +984,7 @@ $(function() {
 
         filter_bool_vc = filterButtonCheckBool(filter_bool_vc);
 
-        BoolDisplayChange(filter_bool_vc,"#filter_bool_vc","VC:ALL","VC:あり","VC:なし");
+        BoolDisplayChange(filter_bool_vc,"#filter_bool_vc","VC：ALL","VC:あり","VC:なし");
 
         //ajax
         AjaxMenuClick();
@@ -983,9 +1022,19 @@ $(function() {
         if(!$(e.target).closest('#filter_string_guide').length) {
           // ターゲット要素の外側をクリックした時の操作
           $(".filter_string_guide_menu ul").slideUp(100);
+
+           　//ここで例外を設定（ジョブアイコン部分）
+            if(e.target.className.indexOf("filter_play_job_menu") >= 0 || e.target.className=="movie_list_filter_button"){                
+                return 0;
+            }else{
+                bodyFixReset(); 
+            }
+                
+          
         } else {
           // ターゲット要素をクリックした時の操作
           $(".filter_string_guide_menu ul").slideDown(100);
+          bodyFix();
         }
      });
 
@@ -1114,7 +1163,7 @@ $(function() {
         filter_bool_act = "NONE";
         filter_language = "NONE";
 
-        $("#filter_bool_vc").text("VC:ALL");
+        $("#filter_bool_vc").text("VC：ALL");
         $("#filter_bool_vc").css("background-color","#444444");
         $("#filter_string_guide").text("解説:ALL");
         $("#filter_string_guide").css("background-color","#444444");
@@ -1203,7 +1252,7 @@ $(function() {
     }
     if(localStorage["filter_bool_vc"] != null){
         filter_bool_vc = localStorage["filter_bool_vc"];
-        BoolDisplayChange(filter_bool_vc,"#filter_bool_vc","VC:ALL","VC:あり","VC:なし");
+        BoolDisplayChange(filter_bool_vc,"#filter_bool_vc","VC：ALL","VC:あり","VC:なし");
     }
     if(localStorage["filter_string_guide"] != null){
         filter_string_guide = localStorage["filter_string_guide"];
@@ -1275,7 +1324,6 @@ $(function() {
     $('#favoritelist a').on('click', function(){
 
         favorite_movie_json = localStorage["favorite_movie"];
-
         favorite_movie = $.parseJSON(favorite_movie_json);
         
         $("input[name='favorite_list']").val(favorite_movie);
@@ -1283,7 +1331,9 @@ $(function() {
         var pageURL = $(this).attr('href');
         $('form').attr('action',pageURL);
         $('form').submit();
+
         return false;
+
     });
 
 
@@ -1297,11 +1347,9 @@ $(function() {
         if ($(this).hasClass('active')) {
             $('.globalMenuSp').addClass('active');
             bodyScrollLock.disableBodyScroll(".globalMenuSp"); 
-
         } else {
             $('.globalMenuSp').removeClass('active');
-            bodyScrollLock.enableBodyScroll(".globalMenuSp");                       
-            
+            bodyScrollLock.clearAllBodyScrollLocks();
         }       
 
 

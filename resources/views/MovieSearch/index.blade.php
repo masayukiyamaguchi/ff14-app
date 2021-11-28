@@ -54,27 +54,27 @@
                         <p class="left_menu_h1 sp_left_menu_h1"><img src="\images\moviesearch\sp_shadowbringers.jpg" alt=""></p>
                         <p class="left_menu_h2 shadowbringers"> <span data-activePart="EdensPromise" class="left_menu_h2_span">希望の園エデン：再生編</span> </p>
                         <ul class="left_menu_ul">
-                            <li data-contents="EdensPromise01"><img src="\images\moviesearch\boss\bossimage048.png" alt="暗闇の雲">暗闇の雲</li>
-                            <li data-contents="EdensPromise02"><img src="\images\moviesearch\boss\bossimage049.png" alt="影の王">影の王</li>
-                            <li data-contents="EdensPromise03"><img src="\images\moviesearch\boss\bossimage050.png" alt="フェイトブレイカー">フェイトブレイカー</li>
-                            <li data-contents="EdensPromise04"><img src="\images\moviesearch\boss\bossimage051.png" alt="プロミス・オブ・エデン">プロミス・オブ・エデン</li>
-                            <li data-contents="EdensPromise05"><img src="\images\moviesearch\boss\bossimage052.png" alt="闇の巫女">闇の巫女</li>
+                            <li data-contents="EdensPromise01"><img src="\images\moviesearch\boss\bossimage048.jpg" alt="暗闇の雲">暗闇の雲</li>
+                            <li data-contents="EdensPromise02"><img src="\images\moviesearch\boss\bossimage049.jpg" alt="影の王">影の王</li>
+                            <li data-contents="EdensPromise03"><img src="\images\moviesearch\boss\bossimage050.jpg" alt="フェイトブレイカー">フェイトブレイカー</li>
+                            <li data-contents="EdensPromise04"><img src="\images\moviesearch\boss\bossimage051.jpg" alt="プロミス・オブ・エデン">プロミス・オブ・エデン</li>
+                            <li data-contents="EdensPromise05"><img src="\images\moviesearch\boss\bossimage052.jpg" alt="闇の巫女">闇の巫女</li>
                         </ul>
 
                         <p class="left_menu_h2 shadowbringers"> <span data-activePart="EdensVerse" class="left_menu_h2_span">希望の園エデン：共鳴編</span> </p>
                         <ul class="left_menu_ul">
-                            <li data-contents="EdensVerse01"><img src="\images\moviesearch\boss\bossimage044.png" alt="ラムウ">ラムウ</li>
-                            <li data-contents="EdensVerse02"><img src="\images\moviesearch\boss\bossimage045.png" alt="イフリート ガルーダ">イフリート ガルーダ</li>
-                            <li data-contents="EdensVerse03"><img src="\images\moviesearch\boss\bossimage046.png" alt="ダークアイドル">ダークアイドル</li>
-                            <li data-contents="EdensVerse04"><img src="\images\moviesearch\boss\bossimage047.png" alt="シヴァ">シヴァ</li>
+                            <li data-contents="EdensVerse01"><img src="\images\moviesearch\boss\bossimage044.jpg" alt="ラムウ">ラムウ</li>
+                            <li data-contents="EdensVerse02"><img src="\images\moviesearch\boss\bossimage045.jpg" alt="イフリート ガルーダ">イフリート ガルーダ</li>
+                            <li data-contents="EdensVerse03"><img src="\images\moviesearch\boss\bossimage046.jpg" alt="ダークアイドル">ダークアイドル</li>
+                            <li data-contents="EdensVerse04"><img src="\images\moviesearch\boss\bossimage047.jpg" alt="シヴァ">シヴァ</li>
                         </ul>
 
                         <p class="left_menu_h2 shadowbringers"> <span data-activePart="EdensGate" class="left_menu_h2_span">希望の園エデン：覚醒編</span> </p>
                         <ul class="left_menu_ul">
-                            <li data-contents="EdensGate01"><img src="\images\moviesearch\boss\bossimage040.png" alt="エデン・プライム">エデン・プライム</li>
-                            <li data-contents="EdensGate02"><img src="\images\moviesearch\boss\bossimage041.png" alt="ヴォイドウォーカー">ヴォイドウォーカー</li>
-                            <li data-contents="EdensGate03"><img src="\images\moviesearch\boss\bossimage040.png" alt="リヴァイアサン">リヴァイアサン</li>
-                            <li data-contents="EdensGate04"><img src="\images\moviesearch\boss\bossimage043.png" alt="タイタン">タイタン</li>
+                            <li data-contents="EdensGate01"><img src="\images\moviesearch\boss\bossimage040.jpg" alt="エデン・プライム">エデン・プライム</li>
+                            <li data-contents="EdensGate02"><img src="\images\moviesearch\boss\bossimage041.jpg" alt="ヴォイドウォーカー">ヴォイドウォーカー</li>
+                            <li data-contents="EdensGate03"><img src="\images\moviesearch\boss\bossimage040.jpg" alt="リヴァイアサン">リヴァイアサン</li>
+                            <li data-contents="EdensGate04"><img src="\images\moviesearch\boss\bossimage043.jpg" alt="タイタン">タイタン</li>
                         </ul>
                         </div>
 
@@ -83,29 +83,29 @@
                         <p class="left_menu_h1 sp_left_menu_h1"><img src="\images\moviesearch\sp_stormblood.jpg" alt=""></p>
                         <p class="left_menu_h2 stormblood"> <span data-activePart="Alphascape" class="left_menu_h2_span">次元の狭間オメガ：アルファ編</span> </p>
                         <ul class="left_menu_ul">
-                            <li data-contents="Alphascape01"><img src="\images\moviesearch\boss\bossimage035.png" alt="カオス">カオス</li>
-                            <li data-contents="Alphascape02"><img src="\images\moviesearch\boss\bossimage036.png" alt="ミドガルズオルム">ミドガルズオルム</li>
-                            <li data-contents="Alphascape03"><img src="\images\moviesearch\boss\bossimage037.png" alt="オメガ">オメガ</li>
-                            <li data-contents="Alphascape04"><img src="\images\moviesearch\boss\bossimage038.png" alt="オメガM オメガF">オメガM オメガF</li>
-                            <li data-contents="Alphascape05"><img src="\images\moviesearch\boss\bossimage039.png" alt="オメガ最終形態">オメガ最終形態</li>
+                            <li data-contents="Alphascape01"><img src="\images\moviesearch\boss\bossimage035.jpg" alt="カオス">カオス</li>
+                            <li data-contents="Alphascape02"><img src="\images\moviesearch\boss\bossimage036.jpg" alt="ミドガルズオルム">ミドガルズオルム</li>
+                            <li data-contents="Alphascape03"><img src="\images\moviesearch\boss\bossimage037.jpg" alt="オメガ">オメガ</li>
+                            <li data-contents="Alphascape04"><img src="\images\moviesearch\boss\bossimage038.jpg" alt="オメガM オメガF">オメガM オメガF</li>
+                            <li data-contents="Alphascape05"><img src="\images\moviesearch\boss\bossimage039.jpg" alt="オメガ最終形態">オメガ最終形態</li>
                         </ul>
 
                         <p class="left_menu_h2 stormblood"> <span data-activePart="Sigmascape" class="left_menu_h2_span">次元の狭間オメガ：シグマ編</span> </p>
                         <ul class="left_menu_ul">
-                            <li data-contents="Sigmascape01"><img src="\images\moviesearch\boss\bossimage030.png" alt="魔列車">魔列車</li>
-                            <li data-contents="Sigmascape02"><img src="\images\moviesearch\boss\bossimage031.png" alt="チャダルヌーク">チャダルヌーク</li>
-                            <li data-contents="Sigmascape03"><img src="\images\moviesearch\boss\bossimage032.png" alt="ガーディアン">ガーディアン</li>
-                            <li data-contents="Sigmascape04"><img src="\images\moviesearch\boss\bossimage033.png" alt="ケフカ">ケフカ</li>
-                            <li data-contents="Sigmascape05"><img src="\images\moviesearch\boss\bossimage034.png" alt="ゴッド・ケフカ">ゴッド・ケフカ</li>
+                            <li data-contents="Sigmascape01"><img src="\images\moviesearch\boss\bossimage030.jpg" alt="魔列車">魔列車</li>
+                            <li data-contents="Sigmascape02"><img src="\images\moviesearch\boss\bossimage031.jpg" alt="チャダルヌーク">チャダルヌーク</li>
+                            <li data-contents="Sigmascape03"><img src="\images\moviesearch\boss\bossimage032.jpg" alt="ガーディアン">ガーディアン</li>
+                            <li data-contents="Sigmascape04"><img src="\images\moviesearch\boss\bossimage033.jpg" alt="ケフカ">ケフカ</li>
+                            <li data-contents="Sigmascape05"><img src="\images\moviesearch\boss\bossimage034.jpg" alt="ゴッド・ケフカ">ゴッド・ケフカ</li>
                         </ul>
 
                         <p class="left_menu_h2 stormblood"> <span data-activePart="Deltascape" class="left_menu_h2_span">次元の狭間オメガ：デルタ編</span> </p>
                         <ul class="left_menu_ul">
-                            <li data-contents="Deltascape01"><img src="\images\moviesearch\boss\bossimage025.png" alt="アルテ・ロイテ">アルテ・ロイテ</li>
-                            <li data-contents="Deltascape02"><img src="\images\moviesearch\boss\bossimage026.png" alt="カタストロフィー">カタストロフィー</li>
-                            <li data-contents="Deltascape03"><img src="\images\moviesearch\boss\bossimage027.png" alt="ハリカルナッソス">ハリカルナッソス</li>
-                            <li data-contents="Deltascape04"><img src="\images\moviesearch\boss\bossimage028.png" alt="エクスデス">エクスデス</li>
-                            <li data-contents="Deltascape05"><img src="\images\moviesearch\boss\bossimage029.png" alt="ネオ・エクスデス">ネオ・エクスデス</li>
+                            <li data-contents="Deltascape01"><img src="\images\moviesearch\boss\bossimage025.jpg" alt="アルテ・ロイテ">アルテ・ロイテ</li>
+                            <li data-contents="Deltascape02"><img src="\images\moviesearch\boss\bossimage026.jpg" alt="カタストロフィー">カタストロフィー</li>
+                            <li data-contents="Deltascape03"><img src="\images\moviesearch\boss\bossimage027.jpg" alt="ハリカルナッソス">ハリカルナッソス</li>
+                            <li data-contents="Deltascape04"><img src="\images\moviesearch\boss\bossimage028.jpg" alt="エクスデス">エクスデス</li>
+                            <li data-contents="Deltascape05"><img src="\images\moviesearch\boss\bossimage029.jpg" alt="ネオ・エクスデス">ネオ・エクスデス</li>
                         </ul>
                         </div>
 
@@ -114,26 +114,26 @@
                         <p class="left_menu_h1 sp_left_menu_h1"><img src="\images\moviesearch\sp_heavensward.jpg" alt=""></p>
                         <p class="left_menu_h2 heavensward"> <span data-activePart="TheSouloftheCreator" class="left_menu_h2_span">機工城アレキサンダー：天動編</span> </p>
                         <ul class="left_menu_ul">
-                            <li data-contents="TheSouloftheCreator01"><img src="\images\moviesearch\boss\bossimage021.png" alt="リファビッシャー">リファビッシャー</li>
-                            <li data-contents="TheSouloftheCreator02"><img src="\images\moviesearch\boss\bossimage022.png" alt="傭兵のレイムブリクス">傭兵のレイムブリクス</li>
-                            <li data-contents="TheSouloftheCreator03"><img src="\images\moviesearch\boss\bossimage023.png" alt="クルーズチェイサー">クルーズチェイサー</li>
-                            <li data-contents="TheSouloftheCreator04"><img src="\images\moviesearch\boss\bossimage024.png" alt="アレキサンダー・プライム">アレキサンダー・プライム</li>
+                            <li data-contents="TheSouloftheCreator01"><img src="\images\moviesearch\boss\bossimage021.jpg" alt="リファビッシャー">リファビッシャー</li>
+                            <li data-contents="TheSouloftheCreator02"><img src="\images\moviesearch\boss\bossimage022.jpg" alt="傭兵のレイムブリクス">傭兵のレイムブリクス</li>
+                            <li data-contents="TheSouloftheCreator03"><img src="\images\moviesearch\boss\bossimage023.jpg" alt="クルーズチェイサー">クルーズチェイサー</li>
+                            <li data-contents="TheSouloftheCreator04"><img src="\images\moviesearch\boss\bossimage024.jpg" alt="アレキサンダー・プライム">アレキサンダー・プライム</li>
                         </ul>
 
                         <p class="left_menu_h2 heavensward"> <span data-activePart="TheBurdenoftheSon" class="left_menu_h2_span">機工城アレキサンダー：律動編</span> </p>
                         <ul class="left_menu_ul">
-                            <li data-contents="TheBurdenoftheSon01"><img src="\images\moviesearch\boss\bossimage017.png" alt="奇才のラットフィンクス">奇才のラットフィンクス</li>
-                            <li data-contents="TheBurdenoftheSon02"><img src="\images\moviesearch\boss\bossimage018.png" alt="4体">4体</li>
-                            <li data-contents="TheBurdenoftheSon03"><img src="\images\moviesearch\boss\bossimage019.png" alt="万能のクイックシンクス">万能のクイックシンクス</li>
-                            <li data-contents="TheBurdenoftheSon04"><img src="\images\moviesearch\boss\bossimage020.png" alt="ブルートジャスティス">ブルートジャスティス</li>
+                            <li data-contents="TheBurdenoftheSon01"><img src="\images\moviesearch\boss\bossimage017.jpg" alt="奇才のラットフィンクス">奇才のラットフィンクス</li>
+                            <li data-contents="TheBurdenoftheSon02"><img src="\images\moviesearch\boss\bossimage018.jpg" alt="4体">4体</li>
+                            <li data-contents="TheBurdenoftheSon03"><img src="\images\moviesearch\boss\bossimage019.jpg" alt="万能のクイックシンクス">万能のクイックシンクス</li>
+                            <li data-contents="TheBurdenoftheSon04"><img src="\images\moviesearch\boss\bossimage020.jpg" alt="ブルートジャスティス">ブルートジャスティス</li>
                         </ul>
 
                         <p class="left_menu_h2 heavensward"> <span data-activePart="TheFistoftheFather" class="left_menu_h2_span">機工城アレキサンダー：起動編</span> </p>
                         <ul class="left_menu_ul">
-                            <li data-contents="TheFistoftheFather01"><img src="\images\moviesearch\boss\bossimage013.png" alt="オプレッサー">オプレッサー</li>
-                            <li data-contents="TheFistoftheFather02"><img src="\images\moviesearch\boss\bossimage014.png" alt="機工兵団">機工兵団</li>
-                            <li data-contents="TheFistoftheFather03"><img src="\images\moviesearch\boss\bossimage015.png" alt="リビングリキッド">リビングリキッド</li>
-                            <li data-contents="TheFistoftheFather04"><img src="\images\moviesearch\boss\bossimage016.png" alt="マニピュレーター">マニピュレーター</li>
+                            <li data-contents="TheFistoftheFather01"><img src="\images\moviesearch\boss\bossimage013.jpg" alt="オプレッサー">オプレッサー</li>
+                            <li data-contents="TheFistoftheFather02"><img src="\images\moviesearch\boss\bossimage014.jpg" alt="機工兵団">機工兵団</li>
+                            <li data-contents="TheFistoftheFather03"><img src="\images\moviesearch\boss\bossimage015.jpg" alt="リビングリキッド">リビングリキッド</li>
+                            <li data-contents="TheFistoftheFather04"><img src="\images\moviesearch\boss\bossimage016.jpg" alt="マニピュレーター">マニピュレーター</li>
                         </ul>
                         </div>
 
@@ -143,26 +143,26 @@
                         <p class="left_menu_h1 sp_left_menu_h1"><img src="\images\moviesearch\sp_arealmreborn.jpg" alt=""></p>
                         <p class="left_menu_h2 arealmreborn"> <span data-activePart="TheFinalCoilofBahamut" class="left_menu_h2_span">大迷宮バハムート：真成編</span> </p>
                         <ul class="left_menu_ul">
-                            <li data-contents="TheFinalCoilofBahamut01"><img src="\images\moviesearch\boss\bossimage009.png" alt="イムドゥグド">イムドゥグド</li>
-                            <li data-contents="TheFinalCoilofBahamut02"><img src="\images\moviesearch\boss\bossimage010.png" alt="カーリア">カーリア</li>
-                            <li data-contents="TheFinalCoilofBahamut03"><img src="\images\moviesearch\boss\bossimage011.png" alt="フェニックス">フェニックス</li>
-                            <li data-contents="TheFinalCoilofBahamut04"><img src="\images\moviesearch\boss\bossimage012.png" alt="バハムート・プライム">バハムート・プライム</li>
+                            <li data-contents="TheFinalCoilofBahamut01"><img src="\images\moviesearch\boss\bossimage009.jpg" alt="イムドゥグド">イムドゥグド</li>
+                            <li data-contents="TheFinalCoilofBahamut02"><img src="\images\moviesearch\boss\bossimage010.jpg" alt="カーリア">カーリア</li>
+                            <li data-contents="TheFinalCoilofBahamut03"><img src="\images\moviesearch\boss\bossimage011.jpg" alt="フェニックス">フェニックス</li>
+                            <li data-contents="TheFinalCoilofBahamut04"><img src="\images\moviesearch\boss\bossimage012.jpg" alt="バハムート・プライム">バハムート・プライム</li>
                         </ul>
 
                         <p class="left_menu_h2 arealmreborn"> <span data-activePart="TheSecondCoilofBahamut" class="left_menu_h2_span">大迷宮バハムート：侵攻編</span> </p>
                         <ul class="left_menu_ul">
-                            <li data-contents="TheSecondCoilofBahamut01"><img src="\images\moviesearch\boss\bossimage005.png" alt="ラフレシア">ラフレシア</li>
-                            <li data-contents="TheSecondCoilofBahamut02"><img src="\images\moviesearch\boss\bossimage006.png" alt="メリュジーヌ">メリュジーヌ</li>
-                            <li data-contents="TheSecondCoilofBahamut03"><img src="\images\moviesearch\boss\bossimage007.png" alt="アバター">アバター</li>
-                            <li data-contents="TheSecondCoilofBahamut04"><img src="\images\moviesearch\boss\bossimage008.png" alt="ネール・デウス・ダーナス">ネール・デウス・ダーナス</li>
+                            <li data-contents="TheSecondCoilofBahamut01"><img src="\images\moviesearch\boss\bossimage005.jpg" alt="ラフレシア">ラフレシア</li>
+                            <li data-contents="TheSecondCoilofBahamut02"><img src="\images\moviesearch\boss\bossimage006.jpg" alt="メリュジーヌ">メリュジーヌ</li>
+                            <li data-contents="TheSecondCoilofBahamut03"><img src="\images\moviesearch\boss\bossimage007.jpg" alt="アバター">アバター</li>
+                            <li data-contents="TheSecondCoilofBahamut04"><img src="\images\moviesearch\boss\bossimage008.jpg" alt="ネール・デウス・ダーナス">ネール・デウス・ダーナス</li>
                         </ul>
 
                         <p class="left_menu_h2 arealmreborn"> <span data-activePart="TheBindingCoilofBahamut" class="left_menu_h2_span">大迷宮バハムート：邂逅編</span> </p>
                         <ul class="left_menu_ul">
-                            <li data-contents="TheBindingCoilofBahamut01"><img src="\images\moviesearch\boss\bossimage001.png" alt="カドゥケウス">カドゥケウス</li>
-                            <li data-contents="TheBindingCoilofBahamut02"><img src="\images\moviesearch\boss\bossimage002.png" alt="防疫システム">防疫システム</li>
-                            <li data-contents="TheBindingCoilofBahamut03"><img src="\images\moviesearch\boss\bossimage003.png" alt="雑魚戦">雑魚戦</li>
-                            <li data-contents="TheBindingCoilofBahamut04"><img src="\images\moviesearch\boss\bossimage004.png" alt="ツインタニア">ツインタニア</li>
+                            <li data-contents="TheBindingCoilofBahamut01"><img src="\images\moviesearch\boss\bossimage001.jpg" alt="カドゥケウス">カドゥケウス</li>
+                            <li data-contents="TheBindingCoilofBahamut02"><img src="\images\moviesearch\boss\bossimage002.jpg" alt="防疫システム">防疫システム</li>
+                            <li data-contents="TheBindingCoilofBahamut03"><img src="\images\moviesearch\boss\bossimage003.jpg" alt="雑魚戦">雑魚戦</li>
+                            <li data-contents="TheBindingCoilofBahamut04"><img src="\images\moviesearch\boss\bossimage004.jpg" alt="ツインタニア">ツインタニア</li>
                         </ul>
                         </div>
 
@@ -192,122 +192,8 @@
                             <div class="movie_list_filter_ul_div filter_div">
                                 <li class="movie_list_filter_icon"><img src="\images\moviesearch\filtericonimage.png" alt=""></li>
                                 <li class="movie_list_filter_button"  id="filter_play_job">ジョブ:ALL</li>
-                                
-                                <!-- ジョブ　-->
-                                <div class="filter_play_job_menu">
-                                    <div class="filter_play_job_menu_div">
-                                        <div class="filter_play_job_menu_div_top">
-                                            <div class="filter_play_job_menu_div_tank">
-                                                <div class="filter_play_job_menu_div_titletank">                                                    
-                                                    タンク
-                                                </div>
-                                                <div class="filter_play_job_menu_div_icontank">
-                                                    <ul>
-                                                        <li data-stat="on" data-job="paladin" class="play_job_icon"><img src="\images\moviesearch\paladin.png" alt=""></li>
-                                                        <li data-stat="on" data-job="warrior" class="play_job_icon"><img src="\images\moviesearch\warrior.png" alt=""></li>
-                                                        <li data-stat="on" data-job="darkknight" class="play_job_icon"><img src="\images\moviesearch\darkknight.png" alt=""></li>
-                                                        <li data-stat="on" data-job="gunbreaker" class="play_job_icon"><img src="\images\moviesearch\gunbreaker.png" alt=""></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            
-                                            <div  class="filter_play_job_menu_div_healer">
-                                                <div class="filter_play_job_menu_div_titlehealer">
-                                                    ヒーラー
-                                                </div>
-                                                <div class="filter_play_job_menu_div_iconhealer">
-                                                    <ul>
-                                                        <li data-stat="on" data-job="whitemage" class="play_job_icon"><img src="\images\moviesearch\whitemage.png" alt=""></li>
-                                                        <li data-stat="on" data-job="scholar" class="play_job_icon"><img src="\images\moviesearch\scholar.png" alt=""></li>
-                                                        <li data-stat="on" data-job="astrologian" class="play_job_icon"><img src="\images\moviesearch\astrologian.png" alt=""></li>
-                                                        <li data-stat="on" data-job="sage" class="play_job_icon"><img src="\images\moviesearch\sage.png" alt=""></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="filter_play_job_menu_div_middle">
-                                            <div class="filter_play_job_menu_div_titledps">
-                                                アタッカー
-                                            </div>
-                                            <div class="filter_play_job_menu_div_dps">
-
-                                                <div class="filter_play_job_menu_div_melee">
-                                                    <div class="filter_play_job_menu_div_titlemelee">
-                                                        近接DPS
-                                                    </div>
-                                                    <div class="filter_play_job_menu_div_iconmelee">
-                                                        <ul>
-                                                            <li data-stat="on" data-job="dragoon" class="play_job_icon"><img src="\images\moviesearch\dragoon.png" alt=""></li>
-                                                            <li data-stat="on" data-job="monk" class="play_job_icon"><img src="\images\moviesearch\monk.png" alt=""></li>
-                                                            <li data-stat="on" data-job="ninja" class="play_job_icon"><img src="\images\moviesearch\ninja.png" alt=""></li>
-                                                            <li data-stat="on" data-job="samurai" class="play_job_icon"><img src="\images\moviesearch\samurai.png" alt=""></li>
-                                                            <li data-stat="on" data-job="reaper" class="play_job_icon"><img src="\images\moviesearch\reaper.png" alt=""></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>  
-
-                                                <div class="filter_play_job_menu_div_range">
-                                                    <div class="filter_play_job_menu_div_titlerange">
-                                                        レンジ
-                                                    </div>
-                                                    <div class="filter_play_job_menu_div_iconrange">
-                                                        <ul>
-                                                            <li data-stat="on" data-job="bard" class="play_job_icon"><img src="\images\moviesearch\bard.png" alt=""></li>
-                                                            <li data-stat="on" data-job="machinist" class="play_job_icon"><img src="\images\moviesearch\machinist.png" alt=""></li>
-                                                            <li data-stat="on" data-job="dancer" class="play_job_icon"><img src="\images\moviesearch\dancer.png" alt=""></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>                                               
-                                            </div>
-
-                                            <div class="filter_play_job_menu_div_bottom">
-                                                <div class="filter_play_job_menu_div_dps">
-                                                    <div class="filter_play_job_menu_div_caster">
-                                                        <div class="filter_play_job_menu_div_titlecaster">
-                                                            キャスター
-                                                        </div>
-                                                        <div class="filter_play_job_menu_div_iconcaster">
-                                                            <ul>
-                                                                <li data-stat="on" data-job="blackmage" class="play_job_icon"><img src="\images\moviesearch\blackmage.png" alt=""></li>
-                                                                <li data-stat="on" data-job="summoner" class="play_job_icon"><img src="\images\moviesearch\summoner.png" alt=""></li>
-                                                                <li data-stat="on" data-job="redmage" class="play_job_icon"><img src="\images\moviesearch\redmage.png" alt=""></li>
-                                                                <li data-stat="on" data-job="bluemage" class="play_job_icon"><img src="\images\moviesearch\bluemage.png" alt=""></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>                              
-                                                </div>
-
-                                                <div class="filter_play_job_menu_all_button">
-                                                    <div class="filter_play_job_menu_all_button_active">
-                                                        <div class="filter_play_job_menu_all_button_active_button">全て選択</div>
-                                                    </div>
-                                                    <div class="filter_play_job_menu_all_button_inactive">
-                                                        <div class="filter_play_job_menu_all_button_inactive_button">全て解除</div>
-                                                    </div>                                                    
-                                                </div>
-                                                <div class="filter_play_job_menu_enter">
-                                                    <div class="filter_play_job_menu_enter_button">
-                                                        <div class="enter_text">決定</div>
-                                                    </div>                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <li class="movie_list_filter_button" id="filter_bool_vc">VC:ALL</li>
-                                <li class="movie_list_filter_button"  id="filter_string_guide">解説:ALL</li>
-                                <div class="filter_string_guide_menu">
-                                    <ul>
-                                        <li data-value="NONE" id="guide_none">ALL</li>
-                                        <li data-value="yukkuri" id="guide_yukkuri">　ゆっくり</li>
-                                        <li data-value="jigoe" id="guide_jigoe">　本人解説</li>
-                                        <li data-value="jimaku" id="guide_jimaku">　字幕のみ</li>
-                                        <li data-value="nonevoice" id="guide_nonevoice">　解説なし</li>
-                                    </ul>
-                                </div>
+                                <li class="movie_list_filter_button" id="filter_bool_vc">VC：ALL</li>
+                                <li class="movie_list_filter_button"  id="filter_string_guide">解説:ALL</li>                                
                                 <li class="movie_list_filter_button"  id="filter_bool_act">DPS表示:ALL</li>
                                 <li class="movie_list_filter_button"  id="filter_bool_clear">クリアー:ALL</li>
                                 <li class="movie_list_filter_button"  id="filter_language">言語:ALL</li>
@@ -325,6 +211,119 @@
                     <div class="movie_list">                    
 
                     </div>
+
+
+                    {{-- 個別プルダウン --}}
+                     <!-- ジョブ　-->
+                    <div class="filter_play_job_menu">
+                        <div class="filter_play_job_menu_div">
+                            <div class="filter_play_job_menu_div_top">
+                                <div class="filter_play_job_menu_div_tank">
+                                    <div class="filter_play_job_menu_div_titletank">                                                    
+                                        タンク
+                                    </div>
+                                    <div class="filter_play_job_menu_div_icontank">
+                                        <ul>
+                                            <li data-stat="on" data-job="paladin" class="play_job_icon"><img class="filter_play_job_menu_img" src="\images\moviesearch\paladin.png" alt=""></li>
+                                            <li data-stat="on" data-job="warrior" class="play_job_icon"><img class="filter_play_job_menu_img" src="\images\moviesearch\warrior.png" alt=""></li>
+                                            <li data-stat="on" data-job="darkknight" class="play_job_icon"><img class="filter_play_job_menu_img" src="\images\moviesearch\darkknight.png" alt=""></li>
+                                            <li data-stat="on" data-job="gunbreaker" class="play_job_icon"><img class="filter_play_job_menu_img" src="\images\moviesearch\gunbreaker.png" alt=""></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div  class="filter_play_job_menu_div_healer">
+                                    <div class="filter_play_job_menu_div_titlehealer">
+                                        ヒーラー
+                                    </div>
+                                    <div class="filter_play_job_menu_div_iconhealer">
+                                        <ul>
+                                            <li data-stat="on" data-job="whitemage" class="play_job_icon"><img class="filter_play_job_menu_img" src="\images\moviesearch\whitemage.png" alt=""></li>
+                                            <li data-stat="on" data-job="scholar" class="play_job_icon"><img class="filter_play_job_menu_img" src="\images\moviesearch\scholar.png" alt=""></li>
+                                            <li data-stat="on" data-job="astrologian" class="play_job_icon"><img class="filter_play_job_menu_img" src="\images\moviesearch\astrologian.png" alt=""></li>
+                                            <li data-stat="on" data-job="sage" class="play_job_icon"><img class="filter_play_job_menu_img" src="\images\moviesearch\sage.png" alt=""></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter_play_job_menu_div_middle">
+                                <div class="filter_play_job_menu_div_titledps">
+                                    アタッカー
+                                </div>
+                                <div class="filter_play_job_menu_div_dps">
+                                    <div class="filter_play_job_menu_div_melee">
+                                        <div class="filter_play_job_menu_div_titlemelee">
+                                            近接DPS
+                                        </div>
+                                        <div class="filter_play_job_menu_div_iconmelee">
+                                            <ul>
+                                                <li data-stat="on" data-job="dragoon" class="play_job_icon"><img class="filter_play_job_menu_img" src="\images\moviesearch\dragoon.png" alt=""></li>
+                                                <li data-stat="on" data-job="monk" class="play_job_icon"><img class="filter_play_job_menu_img" src="\images\moviesearch\monk.png" alt=""></li>
+                                                <li data-stat="on" data-job="ninja" class="play_job_icon"><img class="filter_play_job_menu_img" src="\images\moviesearch\ninja.png" alt=""></li>
+                                                <li data-stat="on" data-job="samurai" class="play_job_icon"><img class="filter_play_job_menu_img" src="\images\moviesearch\samurai.png" alt=""></li>
+                                                <li data-stat="on" data-job="reaper" class="play_job_icon"><img class="filter_play_job_menu_img" src="\images\moviesearch\reaper.png" alt=""></li>
+                                            </ul>
+                                        </div>
+                                    </div>  
+                                    <div class="filter_play_job_menu_div_range">
+                                        <div class="filter_play_job_menu_div_titlerange">
+                                            レンジ
+                                        </div>
+                                        <div class="filter_play_job_menu_div_iconrange">
+                                            <ul>
+                                                <li data-stat="on" data-job="bard" class="play_job_icon"><img class="filter_play_job_menu_img" src="\images\moviesearch\bard.png" alt=""></li>
+                                                <li data-stat="on" data-job="machinist" class="play_job_icon"><img class="filter_play_job_menu_img" src="\images\moviesearch\machinist.png" alt=""></li>
+                                                <li data-stat="on" data-job="dancer" class="play_job_icon"><img class="filter_play_job_menu_img" src="\images\moviesearch\dancer.png" alt=""></li>
+                                            </ul>
+                                        </div>
+                                    </div>                                               
+                                </div>
+                                <div class="filter_play_job_menu_div_bottom">
+                                    <div class="filter_play_job_menu_div_dps">
+                                        <div class="filter_play_job_menu_div_caster">
+                                            <div class="filter_play_job_menu_div_titlecaster">
+                                                キャスター
+                                            </div>
+                                            <div class="filter_play_job_menu_div_iconcaster">
+                                                <ul>
+                                                    <li data-stat="on" data-job="blackmage" class="play_job_icon"><img class="filter_play_job_menu_img" src="\images\moviesearch\blackmage.png" alt=""></li>
+                                                    <li data-stat="on" data-job="summoner" class="play_job_icon"><img class="filter_play_job_menu_img" src="\images\moviesearch\summoner.png" alt=""></li>
+                                                    <li data-stat="on" data-job="redmage" class="play_job_icon"><img class="filter_play_job_menu_img" src="\images\moviesearch\redmage.png" alt=""></li>
+                                                    <li data-stat="on" data-job="bluemage" class="play_job_icon"><img class="filter_play_job_menu_img" src="\images\moviesearch\bluemage.png" alt=""></li>
+                                                </ul>
+                                            </div>
+                                        </div>                              
+                                    </div>
+                                    <div class="filter_play_job_menu_all_button">
+                                        <div class="filter_play_job_menu_all_button_active">
+                                            <div class="filter_play_job_menu_all_button_active_button">全て選択</div>
+                                        </div>
+                                        <div class="filter_play_job_menu_all_button_inactive">
+                                            <div class="filter_play_job_menu_all_button_inactive_button">全て解除</div>
+                                        </div>                                                    
+                                    </div>
+                                    <div class="filter_play_job_menu_enter">
+                                        <div class="filter_play_job_menu_enter_button">
+                                            <div class="enter_text">決定</div>
+                                        </div>                                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- 解説 --}}
+                    <div class="filter_string_guide_menu">
+                        <ul>
+                            <li data-value="NONE" id="guide_none">ALL</li>
+                            <li data-value="yukkuri" id="guide_yukkuri">　ゆっくり</li>
+                            <li data-value="jigoe" id="guide_jigoe">　本人解説</li>
+                            <li data-value="jimaku" id="guide_jimaku">　字幕のみ</li>
+                            <li data-value="nonevoice" id="guide_nonevoice">　解説なし</li>
+                        </ul>
+                    </div>
+
+
+                    
 
             </div>
         </div>

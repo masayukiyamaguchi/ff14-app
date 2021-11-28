@@ -565,6 +565,9 @@
         text-decoration: none;
     }
 
+    #pop{
+        display: none;
+    }
 
 
 

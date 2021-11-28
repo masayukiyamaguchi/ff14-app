@@ -11,19 +11,20 @@
     
     <div class="left_menu_favorite">
         <div id="favoritelist">
-            <form action="" method="post">
+            <form action="" method="POST">
                 @csrf
                 <input type="hidden" name="favorite_list" value="">
             </form>                            
-            <a href="/moviesearch/favorite/">
+            <a href="/moviesearch/favorite">
                 <div class="left_menu_favorite">                        
                     <div class="left_menu_favorite_text" id="left_menu_favorite">
                         <i class="material-icons">star_rate</i>
                         <div>お気に入りリスト</div>
                     </div>                        
                 </div>
-            </a>                        
+            </a>
         </div>
     </div>
+
 
 </div>

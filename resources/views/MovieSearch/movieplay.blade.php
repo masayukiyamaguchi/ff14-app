@@ -37,12 +37,14 @@
 
                     <div class="mainContents_container_left_contents">
                         
+                        
                         <div  class="main_movie_iflame_wrap">
                         <div class="main_movie_iflame">
                             <iframe 
+                                id="main_movie_iflame_id"
                                 width="1280" 
                                 height="720" 
-                                src="https://www.youtube.com/embed/{{ $id }}?autoplay=1"
+                                src="https://www.youtube.com/embed/{{ $id }}?enablejsapi=1&autoplay=1"
                                 title="YouTube video player" 
                                 frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -50,6 +52,9 @@
                             </iframe>
                         </div>
                         </div>
+
+                        {{-- ヌルディヴ --}}
+                        <div id="iflame_null_div">↓スワイプでTOPへ</div>
 
                         <div class="main_movie_detail">
 

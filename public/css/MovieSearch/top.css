@@ -254,8 +254,13 @@
 }
 
 
+.filter_play_job_menu{
+    position: fixed;
+    top:80px;
+    left: 350px;
+    width: 80vw;
 
-
+}
 
 
 .filter_play_job_menu > div
@@ -293,7 +298,6 @@
 {
     display: flex;
     list-style: none;
-    padding-top: 10px;
     padding-left: 10px;
 }
 
@@ -320,7 +324,6 @@
 {
     display: flex;
     list-style: none;
-    padding-top: 10px;
     padding-left: 10px;
 }
 
@@ -359,7 +362,6 @@
 {
     display: flex;
     list-style: none;
-    padding-top: 10px;
     padding-left: 0px;
 }
 
@@ -394,7 +396,6 @@
 {
     display: flex;
     list-style: none;
-    padding-top: 10px;
     padding-left: 0px;
 }
 
@@ -429,7 +430,6 @@
 {
     display: flex;
     list-style: none;
-    padding-top: 10px;
     padding-left: 0px;
 }
 
@@ -438,6 +438,15 @@
     width: 40px;
     margin-top: -5px;
 }
+
+
+.filter_string_guide_menu{
+    position: fixed;
+    top:80px;
+    left: 610px;
+    width: 80vw;
+}
+
 
 .filter_string_guide_menu ul
 {
@@ -737,11 +746,7 @@
 
     .movie_list_sort_icon{
         padding-left: 20px;
-    }
-
-
-
-
+    }    
 
 
     .filter_play_job_menu > div
@@ -750,12 +755,23 @@
     }
 
     /*ジョブメニューの背景*/
+    .filter_play_job_menu{
+        position: fixed;
+        top:48px;
+        left: 80px;
+        width: 80vw;    
+    }
+
+
     .filter_play_job_menu_div
     {
         list-style: none;
-        position: absolute;
-        top: 48px;
-        left: 55px;
+        
+        top: 0;
+        top: 46px;
+        left: 70px;
+        z-index: 3;
+        width: 100vw;
 
         padding: 6px 10px 6px 10px;
         margin-left: -90px;
@@ -932,13 +948,24 @@
         margin-top: -5px;
     }
 
+    .filter_string_guide_menu{
+        position: fixed;
+        top: 0px;
+        left: 50px;
+        z-index: 3;
+        width: 100vw;
+    }
+
+
+
+
     .filter_string_guide_menu ul
     {
         display: none;
         list-style: none;
         position: absolute;
         top: 70px;
-        left: 170px;
+        left: 140px;
         
         padding: 6px 10px 6px 10px;
         margin-left: -90px;
@@ -950,8 +977,15 @@
 
     .filter_string_guide_menu li
     {
-        padding: 3px 50px 3px 3px;
+        padding: 3px 70px 3px 23px;
+        border-bottom: 1px solid;
+        border-color: rgb(163, 163, 163);
+        border-right: transparent;
+        border-left: transparent;
     }
+    
+
+
 
     .filter_play_job_menu_all_button
     {
@@ -1225,6 +1259,12 @@
         text-align: center;
         margin-top: 50px;
     }
+
+    #pop{
+        display: none;
+    }
+
+
 
     
 

@@ -114,7 +114,7 @@ function AjaxMenuClick()
     })
     // Ajaxリクエスト失敗時の処理
     .fail(function(data) {
-        alert('Ajaxリクエスト失敗');
+        //alert('Ajaxリクエスト失敗');
     });
 }
 

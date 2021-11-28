@@ -125,6 +125,10 @@ a{
         text-align: center;
     }
 
+    #pop{
+        display: none;
+    }
+
 
 
 }/*ウィンドウ幅が最大479pxまでの場合に適用*/

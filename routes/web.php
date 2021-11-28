@@ -38,10 +38,10 @@ Route::post('moviesearch/postcontents/create',"MovieSearch\MoviePostController@I
 Route::get('/moviesearch/dataupdataaccess',"MovieSearch\MoviePostController@DataUpdateBach");
 
 //お気に入り画面
-Route::get('/moviesearch/favorite/',"MovieSearch\FavoriteController@redirect");//転送
-Route::post('/moviesearch/favorite/',"MovieSearch\FavoriteController@index");
+Route::get('/moviesearch/favorite',"MovieSearch\FavoriteController@redirect");//転送
+Route::post('/moviesearch/favorite',"MovieSearch\FavoriteController@index");
 Route::post('/moviesearch/favoriteajax',"MovieSearch\FavoriteController@ajax");
-Route::get('/ms/{movie_id}/',"MovieSearch\FavoriteController@shorturl");
+Route::get('/ms/{movie_id}',"MovieSearch\FavoriteController@shorturl");
 
 //チャンネル画面
 Route::get('/moviesearch/channnel/{id}',"MovieSearch\IndexController@channel");

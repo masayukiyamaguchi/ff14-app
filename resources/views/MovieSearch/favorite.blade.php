@@ -49,7 +49,7 @@
                     <div id="favoritelist">
                         @if( $all_datas["formController"] == "index")
                         <ul class="left_menu_ul">
-                            <a href="/moviesearch/favorite/">
+                            <a href="/moviesearch/favorite">
                                 <li id="list_fix">
                                     <form action="" method="post">
                                         @csrf

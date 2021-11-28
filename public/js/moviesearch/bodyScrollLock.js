@@ -140,7 +140,8 @@
             scrollX = _window.scrollX,
             innerHeight = _window.innerHeight;
 
-        document.body.style.position = 'fixed';
+        // ここを閉じました。
+        //document.body.style.position = 'fixed';
         document.body.style.top = -scrollY + 'px';
         document.body.style.left = -scrollX + 'px';
 
