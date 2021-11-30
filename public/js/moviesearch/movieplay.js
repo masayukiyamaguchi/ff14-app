@@ -280,7 +280,6 @@ $(function() {
 
     //タッチスタート
     function start_check(event){
-        console.log("touchstart");
         /** 現在の座標取得 */
 		posiY = getY(event);
 		posiX = getX(event); 
@@ -293,7 +292,6 @@ $(function() {
     };
 
     function move_check(event){
-        console.log("touchmove");
         if (posiX - getX(event) > 70) // 70px以上移動でスワイプと判断
 		{
 			/** 右→左と判断 */
@@ -318,10 +316,9 @@ $(function() {
 
     function end_check(event){
 
-        console.log("touchend ");
-        
-        //動画の再生・停止           
+        //動画の再生・停止
         if(playnow){
+            //$(".ytp-fullscreen-button").trigger("click");
             videoControl("pauseVideo"); 
             playnow = false;
         }else{
@@ -356,12 +353,7 @@ $(function() {
 			
 		}
 
-    };
-
-
-
-
-    
+    };    
 
     //クリックイベントで動画を操作
     //再生
@@ -370,9 +362,7 @@ $(function() {
         $playerWindow.postMessage('{"event":"command","func":"'+action+'","args":""}', '*');
     }
 
-    
 
-  
     
 
 

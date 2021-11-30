@@ -46,7 +46,7 @@
                                 height="720" 
                                 src="https://www.youtube.com/embed/{{ $id }}?enablejsapi=1&autoplay=1"
                                 title="YouTube video player" 
-                                frameborder="0" 
+                                frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                 allowfullscreen>
                             </iframe>
@@ -55,6 +55,7 @@
 
                         {{-- ヌルディヴ --}}
                         <div id="iflame_null_div">↓スワイプでTOPへ</div>
+                        <div class="iflame_fullscreen_guide">動画右下<br>□から<br>ﾌﾙｽｸﾘｰﾝ<br>推奨です</div>
 
                         <div class="main_movie_detail">
 

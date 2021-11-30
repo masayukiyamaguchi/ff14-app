@@ -107,7 +107,13 @@ class MoviePostController extends Controller
         $channel_name = $datas[0]["channelTitle"];
         $samneil_img = $datas[0]["thumbnails"][$samneil_img_size]["url"];
         $channel_img = $channeldatas[0]["thumbnails"][$channel_img_size]["url"];
-        $channel_header_img = $channeldatas[2]["image"]["bannerExternalUrl"];
+
+        if(isset($channeldatas[2]["image"]["bannerExternalUrl"])){
+            $channel_header_img = $channeldatas[2]["image"]["bannerExternalUrl"];
+        }else{
+            $channel_header_img = "https://ff14-app.com/images/moviesearch/nonedot.jpg";            
+        }
+        
 
         $member_num = $channeldatas[1]["subscriberCount"];
         $channel_id = $datas[0]["channelId"];

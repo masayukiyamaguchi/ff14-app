@@ -42,14 +42,14 @@
                                         <img src="\images\Top\template3.png" alt="">
                                     </a>
                                     <h2>キャラクターカードジェネレーター</h2>
-                                    <p>キャラクターカーを生成できます！</p>
+                                    <p>スクリーンショットを使ってオリジナルのキャラクターカードを制作できます！</p>
                                 </li>
                                 <li class="contents_card_li">
                                     <a href="/moviesearch/">
-                                        <img src="\images\Top\nowcreating.jpg" alt="">
+                                        <img src="\images\Top\moviesearchsamneil.jpg" alt="">
                                     </a>
                                     <h2>攻略動画検索</h2>
-                                    <p>現在制作中！</p>
+                                    <p>レイド・討伐討滅戦などの攻略動画をFF14に特化して検索できます！</p>
                                 </li>
                                 <li class="contents_card_li">
                                     <a href="/">
