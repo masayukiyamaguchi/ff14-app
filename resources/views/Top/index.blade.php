@@ -49,7 +49,7 @@
                                         <img src="\images\Top\moviesearchsamneil.jpg" alt="">
                                     </a>
                                     <h2>攻略動画検索</h2>
-                                    <p>レイド・討伐討滅戦などの攻略動画をFF14に特化して検索できます！</p>
+                                    <p>レイド・討伐討滅戦などの攻略動画をFF14に特化して検索できます！※現在、動画登録作業中です</p>
                                 </li>
                                 <li class="contents_card_li">
                                     <a href="/">
