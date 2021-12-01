@@ -550,7 +550,6 @@ $(function() {
         'z-index': '1',
         'top': -scrollPosi
       });
-      console.log("tukeru");
     }
     
     //以下、body固定を解除する関数
@@ -562,7 +561,6 @@ $(function() {
       });
       //scroll位置を調整
       $('html, body').scrollTop(scrollPosi);
-      console.log("kaizyo");
     }
 
 
@@ -1350,14 +1348,14 @@ $(function() {
         } else {
             $('.globalMenuSp').removeClass('active');
             bodyScrollLock.clearAllBodyScrollLocks();
-        }       
-
-
+        }
     });
 
 
     $(".left_menu_ul li").click(function(){
-        $('.hamburger').trigger("click");
+        $('.hamburger').toggleClass('active');
+        $('.globalMenuSp').removeClass('active');
+        bodyScrollLock.clearAllBodyScrollLocks();
     });
 
 
