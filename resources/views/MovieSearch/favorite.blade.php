@@ -24,7 +24,8 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
 
-    <title>FF14-APP|FinalFantasyXIVのアプリサイト</title>
+    @component('components.meta.moviesearch.moviesearch')
+    @endcomponent
 
 </head>
 

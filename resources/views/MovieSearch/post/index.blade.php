@@ -181,6 +181,7 @@
 
                                     <div class="contents_input_version">
                                         <select name="version" id="version">
+                                            <option value="endwalker">暁月</option>
                                             <option value="shadowbringers">漆黒</option>
                                             <option value="stormblood">紅蓮</option>
                                             <option value="heavensward">蒼天</option>
@@ -190,6 +191,7 @@
 
                                     <div class="contents_input_contentsname">
                                         <select name="contentsname" id="contentsname">
+                                            <option value="EndwalkerExtreme" class="endwalker displaynone">極討滅戦</option>
                                             <option value="EdensPromise" class="shadowbringers displaynone">再生編</option>
                                             <option value="EdensVerse" class="shadowbringers displaynone">共鳴編</option>
                                             <option value="EdensGate" class="shadowbringers displaynone">覚醒編</option>
@@ -207,6 +209,8 @@
 
                                     <div class="contents_input_contents">
                                         <select name="contents" id="contents">
+                                            <option value="EndwalkerExtreme01" class="EndwalkerExtreme displaynone">????</option>
+                                            <option value="EndwalkerExtreme02" class="EndwalkerExtreme displaynone">????</option>
                                             <option value="EdensPromise01" class="EdensPromise displaynone">1層</option>
                                             <option value="EdensPromise02" class="EdensPromise displaynone">2層</option>
                                             <option value="EdensPromise03" class="EdensPromise displaynone">3層</option>

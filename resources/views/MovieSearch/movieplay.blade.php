@@ -18,7 +18,8 @@
 
 
 
-    <title>FF14-APP|FinalFantasyXIVのアプリサイト</title>
+    @component('components.meta.moviesearch.moviesearch')
+    @endcomponent
 
 </head>
 

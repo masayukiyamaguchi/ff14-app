@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="/css/mainTopHeader.css">
     <link rel="stylesheet" href="/css/mainTopFooter.css">
 
-    <title>FF14-APP|FinalFantasyXIVのアプリサイト</title>
+    @component('components.meta.top.topmeta')
+    @endcomponent
+    
 
 </head>
 

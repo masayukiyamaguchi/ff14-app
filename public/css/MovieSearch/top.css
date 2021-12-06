@@ -95,6 +95,11 @@
 
 }
 
+.endwalker
+{
+    display: none;
+}
+
 .shadowbringers
 {
     display: none;
@@ -1190,6 +1195,11 @@
         height: 50px;
         position: relative;
 
+    }
+
+    .endwalker
+    {
+        display: none;
     }
 
     .shadowbringers

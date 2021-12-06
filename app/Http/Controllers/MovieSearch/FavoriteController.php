@@ -66,8 +66,8 @@ class FavoriteController extends Controller
         $contents_datas = array();
 
         //ここ追加して！！ここ追加して！！ここ追加して！！ここ追加して！！ここ追加して！！ここ追加して！！
-        $contentsDatas = ["EdensPromise01","EdensPromise02","EdensPromise03","EdensPromise04","EdensPromise05","EdensPromise06","EdensVerse01","EdensVerse02","EdensVerse03","EdensVerse04","EdensGate01","EdensGate02","EdensGate03","EdensGate04","Alphascape01","Alphascape02","Alphascape03","Alphascape04","Alphascape05","Alphascape06","Sigmascape01","Sigmascape02","Sigmascape03","Sigmascape04","Sigmascape05","Sigmascape06","Deltascape01","Deltascape02","Deltascape03","Deltascape04","Deltascape05","Deltascape06","TheSouloftheCreator01","TheSouloftheCreator02","TheSouloftheCreator03","TheSouloftheCreator04","TheBurdenoftheSon01","TheBurdenoftheSon02","TheBurdenoftheSon03","TheBurdenoftheSon04","TheFistoftheFather01","TheFistoftheFather02","TheFistoftheFather03","TheFistoftheFather04","TheFinalCoilofBahamut01","TheFinalCoilofBahamut02","TheFinalCoilofBahamut03","TheFinalCoilofBahamut04","TheSecondCoilofBahamut01","TheSecondCoilofBahamut02","TheSecondCoilofBahamut03","TheSecondCoilofBahamut04","TheBindingCoilofBahamut01","TheBindingCoilofBahamut02","TheBindingCoilofBahamut03","TheBindingCoilofBahamut04"];
-        $contentsDatas_jp = ["EdensPromise01"=>"希望の園エデン：再生編1層","EdensPromise02"=>"希望の園エデン：再生編2層","EdensPromise03"=>"希望の園エデン：再生編3層","EdensPromise04"=>"希望の園エデン：再生編4層前半","EdensPromise05"=>"希望の園エデン：再生編4層後半","EdensPromise06"=>"希望の園エデン：再生編4層前後半","EdensVerse01"=>"希望の園エデン：共鳴編1層","EdensVerse02"=>"希望の園エデン：共鳴編2層","EdensVerse03"=>"希望の園エデン：共鳴編3層","EdensVerse04"=>"希望の園エデン：共鳴編4層","EdensGate01"=>"希望の園エデン：覚醒編1層","EdensGate02"=>"希望の園エデン：覚醒編2層","EdensGate03"=>"希望の園エデン：覚醒編3層","EdensGate04"=>"希望の園エデン：覚醒編4層","Alphascape01"=>"次元の狭間オメガ：アルファ編1層","Alphascape02"=>"次元の狭間オメガ：アルファ編2層","Alphascape03"=>"次元の狭間オメガ：アルファ編3層","Alphascape04"=>"次元の狭間オメガ：アルファ編4層前半","Alphascape05"=>"次元の狭間オメガ：アルファ編4層後半","Alphascape06"=>"次元の狭間オメガ：アルファ編4層前後半","Sigmascape01"=>"次元の狭間オメガ：シグマ編1層","Sigmascape02"=>"次元の狭間オメガ：シグマ編2層","Sigmascape03"=>"次元の狭間オメガ：シグマ編3層","Sigmascape04"=>"次元の狭間オメガ：シグマ編4層前半","Sigmascape05"=>"次元の狭間オメガ：シグマ編4層後半","Sigmascape06"=>"次元の狭間オメガ：シグマ編4層前後半","Deltascape01"=>"次元の狭間オメガ：デルタ編1層","Deltascape02"=>"次元の狭間オメガ：デルタ編2層","Deltascape03"=>"次元の狭間オメガ：デルタ編3層","Deltascape04"=>"次元の狭間オメガ：デルタ編4層前半","Deltascape05"=>"次元の狭間オメガ：デルタ編4層後半","Deltascape06"=>"次元の狭間オメガ：デルタ編4層前後半","TheSouloftheCreator01"=>"機工城アレキサンダー：天動編1層","TheSouloftheCreator02"=>"機工城アレキサンダー：天動編2層","TheSouloftheCreator03"=>"機工城アレキサンダー：天動編3層","TheSouloftheCreator04"=>"機工城アレキサンダー：天動編4層","TheBurdenoftheSon01"=>"機工城アレキサンダー：律動編1層","TheBurdenoftheSon02"=>"機工城アレキサンダー：律動編2層","TheBurdenoftheSon03"=>"機工城アレキサンダー：律動編3層","TheBurdenoftheSon04"=>"機工城アレキサンダー：律動編4層","TheFistoftheFather01"=>"機工城アレキサンダー：起動編1層","TheFistoftheFather02"=>"機工城アレキサンダー：起動編2層","TheFistoftheFather03"=>"機工城アレキサンダー：起動編3層","TheFistoftheFather04"=>"機工城アレキサンダー：起動編4層","TheFinalCoilofBahamut01"=>"大迷宮バハムート：真成編1層","TheFinalCoilofBahamut02"=>"大迷宮バハムート：真成編2層","TheFinalCoilofBahamut03"=>"大迷宮バハムート：真成編3層","TheFinalCoilofBahamut04"=>"大迷宮バハムート：真成編4層","TheSecondCoilofBahamut01"=>"大迷宮バハムート：侵攻編1層","TheSecondCoilofBahamut02"=>"大迷宮バハムート：侵攻編2層","TheSecondCoilofBahamut03"=>"大迷宮バハムート：侵攻編3層","TheSecondCoilofBahamut04"=>"大迷宮バハムート：侵攻編4層","TheBindingCoilofBahamut01"=>"大迷宮バハムート：邂逅編1層","TheBindingCoilofBahamut02"=>"大迷宮バハムート：邂逅編2層","TheBindingCoilofBahamut03"=>"大迷宮バハムート：邂逅編3層","TheBindingCoilofBahamut04"=>"大迷宮バハムート：邂逅編4層"];
+        $contentsDatas = ["EndwalkerExtreme01","EndwalkerExtreme02","EdensPromise01","EdensPromise02","EdensPromise03","EdensPromise04","EdensPromise05","EdensPromise06","EdensVerse01","EdensVerse02","EdensVerse03","EdensVerse04","EdensGate01","EdensGate02","EdensGate03","EdensGate04","Alphascape01","Alphascape02","Alphascape03","Alphascape04","Alphascape05","Alphascape06","Sigmascape01","Sigmascape02","Sigmascape03","Sigmascape04","Sigmascape05","Sigmascape06","Deltascape01","Deltascape02","Deltascape03","Deltascape04","Deltascape05","Deltascape06","TheSouloftheCreator01","TheSouloftheCreator02","TheSouloftheCreator03","TheSouloftheCreator04","TheBurdenoftheSon01","TheBurdenoftheSon02","TheBurdenoftheSon03","TheBurdenoftheSon04","TheFistoftheFather01","TheFistoftheFather02","TheFistoftheFather03","TheFistoftheFather04","TheFinalCoilofBahamut01","TheFinalCoilofBahamut02","TheFinalCoilofBahamut03","TheFinalCoilofBahamut04","TheSecondCoilofBahamut01","TheSecondCoilofBahamut02","TheSecondCoilofBahamut03","TheSecondCoilofBahamut04","TheBindingCoilofBahamut01","TheBindingCoilofBahamut02","TheBindingCoilofBahamut03","TheBindingCoilofBahamut04"];
+        $contentsDatas_jp = ["EndwalkerExtreme01"=>"????","EndwalkerExtreme02"=>"????","EdensPromise01"=>"希望の園エデン：再生編1層","EdensPromise02"=>"希望の園エデン：再生編2層","EdensPromise03"=>"希望の園エデン：再生編3層","EdensPromise04"=>"希望の園エデン：再生編4層前半","EdensPromise05"=>"希望の園エデン：再生編4層後半","EdensPromise06"=>"希望の園エデン：再生編4層前後半","EdensVerse01"=>"希望の園エデン：共鳴編1層","EdensVerse02"=>"希望の園エデン：共鳴編2層","EdensVerse03"=>"希望の園エデン：共鳴編3層","EdensVerse04"=>"希望の園エデン：共鳴編4層","EdensGate01"=>"希望の園エデン：覚醒編1層","EdensGate02"=>"希望の園エデン：覚醒編2層","EdensGate03"=>"希望の園エデン：覚醒編3層","EdensGate04"=>"希望の園エデン：覚醒編4層","Alphascape01"=>"次元の狭間オメガ：アルファ編1層","Alphascape02"=>"次元の狭間オメガ：アルファ編2層","Alphascape03"=>"次元の狭間オメガ：アルファ編3層","Alphascape04"=>"次元の狭間オメガ：アルファ編4層前半","Alphascape05"=>"次元の狭間オメガ：アルファ編4層後半","Alphascape06"=>"次元の狭間オメガ：アルファ編4層前後半","Sigmascape01"=>"次元の狭間オメガ：シグマ編1層","Sigmascape02"=>"次元の狭間オメガ：シグマ編2層","Sigmascape03"=>"次元の狭間オメガ：シグマ編3層","Sigmascape04"=>"次元の狭間オメガ：シグマ編4層前半","Sigmascape05"=>"次元の狭間オメガ：シグマ編4層後半","Sigmascape06"=>"次元の狭間オメガ：シグマ編4層前後半","Deltascape01"=>"次元の狭間オメガ：デルタ編1層","Deltascape02"=>"次元の狭間オメガ：デルタ編2層","Deltascape03"=>"次元の狭間オメガ：デルタ編3層","Deltascape04"=>"次元の狭間オメガ：デルタ編4層前半","Deltascape05"=>"次元の狭間オメガ：デルタ編4層後半","Deltascape06"=>"次元の狭間オメガ：デルタ編4層前後半","TheSouloftheCreator01"=>"機工城アレキサンダー：天動編1層","TheSouloftheCreator02"=>"機工城アレキサンダー：天動編2層","TheSouloftheCreator03"=>"機工城アレキサンダー：天動編3層","TheSouloftheCreator04"=>"機工城アレキサンダー：天動編4層","TheBurdenoftheSon01"=>"機工城アレキサンダー：律動編1層","TheBurdenoftheSon02"=>"機工城アレキサンダー：律動編2層","TheBurdenoftheSon03"=>"機工城アレキサンダー：律動編3層","TheBurdenoftheSon04"=>"機工城アレキサンダー：律動編4層","TheFistoftheFather01"=>"機工城アレキサンダー：起動編1層","TheFistoftheFather02"=>"機工城アレキサンダー：起動編2層","TheFistoftheFather03"=>"機工城アレキサンダー：起動編3層","TheFistoftheFather04"=>"機工城アレキサンダー：起動編4層","TheFinalCoilofBahamut01"=>"大迷宮バハムート：真成編1層","TheFinalCoilofBahamut02"=>"大迷宮バハムート：真成編2層","TheFinalCoilofBahamut03"=>"大迷宮バハムート：真成編3層","TheFinalCoilofBahamut04"=>"大迷宮バハムート：真成編4層","TheSecondCoilofBahamut01"=>"大迷宮バハムート：侵攻編1層","TheSecondCoilofBahamut02"=>"大迷宮バハムート：侵攻編2層","TheSecondCoilofBahamut03"=>"大迷宮バハムート：侵攻編3層","TheSecondCoilofBahamut04"=>"大迷宮バハムート：侵攻編4層","TheBindingCoilofBahamut01"=>"大迷宮バハムート：邂逅編1層","TheBindingCoilofBahamut02"=>"大迷宮バハムート：邂逅編2層","TheBindingCoilofBahamut03"=>"大迷宮バハムート：邂逅編3層","TheBindingCoilofBahamut04"=>"大迷宮バハムート：邂逅編4層"];
 
 
         //お気に入りのコンテンツの配列を抽出
@@ -197,70 +197,6 @@ class FavoriteController extends Controller
 
         $datas -> save();
 
-        /*
-        $dataContents = $jsonRequest["dataContents"];
-        
-        //ソート
-        $sort_view_count = $jsonRequest["sort_view_count"];
-        $sort_published_at = $jsonRequest["sort_published_at"];
-
-        if($sort_view_count != "NONE")
-        {
-            $orderBy = "view_count";
-            $orderBy_val = $sort_view_count;
-        }else if($sort_published_at != "NONE")
-        {
-            $orderBy = "published_at";
-            $orderBy_val = $sort_published_at;
-        }else{
-
-        }
-        
-        //フィルター
-        $filter_bool_vc = $jsonRequest["filter_bool_vc"];
-        $filter_bool_act = $jsonRequest["filter_bool_act"];
-        $filter_bool_clear = $jsonRequest["filter_bool_clear"];
-        $filter_string_guide = $jsonRequest["filter_string_guide"];
-        $filter_language = $jsonRequest["filter_language"];
-        $filter_play_job = $jsonRequest["filter_play_job"];
-        
-        $filter_bool_vc_array = $this ->FilterDoneBool($filter_bool_vc);
-        $filter_bool_act_array = $this ->FilterDoneBool($filter_bool_act);
-        $filter_bool_clear_array = $this ->FilterDoneBool($filter_bool_clear);
-        $filter_string_guide = $this ->FilterDoneGuide($filter_string_guide);
-        $filter_language = $this ->FilterDoneLanguage($filter_language);
-        $filter_play_job = $this ->FilterDonePlayJob($filter_play_job);
-
-         //データベースからデータの抽出
-        $searchdatas = Moviesearch_data::
-            where("contents",$dataContents)
-            ->whereIn("bool_vc",$filter_bool_vc_array)
-            ->whereIn("bool_act",$filter_bool_act_array)
-            ->whereIn("bool_clear",$filter_bool_clear_array)
-            ->whereIn("string_guide",$filter_string_guide)
-            ->whereIn("language",$filter_language)
-            ->whereIn("language",$filter_language)
-            ->whereIn("play_job",$filter_play_job)
-            ->orderBy($orderBy,$orderBy_val)
-            ->take(50)
-            ->get();
-
-        
-        //データの追加
-        foreach($searchdatas as $searchdata)
-        {
-            //視聴回数挿入
-            $view_count_str = $this -> numOfDigitsTo2($searchdata["view_count"]);
-            $searchdata -> view_count_str = $view_count_str;
-
-            //投稿日挿入
-            $published_at_str = $this -> DateToSlash($searchdata["published_at"]);
-            $searchdata -> published_at_str = $published_at_str;
-        }    
-
-        return $searchdatas;
-
-        */
 
         return $datas;
     }

@@ -27,7 +27,8 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
 
-    <title>FF14-APP|FinalFantasyXIVのアプリサイト</title>
+    @component('components.meta.moviesearch.moviesearch')
+    @endcomponent
 
 </head>
 
@@ -49,33 +50,44 @@
                     @endcomponent
 
                     <div class="sp_scroll_area">
+
+                        <div id="endwalker">
+                            <p class="left_menu_h1 pc_left_menu_h1"><img src="\images\moviesearch\endwalker.png" alt=""></p>
+                            <p class="left_menu_h1 sp_left_menu_h1"><img src="\images\moviesearch\sp_endwalker.jpg" alt=""></p>
+                            <p class="left_menu_h2 endwalker"> <span data-activePart="EndwalkerExtreme" class="left_menu_h2_span">極討滅戦</span> </p>
+                            <ul class="left_menu_ul">
+                                <li data-contents="EndwalkerExtreme01"><img src="\images\moviesearch\boss\bossimage053.jpg" alt="????">????</li>    
+                                <li data-contents="EndwalkerExtreme02"><img src="\images\moviesearch\boss\bossimage054.jpg" alt="????">????</li>                        
+                            </ul>    
+                        </div>
+
                         <div id="shadowbringers">
-                        <p class="left_menu_h1 pc_left_menu_h1"><img src="\images\moviesearch\shadowbringers.png" alt=""></p>
-                        <p class="left_menu_h1 sp_left_menu_h1"><img src="\images\moviesearch\sp_shadowbringers.jpg" alt=""></p>
-                        <p class="left_menu_h2 shadowbringers"> <span data-activePart="EdensPromise" class="left_menu_h2_span">希望の園エデン：再生編</span> </p>
-                        <ul class="left_menu_ul">
-                            <li data-contents="EdensPromise01"><img src="\images\moviesearch\boss\bossimage048.jpg" alt="暗闇の雲">暗闇の雲</li>
-                            <li data-contents="EdensPromise02"><img src="\images\moviesearch\boss\bossimage049.jpg" alt="影の王">影の王</li>
-                            <li data-contents="EdensPromise03"><img src="\images\moviesearch\boss\bossimage050.jpg" alt="フェイトブレイカー">フェイトブレイカー</li>
-                            <li data-contents="EdensPromise04"><img src="\images\moviesearch\boss\bossimage051.jpg" alt="プロミス・オブ・エデン">プロミス・オブ・エデン</li>
-                            <li data-contents="EdensPromise05"><img src="\images\moviesearch\boss\bossimage052.jpg" alt="闇の巫女">闇の巫女</li>
-                        </ul>
+                            <p class="left_menu_h1 pc_left_menu_h1"><img src="\images\moviesearch\shadowbringers.png" alt=""></p>
+                            <p class="left_menu_h1 sp_left_menu_h1"><img src="\images\moviesearch\sp_shadowbringers.jpg" alt=""></p>
+                            <p class="left_menu_h2 shadowbringers"> <span data-activePart="EdensPromise" class="left_menu_h2_span">希望の園エデン：再生編</span> </p>
+                            <ul class="left_menu_ul">
+                                <li data-contents="EdensPromise01"><img src="\images\moviesearch\boss\bossimage048.jpg" alt="暗闇の雲">暗闇の雲</li>
+                                <li data-contents="EdensPromise02"><img src="\images\moviesearch\boss\bossimage049.jpg" alt="影の王">影の王</li>
+                                <li data-contents="EdensPromise03"><img src="\images\moviesearch\boss\bossimage050.jpg" alt="フェイトブレイカー">フェイトブレイカー</li>
+                                <li data-contents="EdensPromise04"><img src="\images\moviesearch\boss\bossimage051.jpg" alt="プロミス・オブ・エデン">プロミス・オブ・エデン</li>
+                                <li data-contents="EdensPromise05"><img src="\images\moviesearch\boss\bossimage052.jpg" alt="闇の巫女">闇の巫女</li>
+                            </ul>
 
-                        <p class="left_menu_h2 shadowbringers"> <span data-activePart="EdensVerse" class="left_menu_h2_span">希望の園エデン：共鳴編</span> </p>
-                        <ul class="left_menu_ul">
-                            <li data-contents="EdensVerse01"><img src="\images\moviesearch\boss\bossimage044.jpg" alt="ラムウ">ラムウ</li>
-                            <li data-contents="EdensVerse02"><img src="\images\moviesearch\boss\bossimage045.jpg" alt="イフリート ガルーダ">イフリート ガルーダ</li>
-                            <li data-contents="EdensVerse03"><img src="\images\moviesearch\boss\bossimage046.jpg" alt="ダークアイドル">ダークアイドル</li>
-                            <li data-contents="EdensVerse04"><img src="\images\moviesearch\boss\bossimage047.jpg" alt="シヴァ">シヴァ</li>
-                        </ul>
+                            <p class="left_menu_h2 shadowbringers"> <span data-activePart="EdensVerse" class="left_menu_h2_span">希望の園エデン：共鳴編</span> </p>
+                            <ul class="left_menu_ul">
+                                <li data-contents="EdensVerse01"><img src="\images\moviesearch\boss\bossimage044.jpg" alt="ラムウ">ラムウ</li>
+                                <li data-contents="EdensVerse02"><img src="\images\moviesearch\boss\bossimage045.jpg" alt="イフリート ガルーダ">イフリート ガルーダ</li>
+                                <li data-contents="EdensVerse03"><img src="\images\moviesearch\boss\bossimage046.jpg" alt="ダークアイドル">ダークアイドル</li>
+                                <li data-contents="EdensVerse04"><img src="\images\moviesearch\boss\bossimage047.jpg" alt="シヴァ">シヴァ</li>
+                            </ul>
 
-                        <p class="left_menu_h2 shadowbringers"> <span data-activePart="EdensGate" class="left_menu_h2_span">希望の園エデン：覚醒編</span> </p>
-                        <ul class="left_menu_ul">
-                            <li data-contents="EdensGate01"><img src="\images\moviesearch\boss\bossimage040.jpg" alt="エデン・プライム">エデン・プライム</li>
-                            <li data-contents="EdensGate02"><img src="\images\moviesearch\boss\bossimage041.jpg" alt="ヴォイドウォーカー">ヴォイドウォーカー</li>
-                            <li data-contents="EdensGate03"><img src="\images\moviesearch\boss\bossimage040.jpg" alt="リヴァイアサン">リヴァイアサン</li>
-                            <li data-contents="EdensGate04"><img src="\images\moviesearch\boss\bossimage043.jpg" alt="タイタン">タイタン</li>
-                        </ul>
+                            <p class="left_menu_h2 shadowbringers"> <span data-activePart="EdensGate" class="left_menu_h2_span">希望の園エデン：覚醒編</span> </p>
+                            <ul class="left_menu_ul">
+                                <li data-contents="EdensGate01"><img src="\images\moviesearch\boss\bossimage040.jpg" alt="エデン・プライム">エデン・プライム</li>
+                                <li data-contents="EdensGate02"><img src="\images\moviesearch\boss\bossimage041.jpg" alt="ヴォイドウォーカー">ヴォイドウォーカー</li>
+                                <li data-contents="EdensGate03"><img src="\images\moviesearch\boss\bossimage040.jpg" alt="リヴァイアサン">リヴァイアサン</li>
+                                <li data-contents="EdensGate04"><img src="\images\moviesearch\boss\bossimage043.jpg" alt="タイタン">タイタン</li>
+                            </ul>
                         </div>
 
                         <div id="stormblood">
