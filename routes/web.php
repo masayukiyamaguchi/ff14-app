@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-//TOPページルート
+//TOPページルート.
 Route::get('/',"Top\IndexController@index");
 
 
@@ -22,6 +22,7 @@ Route::get('/',"Top\IndexController@index");
 //ccardルート
 Route::get('/ccard/',"CCard\IndexController@index")->name("index");
 Route::post('/ccard/',"CCard\GenerateController@index")->name("generate");
+
 
 
 
@@ -55,8 +56,6 @@ Route::get('/moviesearch/{movie_id}/',"MovieSearch\MoviePlayController@index");
 
 
 
-
-
-
-
+//Avoidsnakesルート
+Route::get('/avoidsnakes',"avoidsnakes\IndexController@index");
 

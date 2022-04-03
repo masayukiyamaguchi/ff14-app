@@ -54,10 +54,20 @@
                         <div id="endwalker">
                             <p class="left_menu_h1 pc_left_menu_h1"><img src="\images\moviesearch\endwalker.png" alt=""></p>
                             <p class="left_menu_h1 sp_left_menu_h1"><img src="\images\moviesearch\sp_endwalker.jpg" alt=""></p>
+
+                            <p class="left_menu_h2 endwalker"> <span data-activePart="Asphodelos" class="left_menu_h2_span">万魔殿パンデモニウム：辺獄編</span> </p>
+                            <ul class="left_menu_ul">
+                                <li data-contents="Asphodelos01"><img src="\images\moviesearch\boss\bossimage055.png" alt="エリクトニオス">エリクトニオス</li>    
+                                <li data-contents="Asphodelos02"><img src="\images\moviesearch\boss\bossimage056.png" alt="ヒッポカムポス">ヒッポカムポス</li>
+                                <li data-contents="Asphodelos03"><img src="\images\moviesearch\boss\bossimage057.png" alt="フェネクス">フェネクス</li>    
+                                <li data-contents="Asphodelos04"><img src="\images\moviesearch\boss\bossimage058.png" alt="ヘスペロス">ヘスペロス</li>
+                                <li data-contents="Asphodelos05"><img src="\images\moviesearch\boss\bossimage059.png" alt="ヘスペロス">ヘスペロス(後半)</li>                            
+                            </ul>    
+
                             <p class="left_menu_h2 endwalker"> <span data-activePart="EndwalkerExtreme" class="left_menu_h2_span">極討滅戦</span> </p>
                             <ul class="left_menu_ul">
-                                <li data-contents="EndwalkerExtreme01"><img src="\images\moviesearch\boss\bossimage053.jpg" alt="????">????</li>    
-                                <li data-contents="EndwalkerExtreme02"><img src="\images\moviesearch\boss\bossimage054.jpg" alt="????">????</li>                        
+                                <li data-contents="EndwalkerExtreme01"><img src="\images\moviesearch\boss\bossimage053.png" alt="極ゾディアーク">極ゾディアーク</li>    
+                                <li data-contents="EndwalkerExtreme02"><img src="\images\moviesearch\boss\bossimage054.png" alt="極ハイデリン">極ハイデリン</li>                        
                             </ul>    
                         </div>
 

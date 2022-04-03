@@ -34,18 +34,18 @@
                 <div class="mainContents_container_center">
                     <div class="mainContents_container_center_outer">
 
-                        <h1>CONTENTS</h1>
+                        <h1>WEBアプリ</h1>
                         
                         <div class="mainContents_container_center_inner">
                             
                             <ul class="contents_card">
-                                <li class="contents_card_li">
+                                {{-- <li class="contents_card_li">
                                     <a href="/ccard/">
                                         <img src="\images\Top\template3.png" alt="">
                                     </a>
                                     <h2>キャラクターカードジェネレーター</h2>
                                     <p>スクリーンショットを使ってオリジナルのキャラクターカードを制作できます！</p>
-                                </li>
+                                </li> --}}
                                 <li class="contents_card_li">
                                     <a href="/moviesearch/">
                                         <img src="\images\Top\moviesearchsamneil.jpg" alt="">
@@ -67,31 +67,6 @@
                                     <h2>Comming Soon</h2>
                                     <p>現在制作中！</p>
                                 </li>
-                            </ul>
-
-
-                            <ul class="contents_card">
-                                <li class="contents_card_li">
-                                    <a href="/">
-                                        <img src="\images\Top\nowcreating.jpg" alt="">
-                                    </a>
-                                    <h2>Comming Soon</h2>
-                                    <p>現在制作中！</p>
-                                </li>
-                                <li class="contents_card_li">
-                                    <a href="/">
-                                        <img src="\images\Top\nowcreating.jpg" alt="">
-                                    </a>
-                                    <h2>Comming Soon</h2>
-                                    <p>現在制作中！</p>
-                                </li>
-                                <li class="contents_card_li">
-                                    <a href="/">
-                                        <img src="\images\Top\nowcreating.jpg" alt="">
-                                    </a>
-                                    <h2>Comming Soon</h2>
-                                    <p>現在制作中！</p>
-                                </li>
                                 <li class="contents_card_li">
                                     <a href="/">
                                         <img src="\images\Top\nowcreating.jpg" alt="">
@@ -100,166 +75,48 @@
                                     <p>現在制作中！</p>
                                 </li>
                             </ul>
-
-                            <!--
-                            <ul class="contents_card">
-                                <li class="contents_card_li">
-                                    <a href="/">
-                                        <img src="\images\Top\nowcreating.jpg" alt="">
-                                    </a>
-                                    <h2>Comming Soon</h2>
-                                    <p>現在制作中！</p>
-                                </li>
-                                <li class="contents_card_li">
-                                    <a href="/">
-                                        <img src="\images\Top\nowcreating.jpg" alt="">
-                                    </a>
-                                    <h2>Comming Soon</h2>
-                                    <p>現在制作中！</p>
-                                </li>
-                                <li class="contents_card_li">
-                                    <a href="/">
-                                        <img src="\images\Top\nowcreating.jpg" alt="">
-                                    </a>
-                                    <h2>Comming Soon</h2>
-                                    <p>現在制作中！</p>
-                                </li>
-                                <li class="contents_card_li">
-                                    <a href="/">
-                                        <img src="\images\Top\nowcreating.jpg" alt="">
-                                    </a>
-                                    <h2>Comming Soon</h2>
-                                    <p>現在制作中！</p>
-                                </li>
-                            </ul>
-
-                            <ul class="contents_card">
-                                <li class="contents_card_li">
-                                    <a href="/">
-                                        <img src="\images\Top\nowcreating.jpg" alt="">
-                                    </a>
-                                    <h2>Comming Soon</h2>
-                                    <p>現在制作中！</p>
-                                </li>
-                                <li class="contents_card_li">
-                                    <a href="/">
-                                        <img src="\images\Top\nowcreating.jpg" alt="">
-                                    </a>
-                                    <h2>Comming Soon</h2>
-                                    <p>現在制作中！</p>
-                                </li>
-                                <li class="contents_card_li">
-                                    <a href="/">
-                                        <img src="\images\Top\nowcreating.jpg" alt="">
-                                    </a>
-                                    <h2>Comming Soon</h2>
-                                    <p>現在制作中！</p>
-                                </li>
-                                <li class="contents_card_li">
-                                    <a href="/">
-                                        <img src="\images\Top\nowcreating.jpg" alt="">
-                                    </a>
-                                    <h2>Comming Soon</h2>
-                                    <p>現在制作中！</p>
-                                </li>
-                            </ul>
-
-                            <ul class="contents_card">
-                                <li class="contents_card_li">
-                                    <a href="/">
-                                        <img src="\images\Top\nowcreating.jpg" alt="">
-                                    </a>
-                                    <h2>Comming Soon</h2>
-                                    <p>現在制作中！</p>
-                                </li>
-                                <li class="contents_card_li">
-                                    <a href="/">
-                                        <img src="\images\Top\nowcreating.jpg" alt="">
-                                    </a>
-                                    <h2>Comming Soon</h2>
-                                    <p>現在制作中！</p>
-                                </li>
-                                <li class="contents_card_li">
-                                    <a href="/">
-                                        <img src="\images\Top\nowcreating.jpg" alt="">
-                                    </a>
-                                    <h2>Comming Soon</h2>
-                                    <p>現在制作中！</p>
-                                </li>
-                                <li class="contents_card_li">
-                                    <a href="/">
-                                        <img src="\images\Top\nowcreating.jpg" alt="">
-                                    </a>
-                                    <h2>Comming Soon</h2>
-                                    <p>現在制作中！</p>
-                                </li>
-                            </ul>
-
-                            <ul class="contents_card">
-                                <li class="contents_card_li">
-                                    <a href="/">
-                                        <img src="\images\Top\nowcreating.jpg" alt="">
-                                    </a>
-                                    <h2>Comming Soon</h2>
-                                    <p>現在制作中！</p>
-                                </li>
-                                <li class="contents_card_li">
-                                    <a href="/">
-                                        <img src="\images\Top\nowcreating.jpg" alt="">
-                                    </a>
-                                    <h2>Comming Soon</h2>
-                                    <p>現在制作中！</p>
-                                </li>
-                                <li class="contents_card_li">
-                                    <a href="/">
-                                        <img src="\images\Top\nowcreating.jpg" alt="">
-                                    </a>
-                                    <h2>Comming Soon</h2>
-                                    <p>現在制作中！</p>
-                                </li>
-                                <li class="contents_card_li">
-                                    <a href="/">
-                                        <img src="\images\Top\nowcreating.jpg" alt="">
-                                    </a>
-                                    <h2>Comming Soon</h2>
-                                    <p>現在制作中！</p>
-                                </li>
-                            </ul>
-
-                            <ul class="contents_card">
-                                <li class="contents_card_li">
-                                    <a href="/">
-                                        <img src="\images\Top\nowcreating.jpg" alt="">
-                                    </a>
-                                    <h2>Comming Soon</h2>
-                                    <p>現在制作中！</p>
-                                </li>
-                                <li class="contents_card_li">
-                                    <a href="/">
-                                        <img src="\images\Top\nowcreating.jpg" alt="">
-                                    </a>
-                                    <h2>Comming Soon</h2>
-                                    <p>現在制作中！</p>
-                                </li>
-                                <li class="contents_card_li">
-                                    <a href="/">
-                                        <img src="\images\Top\nowcreating.jpg" alt="">
-                                    </a>
-                                    <h2>Comming Soon</h2>
-                                    <p>現在制作中！</p>
-                                </li>
-                                <li class="contents_card_li">
-                                    <a href="/">
-                                        <img src="\images\Top\nowcreating.jpg" alt="">
-                                    </a>
-                                    <h2>Comming Soon</h2>
-                                    <p>現在制作中！！！！</p>
-                                </li>
-                            </ul>
-
-                            -->
                             
                         </div>
+
+
+                        <h1>木人練習場</h1>
+                        
+                        <div class="mainContents_container_center_inner">
+                            
+                            <ul class="contents_card">
+                                <li class="contents_card_li">
+                                    <a href="/avoidsnakes/" target="_blank">
+                                        <img src="\images\Top\AvoidsnakesSamneil.jpg" alt="">
+                                    </a>
+                                    <h2>木人練習場～へびよけ～</h2>
+                                    <p>〇〇〇討滅戦練習！？へびをよけよう！（PC用です！）</p>
+                                </li>
+                                <li class="contents_card_li">
+                                    <a href="/">
+                                        <img src="\images\Top\nowcreating.jpg" alt="">
+                                    </a>
+                                    <h2>Comming Soon</h2>
+                                    <p>現在制作中！</p>
+                                </li>
+                                <li class="contents_card_li">
+                                    <a href="/">
+                                        <img src="\images\Top\nowcreating.jpg" alt="">
+                                    </a>
+                                    <h2>Comming Soon</h2>
+                                    <p>現在制作中！</p>
+                                </li>
+                                <li class="contents_card_li">
+                                    <a href="/">
+                                        <img src="\images\Top\nowcreating.jpg" alt="">
+                                    </a>
+                                    <h2>Comming Soon</h2>
+                                    <p>現在制作中！</p>
+                                </li>
+                            </ul>
+                            
+                        </div>
+
+
                     </div>
                     
                 </div>

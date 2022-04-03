@@ -94,8 +94,8 @@
                                         </div>
                                         <select name="language" id="language">
                                             <option class="language_jp" value="language_jp">日本語</option>
-                                            <option class="language_en" value="">英語</option>
-                                            <option class="language_ot" value="">その他</option>
+                                            <option class="language_en" value="language_en">英語</option>
+                                            <option class="language_ot" value="language_ot">その他</option>
                                         </select>
                                     </div>
                                 </div>
@@ -191,6 +191,7 @@
 
                                     <div class="contents_input_contentsname">
                                         <select name="contentsname" id="contentsname">
+                                            <option value="Asphodelos" class="endwalker displaynone">辺獄編</option>
                                             <option value="EndwalkerExtreme" class="endwalker displaynone">極討滅戦</option>
                                             <option value="EdensPromise" class="shadowbringers displaynone">再生編</option>
                                             <option value="EdensVerse" class="shadowbringers displaynone">共鳴編</option>
@@ -209,8 +210,14 @@
 
                                     <div class="contents_input_contents">
                                         <select name="contents" id="contents">
-                                            <option value="EndwalkerExtreme01" class="EndwalkerExtreme displaynone">????</option>
-                                            <option value="EndwalkerExtreme02" class="EndwalkerExtreme displaynone">????</option>
+                                            <option value="Asphodelos01" class="Asphodelos displaynone">1層</option>
+                                            <option value="Asphodelos02" class="Asphodelos displaynone">2層</option>
+                                            <option value="Asphodelos03" class="Asphodelos displaynone">3層</option>
+                                            <option value="Asphodelos04" class="Asphodelos displaynone">4層前半</option>
+                                            <option value="Asphodelos05" class="Asphodelos displaynone">4層後半</option>
+                                            <option value="Asphodelos06" class="Asphodelos displaynone">4層前後半</option>
+                                            <option value="EndwalkerExtreme01" class="EndwalkerExtreme displaynone">極ゾディアーク</option>
+                                            <option value="EndwalkerExtreme02" class="EndwalkerExtreme displaynone">極ハイデリン</option>
                                             <option value="EdensPromise01" class="EdensPromise displaynone">1層</option>
                                             <option value="EdensPromise02" class="EdensPromise displaynone">2層</option>
                                             <option value="EdensPromise03" class="EdensPromise displaynone">3層</option>

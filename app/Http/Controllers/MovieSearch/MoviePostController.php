@@ -269,8 +269,6 @@ class MoviePostController extends Controller
         //チャンネル
         $channeldatas = $this-> YoutubeApiGetDataChannel($datas[0]["channelId"]);
 
-        dump($channeldatas);
-
         //サムネイル画像の大きさチェック
         $samneil_img_size = $this-> ImageSizeCheck($datas[0]["thumbnails"]);
         $channel_img_size = $this-> ImageSizeCheck($channeldatas[0]["thumbnails"]);
