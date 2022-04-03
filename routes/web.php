@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-//TOPページルート
+//TOPページルートルートルート
 Route::get('/',"Top\IndexController@index");
 
 
@@ -58,4 +58,8 @@ Route::get('/moviesearch/{movie_id}/',"MovieSearch\MoviePlayController@index");
 
 //Avoidsnakesルート
 Route::get('/avoidsnakes',"avoidsnakes\IndexController@index");
+
+
+//Checkleve
+Route::get('/checkleve',"checkleve\IndexController@index");
 
