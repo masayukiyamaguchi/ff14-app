@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-//TOPページルート.
+//TOPページルート
 Route::get('/',"Top\IndexController@index");
 
 
