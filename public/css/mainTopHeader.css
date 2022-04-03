@@ -1,6 +1,13 @@
 @media screen and (min-width: 767px) { /*ウィンドウ幅が767px以上の場合に適用*/
 
 
+/*ページ*/
+#body
+{
+    margin:0;
+    background-color: rgb(33, 33, 33);  
+}
+
 /*ヘッダー*/
 #main_top_header
 {
@@ -66,11 +73,37 @@
 }
 
 
+
+
+
+/*メインコンテンツ*/
+#mainContents
+{
+    position: initial;
+}
+
+.backgroundimage
+{
+
+}
+
+.mainContents_container
+{
+    display: flex;
+    padding-top: 55px;
+    display: -webkit-flex;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+}
+
+
+
+
 }/*ウィンドウ幅が767px以上の場合に適用*/
 
 
 
-@media screen and (max-width: 479px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
+@media screen and (max-width : 599px) { /*ウィンドウ幅が最大479pxまでの場合に適用*/
 
 /*ヘッダー*/
 .main_top_header_menu{
@@ -82,8 +115,6 @@
     justify-content: space-between;
 
 }
-
-
 
 .main_top_header_menu_logo{
     background-color: rgb(24,24,24);    

@@ -34,6 +34,8 @@
 
 <body id="body">
 
+    <div class="backgroundimage">
+
     <!--共通ヘッダー-->
     @component('components.commonHeaderMenu')
     @endcomponent
@@ -351,7 +353,7 @@
         </div>
     </div>
 
-
+    </div>
 
     
     

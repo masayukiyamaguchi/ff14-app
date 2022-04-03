@@ -1,0 +1,134 @@
+@media screen and (min-width: 767px) {
+  .backgroundimage {
+    background-image: url("/images/checkleve/backgroundimage.png");
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+
+  /*レフトコンテンツ*/
+  .mainContents_container_left {
+    width: 10%;
+    height: 80vh;
+  }
+
+  /*中央コンテンツ*/
+  .mainContents_container_center {
+    width: 80%;
+    background-color: rgba(45, 45, 45, 0.95);
+    padding-left: 20px;
+  }
+
+  .mainContents_container_center div {
+    text-align: center;
+  }
+
+
+
+  .center_h0 {
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    margin-left: -10px;
+    margin-top: 10px;
+    display: table;
+  }
+
+  .leveicon {
+    margin-top: 5px;
+    text-align: center;
+  }
+
+  .leveicon img {
+    width: 50px;
+  }
+
+  .center_h0_text {
+    display: table-cell;
+    color: rgb(255, 184, 230);
+    font-size: 40px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .center_h1 {
+    color: white;
+    font-size: 30px;
+  }
+
+  .input_area{
+    margin:  0 auto;
+  }
+
+  .input {
+    display:flex;
+    justify-content: center;
+  }
+
+
+  .input_area {
+    color: white;
+    font-size: 30px;
+    margin-top: -12px;
+  }
+
+  #leave_num {
+    width: 100px;
+    height: 30px;
+    border-radius: 3px;
+    /*ボックス角の丸み*/
+    font-size: 20px;
+  }
+
+
+  .input_floatleft_text {
+    color: white;
+    font-size: 30px;
+    padding-left: 20px;
+    padding-top: 8px;
+  }
+
+
+
+
+  /*ライトコンテンツ*/
+  .mainContents_container_right {
+    width: 10%;
+  }
+
+
+  #desired_date {
+    padding-top: 10px;
+    font-size: 30px;
+    color: rgb(255, 147, 217);
+  }
+
+
+  #coffee_c_input {
+    width: 80px;
+  }
+
+  .coffee_cookie_num_table th {
+    padding-left: 10px;
+  }
+
+  .coffee_cookie_num_table td {
+    padding-left: 10px;
+    padding-bottom: 5px;
+  }
+
+  [id$="neces"] {
+    text-align: center;
+  }
+
+
+}
+
+/*ウィンドウ幅が767px以上の場合に適用*/
+
+
+
+@media screen and (max-width : 599px) {
+  
+}
+
+/*ウィンドウ幅が599px以上の場合に適用*/
