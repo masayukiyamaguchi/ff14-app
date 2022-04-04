@@ -15,7 +15,7 @@
   /*中央コンテンツ*/
   .mainContents_container_center {
     width: 80%;
-    background-color: rgba(45, 45, 45, 0.95);
+    background-color: rgba(248, 221, 192, 0.8);
     padding-left: 20px;
   }
 
@@ -23,44 +23,58 @@
     text-align: center;
   }
 
-
-
   .center_h0 {
-    background-color: rgba(255, 255, 255, 0.1);
-    width: 100%;
-    margin-left: -10px;
-    margin-top: 10px;
-    display: table;
+    background-color: rgb(122, 106, 80);
+    margin-right: 20px;
+    margin-top: 30px;
+    height: 100px;
+    border-radius: 10px;
   }
 
-  .leveicon {
-    margin-top: 5px;
-    text-align: center;
-  }
-
-  .leveicon img {
-    width: 50px;
+  .center_h0 div {
+    display: inline-block;
   }
 
   .center_h0_text {
-    display: table-cell;
-    color: rgb(255, 184, 230);
-    font-size: 40px;
-    text-align: center;
-    vertical-align: middle;
+    font-size: 50px;
+    margin-top: 10px;
+    font-family: 'Hachi Maru Pop', cursive;
+    font-weight: bold;
+    color: #ffffff;
   }
+
+  .center_h0 img {
+    width: 50px;
+    margin-bottom: -10px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+
 
   .center_h1 {
+
+    background-color: #ffa72b;
+    width: 40vw;
     color: white;
-    font-size: 30px;
+    font-size: 33px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: 60px;
+    padding-top: 5px;
+    border-radius: 20px;
+    font-family: 'Hachi Maru Pop', cursive;
+    margin-right: auto;
+    margin-left: auto;
   }
 
-  .input_area{
-    margin:  0 auto;
+
+  .input_area {
+    margin: 0 auto;
   }
 
   .input {
-    display:flex;
+    display: flex;
     justify-content: center;
   }
 
@@ -73,18 +87,104 @@
 
   #leave_num {
     width: 100px;
-    height: 30px;
-    border-radius: 3px;
-    /*ボックス角の丸み*/
-    font-size: 20px;
+    height: 50px;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    font-size: 40px;    
+    font-family: 'Hachi Maru Pop', cursive;
+    font-weight: bold;
+  }
+
+  input{
+    text-align: center;
   }
 
 
   .input_floatleft_text {
-    color: white;
+    display: block;
+    font-size: 50px;
+    margin-top: -12px;
+    margin-left: 10px;
+    font-family: 'Hachi Maru Pop', cursive;
+    font-weight: bold;
+    color: #351b04;
+  }
+
+  .input_floatleft_button {
+    margin-top: 30px;
+    font-family: 'Hachi Maru Pop', cursive;
+    font-weight: bold;
     font-size: 30px;
-    padding-left: 20px;
-    padding-top: 8px;
+  }
+
+  .input_area_text_none{
+    display:none;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    font-size: 40px;
+    font-family: 'Hachi Maru Pop', cursive;
+    font-weight: bold;
+    color:black;
+
+    background-color:white;
+    width: 100px;
+    height: 50px;
+
+    border-style: solid;
+    border-width:2px;
+    border-color: black;
+  }
+
+
+  /*ボタンCSS*/
+  .button {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: .65em 4em;
+    border: 2px solid #333;
+    color: #333;
+    text-decoration: none;
+    text-align: center;
+    transition: .3s ease-in-out;
+  }
+
+  .button span {
+    position: relative;
+    z-index: 2;
+  }
+
+  .button::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border: 2px solid #333;
+  }
+
+  .button::after {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    content: '';
+    width: 101%;
+    height: 105%;
+    background-color: #fe5f95;
+    transition: .3s ease-in-out;
+  }
+
+  .button:hover {
+    color: #fff;
+  }
+
+  .button:hover::after {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
 
@@ -95,11 +195,34 @@
     width: 10%;
   }
 
+  .message_panel{
+    display:none;
+  }
+
+  .message_div {
+    text-align: center;
+    background-image: url("/images/checkleve/checkleve_comment.png");
+    height:184px;
+    width:731px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 30px;
+  }
+
+  .message_icon{
+    position:absolute;
+    left: 15vw;
+    margin-top:-50px;
+  }
+
 
   #desired_date {
-    padding-top: 10px;
-    font-size: 30px;
+    margin-top: -130px;
+    margin-left:50px;
+    font-size: 40px;
     color: rgb(255, 147, 217);
+    font-family: 'Hachi Maru Pop', cursive;
+    
   }
 
 
@@ -121,14 +244,22 @@
   }
 
 
+  /* フッター */
+  .checkleve_footer{
+    text-align: center;
+  }
+
+  .checkleve_footer img{
+    width:100px;
+  }
+
+
 }
 
 /*ウィンドウ幅が767px以上の場合に適用*/
 
 
 
-@media screen and (max-width : 599px) {
-  
-}
+@media screen and (max-width : 599px) {}
 
 /*ウィンドウ幅が599px以上の場合に適用*/

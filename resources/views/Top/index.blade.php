@@ -54,11 +54,11 @@
                                     <p>レイド・討伐討滅戦などの攻略動画をFF14に特化して検索できます！※現在、動画登録作業中です</p>
                                 </li>
                                 <li class="contents_card_li">
-                                    <a href="/">
-                                        <img src="\images\Top\nowcreating.jpg" alt="">
+                                    <a href="/checkleve">
+                                        <img src="\images\Top\checklevesamneil.png" alt="">
                                     </a>
-                                    <h2>Comming Soon</h2>
-                                    <p>現在制作中！</p>
+                                    <h2>ただリーヴ券が溢れないようにしてくれるツール</h2>
+                                    <p>リーヴ券がいつ溢れてしまうかを計算してくれるツールです！</p>
                                 </li>
                                 <li class="contents_card_li">
                                     <a href="/">

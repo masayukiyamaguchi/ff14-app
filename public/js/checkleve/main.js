@@ -82,13 +82,61 @@ $(function () {
         } else if (leave_num >= 98) {
             $("#desired_date").text("次の" + next + "時で溢れます！");
         } else {
-            $("#desired_date").text(m + '月' + d + '日(' + nichi + '日後)' + zi + '時で' + mai + '枚。次で溢れます。');
+            $("#desired_date").text(m + '月' + d + '日(' + nichi + '日後)' + zi + '時で' + mai + '枚。');
         }
+
+        //画像変更
+        var images = [
+            'leveicon1.png',
+            'leveicon2.png',
+            'leveicon3.png',
+            'leveicon4.png',
+            'leveicon5.png',
+            'leveicon6.png',
+            'leveicon7.png',
+            'leveicon8.png',
+            'leveicon9.png',
+            'leveicon10.png',
+            'leveicon11.png',
+            'leveicon12.png',
+            'leveicon13.png'
+        ];
+        var randImg = images[Math.floor(Math.random() * images.length)];
+        var icon_src = "images/checkleve/" + randImg;
+
+        $(".message_icon_img").attr("src", icon_src);
+
+        //表示
+        $(".message_panel").css("display", "block");
 
         // 記録
         localStorage.setItem('coffee_cookie_comment', $("#desired_date").text());
 
     });
+
+    //スクショ
+    $("#plotter-img").click(function () {
+
+        // インプットから、テキストへ差し替える
+        var input_num = $("#leave_num").val();
+        $(".input_area_text_none").text(input_num);
+        
+        $(".input_area_text_none").css("display","block");
+        $(".input_area_text").css("display","none");        
+
+        html2canvas(document.querySelector("#target")).then(canvas => {
+            let downloadEle = document.createElement("a");
+            downloadEle.href = canvas.toDataURL("image/png");
+            downloadEle.download = "canvas.png";
+            downloadEle.click();
+        });
+
+        $(".input_area_text_none").css("display","none");
+        $(".input_area_text").css("display","block"); 
+
+    });
+
+
 
     $("#coffee_bean_button").click(function () {
         // インプットの内容をGET
@@ -166,6 +214,10 @@ $(function () {
         }
 
     }
+
+
+
+
 
 
 });
