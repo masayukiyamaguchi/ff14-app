@@ -90,12 +90,12 @@
     height: 50px;
     border-radius: 10px;
     padding-bottom: 10px;
-    font-size: 40px;    
+    font-size: 40px;
     font-family: 'Hachi Maru Pop', cursive;
     font-weight: bold;
   }
 
-  input{
+  input {
     text-align: center;
   }
 
@@ -117,21 +117,21 @@
     font-size: 30px;
   }
 
-  .input_area_text_none{
-    display:none;
+  .input_area_text_none {
+    display: none;
     border-radius: 10px;
     padding-bottom: 10px;
     font-size: 40px;
     font-family: 'Hachi Maru Pop', cursive;
     font-weight: bold;
-    color:black;
+    color: black;
 
-    background-color:white;
+    background-color: white;
     width: 100px;
     height: 50px;
 
     border-style: solid;
-    border-width:2px;
+    border-width: 2px;
     border-color: black;
   }
 
@@ -195,34 +195,34 @@
     width: 10%;
   }
 
-  .message_panel{
-    display:none;
+  .message_panel {
+    display: none;
   }
 
   .message_div {
     text-align: center;
     background-image: url("/images/checkleve/checkleve_comment.png");
-    height:184px;
-    width:731px;
+    height: 184px;
+    width: 731px;
     margin-right: auto;
     margin-left: auto;
     margin-top: 30px;
   }
 
-  .message_icon{
-    position:absolute;
+  .message_icon {
+    position: absolute;
     left: 15vw;
-    margin-top:-50px;
+    margin-top: -50px;
   }
 
 
   #desired_date {
     margin-top: -130px;
-    margin-left:50px;
+    margin-left: 50px;
     font-size: 40px;
     color: rgb(255, 147, 217);
     font-family: 'Hachi Maru Pop', cursive;
-    
+
   }
 
 
@@ -245,12 +245,18 @@
 
 
   /* フッター */
-  .checkleve_footer{
+  .checkleve_footer {
     text-align: center;
   }
 
-  .checkleve_footer img{
-    width:100px;
+  .checkleve_footer img {
+    width: 100px;
+    opacity: 0.8;
+  }
+
+  .checkleve_footer img:hover {
+    opacity: 1.0;
+    cursor : pointer;
   }
 
 

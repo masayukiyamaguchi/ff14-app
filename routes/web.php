@@ -63,3 +63,4 @@ Route::get('/avoidsnakes',"avoidsnakes\IndexController@index");
 //Checkleve
 Route::get('/checkleve',"checkleve\IndexController@index");
 
+

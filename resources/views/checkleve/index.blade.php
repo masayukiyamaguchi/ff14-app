@@ -113,15 +113,14 @@
 
     <div class="checkleve_footer">
 
+        <img id="plotter-img" src="/images/checkleve/checklevedownload.png" alt="" />
         <a href="https://twitter.com/share?
 url=https://ff14-app.com/checkleve%0a&
 related=@pellegrinogame%0a&
 hashtags=ただリーヴ券が溢れないようにしてくれるツール%0a&
 text=次にリーヴ券がたまるまで！%0a" rel="nofollow" target="_blank">
             <img src="/images/checkleve/twittericon.png" alt="" /></a>
-
-
-        <div id="plotter-img">ダウンロード</div>
+        <img id="plotter-img" src="/images/checkleve/checklevemail.png" alt="" />
     </div>
 
 
