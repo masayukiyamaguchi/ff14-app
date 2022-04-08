@@ -120,7 +120,33 @@ related=@pellegrinogame%0a&
 hashtags=ただリーヴ券が溢れないようにしてくれるツール%0a&
 text=次にリーヴ券がたまるまで！%0a" rel="nofollow" target="_blank">
             <img src="/images/checkleve/twittericon.png" alt="" /></a>
-        <img id="plotter-img" src="/images/checkleve/checklevemail.png" alt="" />
+        <img id="mailform_button" src="/images/checkleve/checklevemail.png" alt="" />
+    </div>
+
+
+    <div class="mailform">
+        <div class="mailform_main">
+            <div class="mailform_h1">
+                メールアドレスを入力すると、前日にメールが届きます！
+            </div>
+
+            <form id="mailform" action="/checkleve/post" method="post">
+                @csrf
+                <div class="mailform_input">
+                    <input class="mailform_input_area" type="text" name="email">
+                    <input class="mailform_input_area area_data" type="text" name="date">
+                    <input class="mailform_input_area area_time" type="text" name="time">
+                    <input class="mailform_input_area area_count" type="text" name="count">
+                </div>
+                <div class="mailform_button">
+                    <a class="button" id="mailform_button_submit" href="#"><span>通知する</span></a>
+                </div>
+            </form>
+
+            <div class="close_button">
+                ✕
+            </div>
+        </div>
     </div>
 
 

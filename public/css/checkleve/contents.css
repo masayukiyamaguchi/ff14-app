@@ -1,4 +1,5 @@
 @media screen and (min-width: 767px) {
+
   .backgroundimage {
     background-image: url("/images/checkleve/backgroundimage.png");
     background-attachment: fixed;
@@ -256,8 +257,85 @@
 
   .checkleve_footer img:hover {
     opacity: 1.0;
-    cursor : pointer;
+    cursor: pointer;
   }
+
+  /* メール通知 */
+  .mailform {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(64, 64, 64, 0.5);
+  }
+
+  .mailform_main {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 200px;
+    border: solid 5px;
+    border-color: #ffa083;
+    background-color: rgb(255, 242, 191);
+
+    text-align: center;
+
+  }
+
+  .mailform_h1 {
+    margin-top: 30px;
+    font-family: 'Hachi Maru Pop', cursive;
+    font-weight: bold;
+    color: black;
+  }
+
+  .mailform_input input {
+    margin-top: 30px;
+    width: 300px;
+  }
+
+  .mailform_button {
+    margin-top: 30px;
+  }
+
+  .close_button {
+    position: fixed;
+    text-align: center;
+    top: 0px;
+    right: 0px;
+    transform: translate(50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: rgb(255, 255, 255);
+    border: solid 5px;
+    border-color: #ffa083;
+    border-radius: 100%;
+    font-size: 30px;
+  }
+
+  .area_data,.area_time,.area_count{
+    position: fixed;
+    visibility: hidden;
+  }
+
+
+  /* スクロールロック */
+  body.scroll-rock {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #000;
+  }
+
+
+
 
 
 }

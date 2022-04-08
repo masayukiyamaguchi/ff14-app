@@ -1,5 +1,11 @@
 $(function () {
 
+    //満了日時
+    var max_leve_data = null;
+    var max_leve_time = null;
+    var max_leve_count = null;
+    var bool_mail_allart = false;
+
     // 前の入力数値を代入
     $("#leave_num").val(localStorage.getItem('coffee_cookie_leave_num'));
     $("#desired_date").text(localStorage.getItem('coffee_cookie_comment'));
@@ -72,17 +78,26 @@ $(function () {
         now.setDate(now.getDate() + nichi);
 
         // いっぱいになる日付を算出
+        var y = now.getFullYear();
         var m = now.getMonth() + 1;
         var d = now.getDate();
 
+        max_leve_data = y + "-" + m + "-" + d;
+        max_leve_time = zi;
+        max_leve_count = mai;
+
         if (leave_num == "") {
             $("#desired_date").text("ちゃんと入力してください！");
+            bool_mail_allart = false;
         } else if (leave_num > 100) {
             $("#desired_date").text("そんなに多くは持てません！");
+            bool_mail_allart = false;
         } else if (leave_num >= 98) {
             $("#desired_date").text("次の" + next + "時で溢れます！");
+            bool_mail_allart = false;
         } else {
             $("#desired_date").text(m + '月' + d + '日(' + nichi + '日後)' + zi + '時で' + mai + '枚。');
+            bool_mail_allart = true;
         }
 
         //画像変更
@@ -110,7 +125,11 @@ $(function () {
         $(".message_panel").css("display", "block");
 
         // 記録
-        localStorage.setItem('coffee_cookie_comment', $("#desired_date").text());
+        $(".area_data").val(max_leve_data);
+        $(".area_time").val(max_leve_time);
+        $(".area_count").val(max_leve_count);
+        //localStorage.setItem('coffee_cookie_comment', $("#desired_date").text());
+
 
     });
 
@@ -120,9 +139,9 @@ $(function () {
         // インプットから、テキストへ差し替える
         var input_num = $("#leave_num").val();
         $(".input_area_text_none").text(input_num);
-        
-        $(".input_area_text_none").css("display","block");
-        $(".input_area_text").css("display","none");        
+
+        $(".input_area_text_none").css("display", "block");
+        $(".input_area_text").css("display", "none");
 
         html2canvas(document.querySelector("#target")).then(canvas => {
             let downloadEle = document.createElement("a");
@@ -131,8 +150,8 @@ $(function () {
             downloadEle.click();
         });
 
-        $(".input_area_text_none").css("display","none");
-        $(".input_area_text").css("display","block"); 
+        $(".input_area_text_none").css("display", "none");
+        $(".input_area_text").css("display", "block");
 
     });
 
@@ -212,12 +231,56 @@ $(function () {
         } else {
             return num;
         }
-
     }
 
+    //メールアドレス登録
+
+    $("#mailform_button").click(function () {
+        $(".mailform").fadeIn(500);
+        $('body').addClass('scroll-rock');
+    });
+
+    $(".close_button").click(function () {
+        $(".mailform").fadeOut(500);
+        $('body').removeClass('scroll-rock');
+    });
 
 
+    $("#mailform_button").click(function () {
+        var mail_addless = $(".mailform_input_area").val();
 
+        if (max_leve_data != null) {
+            console.log(max_leve_data);
+        } else {
+            console.log("null");
+        }
+
+    })
+
+    const form = document.getElementById("mailform")
+    const submitButton = document.getElementById("mailform_button_submit")
+
+    submitButton.onclick = () => {
+
+        if(!bool_mail_allart){
+            alert("通知登録できません(´・ω・`)");
+            return;
+        }
+
+        const formData = new FormData(form)
+        const action = form.getAttribute("action")
+        const options = {
+            method: 'POST',
+            body: formData,
+        }
+        fetch(action, options).then((e) => {
+            if (e.status === 200) {
+                alert("登録しました！")
+                return
+            }
+            alert("登録できませんでした；ｗ；")
+        })
+    }
 
 
 });

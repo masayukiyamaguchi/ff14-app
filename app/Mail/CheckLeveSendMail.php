@@ -16,9 +16,10 @@ class CheckLeveSendMail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($search_data)
     {
         //
+        $this->search_data = $search_data;
     }
 
     /**
@@ -28,8 +29,9 @@ class CheckLeveSendMail extends Mailable
      */
     public function build()
     {
-        return $this->view('checkleve.sendmail')
+        return $this->text('checkleve.sendmail')
             ->from("info@ff14-app.com", 'ただリーヴ券が溢れないようにしてくれるツール')
-            ->subject('リーヴ券もうすぐ溢れます！');
+            ->subject('リーヴ券もうすぐ溢れます！')
+            ->with(['search_data' => $this->search_data]);
     }
 }

@@ -7,6 +7,7 @@ use App\User;
 //メール送信用ファサードを紐づける
 use Illuminate\Support\Facades\Mail;
 use App\Mail\CheckLeveSendMail;
+use App\Models\checkleve\Checkleve_data;
 
 
 class SendMailCommandCheckLeve extends Command
@@ -43,14 +44,16 @@ class SendMailCommandCheckLeve extends Command
     public function handle()
     {
         //下記を追加・修正する
-        //$users_infos = User::all();
+        $today = date("d");
+        $today_1 = date("Y-m-".$today-1);
+        $search_datas = Checkleve_data::where("lossdata",$today_1)->get();
+        
 
-        $users_infos = [
-            ["name" => "masa", "email" => "echofct14@gmail.com"],
-            ["name" => "masa", "email" => "echofct37@gmail.com"]
-        ];
-
-        Mail::to($users_infos)->send(new CheckLeveSendMail());
+        foreach($search_datas as $search_data){
+            $send_mail = ["email" => $search_data->email];
+            Mail::to($send_mail)->send(new CheckLeveSendMail($search_data));
+        }       
+        
         //上記までを追加・修正する
 
     }
