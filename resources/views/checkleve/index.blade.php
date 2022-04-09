@@ -31,8 +31,6 @@
 
 <body id="body">
 
-
-
     <!--共通ヘッダー-->
     @component('components.commonHeaderMenu')
     @endcomponent
@@ -58,6 +56,10 @@
                             ただリーヴ券が溢れないようにしてくれるツール
                         </div>
 
+                        <div class="center_h0_text_sp">
+                            ただリーヴ券が溢れない<br>ようにしてくれるツール
+                        </div>
+
                         <div class="leveicon leveiconright">
                             <img src="images/checkleve/schedule_dutyicon_guildhests.png" alt="">
                         </div>
@@ -75,7 +77,7 @@
                                 <input id="leave_num" type="text" value="">
                             </div>
 
-                            <div class="input_area_text_none"></div>
+                            <div class="input_area_text_none">70</div>
 
                             <div class="input_floatleft_text">枚</div>
 
@@ -113,7 +115,9 @@
 
     <div class="checkleve_footer">
 
-        <img id="plotter-img" src="/images/checkleve/checklevedownload.png" alt="" />
+        <img class="download_button" id="plotter-img" src="/images/checkleve/checklevedownload.png" alt="" />
+        <img class="download_button_sp"  id="plotter-img_sp" src="/images/checkleve/checklevedownload.png" alt="" />
+        
         <a href="https://twitter.com/share?
 url=https://ff14-app.com/checkleve%0a&
 related=@pellegrinogame%0a&
@@ -127,7 +131,7 @@ text=次にリーヴ券がたまるまで！%0a" rel="nofollow" target="_blank">
     <div class="mailform">
         <div class="mailform_main">
             <div class="mailform_h1">
-                メールアドレスを入力すると、前日にメールが届きます！
+                メールアドレスを入力すると、前日にメールが届きます！(テスト中)
             </div>
 
             <form id="mailform" action="/checkleve/post" method="post">

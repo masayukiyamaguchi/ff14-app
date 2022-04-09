@@ -45,7 +45,7 @@ class SendMailCommandCheckLeve extends Command
     {
         //下記を追加・修正する
         $today = date("d");
-        $today_1 = date("Y-m-".$today-1);
+        $today_1 = date("Y-m-".$today+1);
         $search_datas = Checkleve_data::where("lossdata",$today_1)->get();
         
 

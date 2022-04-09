@@ -133,8 +133,30 @@ $(function () {
 
     });
 
-    //スクショ
+    //スクショPC
     $("#plotter-img").click(function () {
+
+        // インプットから、テキストへ差し替える
+        var input_num = $("#leave_num").val();
+        $(".input_area_text_none").text(input_num);
+
+        $(".input_area_text_none").css("display", "block");
+        $(".input_area_text").css("display", "none");
+
+        html2canvas(document.querySelector("#target")).then(canvas => {
+            let downloadEle = document.createElement("a");
+            downloadEle.href = canvas.toDataURL("image/png");
+            downloadEle.download = "checkleve.png";
+            downloadEle.click();
+        });
+
+        $(".input_area_text_none").css("display", "none");
+        $(".input_area_text").css("display", "block");
+
+    });
+
+    //スクショSP
+    $("#plotter-img_sp").click(function () {
 
         // インプットから、テキストへ差し替える
         var input_num = $("#leave_num").val();
@@ -264,6 +286,17 @@ $(function () {
 
         if(!bool_mail_allart){
             alert("通知登録できません(´・ω・`)");
+            return;
+        }
+
+        var mail_address = $(".mailform_input_area").val();
+        var result = mail_address.indexOf("@")
+
+        if(mail_address==""){
+            alert("アドレス入れてね(´・ω・`)");
+            return;
+        }else if(result == -1){
+            alert("アドレスが不正だよ(´・ω・`)");
             return;
         }
 

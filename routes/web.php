@@ -14,8 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-//TOPページルートルートルート
+//TOPページルート
 Route::get('/',"Top\IndexController@index");
+
+//footer
+Route::get('/privacy/',"Footer\IndexController@index");
 
 
 

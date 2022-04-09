@@ -12,19 +12,19 @@
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "google/apiclient": "^2.11",
-        "guzzlehttp/guzzle": "^7.0.1",
+        "guzzlehttp/guzzle": "^7.3",
         "intervention/image": "^2.5",
-        "laravel/framework": "^8.0",
+        "laravel/framework": "^7.29",
         "laravel/tinker": "^2.5",
         "xivapi/xivapi-php": "dev-master"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.7",
-        "facade/ignition": "^2.3.6",
+        "facade/ignition": "^2.0",
         "fakerphp/faker": "^1.9.1",
         "mockery/mockery": "^1.3.1",
-        "nunomaduro/collision": "^5.0",
-        "phpunit/phpunit": "^9.0|^9.3.3"
+        "nunomaduro/collision": "^4.3",
+        "phpunit/phpunit": "^8.5.8|^9.3.3"
     },
     "config": {
         "optimize-autoloader": true,

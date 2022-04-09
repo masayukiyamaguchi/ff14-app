@@ -8,6 +8,10 @@
             </a>
         </div>
 
+        <div class="footer_privacy">
+            <a href="/privacy">プライバシーポリシー</a>
+        </div>
+
 
         <p class="main_top_copyrights">
             (C) FF14-APP All rights reserved.<br>
