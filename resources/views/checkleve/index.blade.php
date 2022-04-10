@@ -6,6 +6,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- CSRFトークン -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <!--共通のCSS-->
     <link rel="stylesheet" href="/css/mainTopHeader.css">
     <link rel="stylesheet" href="/css/mainTopFooter.css">
@@ -114,10 +117,10 @@
     </div>
 
     <div class="checkleve_footer">
-
+        @csrf
         <img class="download_button" id="plotter-img" src="/images/checkleve/checklevedownload.png" alt="" />
-        <img class="download_button_sp"  id="plotter-img_sp" src="/images/checkleve/checklevedownload.png" alt="" />
-        
+        <img class="download_button_sp" id="plotter-img_sp" src="/images/checkleve/checklevedownload.png" alt="" />
+
         <a href="https://twitter.com/share?
 url=https://ff14-app.com/checkleve%0a&
 related=@pellegrinogame%0a&
@@ -125,7 +128,15 @@ hashtags=ただリーヴ券が溢れないようにしてくれるツール%0a&
 text=次にリーヴ券がたまるまで！%0a" rel="nofollow" target="_blank">
             <img src="/images/checkleve/twittericon.png" alt="" /></a>
         <img id="mailform_button" src="/images/checkleve/checklevemail.png" alt="" />
+
+        <div class="downloaderror">
+            <a class="downloaderror_a" href="" target="_blank">
+                ダウンロードできない場合はコチラ
+            </a>
+        </div>
     </div>
+
+
 
 
     <div class="mailform">

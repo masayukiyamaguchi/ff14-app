@@ -165,12 +165,50 @@ $(function () {
         $(".input_area_text_none").css("display", "block");
         $(".input_area_text").css("display", "none");
 
+
         html2canvas(document.querySelector("#target")).then(canvas => {
             let downloadEle = document.createElement("a");
             downloadEle.href = canvas.toDataURL("image/png");
             downloadEle.download = "checkleve.png";
-            downloadEle.click();
+
+            //ajaxでデータを受け渡し
+            $.ajaxSetup({
+                headers: {
+                    "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+                },
+            });
+            $.ajax({
+                //POST通信
+                type: "post",
+                //ここでデータの送信先URLを指定します。
+                url: "/checkleve/download/",
+                dataType: "json",
+                data: {
+                    datauri: downloadEle.href,
+                },
+            })
+                // Ajaxリクエスト成功時の処理
+                .done(function (filename) {
+                    // Laravel内で処理された結果がdataに入って返ってくる
+                    download_url = filename;
+
+                    console.log(download_url);
+                    window.open(download_url, '_blank');
+                    $(".downloaderror_a").attr("href", download_url);
+                    $(".downloaderror").css("display", "block");
+                })
+                // Ajaxリクエスト失敗時の処理
+                .fail(function (filename) {
+                    download_url = filename;
+
+                    console.log(download_url);
+                    window.open(download_url, '_blank');
+                    $(".downloaderror_a").attr("href", download_url);
+                    $(".downloaderror").css("display", "block");
+                });
+
         });
+
 
         $(".input_area_text_none").css("display", "none");
         $(".input_area_text").css("display", "block");
@@ -284,7 +322,7 @@ $(function () {
 
     submitButton.onclick = () => {
 
-        if(!bool_mail_allart){
+        if (!bool_mail_allart) {
             alert("通知登録できません(´・ω・`)");
             return;
         }
@@ -292,10 +330,10 @@ $(function () {
         var mail_address = $(".mailform_input_area").val();
         var result = mail_address.indexOf("@")
 
-        if(mail_address==""){
+        if (mail_address == "") {
             alert("アドレス入れてね(´・ω・`)");
             return;
-        }else if(result == -1){
+        } else if (result == -1) {
             alert("アドレスが不正だよ(´・ω・`)");
             return;
         }

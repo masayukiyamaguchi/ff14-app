@@ -65,6 +65,7 @@ Route::get('/avoidsnakes',"avoidsnakes\IndexController@index");
 
 //Checkleve
 Route::get('/checkleve',"checkleve\IndexController@index");
+Route::post('/checkleve/download/',"checkleve\IndexController@download");
 Route::post('/checkleve/post',"checkleve\IndexController@post");
 
 
